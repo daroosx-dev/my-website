@@ -3,427 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>daroPrinter - E-Commerce Store</title>
+    <title id="pageTitle">Product Detail - DPrinteraro</title>
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Styles -->
-    <style>
-        /* ========================================== */
-        /* GENERAL STYLES & RESET */
-        /* ========================================== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Leelawadee UI', 'Khmer OS Siemreap', 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background-color: #f5f6f8;
-            color: #333333;
-            overflow-x: hidden;
-        }
-
-        /* Top Bar Header */
-        .top-bar {
-            background-color: #222;
-            color: #fff;
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-        }
-        .social-icons a {
-            color: #fff;
-            margin-left: 15px;
-            text-decoration: none;
-        }
-
-        /* ========================================== */
-        /* APPLE HEADER & NAVIGATION */
-        /* ========================================== */
-        .apple-header {
-            background-color: #161617;
-            color: #f5f5f7;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .apple-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 12px 20px;
-            position: relative;
-        }
-
-        .nav-logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .logo-blue {
-            color: #0071e3;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .nav-menu > a, .dropbtn, .filter-trigger {
-            color: #f5f5f7;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px 0;
-        }
-
-        .nav-menu > a:hover, .dropbtn:hover, .filter-trigger:hover {
-            color: #0071e3;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #ffffff;
-            min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-            z-index: 1000;
-            border-radius: 6px;
-            padding: 8px 0;
-            text-align: left;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block !important;
-        }
-
-        .dropdown-content button {
-            color: #333333 !important;
-            padding: 10px 16px;
-            text-decoration: none;
-            display: block !important;
-            text-align: left;
-            font-size: 14px;
-            width: 100%;
-            background: none;
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .dropdown-content button:hover {
-            background-color: #f5f5f7;
-            color: #0071e3 !important;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 22px;
-            color: #ffffff;
-            cursor: pointer;
-        }
-
-        /* Search Section */
-        .search-section {
-            text-align: center;
-            margin: 25px 0 15px 0;
-        }
-        .search-box input {
-            padding: 12px 20px;
-            width: 100%;
-            max-width: 500px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            outline: none;
-            font-size: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        /* ========================================== */
-        /* PRODUCT CONTAINER & CARD GRID (ស្មើគ្នា ១០០%) */
-        /* ========================================== */
-        .product-container {
-            display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 15px !important;
-            padding: 20px 3% !important;
-            max-width: 1400px !important;
-            margin: 0 auto !important;
-            align-items: stretch !important;
-        }
-
-        .product-card {
-            background: #ffffff !important;
-            border: 1px solid #e2e8f0 !important;
-            border-radius: 8px !important;
-            padding: 12px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            height: 100% !important;
-            box-sizing: border-box !important;
-            transition: transform 0.2s, box-shadow 0.2s !important;
-        }
-
-        .product-card:hover {
-            transform: translateY(-3px) !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-        }
-
-        .brand-logo-text {
-            font-size: 11px !important;
-            font-weight: 800 !important;
-            color: #003399 !important;
-            letter-spacing: 0.5px !important;
-            text-align: left !important;
-            margin-bottom: 6px !important;
-            text-transform: uppercase !important;
-        }
-
-        .card-img {
-            text-align: center !important;
-            margin: 6px 0 !important;
-            cursor: pointer !important;
-            height: 120px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        .card-img img {
-            max-width: 100% !important;
-            max-height: 100% !important;
-            object-fit: contain !important;
-        }
-
-        .product-title {
-            font-size: 11px !important;
-            font-weight: 700 !important;
-            line-height: 1.3 !important;
-            height: 28px !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-            display: -webkit-box !important;
-            line-clamp: 2 !important;
-            -webkit-line-clamp: 2 !important;
-            -webkit-box-orient: vertical !important;
-            margin: 4px 0 !important;
-            cursor: pointer !important;
-            color: #0044cc !important;
-            text-align: center !important;
-        }
-
-        .price {
-            font-size: 14px !important;
-            font-weight: 800 !important;
-            color: #2563eb !important;
-            margin-bottom: 8px !important;
-            text-align: center !important;
-        }
-
-        /* TAGS & COLOR BAR */
-        .tag-list {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 3px !important;
-            margin-bottom: 6px !important;
-        }
-
-        .tag-item {
-            background-color: #e6f7ff !important;
-            border-left: 3px solid #00aeef !important;
-            padding: 3px 6px !important;
-            font-size: 9px !important;
-            color: #333333 !important;
-            display: block !important;
-        }
-
-        .cmyk-bar {
-            display: flex !important;
-            height: 5px !important;
-            border-radius: 3px !important;
-            overflow: hidden !important;
-            margin: 6px 0 !important;
-            background: #ddd !important;
-        }
-        .cmyk-bar span {
-            flex: 1 !important;
-        }
-        .c-black { background-color: #000000 !important; }
-        .c-cyan { background-color: #00bcd4 !important; }
-        .c-magenta { background-color: #e91e63 !important; }
-        .c-yellow { background-color: #ffeb3b !important; }
-
-        /* SPECS TABLE */
-        .specs-table {
-            width: 100% !important;
-            font-size: 10px !important;
-            border-collapse: collapse !important;
-            margin-top: auto !important;
-            margin-bottom: 6px !important;
-        }
-
-        .specs-table td {
-            padding: 2px 0 !important;
-            vertical-align: top !important;
-        }
-
-        .specs-table td.label {
-            width: 40% !important;
-            color: #64748b !important;
-            font-weight: 500 !important;
-        }
-
-        .specs-table td.colon {
-            width: 5% !important;
-            text-align: center !important;
-            color: #64748b !important;
-        }
-
-        .specs-table td.value {
-            width: 55% !important;
-            color: #1e293b !important;
-            font-weight: 600 !important;
-        }
-
-        /* CARD ACTIONS */
-        .card-actions {
-            margin-top: auto !important;
-            text-align: center !important;
-            padding-top: 4px !important;
-        }
-
-        .btn-detail {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            background-color: #2563eb !important;
-            color: #ffffff !important;
-            text-decoration: none !important;
-            padding: 6px 10px !important;
-            border-radius: 4px !important;
-            font-size: 11px !important;
-            font-weight: 700 !important;
-            border: none !important;
-            cursor: pointer !important;
-            transition: background 0.2s !important;
-        }
-
-        .btn-detail:hover {
-            background-color: #1d4ed8 !important;
-        }
-
-        /* ========================================== */
-        /* RESPONSIVE DESIGN (MOBILE & TABLET) */
-        /* ========================================== */
-        @media (max-width: 1024px) {
-            .product-container {
-                grid-template-columns: repeat(2, 1fr) !important;
-                padding: 15px 2% !important;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .menu-toggle {
-                display: block !important;
-            }
-
-            .nav-menu {
-                display: none !important;
-                position: absolute !important;
-                top: 100% !important;
-                left: 0 !important;
-                width: 100% !important;
-                background-color: #161617 !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                padding: 15px 20px !important;
-                gap: 15px !important;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
-                transform: none !important;
-            }
-
-            .nav-menu.active {
-                display: flex !important;
-            }
-
-            .nav-menu > a, .dropbtn, .filter-trigger {
-                width: 100% !important;
-                text-align: left !important;
-            }
-
-            .dropdown-content {
-                position: static !important;
-                box-shadow: none !important;
-                background-color: #222223 !important;
-                width: 100% !important;
-                margin-top: 5px !important;
-            }
-
-            .dropdown-content button {
-                color: #f5f5f7 !important;
-                padding-left: 20px !important;
-            }
-
-            /* បង្ហាញ ២ ជួរទន្ទឹមគ្នាលើទូរស័ព្ទ */
-            .product-container {
-                grid-template-columns: repeat(2, 1fr) !important;
-                padding: 8px !important;
-                gap: 8px !important;
-                align-items: stretch !important;
-            }
-
-            .product-card {
-                padding: 8px !important;
-            }
-
-            .card-img {
-                height: 100px !important;
-            }
-
-            .product-title {
-                font-size: 10px !important;
-                height: 26px !important;
-            }
-
-            .price {
-                font-size: 13px !important;
-            }
-
-            .specs-table {
-                font-size: 9px !important;
-            }
-        }
-    </style>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="single-product.css">
 </head>
 <body>
 
@@ -433,84 +20,224 @@
             <span><i class="fa-solid fa-headset"></i> Phone: 010 111 222 | 097 333 444</span>
         </div>
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://t.me/your_telegram_id" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
         </div>
     </div>
 
     <!-- Main Navigation Header -->
     <header class="apple-header">
         <nav class="apple-nav">
-            <a href="index.html" class="nav-logo">
+            <a href="../index.html" class="nav-logo">
                 <span class="logo-blue">daro</span>printer
             </a>
-
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
+            
             <div class="nav-menu" id="navMenu">
-                <button class="filter-trigger" data-filter="All">Store</button>
-
+                <a href="../index.html">Store</a>
+                
+                <!-- Software Firmware Dropdown -->
                 <div class="dropdown">
-                    <span class="dropbtn">Software Firmware <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
+                    <a href="#" class="dropbtn">Software Firmware <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Canon Firmware">Canon</button>
-                        <button class="filter-trigger" data-filter="Ricoh Firmware">Ricoh</button>
-                        <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba</button>
-                        <button class="filter-trigger" data-filter="Epson Firmware">Epson</button>
-                        <button class="filter-trigger" data-filter="HP Firmware">HP</button>
+                        <a href="../index.html" data-filter="Canon">Canon</a>
+                        <a href="../index.html" data-filter="Ricoh">Ricoh</a>
+                        <a href="../index.html" data-filter="Toshiba">Toshiba</a>
+                        <a href="../index.html" data-filter="Epson">Epson</a>
+                        <a href="../index.html" data-filter="HP">HP</a>
                     </div>
                 </div>
 
+                <!-- Printer Dropdown -->
                 <div class="dropdown">
-                    <span class="dropbtn">Printer <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
+                    <a href="#" class="dropbtn">Printer <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
-                        <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
+                        <a href="../index.html" data-filter="Ink Printer">Ink Printer</a>
+                        <a href="../index.html" data-filter="Laser Printer">Laser Printer</a>
                     </div>
                 </div>
 
-                <div class="dropdown">
-                    <span class="dropbtn">Software License <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
-                    <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Windows">Windows</button>
-                        <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
-                    </div>
-                </div>
-
-                <a href="#">Support</a>
+                <a href="../index.html">Software License</a>
+                <a href="../index.html">Support</a>
             </div>
         </nav>
     </header>
 
-    <!-- Search Bar Section -->
-    <div class="search-section">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="ស្វែងរកឈ្មោះម៉ាស៊ីនព្រីន, Copier, ឬ Software...">
-        </div>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb">
+            <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
+            <span id="breadcrumbCategory" class="current">Products</span> <span class="separator">/</span> 
+            <span class="current" id="breadcrumbName">รายละเอียด</span>
+        </nav>
     </div>
 
-    <!-- Main Product Container -->
-    <main class="container">
-        <div id="product-grid" class="product-container">
-            <!-- ផលិតផលនឹងទាញយកមកបង្ហាញដោយស្វ័យប្រវត្តិពី script.js -->
+    <!-- Main Product Section -->
+    <main class="single-product-main">
+        <div class="product-layout" id="productDetailContainer">
+            <p style="text-align: center; grid-column: 1 / -1; padding: 40px;">កំពុងផ្ទុកទិន្ន័យផលិតផល...</p>
         </div>
+
+        <!-- Detailed Information Box (GSMArena Specs Style) -->
+        <section class="detailed-info-container" id="specsSection" style="display: none;">
+            <table class="specs-table" id="specsContainerTable">
+                <!-- JavaScript នឹងរៀបចំ Category និង Rows ដាក់ទីនេះដោយស្វ័យប្រវត្ត -->
+            </table>
+        </section>
     </main>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript for Single Product Page Data Binding -->
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById('productDetailContainer');
+            const specsSection = document.getElementById('specsSection');
+            const breadcrumbName = document.getElementById('breadcrumbName');
+            const breadcrumbCategory = document.getElementById('breadcrumbCategory');
+            const pageTitle = document.getElementById('pageTitle');
 
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            // ទាញយក ID ពី URL Parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (!productId) {
+                container.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">រកមិនឃើញលេខសម្គាល់ផលិតផល (Product ID) ទេ។</p>';
+                return;
+            }
+
+            // ទាញយកទិន្ន័យពី products.json ដោយថយក្រោយមួយថត (../products.json)
+            fetch('../products.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(products => {
+                    const product = products.find(p => String(p.id) === String(productId));
+
+                    if (!product) {
+                        container.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">មិនមានទិន្ន័យសម្រាប់ផលិតផលនេះទេ!</p>';
+                        return;
+                    }
+
+                    pageTitle.innerText = `${product.name} - DPrinteraro`;
+                    breadcrumbName.innerText = product.name;
+                    breadcrumbCategory.innerText = product.category || product.machine_type || 'Product';
+
+                    // កែសម្រួលផ្លូវរូបភាពក្នុង images array
+                    let imagesList = [];
+                    if (product.images && Array.isArray(product.images) && product.images.length > 0) {
+                        imagesList = product.images.map(rawImg => {
+                            if (!rawImg) return '../images/default.png';
+                            return rawImg.startsWith('../') ? rawImg : (rawImg.startsWith('images/') ? '../' + rawImg : '../images/' + rawImg);
+                        });
+                    } else {
+                        let rawImg = product.image || 'images/default.png';
+                        imagesList = [rawImg.startsWith('../') ? rawImg : (rawImg.startsWith('images/') ? '../' + rawImg : '../images/' + rawImg)];
+                    }
+
+                    let mainImgSrc = imagesList[0];
+
+                    let thumbnailsHTML = '';
+                    imagesList.forEach((imgSrc, index) => {
+                        let activeClass = index === 0 ? 'active' : '';
+                        thumbnailsHTML += `<img src="${imgSrc}" alt="Thumb ${index + 1}" class="thumb ${activeClass}" onclick="changeImage(this)">`;
+                    });
+
+                    let tagsHTML = "";
+                    if (product.tags && Array.isArray(product.tags)) {
+                        product.tags.forEach(tag => {
+                            tagsHTML += `<span class="tag">✓ ${tag}</span>`;
+                        });
+                    }
+
+                    container.innerHTML = `
+                        <!-- Left: Image Gallery -->
+                        <div class="product-gallery-section">
+                            <div class="main-preview-img">
+                                <img id="productImage" src="${mainImgSrc}" alt="${product.name}">
+                            </div>
+                            <div class="thumbnail-row">
+                                ${thumbnailsHTML}
+                            </div>
+                        </div>
+
+                        <!-- Right: Product Info -->
+                        <div class="product-info-section">
+                            <div class="title-share-row">
+                                <div>
+                                    <span class="brand-badge">${product.brand ? product.brand.toUpperCase() : ''}</span>
+                                    <h1 class="single-product-title" id="productTitle">${product.name}</h1>
+                                    <p class="product-category-subtitle" id="productSubtitle">${product.subtitle || product.machine_type || ''}</p>
+                                </div>
+                                <button class="share-btn" aria-label="Share"><i class="fa-solid fa-share-nodes"></i></button>
+                            </div>
+
+                            <div class="product-tags" id="productTags">
+                                ${tagsHTML}
+                            </div>
+
+                            <h2 class="single-price" id="productPrice">${product.price}</h2>
+
+                            <div class="short-desc-box">
+                                <div class="desc-box-title">
+                                    <i class="fa-regular fa-file-lines"></i> Product Description
+                                </div>
+                                <p id="productDesc">${product.description || 'ម៉ាស៊ីនព្រីន និងថតចម្លងគុណភាពខ្ពស់ ដំណើរការបានយ៉ាងល្អរលូន។'}</p>
+                            </div>
+
+                            <a href="https://t.me/your_telegram_id" target="_blank" class="btn-contact-us">
+                                <i class="fa-brands fa-telegram"></i> កុម្ម៉ង់ទិញ ឬសាកសួរព័ត៌មានតាម Telegram
+                            </a>
+
+                            <div class="delivery-stock-info">
+                                <p class="delivery-text"><i class="fa-solid fa-truck-fast"></i> សេវាដឹកជញ្ជូនរហ័ស ស្ថាប័ននិងខេត្ត-ក្រុង</p>
+                                <p class="stock-status"><i class="fa-solid fa-box"></i> ក្នុងស្តុក (In Stock)</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    specsSection.style.display = 'block';
+                    
+                    let specsTableHTML = '';
+                    if (product.specs && Array.isArray(product.specs) && product.specs.length > 0) {
+                        product.specs.forEach(specGroup => {
+                            specsTableHTML += `
+                                <tr class="section-header">
+                                    <td colspan="2">${specGroup.category}</td>
+                                </tr>
+                            `;
+
+                            if (specGroup.rows && Array.isArray(specGroup.rows)) {
+                                specGroup.rows.forEach(row => {
+                                    specsTableHTML += `
+                                        <tr>
+                                            <td class="spec-label">${row.label}</td>
+                                            <td class="spec-value">${row.val}</td>
+                                        </tr>
+                                    `;
+                                });
+                            }
+                        });
+                        document.getElementById('specsContainerTable').innerHTML = specsTableHTML;
+                    } else {
+                        document.getElementById('specsContainerTable').innerHTML = '<tr><td colspan="2" style="padding: 15px; color: #666; text-align: center;">មិនមានទិន្ន័យបច្ចេកទេសលម្អិតបន្ថែមទេសម្រាប់ផលិតផលនេះ។</td></tr>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    container.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">មានបញ្ហាក្នុងការទាញយកទិន្ន័យ!</p>';
+                });
         });
-    </script>
 
-    <!-- Connect External script.js -->
-    <script src="script.js"></script>
+        // មុខងារប្តូររូបភាពពេលចុចលើ Thumbnail
+        function changeImage(el) {
+            const mainImg = document.getElementById('productImage');
+            if (mainImg) {
+                mainImg.src = el.src;
+            }
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
 </body>
 </html>
