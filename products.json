@@ -433,8 +433,9 @@
         ]
       }
     ]
-  },{
-    "id": "8",
+  },
+  {
+    "id": "9",
     "name": "Epson EcoTank L6390 Wi-Fi All-in-One Ink Tank Printer",
     "brand": "Epson",
     "category": "printer",
@@ -472,5 +473,5 @@
         ]
       }
     ]
-}
+  }
 ]
