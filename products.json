@@ -1,0 +1,476 @@
+[
+  {
+    "id": "1",
+    "name": "Canon imageRUNNER ADVANCE C7580i III",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Color Digital Copier & Production Press",
+    "price": "Firmware only",
+    "images": [
+      "images/canon-c7580-1.png",
+      "images/canon-c7580-2.png",
+      "images/canon-c7580-3.png"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE C7580i III is a high-speed digital press and office color copier designed for heavy-duty office environments and professional printing workflows.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Send, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Press",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "80 Pages Per Minute" },
+          { "label": "Speed Color", "val": "70 Pages Per Minute" },
+          { "label": "Resolution", "val": "2400 x 2400 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 1100 Sheet Drawers" },
+          { "label": "Max Monthly Volume", "val": "800,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "82,000 Impressions" },
+          { "label": "Toner Impressions Color", "val": "66,500 Impressions" },
+          { "label": "Copier Type", "val": "Digital Press, Office Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "canon_c3530i_iii",
+    "name": "Canon imageRUNNER ADVANCE C3530i III",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Color Digital Multifunction Copier",
+    "price": "0$",
+    "images": [
+      "images/canon-c3530i-iii-1.png",
+      "images/canon-c3530i-iii-2.png"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE C3530i III delivers seamless color productivity, high security, and smart workflow integration for modern office environments.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Send, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "30 Pages Per Minute" },
+          { "label": "Speed Color", "val": "30 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 100 Sheet Stack Bypass" },
+          { "label": "Max Monthly Volume", "val": "80,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "36,000 Impressions" },
+          { "label": "Toner Impressions Color", "val": "19,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "HP Color LaserJet Pro MFP M283fdw",
+    "brand": "HP",
+    "category": "Laser printer",
+    "subtitle": "A4 Color Wireless All-in-One Laser Printer",
+    "price": "450$",
+    "images": [
+      "images/hp-m283fdw-1.png",
+      "images/hp-m283fdw-2.png"
+    ],
+    "tags": [
+      "Wireless & Mobile Printing",
+      "Automatic Duplex Printing",
+      "Fast Laser Technology"
+    ],
+    "description": "HP Color LaserJet Pro MFP M283fdw delivers high-quality color, wireless productivity, and fast print/scan speeds for small to medium offices.",
+    "machine_type": "A4 Color Laser Printer",
+    "functions": "Print, Scan, Copy, Fax",
+    "copier_type": "Wireless All-in-One",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Type", "val": "A4 Color Wireless All-in-One Laser Printer" },
+          { "label": "Technology", "val": "Laser Printing Technology" },
+          { "label": "Display", "val": "2.7-inch (6.8 cm) Color Graphic Touchscreen" },
+          { "label": "Connectivity", "val": "Hi-Speed USB 2.0, Gigabit Ethernet, Dual-band Wi-Fi, Wi-Fi Direct, USB Host" },
+          { "label": "Copying Speed", "val": "Up to 21 cpm (Black) / 21 cpm (Colour)" },
+          { "label": "Printing Speed", "val": "Up to 21 ppm (Mono) / 21 ppm (Color)" },
+          { "label": "Scanning Speed", "val": "Up to 26 ppm (Mono) / 22 ppm (Color)" },
+          { "label": "ADF", "val": "50-sheet Automatic Document Feeder (ADF)" },
+          { "label": "Resolution", "val": "Up to 600 x 600 dpi (Print & Copy)" },
+          { "label": "Paper Feed Sizes", "val": "Input Tray: Up to 250 sheets (A4, A5, A6, B5, Envelopes, Legal)" },
+          { "label": "Duplex", "val": "Automatic (standard) duplex printing" },
+          { "label": "Color Capability", "val": "4-Color Laser Toner (CMYK)" },
+          { "label": "Ink Code", "val": "HP 206A / 206X Toner Cartridges (Black, Cyan, Magenta, Yellow)" },
+          { "label": "Properties", "val": "Print, Scan, Copy, Fax" },
+          { "label": "EcoTank", "val": "Laser Toner System (Recommended monthly volume: 150 to 2,500 pages)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Epson EcoTank L3210 All-in-One Ink Tank Printer",
+    "brand": "Epson",
+    "category": "printer",
+    "subtitle": "A4 All-in-One Ink Tank Printer with EcoTank System",
+    "price": "165$",
+    "images": [
+      "images/epson-l3210-1.png",
+      "images/epson-l3210-2.png"
+    ],
+    "tags": [
+      "High Yield Ink Bottles",
+      "Borderless Printing up to 4R",
+      "Compact Integrated Tank Design"
+    ],
+    "description": "Epson L3210 all-in-one ink tank printer delivers high-yield printing, low printing costs, and convenient multi-functions (Print, Scan, Copy) for home and office use.",
+    "machine_type": "A4 All-in-One Ink Tank Printer",
+    "functions": "Print, Scan, Copy",
+    "copier_type": "Ink Tank System",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Type", "val": "A4 Print, Scan, Copy with EcoTank" },
+          { "label": "Technology", "val": "On-demand inkjet (Piezoelectric)" },
+          { "label": "Printing Speed", "val": "Up to 33 ppm (Mono) / 15 ppm (Color)" },
+          { "label": "Resolution", "val": "5760 x 1440 dpi" },
+          { "label": "Connectivity", "val": "USB 2.0" },
+          { "label": "Paper Feed Sizes", "val": "Legal, Indian-Legal, Letter, A4, A5, A6, B5, Envelopes" },
+          { "label": "Color Capability", "val": "4-Color EcoTank (CMYK)" },
+          { "label": "Ink Code", "val": "Epson 003 (Black, Cyan, Magenta, Yellow)" },
+          { "label": "Properties", "val": "Print, Scan, Copy" },
+          { "label": "EcoTank", "val": "Ultra-low-cost ink bottles (Yield up to 4,500 pages B/W / 7,500 pages Color)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Epson EcoTank L3250 Wi-Fi All-in-One Ink Tank Printer",
+    "brand": "Epson",
+    "category": "printer",
+    "subtitle": "A4 Wi-Fi All-in-One Ink Tank Printer with Wireless Printing",
+    "price": "185$",
+    "images": [
+      "images/epson-l3250-1.png",
+      "images/epson-l3250-2.png"
+    ],
+    "tags": [
+      "Wireless & Wi-Fi Direct Printing",
+      "Epson Smart Panel App Support",
+      "High Yield Ink Bottles"
+    ],
+    "description": "Epson L3250 Wi-Fi all-in-one ink tank printer offers integrated wireless connectivity, borderless photo printing, and ultra-low-cost printing for homes and small offices.",
+    "machine_type": "A4 Wi-Fi All-in-One Ink Tank Printer",
+    "functions": "Print, Scan, Copy, Wi-Fi",
+    "copier_type": "Ink Tank System",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Type", "val": "A4 Print, Scan, Copy with Wi-Fi & EcoTank" },
+          { "label": "Technology", "val": "On-demand inkjet (Piezoelectric)" },
+          { "label": "Printing Speed", "val": "Up to 33 ppm (Mono) / 15 ppm (Color)" },
+          { "label": "Resolution", "val": "5760 x 1440 dpi" },
+          { "label": "Connectivity", "val": "USB 2.0, Wi-Fi, Wi-Fi Direct" },
+          { "label": "Mobile/Software", "val": "Epson Smart Panel, Epson Connect" },
+          { "label": "Paper Feed Sizes", "val": "Legal, Indian-Legal, Letter, A4, A5, A6, B5, Envelopes" },
+          { "label": "Color Capability", "val": "4-Color EcoTank (CMYK)" },
+          { "label": "Ink Code", "val": "Epson 003 (Black, Cyan, Magenta, Yellow)" },
+          { "label": "EcoTank", "val": "Ultra-low-cost ink bottles (Yield up to 4,500 pages B/W / 7,500 pages Color)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Epson EcoTank Photo L18050 A3+ Wi-Fi Ink Tank Printer",
+    "brand": "Epson",
+    "category": "printer",
+    "subtitle": "A3+ 6-Color Photo Printer with Wi-Fi & EcoTank System",
+    "price": "650$",
+    "images": [
+      "images/epson-l18050-1.png",
+      "images/epson-l18050-2.png"
+    ],
+    "tags": [
+      "6-Color Dye-Based Inks",
+      "A3+ Borderless Photo Printing",
+      "Direct Printing on CDs, DVDs & PVC Cards",
+      "Wireless & Wi-Fi Direct"
+    ],
+    "description": "Epson EcoTank L18050 A3+ photo printer delivers vibrant, lab-quality borderless photos and designs with ultra-low printing costs, featuring a 6-color ink system and wireless connectivity.",
+    "machine_type": "A3+ 6-Color Ink Tank Photo Printer",
+    "functions": "Print, Wi-Fi, CD/DVD/PVC Card Printing",
+    "copier_type": "Ink Tank System (6-Color)",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Type", "val": "A3+ Photo Printer with Wi-Fi & EcoTank" },
+          { "label": "Technology", "val": "Micro Piezo Print Head (6-Color)" },
+          { "label": "Printing Speed", "val": "Up to 22 ppm (Mono/Color) / Approx. 27 sec per 4x6 photo" },
+          { "label": "Resolution", "val": "5760 x 1440 dpi" },
+          { "label": "Connectivity", "val": "USB 2.0, Wi-Fi, Wi-Fi Direct" },
+          { "label": "Mobile/Software", "val": "Epson Smart Panel, Epson iPrint" },
+          { "label": "Paper Feed Sizes", "val": "A3+, A3, A4, A5, A6, B5, Letter, Legal, 4x6\", Envelopes, CD/DVD/PVC Cards" },
+          { "label": "Color Capability", "val": "6-Color EcoTank (Black, Cyan, Magenta, Yellow, Light Cyan, Light Magenta)" },
+          { "label": "Ink Code", "val": "Epson 057 Ink Bottles (70ml each)" },
+          { "label": "EcoTank", "val": "High-yield photo printing (Yield up to 2,100 photos / 4R)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Epson EcoTank Photo L8050 A4 Wi-Fi Ink Tank Printer",
+    "brand": "Epson",
+    "category": "printer",
+    "subtitle": "A4 6-Color Photo Printer with Wi-Fi & EcoTank System",
+    "price": "450$",
+    "images": [
+      "images/epson-l8050-1.png",
+      "images/epson-l8050-2.png"
+    ],
+    "tags": [
+      "6-Color Dye-Based Inks",
+      "A4 Borderless Photo Printing",
+      "Direct Printing on CDs, DVDs & PVC Cards",
+      "USB 2.0, Ethernet"
+    ],
+    "description": "Epson EcoTank L8050 A4 photo printer provides exceptional, vibrant photo printing at an ultra-low cost, featuring a 6-color ink system and convenient connectivity for studios and photographers.",
+    "machine_type": "A4 6-Color Ink Tank Photo Printer",
+    "functions": "Print, USB 2.0, Ethernet, CD/DVD/PVC Card Printing",
+    "copier_type": "Ink Tank System (6-Color)",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Type", "val": "A4 Photo Printer with Ethernet & EcoTank" },
+          { "label": "Technology", "val": "Micro Piezo Print Head (6-Color)" },
+          { "label": "Printing Speed", "val": "Up to 22 ppm (Mono/Color) / Approx. 25 sec per 4x6 photo" },
+          { "label": "Resolution", "val": "5760 x 1440 dpi" },
+          { "label": "Connectivity", "val": "USB 2.0, Ethernet" },
+          { "label": "Mobile/Software", "val": "Epson Smart Panel, Epson iPrint" },
+          { "label": "Paper Feed Sizes", "val": "A4, A5, B5, Letter, Legal, 4x6\", 5x7\", Envelopes, CD/DVD/PVC Cards" },
+          { "label": "Color Capability", "val": "6-Color EcoTank (Black, Cyan, Magenta, Yellow, Light Cyan, Light Magenta)" },
+          { "label": "Ink Code", "val": "Epson 057 Ink Bottles (70ml each)" },
+          { "label": "EcoTank", "val": "High-yield photo printing (Yield up to 2,100 photos / 4R)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Epson ColorWorks CW-C6530A Industrial Label Printer",
+    "brand": "Epson",
+    "category": "printer",
+    "subtitle": "8-Inch Industrial Color Inkjet Label Printer with Auto-Cutter",
+    "price": "3,250$",
+    "images": [
+      "images/epson-cw6530a-1.png",
+      "images/epson-cw6530a-2.png"
+    ],
+    "tags": [
+      "4-Color Pigment Inks",
+      "8-Inch Industrial Label Printing",
+      "Built-in Auto-Cutter",
+      "USB 2.0 & Ethernet LAN"
+    ],
+    "description": "Epson ColorWorks CW-C6530A delivers high-reliability 8-inch industrial color label printing with precision, auto-cutter, and robust network connectivity for commercial applications.",
+    "machine_type": "8-Inch Industrial Color Inkjet Label Printer",
+    "functions": "Color Label Printing, Auto-Cutter, USB 2.0, Ethernet, I/O Port",
+    "copier_type": "PrecisionCore Inkjet System (4-Color Pigment)",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Type", "val": "8-Inch Industrial Color Inkjet Label Printer" },
+          { "label": "Technology", "val": "PrecisionCore TFP with Nozzle Verification" },
+          { "label": "Printing Speed", "val": "Up to 119 mm/sec" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Connectivity", "val": "USB 2.0, Ethernet 1000BASE-T/100BASE-TX/10BASE-T" },
+          { "label": "Media Width", "val": "Max. 212 mm (8.34 inches)" },
+          { "label": "Auto-Cutter", "val": "Included (Built-in)" },
+          { "label": "Color Capability", "val": "4-Color Pigment Ink (CMYK)" },
+          { "label": "Ink Code", "val": "Epson SJIC40P Ink Cartridges" },
+          { "label": "EcoTank", "val": "High-capacity individual ink cartridges" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "HP LaserJet Pro 4003dw Wireless Printer",
+    "brand": "HP",
+    "category": "printer",
+    "subtitle": "A4 Monochrome Wireless Laser Printer with Duplex",
+    "price": "280$",
+    "images": [
+      "images/hp-4003dw-1.png",
+      "images/hp-4003dw-2.png"
+    ],
+    "tags": [
+      "Wireless & Wi-Fi Direct Printing",
+      "Automatic Two-Sided Printing",
+      "High-Speed Laser Technology",
+      "Print Only"
+    ],
+    "description": "HP LaserJet Pro 4003dw is designed for maximum productivity with reliable high-speed monochrome printing, robust security features, and convenient wireless networking for busy offices.",
+    "machine_type": "A4 Monochrome Laser Printer",
+    "functions": "Print, Wireless, Auto Duplex, Ethernet",
+    "copier_type": "Monochrome Laser System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Type", "val": "A4 Monochrome Wireless Laser Printer" },
+          { "label": "Technology", "val": "Laser Printing Technology" },
+          { "label": "Printing Speed", "val": "Up to 40 ppm (A4)" },
+          { "label": "Resolution", "val": "Fine Lines (1200 x 1200 dpi)" },
+          { "label": "Connectivity", "val": "Hi-Speed USB 2.0, Gigabit Ethernet, Dual-band Wi-Fi, Bluetooth Low Energy" },
+          { "label": "Mobile/Software", "val": "HP Smart App, Apple AirPrint, Mopria Certified" },
+          { "label": "Paper Feed Sizes", "val": "Tray 1: A4, A5, A6, Envelopes; Tray 2: A4, A5, A6" },
+          { "label": "Duplex Printing", "val": "Automatic (standard)" },
+          { "label": "Ink Code", "val": "HP 151A / 151X Black LaserJet Toner Cartridge" },
+          { "label": "Duty Cycle", "val": "Recommended monthly volume up to 4,000 pages" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "software_canon_5050_01",
+    "name": "Canon imageRUNNER 5050-5075",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White Copier - Software & Firmware",
+    "price": "0.00$",
+    "images": [
+      "images/software-firmware/canon/5050/canon-5050-1.png",
+      "images/software-firmware/canon/5050/canon-5050-2.png"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER 5050-5075 software and permanent firmware reset solution, designed for high-volume office digital systems with instant download access via Telegram.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Fax (Optional)",
+    "copier_type": "High-Volume Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "50 Pages Per Minute" },
+          { "label": "Resolution", "val": "600 X 600 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Paper Drawer/Dual 1,500 Impressions Sheet Paper Drawer" },
+          { "label": "Max Monthly Volume", "val": "200000" },
+          { "label": "Toner Impressions B/W", "val": "48,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "canon_ir_adv_4242_01",
+    "name": "Canon imageRUNNER ADVANCE 4242",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White Copier - Software & Firmware",
+    "price": "0.00$",
+    "images": [
+      "images/software-firmware/canon/ir-adv-4242-1.png",
+      "images/software-firmware/canon/ir-adv-4242-2.png"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE 4242 software and permanent firmware reset solution, designed for high-volume office digital systems with instant download access.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Fax (Optional)",
+    "copier_type": "High-Volume Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "42 Pages Per Minute" },
+          { "label": "Resolution", "val": "600 x 600 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Paper Drawer/Dual 1,500 Impressions Sheet Paper Drawer" },
+          { "label": "Max Monthly Volume", "val": "200,000" },
+          { "label": "Toner Impressions B/W", "val": "48,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "8",
+    "name": "Epson EcoTank L6390 Wi-Fi All-in-One Ink Tank Printer",
+    "brand": "Epson",
+    "category": "printer",
+    "subtitle": "A4 Print, Scan, Copy, Fax with ADF & Wi-Fi Direct",
+    "price": "420$",
+    "images": [
+      "images/epson-l6390-1.png",
+      "images/epson-l6390-2.png"
+    ],
+    "tags": [
+      "Print, Scan, Copy, Fax with ADF",
+      "Automatic Two-Sided Printing",
+      "PrecisionCore Printhead Technology",
+      "Wi-Fi & Wi-Fi Direct Networking"
+    ],
+    "description": "Epson EcoTank L6390 is a compact 4-in-1 printer designed to boost office productivity with high-speed printing, automatic document feeder (ADF), auto-duplex, and ultra-low-cost ink tank system.",
+    "machine_type": "A4 Multi-Function Ink Tank Printer",
+    "functions": "Print, Scan, Copy, Fax with ADF, Auto-Duplex",
+    "copier_type": "Ink Tank System (4-Color Pigment & Dye)",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Type", "val": "A4 Print, Scan, Copy, Fax with ADF" },
+          { "label": "Technology", "val": "PrecisionCore Printhead Technology" },
+          { "label": "Printing Speed", "val": "Up to 17 ipm (Mono) / 9.5 ipm (Colour)" },
+          { "label": "Resolution", "val": "4800 x 1200 dpi" },
+          { "label": "Connectivity", "val": "USB 2.0, Ethernet, Wi-Fi, Wi-Fi Direct" },
+          { "label": "Automatic Document Feeder", "val": "Supported (ADF)" },
+          { "label": "Duplex Printing", "val": "Automatic Duplex" },
+          { "label": "Ink Code", "val": "Epson 003 Ink Bottles (Black, Cyan, Magenta, Yellow)" },
+          { "label": "Paper Capacity", "val": "250 sheets input tray" },
+          { "label": "Mobile/Software", "val": "Epson Smart Panel, iPrint, Email Print" }
+        ]
+      }
+    ]
+}
+]
