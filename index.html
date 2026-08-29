@@ -40,7 +40,8 @@
 
             <div class="nav-menu" id="navMenu">
                 <a href="index.html" style="color: #5c8a00; font-weight: bold;">Home</a>
-                <a href="../Store.html">Store</a>
+                <!-- 🟢 កែពី ../Store.html មកជា store.html ធម្មតា ព្រោះ index.html នៅក្រៅ Root -->
+                <a href="store.html">Store</a>
                 <a href="pages/software.html">Software</a>
             </div>
         </nav>
@@ -65,8 +66,8 @@
     <!-- Featured Products Section -->
     <section class="featured-section">
         <div class="section-header-title">
-    <h2><i class="fa-solid fa-star"></i> Featured Products</h2>
-</div>
+            <h2><i class="fa-solid fa-star"></i> Featured Products</h2>
+        </div>
         <div class="featured-grid" id="featuredProductsGrid">
             <p style="grid-column: 1 / -1; text-align: center; color: #666; padding: 20px;">កំពុងផ្ទុកទំនិញលេចធ្លោ...</p>
         </div>
@@ -93,7 +94,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Toggle Mobile Menu
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -103,7 +103,6 @@
             });
         }
 
-        // List of Images for Hero Carousel
         const imagesList = [
             "images/my-home/image (1).jpg",
             "images/my-home/image (2).jpg",
@@ -170,7 +169,6 @@
             setInterval(updateCarousel, 3000);
         }
 
-        // Fetch Featured Products Filtered by Category
         document.addEventListener("DOMContentLoaded", async () => {
             const gridContainer = document.getElementById('featuredProductsGrid');
             try {
@@ -178,15 +176,12 @@
                 if (!response.ok) throw new Error('Cannot load products.json');
                 const products = await response.json();
 
-                // 🌟 កន្លែងនេះបងអាចដូរ Category តាមចិត្តចង់បាន
                 const targetCategory = "Software Firmware"; 
 
-                // ចម្រាញ់យកទំនិញណាដែលត្រូវនឹង Category នេះ
                 const filteredProducts = products.filter(prod => 
                     prod.category && prod.category.trim().toLowerCase() === targetCategory.toLowerCase()
                 );
 
-                // យក 4 ផលិតផលដំបូងមកបង្ហាញ
                 const featured = filteredProducts.slice(0, 4);
 
                 if (featured.length === 0) {
@@ -197,8 +192,6 @@
                 let htmlContent = '';
                 featured.forEach(prod => {
                     let imgSrc = 'images/default.png';
-                    
-                    // កែសម្រួលផ្លូវរូបភាព (Image Path) ឱ្យត្រូវជាមួយ index.html (Root Folder)
                     let rawImg = '';
                     if (prod.images && prod.images.length > 0) {
                         rawImg = prod.images[0];
@@ -216,7 +209,6 @@
                         }
                     }
 
-                    // តំណភ្ជាប់ទៅកាន់ single-product.html តាម id
                     let productLink = `pages/single-product.html?id=${prod.id}`;
 
                     htmlContent += `
