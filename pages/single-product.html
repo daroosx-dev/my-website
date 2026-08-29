@@ -23,7 +23,7 @@
             <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://t.me/your_telegram_id" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://t.me/your_telegram_username" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
         </div>
     </div>
 
@@ -36,29 +36,8 @@
             
             <div class="nav-menu" id="navMenu">
                 <a href="../index.html">Store</a>
-                
-                <!-- Software Firmware Dropdown -->
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">Software Firmware <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="../index.html" data-filter="Canon">Canon</a>
-                        <a href="../index.html" data-filter="Ricoh">Ricoh</a>
-                        <a href="../index.html" data-filter="Toshiba">Toshiba</a>
-                        <a href="../index.html" data-filter="Epson">Epson</a>
-                        <a href="../index.html" data-filter="HP">HP</a>
-                    </div>
-                </div>
-
-                <!-- Printer Dropdown -->
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">Printer <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="../index.html" data-filter="Ink Printer">Ink Printer</a>
-                        <a href="../index.html" data-filter="Laser Printer">Laser Printer</a>
-                    </div>
-                </div>
-
-                <a href="../index.html">Software License</a>
+                <a href="../index.html">Software Firmware</a>
+                <a href="../index.html">Printer</a>
                 <a href="../index.html">Support</a>
             </div>
         </nav>
@@ -69,7 +48,7 @@
         <nav class="breadcrumb">
             <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
             <span id="breadcrumbCategory" class="current">Products</span> <span class="separator">/</span> 
-            <span class="current" id="breadcrumbName">รายละเอียด</span>
+            <span class="current" id="breadcrumbName">ព័ត៌មានលម្អិត</span>
         </nav>
     </div>
 
@@ -79,17 +58,26 @@
             <p style="text-align: center; grid-column: 1 / -1; padding: 40px;">កំពុងផ្ទុកទិន្ន័យផលិតផល...</p>
         </div>
 
-        <!-- Detailed Information Box (GSMArena Specs Style) -->
+        <!-- Detailed Information Box (Specs Style) -->
         <section class="detailed-info-container" id="specsSection" style="display: none;">
-            <!-- Specs Table Container (ដាក់តែមួយតារាងរួមគ្នា ដើម្បីឱ្យជួរតម្រៀបចុះក្រោមស្អាត) -->
             <table class="specs-table" id="specsContainerTable">
-                <!-- JavaScript នឹងរៀបចំ Category និង Rows ដាក់ទីនេះដោយស្វ័យប្រវត្ត -->
+                <!-- Data specs នឹងរៀបចំដាក់ទីនេះស្វ័យប្រវត្តិ -->
             </table>
         </section>
     </main>
 
     <!-- JavaScript for Single Product Page Data Binding -->
     <script>
+        // មុខងារប្តូររូបភាពពេលចុចលើ Thumbnail
+        function changeImage(el) {
+            const mainImg = document.getElementById('productImage');
+            if (mainImg) {
+                mainImg.src = el.src;
+            }
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
             const container = document.getElementById('productDetailContainer');
             const specsSection = document.getElementById('specsSection');
@@ -97,7 +85,7 @@
             const breadcrumbCategory = document.getElementById('breadcrumbCategory');
             const pageTitle = document.getElementById('pageTitle');
 
-            // ទាញយក ID ពី URL Parameters
+            // 1. ទាញយក ID ពី URL (ឧទាហរណ៍: single-product.html?id=1)
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
 
@@ -106,14 +94,14 @@
                 return;
             }
 
-            // ទាញយកទិន្ន័យពី products.json ដោយថយក្រោយមួយថត (../products.json)
+            // 2. ទាញយកទិន្ន័យពី products.json (ស្ថិតនៅថ្នាក់ក្រៅ pages/ ដូច្នេះត្រូវប្រើ ../products.json)
             fetch('../products.json')
                 .then(response => {
                     if (!response.ok) throw new Error('Network response was not ok');
                     return response.json();
                 })
                 .then(products => {
-                    // ប្រៀបធៀប ID ជា String ដើម្បីការពារករណី ID ក្នុង JSON ជា Number ឬ String
+                    // 3. ស្វែងរកទំនិញដែលត្រូវនឹង ID
                     const product = products.find(p => String(p.id) === String(productId));
 
                     if (!product) {
@@ -123,9 +111,9 @@
 
                     pageTitle.innerText = `${product.name} - DPrinteraro`;
                     breadcrumbName.innerText = product.name;
-                    breadcrumbCategory.innerText = product.category || product.machine_type || 'Product';
+                    breadcrumbCategory.innerText = product.category || 'Product';
 
-                    // កែសម្រួលផ្លូវរូបភាពសម្រាប់រាល់រូបទាំងអស់នៅក្នុង Array images
+                    // 4. រៀបចំផ្លូវរូបភាព ( Image Paths )
                     let imagesList = [];
                     if (product.images && Array.isArray(product.images) && product.images.length > 0) {
                         imagesList = product.images.map(rawImg => {
@@ -139,7 +127,6 @@
 
                     let mainImgSrc = imagesList[0];
 
-                    // បង្កើត Thumbnails HTML ស្វ័យប្រវត្តិពី Array
                     let thumbnailsHTML = '';
                     imagesList.forEach((imgSrc, index) => {
                         let activeClass = index === 0 ? 'active' : '';
@@ -152,6 +139,9 @@
                             tagsHTML += `<span class="tag">✓ ${tag}</span>`;
                         });
                     }
+
+                    // ទាញយក custom_link (Telegram Link) មកដាក់បើមាន ឬប្រើតំណរភ្ជាប់លំនាំដើម
+                    let telegramLink = product.custom_link ? product.custom_link : "https://t.me/your_telegram_username";
 
                     container.innerHTML = `
                         <!-- Left: Image Gallery -->
@@ -172,23 +162,23 @@
                                     <h1 class="single-product-title" id="productTitle">${product.name}</h1>
                                     <p class="product-category-subtitle" id="productSubtitle">${product.subtitle || product.machine_type || ''}</p>
                                 </div>
-                                <button class="share-btn" aria-label="Share"><i class="fa-solid fa-share-nodes"></i></button>
                             </div>
 
                             <div class="product-tags" id="productTags">
                                 ${tagsHTML}
                             </div>
 
-                            <h2 class="single-price" id="productPrice">${product.price}</h2>
+                            <h2 class="single-price" id="productPrice">${product.price || 'តម្លៃទំនាក់ទំនង'}</h2>
 
                             <div class="short-desc-box">
                                 <div class="desc-box-title">
                                     <i class="fa-regular fa-file-lines"></i> Product Description
                                 </div>
-                                <p id="productDesc">${product.description || 'ម៉ាស៊ីនព្រីន និងថតចម្លងគុណភាពខ្ពស់ ដំណើរការបានយ៉ាងល្អរលូន។'}</p>
+                                <p id="productDesc">${product.description || 'គ្មានការពន្យល់លម្អិត។'}</p>
                             </div>
 
-                            <a href="https://t.me/your_telegram_id" target="_blank" class="btn-contact-us">
+                            <!-- ប៊ូតុង Telegram ភ្ជាប់ទៅកាន់ Link របស់ទំនិញនីមួយៗផ្ទាល់ -->
+                            <a href="${telegramLink}" target="_blank" class="btn-contact-us">
                                 <i class="fa-brands fa-telegram"></i> កុម្ម៉ង់ទិញ ឬសាកសួរព័ត៌មានតាម Telegram
                             </a>
 
@@ -201,17 +191,15 @@
                     
                     specsSection.style.display = 'block';
                     
-                    // រៀបចំកសាងตារាង specs ក្នុងតារាងតែមួយ (Unified Table) ដើម្បីឱ្យមានបន្ទាត់និងតម្រៀបបន្តបន្ទាប់គ្នា
+                    // 5. តារាង Specs លម្អិត
                     let specsTableHTML = '';
                     if (product.specs && Array.isArray(product.specs) && product.specs.length > 0) {
                         product.specs.forEach(specGroup => {
-                            // ដាក់ចំណងជើងផ្នែកជា tr.section-header ក្នុងតារាងតែមួយ
                             specsTableHTML += `
                                 <tr class="section-header">
                                     <td colspan="2">${specGroup.category}</td>
                                 </tr>
                             `;
-
                             if (specGroup.rows && Array.isArray(specGroup.rows)) {
                                 specGroup.rows.forEach(row => {
                                     specsTableHTML += `
@@ -233,16 +221,6 @@
                     container.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">មានបញ្ហាក្នុងការទាញយកទិន្ន័យ!</p>';
                 });
         });
-
-        // មុខងារប្តូររូបភាពពេលចុចលើ Thumbnail
-        function changeImage(el) {
-            const mainImg = document.getElementById('productImage');
-            if (mainImg) {
-                mainImg.src = el.src;
-            }
-            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-            el.classList.add('active');
-        }
     </script>
 </body>
 </html>

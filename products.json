@@ -2,6 +2,8 @@
   {
     "id": "1",
     "name": "Canon imageRUNNER ADVANCE C7580i III",
+    "custom_title": "Canon imageRUNNER ADVANCE C7580i III",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
     "subtitle": "A3 Color Digital Copier & Production Press",
@@ -42,6 +44,8 @@
   {
     "id": "canon_c3530i_iii",
     "name": "Canon imageRUNNER ADVANCE C3530i III",
+    "custom_title": "Canon imageRUNNER ADVANCE C3530i III",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
     "subtitle": "A3 Color Digital Multifunction Copier",
@@ -81,6 +85,8 @@
   {
     "id": "2",
     "name": "HP Color LaserJet Pro MFP M283fdw",
+    "custom_title": "HP Color LaserJet Pro MFP M283fdw",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "HP",
     "category": "Laser printer",
     "subtitle": "A4 Color Wireless All-in-One Laser Printer",
@@ -125,6 +131,8 @@
   {
     "id": "3",
     "name": "Epson EcoTank L3210 All-in-One Ink Tank Printer",
+    "custom_title": "Epson EcoTank L3210 All-in-One Ink Tank Printer",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A4 All-in-One Ink Tank Printer with EcoTank System",
@@ -164,6 +172,8 @@
   {
     "id": "4",
     "name": "Epson EcoTank L3250 Wi-Fi All-in-One Ink Tank Printer",
+    "custom_title": "Epson EcoTank L3250 Wi-Fi All-in-One Ink Tank Printer",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A4 Wi-Fi All-in-One Ink Tank Printer with Wireless Printing",
@@ -203,6 +213,8 @@
   {
     "id": "5",
     "name": "Epson EcoTank Photo L18050 A3+ Wi-Fi Ink Tank Printer",
+    "custom_title": "Epson EcoTank Photo L18050 A3+ Wi-Fi Ink Tank Printer",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A3+ 6-Color Photo Printer with Wi-Fi & EcoTank System",
@@ -243,6 +255,8 @@
   {
     "id": "6",
     "name": "Epson EcoTank Photo L8050 A4 Wi-Fi Ink Tank Printer",
+    "custom_title": "Epson EcoTank Photo L8050 A4 Wi-Fi Ink Tank Printer",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A4 6-Color Photo Printer with Wi-Fi & EcoTank System",
@@ -283,6 +297,8 @@
   {
     "id": "7",
     "name": "Epson ColorWorks CW-C6530A Industrial Label Printer",
+    "custom_title": "Epson ColorWorks CW-C6530A Industrial Label Printer",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
     "category": "printer",
     "subtitle": "8-Inch Industrial Color Inkjet Label Printer with Auto-Cutter",
@@ -323,6 +339,8 @@
   {
     "id": "8",
     "name": "HP LaserJet Pro 4003dw Wireless Printer",
+    "custom_title": "HP LaserJet Pro 4003dw Wireless Printer",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "HP",
     "category": "printer",
     "subtitle": "A4 Monochrome Wireless Laser Printer with Duplex",
@@ -363,6 +381,8 @@
   {
     "id": "software_canon_5050_01",
     "name": "Canon imageRUNNER 5050-5075",
+    "custom_title": "Canon imageRUNNER 5050-5075",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
     "subtitle": "A3 Black and White Copier - Software & Firmware",
@@ -400,6 +420,8 @@
   {
     "id": "canon_ir_adv_4242_01",
     "name": "Canon imageRUNNER ADVANCE 4242",
+    "custom_title": "Canon imageRUNNER ADVANCE 4242",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
     "subtitle": "A3 Black and White Copier - Software & Firmware",
@@ -433,9 +455,12 @@
         ]
       }
     ]
-  },{
-    "id": "8",
+  },
+  {
+    "id": "epson_l6390_01",
     "name": "Epson EcoTank L6390 Wi-Fi All-in-One Ink Tank Printer",
+    "custom_title": "Epson EcoTank L6390 Wi-Fi All-in-One Ink Tank Printer",
+    "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A4 Print, Scan, Copy, Fax with ADF & Wi-Fi Direct",
@@ -472,5 +497,5 @@
         ]
       }
     ]
-}
+  }
 ]

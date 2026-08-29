@@ -3,427 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>daroprinter.com</title>
+    <title>daroPrinter - Home Page</title>
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Styles -->
-    <style>
-        /* ========================================== */
-        /* GENERAL STYLES & RESET */
-        /* ========================================== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Leelawadee UI', 'Khmer OS Siemreap', 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background-color: #f5f6f8;
-            color: #333333;
-            overflow-x: hidden;
-        }
-
-        /* Top Bar Header */
-        .top-bar {
-            background-color: #222;
-            color: #fff;
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-        }
-        .social-icons a {
-            color: #fff;
-            margin-left: 15px;
-            text-decoration: none;
-        }
-
-        /* ========================================== */
-        /* APPLE HEADER & NAVIGATION */
-        /* ========================================== */
-        .apple-header {
-            background-color: #161617;
-            color: #f5f5f7;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .apple-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 12px 20px;
-            position: relative;
-        }
-
-        .nav-logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .logo-blue {
-            color: #0071e3;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .nav-menu > a, .dropbtn, .filter-trigger {
-            color: #f5f5f7;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px 0;
-        }
-
-        .nav-menu > a:hover, .dropbtn:hover, .filter-trigger:hover {
-            color: #0071e3;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #ffffff;
-            min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-            z-index: 1000;
-            border-radius: 6px;
-            padding: 8px 0;
-            text-align: left;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block !important;
-        }
-
-        .dropdown-content button {
-            color: #333333 !important;
-            padding: 10px 16px;
-            text-decoration: none;
-            display: block !important;
-            text-align: left;
-            font-size: 14px;
-            width: 100%;
-            background: none;
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .dropdown-content button:hover {
-            background-color: #f5f5f7;
-            color: #0071e3 !important;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 22px;
-            color: #ffffff;
-            cursor: pointer;
-        }
-
-        /* Search Section */
-        .search-section {
-            text-align: center;
-            margin: 25px 0 15px 0;
-        }
-        .search-box input {
-            padding: 12px 20px;
-            width: 100%;
-            max-width: 500px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            outline: none;
-            font-size: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        /* ========================================== */
-        /* PRODUCT CONTAINER & CARD GRID (ស្មើគ្នា ១០០%) */
-        /* ========================================== */
-        .product-container {
-            display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 15px !important;
-            padding: 20px 3% !important;
-            max-width: 1400px !important;
-            margin: 0 auto !important;
-            align-items: stretch !important;
-        }
-
-        .product-card {
-            background: #ffffff !important;
-            border: 1px solid #e2e8f0 !important;
-            border-radius: 8px !important;
-            padding: 12px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            height: 100% !important;
-            box-sizing: border-box !important;
-            transition: transform 0.2s, box-shadow 0.2s !important;
-        }
-
-        .product-card:hover {
-            transform: translateY(-3px) !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-        }
-
-        .brand-logo-text {
-            font-size: 11px !important;
-            font-weight: 800 !important;
-            color: #003399 !important;
-            letter-spacing: 0.5px !important;
-            text-align: left !important;
-            margin-bottom: 6px !important;
-            text-transform: uppercase !important;
-        }
-
-        .card-img {
-            text-align: center !important;
-            margin: 6px 0 !important;
-            cursor: pointer !important;
-            height: 120px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        .card-img img {
-            max-width: 100% !important;
-            max-height: 100% !important;
-            object-fit: contain !important;
-        }
-
-        .product-title {
-            font-size: 11px !important;
-            font-weight: 700 !important;
-            line-height: 1.3 !important;
-            height: 28px !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-            display: -webkit-box !important;
-            line-clamp: 2 !important;
-            -webkit-line-clamp: 2 !important;
-            -webkit-box-orient: vertical !important;
-            margin: 4px 0 !important;
-            cursor: pointer !important;
-            color: #0044cc !important;
-            text-align: center !important;
-        }
-
-        .price {
-            font-size: 14px !important;
-            font-weight: 800 !important;
-            color: #2563eb !important;
-            margin-bottom: 8px !important;
-            text-align: center !important;
-        }
-
-        /* TAGS & COLOR BAR */
-        .tag-list {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 3px !important;
-            margin-bottom: 6px !important;
-        }
-
-        .tag-item {
-            background-color: #e6f7ff !important;
-            border-left: 3px solid #00aeef !important;
-            padding: 3px 6px !important;
-            font-size: 9px !important;
-            color: #333333 !important;
-            display: block !important;
-        }
-
-        .cmyk-bar {
-            display: flex !important;
-            height: 5px !important;
-            border-radius: 3px !important;
-            overflow: hidden !important;
-            margin: 6px 0 !important;
-            background: #ddd !important;
-        }
-        .cmyk-bar span {
-            flex: 1 !important;
-        }
-        .c-black { background-color: #000000 !important; }
-        .c-cyan { background-color: #00bcd4 !important; }
-        .c-magenta { background-color: #e91e63 !important; }
-        .c-yellow { background-color: #ffeb3b !important; }
-
-        /* SPECS TABLE */
-        .specs-table {
-            width: 100% !important;
-            font-size: 10px !important;
-            border-collapse: collapse !important;
-            margin-top: auto !important;
-            margin-bottom: 6px !important;
-        }
-
-        .specs-table td {
-            padding: 2px 0 !important;
-            vertical-align: top !important;
-        }
-
-        .specs-table td.label {
-            width: 40% !important;
-            color: #64748b !important;
-            font-weight: 500 !important;
-        }
-
-        .specs-table td.colon {
-            width: 5% !important;
-            text-align: center !important;
-            color: #64748b !important;
-        }
-
-        .specs-table td.value {
-            width: 55% !important;
-            color: #1e293b !important;
-            font-weight: 600 !important;
-        }
-
-        /* CARD ACTIONS */
-        .card-actions {
-            margin-top: auto !important;
-            text-align: center !important;
-            padding-top: 4px !important;
-        }
-
-        .btn-detail {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            background-color: #2563eb !important;
-            color: #ffffff !important;
-            text-decoration: none !important;
-            padding: 6px 10px !important;
-            border-radius: 4px !important;
-            font-size: 11px !important;
-            font-weight: 700 !important;
-            border: none !important;
-            cursor: pointer !important;
-            transition: background 0.2s !important;
-        }
-
-        .btn-detail:hover {
-            background-color: #1d4ed8 !important;
-        }
-
-        /* ========================================== */
-        /* RESPONSIVE DESIGN (MOBILE & TABLET) */
-        /* ========================================== */
-        @media (max-width: 1024px) {
-            .product-container {
-                grid-template-columns: repeat(2, 1fr) !important;
-                padding: 15px 2% !important;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .menu-toggle {
-                display: block !important;
-            }
-
-            .nav-menu {
-                display: none !important;
-                position: absolute !important;
-                top: 100% !important;
-                left: 0 !important;
-                width: 100% !important;
-                background-color: #161617 !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                padding: 15px 20px !important;
-                gap: 15px !important;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
-                transform: none !important;
-            }
-
-            .nav-menu.active {
-                display: flex !important;
-            }
-
-            .nav-menu > a, .dropbtn, .filter-trigger {
-                width: 100% !important;
-                text-align: left !important;
-            }
-
-            .dropdown-content {
-                position: static !important;
-                box-shadow: none !important;
-                background-color: #222223 !important;
-                width: 100% !important;
-                margin-top: 5px !important;
-            }
-
-            .dropdown-content button {
-                color: #f5f5f7 !important;
-                padding-left: 20px !important;
-            }
-
-            /* បង្ហាញ ២ ជួរទន្ទឹមគ្នាលើទូរស័ព្ទ */
-            .product-container {
-                grid-template-columns: repeat(2, 1fr) !important;
-                padding: 8px !important;
-                gap: 8px !important;
-                align-items: stretch !important;
-            }
-
-            .product-card {
-                padding: 8px !important;
-            }
-
-            .card-img {
-                height: 100px !important;
-            }
-
-            .product-title {
-                font-size: 10px !important;
-                height: 26px !important;
-            }
-
-            .price {
-                font-size: 13px !important;
-            }
-
-            .specs-table {
-                font-size: 9px !important;
-            }
-        }
-    </style>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/home-style.css">
 </head>
 <body>
 
@@ -436,7 +23,7 @@
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#"><i class="fa-brands fa-tiktok"></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://t.me/your_telegram_id" target="_blank"><i class="fa-brands fa-telegram"></i></a>
         </div>
     </div>
 
@@ -452,65 +39,208 @@
             </button>
 
             <div class="nav-menu" id="navMenu">
-                <button class="filter-trigger" data-filter="All">Store</button>
-
-                <div class="dropdown">
-                    <span class="dropbtn">Software Firmware <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
-                    <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Canon Firmware">Canon</button>
-                        <button class="filter-trigger" data-filter="Ricoh Firmware">Ricoh</button>
-                        <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba</button>
-                        <button class="filter-trigger" data-filter="Epson Firmware">Epson</button>
-                        <button class="filter-trigger" data-filter="HP Firmware">HP</button>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <span class="dropbtn">Printer <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
-                    <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
-                        <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <span class="dropbtn">Software License <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
-                    <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Windows">Windows</button>
-                        <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
-                    </div>
-                </div>
-
-                <a href="#">Support</a>
+                <a href="index.html" style="color: #5c8a00; font-weight: bold;">Home</a>
+                <a href="store.html">Store</a>
+                <a href="pages/software.html">Software</a>
             </div>
         </nav>
     </header>
 
-    <!-- Search Bar Section -->
-    <div class="search-section">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="ស្វែងរកឈ្មោះម៉ាស៊ីនព្រីន, Copier, ឬ Software...">
+    <!-- 3D Coverflow Hero Carousel -->
+    <section class="tech-hero">
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- រូបភាពនឹងត្រូវបានទាញមកបញ្ចូលស្វ័យប្រវត្តិដោយ JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Shop Now Button -->
+        <div class="tech-btn-group" style="text-align: center; margin-top: 30px;">
+            <a href="store.html" class="btn-primary-tech">
+                <i class="fa-solid fa-store"></i> Shop Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-section">
+        <div class="section-header-title">
+    <h2><i class="fa-solid fa-star"></i> Featured Products</h2>
+</div>
+        <div class="featured-grid" id="featuredProductsGrid">
+            <p style="grid-column: 1 / -1; text-align: center; color: #666; padding: 20px;">កំពុងផ្ទុកទំនិញលេចធ្លោ...</p>
+        </div>
+    </section>
+
+    <!-- Tech Features Highlights -->
+    <div class="tech-features">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-print"></i></div>
+            <h3>Printer & Copier</h3>
+            <p>មានលក់ម៉ាស៊ីនព្រីន និងម៉ាស៊ីនថតចម្លងគ្រប់ម៉ាកល្បីៗ ធានាគុណភាពជូន។</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Software Firmware</h3>
+            <p>ផ្ដល់ជូន Firmware និង Software កាត់ត រួមទាំង Utility ផ្សេងៗ។</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Trusted Support</h3>
+            <p>សេវាកម្មរហ័សទាន់ចិត្ត ព្រមទាំងមានការណែនាំបច្ចេកទេសច្បាស់លាស់។</p>
         </div>
     </div>
 
-    <!-- Main Product Container -->
-    <main class="container">
-        <div id="product-grid" class="product-container">
-            <!-- ផលិតផលនឹងទាញយកមកបង្ហាញដោយស្វ័យប្រវត្តិពី script.js -->
-        </div>
-    </main>
-
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript -->
     <script>
+        // Toggle Mobile Menu
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // List of Images for Hero Carousel
+        const imagesList = [
+            "images/my-home/image (1).jpg",
+            "images/my-home/image (2).jpg",
+            "images/my-home/image (3).jpg",
+            "images/my-home/image (4).jpg",
+            "images/my-home/image (5).jpg",
+            "images/my-home/image (7).jpg",
+            "images/my-home/image (8).jpg",
+            "images/my-home/image (9).jpg",
+            "images/my-home/image (10).jpg",
+            "images/my-home/image (11).jpg",
+            "images/my-home/image (12).jpg",
+            "images/my-home/image (13).jpg"
+        ];
+
+        const track = document.getElementById('carouselTrack');
+
+        imagesList.forEach((src, index) => {
+            const item = document.createElement('div');
+            item.classList.add('carousel-item');
+            
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `Slide ${index + 1}`;
+            
+            img.onerror = function() {
+                this.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
+            };
+
+            item.appendChild(img);
+            track.appendChild(item);
+        });
+
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            if (items.length === 0) return;
+
+            items.forEach((item, i) => {
+                item.className = 'carousel-item';
+                let offset = (i - currentIndex + items.length) % items.length;
+
+                if (offset === 0) {
+                    item.classList.add('active');
+                } else if (offset === 1) {
+                    item.classList.add('next');
+                } else if (offset === 2) {
+                    item.classList.add('far-right');
+                } else if (offset === items.length - 1) {
+                    item.classList.add('prev');
+                } else if (offset === items.length - 2) {
+                    item.classList.add('far-left');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            currentIndex = (currentIndex + 1) % items.length;
+        }
+
+        if (items.length > 0) {
+            updateCarousel();
+            setInterval(updateCarousel, 3000);
+        }
+
+        // Fetch Featured Products Filtered by Category
+        document.addEventListener("DOMContentLoaded", async () => {
+            const gridContainer = document.getElementById('featuredProductsGrid');
+            try {
+                const response = await fetch('products.json');
+                if (!response.ok) throw new Error('Cannot load products.json');
+                const products = await response.json();
+
+                // 🌟 កន្លែងនេះបងអាចដូរ Category តាមចិត្តចង់បាន
+                const targetCategory = "Software Firmware"; 
+
+                // ចម្រាញ់យកទំនិញណាដែលត្រូវនឹង Category នេះ
+                const filteredProducts = products.filter(prod => 
+                    prod.category && prod.category.trim().toLowerCase() === targetCategory.toLowerCase()
+                );
+
+                // យក 4 ផលិតផលដំបូងមកបង្ហាញ
+                const featured = filteredProducts.slice(0, 4);
+
+                if (featured.length === 0) {
+                    gridContainer.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: #666;">មិនមានទំនិញក្នុងប្រភេទ "${targetCategory}" ទេ</p>`;
+                    return;
+                }
+
+                let htmlContent = '';
+                featured.forEach(prod => {
+                    let imgSrc = 'images/default.png';
+                    
+                    // កែសម្រួលផ្លូវរូបភាព (Image Path) ឱ្យត្រូវជាមួយ index.html (Root Folder)
+                    let rawImg = '';
+                    if (prod.images && prod.images.length > 0) {
+                        rawImg = prod.images[0];
+                    } else if (prod.image) {
+                        rawImg = prod.image;
+                    }
+
+                    if (rawImg) {
+                        if (rawImg.startsWith('../')) {
+                            imgSrc = rawImg.replace('../', '');
+                        } else if (rawImg.startsWith('pages/')) {
+                            imgSrc = rawImg.replace('pages/', '');
+                        } else {
+                            imgSrc = rawImg;
+                        }
+                    }
+
+                    // តំណភ្ជាប់ទៅកាន់ single-product.html តាម id
+                    let productLink = `pages/single-product.html?id=${prod.id}`;
+
+                    htmlContent += `
+                        <a href="${productLink}" class="product-card-home">
+                            <div class="card-img-wrap">
+                                <span class="brand-tag-floating">${prod.brand || 'DPrinteraro'}</span>
+                                <img src="${imgSrc}" alt="${prod.name}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+                            </div>
+                            <div class="card-body-content">
+                                <h3 class="card-title">${prod.name}</h3>
+                                <div class="card-footer-row">
+                                    <span class="card-price">${prod.price}</span>
+                                    <span class="card-btn-detail">មើលលម្អិត</span>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                });
+                gridContainer.innerHTML = htmlContent;
+            } catch (err) {
+                console.error(err);
+                gridContainer.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red;">មានបញ្ហាក្នុងការទាញយកទិន្នន័យផលិតផលមកបង្ហាញ។</p>';
+            }
         });
     </script>
-
-    <!-- Connect External script.js -->
-    <script src="script.js"></script>
 </body>
 </html>

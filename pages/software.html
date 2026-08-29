@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>daroPrinter - Software & Firmware Store</title>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/home-style.css">
+    
+    <style>
+        .page-header-banner {
+            background: #2b3e50;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .page-header-banner h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        .page-header-banner p {
+            margin: 0;
+            color: #b0c4de;
+            font-size: 14px;
+        }
+
+        .software-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 0 15px;
+        }
+
+        .software-card-item {
+            display: flex;
+            background: #ffffff;
+            border: 1px solid #dcdcdc;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .software-card-item:hover {
+            border-color: #5c8a00;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .sw-img-box {
+            flex: 0 0 160px;
+            height: 120px;
+            background: #2b3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .sw-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sw-content-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .sw-header-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .sw-badge {
+            background-color: #555;
+            color: #fff;
+            padding: 3px 10px;
+            font-weight: bold;
+            border-radius: 3px 0 0 3px;
+            font-size: 11px;
+        }
+
+        .sw-category {
+            background-color: #eee;
+            color: #444;
+            padding: 3px 10px;
+            border-radius: 0 3px 3px 0;
+            border-left: 1px solid #ddd;
+            font-size: 12px;
+        }
+
+        .sw-category a {
+            color: #0073aa;
+            text-decoration: none;
+        }
+        .sw-category a:hover {
+            text-decoration: underline;
+        }
+
+        .sw-title {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+
+        .sw-title a {
+            color: #5c8a00;
+            text-decoration: none;
+        }
+
+        .sw-title a:hover {
+            text-decoration: underline;
+        }
+
+        .sw-desc {
+            margin: 0;
+            font-size: 13px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .more-link {
+            color: #0073aa;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .more-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .software-card-item {
+                flex-direction: column;
+            }
+            .sw-img-box {
+                width: 100%;
+                height: 180px;
+                margin-right: 0;
+                margin-bottom: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar Header -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fa-solid fa-headset"></i> Phone: 010 111 222 | 097 333 444</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="apple-header">
+        <nav class="apple-nav">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-blue">daro</span>printer
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html">Home</a>
+                <a href="../Store.html">Store</a>
+                <a href="software.html" style="color: #5c8a00; font-weight: bold;">Software</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header Banner -->
+    <div class="page-header-banner">
+        <h1><i class="fa-solid fa-code"></i> Software & Firmware Download</h1>
+        <p>ប្រមូលផ្ដុំកម្មវិធីកាត់ត រួមទាំង Firmware និង Utility សម្រាប់ជាងនិងអ្នកប្រើប្រាស់ទូទៅ</p>
+    </div>
+
+    <!-- Software List Section -->
+    <div class="software-list-container" id="softwareListGrid">
+        <p style="text-align: center; color: #666; padding: 40px;">កំពុងផ្ទុកទិន្នន័យ Software...</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        function createSoftwareCard(prod) {
+            let imgSrc = '../images/default.png';
+            if (prod.images && prod.images.length > 0) {
+                imgSrc = prod.images[0].startsWith('../') ? prod.images[0] : '../' + prod.images[0];
+            } else if (prod.image) {
+                imgSrc = prod.image.startsWith('../') ? prod.image : '../' + prod.image;
+            }
+
+            let category = prod.category || 'Utilities';
+            let dateStr = prod.date || '1 DAY AGO';
+
+            let displayTitle = prod.custom_title || prod.name;
+            let targetLink = prod.custom_link || `single-product.html?id=${prod.id}`;
+            let linkTarget = prod.custom_link ? 'target="_blank"' : '';
+
+            return `
+                <div class="software-card-item">
+                    <div class="sw-img-box" onclick="window.open('${targetLink}', '_blank')">
+                        <img src="${imgSrc}" alt="${displayTitle}">
+                    </div>
+                    <div class="sw-content-box">
+                        <div class="sw-header-row">
+                            <span class="sw-badge"><i class="fa-solid fa-clock"></i> ${dateStr}</span>
+                            <span class="sw-category">in <a href="#">${category}</a></span>
+                        </div>
+                        <h3 class="sw-title">
+                            <a href="${targetLink}" ${linkTarget}>${displayTitle}</a>
+                        </h3>
+                        <p class="sw-desc">
+                            ${prod.description || prod.name + ' Download Latest Version for Windows.'} 
+                            <a href="${targetLink}" ${linkTarget} class="more-link">(MORE...)</a>
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const gridContainer = document.getElementById('softwareListGrid');
+            try {
+                // 🟢 កែប្រែ Path ឱ្យទៅហៅ File software.json នៅក្នុង Folder json 
+                const response = await fetch('../json/software.json');
+                if (!response.ok) throw new Error('Cannot load software.json');
+                const softwareList = await response.json();
+
+                if (softwareList.length === 0) {
+                    gridContainer.innerHTML = '<p style="text-align: center; color: #666; padding: 30px;">មិនមានទំនិញ Software បង្ហាញទេ</p>';
+                    return;
+                }
+
+                gridContainer.innerHTML = softwareList.map(prod => createSoftwareCard(prod)).join('');
+
+            } catch (err) {
+                console.error(err);
+                gridContainer.innerHTML = '<p style="text-align: center; color: red;">មានបញ្ហាក្នុងការទាញយកទិន្នន័យ Software មកបង្ហាញ។</p>';
+            }
+        });
+    </script>
+</body>
+</html>

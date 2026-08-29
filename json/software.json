@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Microfot Office 2019",
+    "category": "Software",
+    "date": "1 DAY AGO",
+    "description": "Canon imageRUNNER ADVANCE C7580i III is a high-speed digital press and office color copier designed for heavy-duty office environments and professional printing workflows.",
+    "image": "images/c7580.png",
+    "custom_link": "#"
+  },
+  {
+    "id": 2,
+    "name": "Microssoft office 2024",
+    "category": "Software",
+    "date": "1 DAY AGO",
+    "description": "Canon imageRUNNER ADVANCE C3530i III delivers seamless color productivity, high security, and smart workflow integration for modern office environments.",
+    "image": "images/c3530.png",
+    "custom_link": "#"
+  },
+  {
+    "id": 3,
+    "name": "Microssoft office 365",
+    "category": "Software ",
+    "date": "1 DAY AGO",
+    "description": "Canon imageRUNNER 5050-5075 software and permanent firmware reset solution, designed for high-volume office digital systems with instant download access via Telegram.",
+    "image": "images/5050.png",
+    "custom_link": "#"
+  },
+  {
+    "id": 4,
+    "name": "windows 11 pro",
+    "category": "Software",
+    "date": "1 DAY AGO",
+    "description": "Canon imageRUNNER ADVANCE 4242 software and permanent firmware reset solution, designed for high-volume office digital systems with instant download access.",
+    "image": "images/4242.png",
+    "custom_link": "#"
+  },
+    {
+    "id": 5,
+    "name": "CPDFgear",
+    "category": "Software",
+    "date": "1 DAY AGO",
+    "description": "Canon imageRUNNER ADVANCE 4242 software and permanent firmware reset solution, designed for high-volume office digital systems with instant download access.",
+    "image": "images/4242.png",
+    "custom_link": "#"
+  }
+]
