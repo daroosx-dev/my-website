@@ -8,10 +8,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Styles (បញ្ចូល store.css មកទីនេះឱ្យបានត្រឹមត្រូវ) -->
-    <link rel="stylesheet" href="store.css">
-
-    <!-- CSS Styles ផ្ទាល់ក្នុង File -->
+    <!-- CSS Styles -->
     <style>
         /* ========================================== */
         /* GENERAL STYLES & RESET */
@@ -171,7 +168,7 @@
         }
 
         /* ========================================== */
-        /* PRODUCT CONTAINER & CARD GRID */
+        /* PRODUCT CONTAINER & CARD GRID (ស្មើគ្នា ១០០%) */
         /* ========================================== */
         .product-container {
             display: grid !important;
@@ -235,6 +232,7 @@
             overflow: hidden !important;
             text-overflow: ellipsis !important;
             display: -webkit-box !important;
+            line-clamp: 2 !important;
             -webkit-line-clamp: 2 !important;
             -webkit-box-orient: vertical !important;
             margin: 4px 0 !important;
@@ -345,7 +343,7 @@
         }
 
         /* ========================================== */
-        /* RESPONSIVE DESIGN */
+        /* RESPONSIVE DESIGN (MOBILE & TABLET) */
         /* ========================================== */
         @media (max-width: 1024px) {
             .product-container {
@@ -396,10 +394,33 @@
                 padding-left: 20px !important;
             }
 
+            /* បង្ហាញ ២ ជួរទន្ទឹមគ្នាលើទូរស័ព្ទ */
             .product-container {
                 grid-template-columns: repeat(2, 1fr) !important;
                 padding: 8px !important;
                 gap: 8px !important;
+                align-items: stretch !important;
+            }
+
+            .product-card {
+                padding: 8px !important;
+            }
+
+            .card-img {
+                height: 100px !important;
+            }
+
+            .product-title {
+                font-size: 10px !important;
+                height: 26px !important;
+            }
+
+            .price {
+                font-size: 13px !important;
+            }
+
+            .specs-table {
+                font-size: 9px !important;
             }
         }
     </style>
@@ -461,7 +482,7 @@
                     </div>
                 </div>
 
-                <button class="filter-trigger" data-filter="Software">Software</button>
+                <a href="pages/software.html">Software</a>
             </div>
         </nav>
     </header>
@@ -476,7 +497,7 @@
     <!-- Main Product Container -->
     <main class="container">
         <div id="product-grid" class="product-container">
-            <!-- ផលិតផលនឹងទាញយកមកបង្ហាញដោយស្វ័យប្រវត្តិពី script.js / store.js -->
+            <!-- ផលិតផលនឹងទាញយកមកបង្ហាញដោយស្វ័យប្រវត្តិពី script.js -->
         </div>
     </main>
 
@@ -490,7 +511,12 @@
         });
     </script>
 
-    <!-- Connect External Script (ដាក់នៅទីនេះត្រឹមត្រូវតាមស្ដង់ដារ) -->
-    <script src="store.js"></script>
+    <!-- Connect External script.js -->
+    <script src="script.js"></script>
 </body>
 </html>
+<!-- តំណភ្ជាប់ CSS (ព្រោះ store.css ស្ថិតក្នុង Folder store ជាមួយគ្នា) -->
+<link rel="stylesheet" href="store.css">
+
+<!-- តំណភ្ជាប់ JavaScript (ព្រោះ store.js ស្ថិតក្នុង Folder store ជាមួយគ្នា) -->
+<script src="store.js"></script>
