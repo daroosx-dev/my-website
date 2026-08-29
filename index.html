@@ -241,3 +241,54 @@
     </script>
 </body>
 </html>
+document.addEventListener("DOMContentLoaded", async () => {
+    const gridContainer = document.getElementById('featuredProductsGrid');
+    try {
+        const response = await fetch('json/products.json'); // ប្ដូរជា 'json/products.json' ឬ 'products.json' តាមទីតាំងពិត
+        if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+        const products = await response.json();
+        
+        console.log("ទិន្នន័យ Products ទាំងអស់៖", products); // មើលក្នុង F12 Console ពេល Run
+
+        const targetCategory = "Software Firmware"; 
+        const filteredProducts = products.filter(prod => 
+            prod.category && prod.category.trim().toLowerCase() === targetCategory.toLowerCase()
+        );
+
+        const featured = filteredProducts.slice(0, 4);
+
+        if (featured.length === 0) {
+            gridContainer.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: #666;">រកមិនឃើញទំនិញក្នុងប្រភេទ "${targetCategory}" ទេ (សូមឆែកឈ្មោះ Category ក្នុង JSON)</p>`;
+            return;
+        }
+
+        let htmlContent = '';
+        featured.forEach(prod => {
+            let imgSrc = prod.image || (prod.images && prod.images[0]) || 'images/default.png';
+            if (imgSrc.startsWith('../')) imgSrc = imgSrc.replace('../', '');
+            if (imgSrc.startsWith('pages/')) imgSrc = imgsrc.replace('pages/', '');
+
+            let productLink = `pages/single-product.html?id=${prod.id}`;
+
+            htmlContent += `
+                <a href="${productLink}" class="product-card-home">
+                    <div class="card-img-wrap">
+                        <span class="brand-tag-floating">${prod.brand || 'DPrinteraro'}</span>
+                        <img src="${imgSrc}" alt="${prod.name}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+                    </div>
+                    <div class="card-body-content">
+                        <h3 class="card-title">${prod.name}</h3>
+                        <div class="card-footer-row">
+                            <span class="card-price">${prod.price}</span>
+                            <span class="card-btn-detail">មើលលម្អិត</span>
+                        </div>
+                    </div>
+                </a>
+            `;
+        });
+        gridContainer.innerHTML = htmlContent;
+    } catch (err) {
+        console.error("កំហុសឆ្គង៖", err);
+        gridContainer.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: red;">Error: ${err.message}</p>`;
+    }
+});
