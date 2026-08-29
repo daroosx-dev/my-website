@@ -65,8 +65,8 @@
     <!-- Featured Products Section -->
     <section class="featured-section">
         <div class="section-header-title">
-            <h2><i class="fa-solid fa-star"></i> Featured Products</h2>
-        </div>
+    <h2><i class="fa-solid fa-star"></i> Featured Products</h2>
+</div>
         <div class="featured-grid" id="featuredProductsGrid">
             <p style="grid-column: 1 / -1; text-align: center; color: #666; padding: 20px;">កំពុងផ្ទុកទំនិញលេចធ្លោ...</p>
         </div>
@@ -174,17 +174,19 @@
         document.addEventListener("DOMContentLoaded", async () => {
             const gridContainer = document.getElementById('featuredProductsGrid');
             try {
-                // ផ្ទៀងផ្ទាត់ path ឱ្យចំ products.json ដែលស្ថិតនៅ Root ជាមួយ index.html
                 const response = await fetch('products.json');
                 if (!response.ok) throw new Error('Cannot load products.json');
                 const products = await response.json();
 
+                // 🌟 កន្លែងនេះបងអាចដូរ Category តាមចិត្តចង់បាន
                 const targetCategory = "Software Firmware"; 
 
+                // ចម្រាញ់យកទំនិញណាដែលត្រូវនឹង Category នេះ
                 const filteredProducts = products.filter(prod => 
                     prod.category && prod.category.trim().toLowerCase() === targetCategory.toLowerCase()
                 );
 
+                // យក 4 ផលិតផលដំបូងមកបង្ហាញ
                 const featured = filteredProducts.slice(0, 4);
 
                 if (featured.length === 0) {
@@ -196,6 +198,7 @@
                 featured.forEach(prod => {
                     let imgSrc = 'images/default.png';
                     
+                    // កែសម្រួលផ្លូវរូបភាព (Image Path) ឱ្យត្រូវជាមួយ index.html (Root Folder)
                     let rawImg = '';
                     if (prod.images && prod.images.length > 0) {
                         rawImg = prod.images[0];
@@ -213,7 +216,7 @@
                         }
                     }
 
-                    // តំណភ្ជាប់ទៅកាន់ single-product.html ពី index.html ត្រូវចូលតាម pages/
+                    // តំណភ្ជាប់ទៅកាន់ single-product.html តាម id
                     let productLink = `pages/single-product.html?id=${prod.id}`;
 
                     htmlContent += `
@@ -241,54 +244,3 @@
     </script>
 </body>
 </html>
-document.addEventListener("DOMContentLoaded", async () => {
-    const gridContainer = document.getElementById('featuredProductsGrid');
-    try {
-        const response = await fetch('json/products.json'); // ប្ដូរជា 'json/products.json' ឬ 'products.json' តាមទីតាំងពិត
-        if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
-        const products = await response.json();
-        
-        console.log("ទិន្នន័យ Products ទាំងអស់៖", products); // មើលក្នុង F12 Console ពេល Run
-
-        const targetCategory = "Software Firmware"; 
-        const filteredProducts = products.filter(prod => 
-            prod.category && prod.category.trim().toLowerCase() === targetCategory.toLowerCase()
-        );
-
-        const featured = filteredProducts.slice(0, 4);
-
-        if (featured.length === 0) {
-            gridContainer.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: #666;">រកមិនឃើញទំនិញក្នុងប្រភេទ "${targetCategory}" ទេ (សូមឆែកឈ្មោះ Category ក្នុង JSON)</p>`;
-            return;
-        }
-
-        let htmlContent = '';
-        featured.forEach(prod => {
-            let imgSrc = prod.image || (prod.images && prod.images[0]) || 'images/default.png';
-            if (imgSrc.startsWith('../')) imgSrc = imgSrc.replace('../', '');
-            if (imgSrc.startsWith('pages/')) imgSrc = imgsrc.replace('pages/', '');
-
-            let productLink = `pages/single-product.html?id=${prod.id}`;
-
-            htmlContent += `
-                <a href="${productLink}" class="product-card-home">
-                    <div class="card-img-wrap">
-                        <span class="brand-tag-floating">${prod.brand || 'DPrinteraro'}</span>
-                        <img src="${imgSrc}" alt="${prod.name}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
-                    </div>
-                    <div class="card-body-content">
-                        <h3 class="card-title">${prod.name}</h3>
-                        <div class="card-footer-row">
-                            <span class="card-price">${prod.price}</span>
-                            <span class="card-btn-detail">មើលលម្អិត</span>
-                        </div>
-                    </div>
-                </a>
-            `;
-        });
-        gridContainer.innerHTML = htmlContent;
-    } catch (err) {
-        console.error("កំហុសឆ្គង៖", err);
-        gridContainer.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: red;">Error: ${err.message}</p>`;
-    }
-});
