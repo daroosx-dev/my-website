@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- CSS Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="store.css">
+
     <style>
         /* ========================================== */
         /* GENERAL STYLES & RESET */
@@ -168,7 +171,7 @@
         }
 
         /* ========================================== */
-        /* PRODUCT CONTAINER & CARD GRID (ស្មើគ្នា ១០០%) */
+        /* PRODUCT CONTAINER & CARD GRID */
         /* ========================================== */
         .product-container {
             display: grid !important;
@@ -232,7 +235,6 @@
             overflow: hidden !important;
             text-overflow: ellipsis !important;
             display: -webkit-box !important;
-            line-clamp: 2 !important;
             -webkit-line-clamp: 2 !important;
             -webkit-box-orient: vertical !important;
             margin: 4px 0 !important;
@@ -249,106 +251,10 @@
             text-align: center !important;
         }
 
-        /* TAGS & COLOR BAR */
-        .tag-list {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 3px !important;
-            margin-bottom: 6px !important;
-        }
-
-        .tag-item {
-            background-color: #e6f7ff !important;
-            border-left: 3px solid #00aeef !important;
-            padding: 3px 6px !important;
-            font-size: 9px !important;
-            color: #333333 !important;
-            display: block !important;
-        }
-
-        .cmyk-bar {
-            display: flex !important;
-            height: 5px !important;
-            border-radius: 3px !important;
-            overflow: hidden !important;
-            margin: 6px 0 !important;
-            background: #ddd !important;
-        }
-        .cmyk-bar span {
-            flex: 1 !important;
-        }
-        .c-black { background-color: #000000 !important; }
-        .c-cyan { background-color: #00bcd4 !important; }
-        .c-magenta { background-color: #e91e63 !important; }
-        .c-yellow { background-color: #ffeb3b !important; }
-
-        /* SPECS TABLE */
-        .specs-table {
-            width: 100% !important;
-            font-size: 10px !important;
-            border-collapse: collapse !important;
-            margin-top: auto !important;
-            margin-bottom: 6px !important;
-        }
-
-        .specs-table td {
-            padding: 2px 0 !important;
-            vertical-align: top !important;
-        }
-
-        .specs-table td.label {
-            width: 40% !important;
-            color: #64748b !important;
-            font-weight: 500 !important;
-        }
-
-        .specs-table td.colon {
-            width: 5% !important;
-            text-align: center !important;
-            color: #64748b !important;
-        }
-
-        .specs-table td.value {
-            width: 55% !important;
-            color: #1e293b !important;
-            font-weight: 600 !important;
-        }
-
-        /* CARD ACTIONS */
-        .card-actions {
-            margin-top: auto !important;
-            text-align: center !important;
-            padding-top: 4px !important;
-        }
-
-        .btn-detail {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            background-color: #2563eb !important;
-            color: #ffffff !important;
-            text-decoration: none !important;
-            padding: 6px 10px !important;
-            border-radius: 4px !important;
-            font-size: 11px !important;
-            font-weight: 700 !important;
-            border: none !important;
-            cursor: pointer !important;
-            transition: background 0.2s !important;
-        }
-
-        .btn-detail:hover {
-            background-color: #1d4ed8 !important;
-        }
-
-        /* ========================================== */
-        /* RESPONSIVE DESIGN (MOBILE & TABLET) */
-        /* ========================================== */
+        /* RESPONSIVE */
         @media (max-width: 1024px) {
             .product-container {
                 grid-template-columns: repeat(2, 1fr) !important;
-                padding: 15px 2% !important;
             }
         }
 
@@ -356,7 +262,6 @@
             .menu-toggle {
                 display: block !important;
             }
-
             .nav-menu {
                 display: none !important;
                 position: absolute !important;
@@ -371,56 +276,13 @@
                 box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
                 transform: none !important;
             }
-
             .nav-menu.active {
                 display: flex !important;
             }
-
-            .nav-menu > a, .dropbtn, .filter-trigger {
-                width: 100% !important;
-                text-align: left !important;
-            }
-
-            .dropdown-content {
-                position: static !important;
-                box-shadow: none !important;
-                background-color: #222223 !important;
-                width: 100% !important;
-                margin-top: 5px !important;
-            }
-
-            .dropdown-content button {
-                color: #f5f5f7 !important;
-                padding-left: 20px !important;
-            }
-
-            /* បង្ហាញ ២ ជួរទន្ទឹមគ្នាលើទូរស័ព្ទ */
             .product-container {
                 grid-template-columns: repeat(2, 1fr) !important;
                 padding: 8px !important;
                 gap: 8px !important;
-                align-items: stretch !important;
-            }
-
-            .product-card {
-                padding: 8px !important;
-            }
-
-            .card-img {
-                height: 100px !important;
-            }
-
-            .product-title {
-                font-size: 10px !important;
-                height: 26px !important;
-            }
-
-            .price {
-                font-size: 13px !important;
-            }
-
-            .specs-table {
-                font-size: 9px !important;
             }
         }
     </style>
@@ -453,7 +315,7 @@
 
             <div class="nav-menu" id="navMenu">
                 <a href="index.html">Home</a>
-                <button class="filter-trigger" data-filter="All">Store</button>
+                <a href="store.html">Store</a>
 
                 <div class="dropdown">
                     <span class="dropbtn">Software Firmware <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
@@ -481,8 +343,6 @@
                         <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
                     </div>
                 </div>
-
-                <a href="pages/software.html">Software</a>
             </div>
         </nav>
     </header>
@@ -497,7 +357,7 @@
     <!-- Main Product Container -->
     <main class="container">
         <div id="product-grid" class="product-container">
-            <!-- ផលិតផលនឹងទាញយកមកបង្ហាញដោយស្វ័យប្រវត្តិពី script.js -->
+            <!-- ផលិតផលនឹងទាញយកមកបង្ហាញដោយស្វ័យប្រវត្តិពី script.js / store.js -->
         </div>
     </main>
 
@@ -511,12 +371,8 @@
         });
     </script>
 
-    <!-- Connect External script.js -->
+    <!-- External JavaScript Connection -->
     <script src="script.js"></script>
+    <script src="store.js"></script>
 </body>
 </html>
-<!-- តំណភ្ជាប់ CSS (ព្រោះ store.css ស្ថិតក្នុង Folder store ជាមួយគ្នា) -->
-<link rel="stylesheet" href="store.css">
-
-<!-- តំណភ្ជាប់ JavaScript (ព្រោះ store.js ស្ថិតក្នុង Folder store ជាមួយគ្នា) -->
-<script src="store.js"></script>
