@@ -1,46 +1,73 @@
 [
   {
     "id": 1,
-    "name": "Microfot Office 2019",
+    "name": "Microsoft Office 2019",
     "category": "Software",
     "date": "1 DAY AGO",
-    "description": "Canon imageRUNNER ADVANCE C7580i III is a high-speed digital press and office color copier designed for heavy-duty office environments and professional printing workflows.",
+    "description": "Microsoft Office 2019 professional productivity suite designed for modern office environments and document workflows.",
     "image": "images/c7580.png",
     "custom_link": "#"
   },
   {
     "id": 2,
-    "name": "Microssoft office 2024",
+    "name": "Microsoft Office 2024",
     "category": "Software",
     "date": "1 DAY AGO",
-    "description": "Canon imageRUNNER ADVANCE C3530i III delivers seamless color productivity, high security, and smart workflow integration for modern office environments.",
+    "description": "Microsoft Office 2024 delivers seamless document productivity, high security, and smart workflow integration.",
     "image": "images/c3530.png",
     "custom_link": "#"
   },
   {
     "id": 3,
-    "name": "Microssoft office 365",
-    "category": "Software ",
-    "date": "1 DAY AGO",
-    "description": "Canon imageRUNNER 5050-5075 software and permanent firmware reset solution, designed for high-volume office digital systems with instant download access via Telegram.",
+    "name": "Windows 11 Pro Driver & Utility Package",
+    "category": "PC Driver",
+    "date": "2 DAYS AGO",
+    "description": "Essential motherboard, chipset, LAN, and audio drivers package for Windows 11 PC workstations.",
     "image": "images/5050.png",
     "custom_link": "#"
   },
   {
     "id": 4,
-    "name": "windows 11 pro",
-    "category": "Software",
-    "date": "1 DAY AGO",
-    "description": "Canon imageRUNNER ADVANCE 4242 software and permanent firmware reset solution, designed for high-volume office digital systems with instant download access.",
+    "name": "MacBook / iMac macOS Utility & Driver Pack",
+    "category": "Mac Driver",
+    "date": "2 DAYS AGO",
+    "description": "Official support utilities and helper drivers optimized for Apple macOS systems and peripherals.",
     "image": "images/4242.png",
     "custom_link": "#"
   },
-    {
+  {
     "id": 5,
-    "name": "CPDFgear",
+    "name": "Canon imageRUNNER Universal Printer Driver",
+    "category": "Printer Driver",
+    "date": "3 DAYS AGO",
+    "description": "Official PCL6 / UFR II printer and copier driver for Canon multi-function devices compatible with Windows and Mac.",
+    "image": "images/c7580.png",
+    "custom_link": "#"
+  },
+  {
+    "id": 6,
+    "name": "Epson EcoTank & L-Series Full Driver Package",
+    "category": "Printer Driver",
+    "date": "3 DAYS AGO",
+    "description": "Complete printer driver and scanner utility software for Epson EcoTank series printers.",
+    "image": "images/c3530.png",
+    "custom_link": "#"
+  },
+  {
+    "id": 7,
+    "name": "Sharp & Ricoh Copier Universal PCL Driver",
+    "category": "Copier Driver",
+    "date": "4 DAYS AGO",
+    "description": "Network printing and scanning driver bundle for office digital copiers and multi-function printers.",
+    "image": "images/5050.png",
+    "custom_link": "#"
+  },
+  {
+    "id": 8,
+    "name": "PDFgear",
     "category": "Software",
     "date": "1 DAY AGO",
-    "description": "Canon imageRUNNER ADVANCE 4242 software and permanent firmware reset solution, designed for high-volume office digital systems with instant download access.",
+    "description": "PDFgear all-in-one PDF reader, editor, and converter tool designed for fast office document management.",
     "image": "images/4242.png",
     "custom_link": "#"
   }

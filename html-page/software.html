@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>daroPrinter - Software & Firmware Store</title>
+    <title>daroPrinter - Software & Drivers Store</title>
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,11 +12,8 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/home-style.css">
     <link rel="stylesheet" href="../store.css">
-    
+
     <style>
-        /* ========================================== */
-        /* GENERAL RESET & APPLE HEADER STYLES */
-        /* ========================================== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -129,7 +126,7 @@
             display: block !important;
         }
 
-        .dropdown-content button {
+        .dropdown-content button, .dropdown-content a {
             color: #333333 !important;
             padding: 10px 16px;
             text-decoration: none;
@@ -143,7 +140,7 @@
             white-space: nowrap;
         }
 
-        .dropdown-content button:hover {
+        .dropdown-content button:hover, .dropdown-content a:hover {
             background-color: #f5f5f7;
             color: #0071e3 !important;
         }
@@ -157,31 +154,50 @@
             cursor: pointer;
         }
 
-        /* Page Specific Styles */
-        .page-header-banner {
-            background: #2b3e50;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .page-header-banner h1 {
-            margin: 0 0 10px 0;
-            font-size: 28px;
-        }
-        .page-header-banner p {
-            margin: 0;
-            color: #b0c4de;
-            font-size: 14px;
+        /* Software Container & Tabs Styling */
+        .software-container {
+            max-width: 900px;
+            margin: 30px auto 50px auto;
+            padding: 0 15px;
         }
 
+        .software-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .sw-tab-btn {
+            background-color: #e2e8f0;
+            color: #334155;
+            border: none;
+            padding: 12px 25px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sw-tab-btn:hover {
+            background-color: #cbd5e1;
+        }
+
+        .sw-tab-btn.active {
+            background-color: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Software List Grid */
         .software-list-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            max-width: 900px;
-            margin: 0 auto 50px auto;
-            padding: 0 15px;
         }
 
         .software-card-item {
@@ -191,10 +207,11 @@
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
+            border-radius: 6px;
         }
 
         .software-card-item:hover {
-            border-color: #5c8a00;
+            border-color: #2563eb;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
@@ -208,6 +225,7 @@
             margin-right: 15px;
             overflow: hidden;
             cursor: pointer;
+            border-radius: 4px;
         }
 
         .sw-img-box img {
@@ -248,21 +266,13 @@
             font-size: 12px;
         }
 
-        .sw-category a {
-            color: #0073aa;
-            text-decoration: none;
-        }
-        .sw-category a:hover {
-            text-decoration: underline;
-        }
-
         .sw-title {
             margin: 0 0 8px 0;
             font-size: 18px;
         }
 
         .sw-title a {
-            color: #5c8a00;
+            color: #2563eb;
             text-decoration: none;
         }
 
@@ -286,9 +296,6 @@
             text-decoration: underline;
         }
 
-        /* ========================================== */
-        /* RESPONSIVE DESIGN (MOBILE & TABLET) */
-        /* ========================================== */
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block !important;
@@ -326,9 +333,13 @@
                 margin-top: 5px !important;
             }
 
-            .dropdown-content button {
+            .dropdown-content button, .dropdown-content a {
                 color: #f5f5f7 !important;
                 padding-left: 20px !important;
+            }
+
+            .software-tabs {
+                flex-direction: column;
             }
 
             .software-card-item {
@@ -359,7 +370,7 @@
         </div>
     </div>
 
-    <!-- Main Navigation Header (Apple Style) -->
+    <!-- Main Navigation Header -->
     <header class="apple-header">
         <nav class="apple-nav">
             <a href="../index.html" class="nav-logo">
@@ -406,20 +417,28 @@
         </nav>
     </header>
 
-    <!-- Page Header Banner -->
-    <div class="page-header-banner">
-        <h1><i class="fa-solid fa-code"></i> Software & Firmware Download</h1>
-        <p>ប្រមូលផ្ដុំកម្មវិធីកាត់ត រួមទាំង Firmware និង Utility សម្រាប់ជាងនិងអ្នកប្រើប្រាស់ទូទៅ</p>
-    </div>
+    <!-- Software Container with 2 Main Tabs -->
+    <div class="software-container">
+        
+        <!-- Main 2 Tabs: Driver vs Computer -->
+        <div class="software-tabs">
+            <button class="sw-tab-btn active" onclick="filterSoftwareCategory('Driver', event)">
+                <i class="fa-solid fa-print"></i> Driver
+            </button>
+            <button class="sw-tab-btn" onclick="filterSoftwareCategory('Computer', event)">
+                <i class="fa-solid fa-laptop"></i> Computer
+            </button>
+        </div>
 
-    <!-- Software List Section -->
-    <div class="software-list-container" id="softwareListGrid">
-        <p style="text-align: center; color: #666; padding: 40px;">កំពុងផ្ទុកទិន្នន័យ Software...</p>
+        <!-- Software List Grid -->
+        <div class="software-list-container" id="softwareListGrid">
+            <p style="text-align: center; color: #666; padding: 40px;">កំពុងផ្ទុកទិន្នន័យ...</p>
+        </div>
+
     </div>
 
     <!-- JavaScript -->
     <script>
-        // Toggle Mobile Menu
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -429,13 +448,14 @@
             });
         }
 
-        // Handle Filter Buttons to jump directly to store.html with parameter
-        const filterTriggers = document.querySelectorAll('.filter-trigger');
-        filterTriggers.forEach(button => {
+        let allSoftwareData = [];
+
+        // Correct Header Filter-Trigger navigation routing to store.html
+        document.querySelectorAll('.filter-trigger').forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
                 const filterValue = button.getAttribute('data-filter');
-                
+
                 if (filterValue === 'All') {
                     window.location.href = '../store.html';
                 } else {
@@ -444,7 +464,6 @@
             });
         });
 
-        // Function to create software card elements
         function createSoftwareCard(prod) {
             let imgSrc = '../images/default.png';
             if (prod.images && prod.images.length > 0) {
@@ -455,7 +474,6 @@
 
             let category = prod.category || 'Utilities';
             let dateStr = prod.date || '1 DAY AGO';
-
             let displayTitle = prod.custom_title || prod.name;
             let targetLink = prod.custom_link || `single-product.html?id=${prod.id}`;
             let linkTarget = prod.custom_link ? 'target="_blank"' : '';
@@ -474,7 +492,7 @@
                             <a href="${targetLink}" ${linkTarget}>${displayTitle}</a>
                         </h3>
                         <p class="sw-desc">
-                            ${prod.description || prod.name + ' Download Latest Version for Windows.'} 
+                            ${prod.description || prod.name + ' Download Latest Version.'} 
                             <a href="${targetLink}" ${linkTarget} class="more-link">(MORE...)</a>
                         </p>
                     </div>
@@ -482,20 +500,55 @@
             `;
         }
 
-        // Fetch and render software list on page load
+        function renderSoftwareList(list) {
+            const gridContainer = document.getElementById('softwareListGrid');
+            if (list.length === 0) {
+                gridContainer.innerHTML = '<p style="text-align: center; color: #666; padding: 30px;">មិនមានទិន្នន័យសម្រាប់បង្ហាញក្នុងផ្នែកនេះទេ</p>';
+                return;
+            }
+            gridContainer.innerHTML = list.map(prod => createSoftwareCard(prod)).join('');
+        }
+
+        function filterSoftwareCategory(type, event) {
+            document.querySelectorAll('.sw-tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            let filtered = [];
+            if (type === 'Driver') {
+                // Displays Printer, Copier, or Label Printer
+                filtered = allSoftwareData.filter(item => {
+                    let cat = (item.category || '').toLowerCase();
+                    let name = (item.name || '').toLowerCase();
+                    return cat.includes('printer') || cat.includes('copier') || cat.includes('label') || 
+                           name.includes('printer') || name.includes('copier') || name.includes('label');
+                });
+            } else if (type === 'Computer') {
+                // Displays Windows or Mac
+                filtered = allSoftwareData.filter(item => {
+                    let cat = (item.category || '').toLowerCase();
+                    let name = (item.name || '').toLowerCase();
+                    return cat.includes('windows') || cat.includes('mac') || 
+                           name.includes('windows') || name.includes('mac') || name.includes('office');
+                });
+            }
+            renderSoftwareList(filtered);
+        }
+
         document.addEventListener("DOMContentLoaded", async () => {
             const gridContainer = document.getElementById('softwareListGrid');
             try {
                 const response = await fetch('../json/software.json');
                 if (!response.ok) throw new Error('Cannot load software.json');
-                const softwareList = await response.json();
+                allSoftwareData = await response.json();
 
-                if (softwareList.length === 0) {
-                    gridContainer.innerHTML = '<p style="text-align: center; color: #666; padding: 30px;">មិនមានទំនិញ Software បង្ហាញទេ</p>';
-                    return;
-                }
-
-                gridContainer.innerHTML = softwareList.map(prod => createSoftwareCard(prod)).join('');
+                // Default display 'Driver' tab on load
+                let initialFiltered = allSoftwareData.filter(item => {
+                    let cat = (item.category || '').toLowerCase();
+                    let name = (item.name || '').toLowerCase();
+                    return cat.includes('printer') || cat.includes('copier') || cat.includes('label') || 
+                           name.includes('printer') || name.includes('copier') || name.includes('label');
+                });
+                renderSoftwareList(initialFiltered);
 
             } catch (err) {
                 console.error(err);
