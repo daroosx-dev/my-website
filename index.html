@@ -11,6 +11,153 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/home-style.css">
+
+    <style>
+        /* Apple Header & Navigation Styles */
+        .apple-header {
+            background-color: #161617;
+            color: #f5f5f7;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .apple-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            position: relative;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-blue {
+            color: #0071e3;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu > a, .dropbtn, .filter-trigger {
+            color: #f5f5f7;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px 0;
+        }
+
+        .nav-menu > a:hover, .dropbtn:hover, .filter-trigger:hover {
+            color: #0071e3;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+            z-index: 1000;
+            border-radius: 6px;
+            padding: 8px 0;
+            text-align: left;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block !important;
+        }
+
+        .dropdown-content button {
+            color: #333333 !important;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block !important;
+            text-align: left;
+            font-size: 14px;
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #f5f5f7;
+            color: #0071e3 !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block !important;
+            }
+            .nav-menu {
+                display: none !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                width: 100% !important;
+                background-color: #161617 !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 15px 20px !important;
+                gap: 15px !important;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+                transform: none !important;
+            }
+            .nav-menu.active {
+                display: flex !important;
+            }
+            .nav-menu > a, .dropbtn, .filter-trigger {
+                width: 100% !important;
+                text-align: left !important;
+            }
+            .dropdown-content {
+                position: static !important;
+                box-shadow: none !important;
+                background-color: #222223 !important;
+                width: 100% !important;
+                margin-top: 5px !important;
+            }
+            .dropdown-content button {
+                color: #f5f5f7 !important;
+                padding-left: 20px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -39,9 +186,37 @@
             </button>
 
             <div class="nav-menu" id="navMenu">
-                <a href="index.html" style="color: #5c8a00; font-weight: bold;">Home</a>
-                <a href="store.html">Store</a>
-                <a href="pages/software.html">Software</a>
+                <a href="index.html" style="color: #0071e3; font-weight: bold;">Home</a>
+                <button class="filter-trigger" data-filter="All">Store</button>
+
+                <div class="dropdown">
+                    <span class="dropbtn">Software Firmware <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
+                    <div class="dropdown-content">
+                        <button class="filter-trigger" data-filter="Canon Firmware">Canon</button>
+                        <button class="filter-trigger" data-filter="Ricoh Firmware">Ricoh</button>
+                        <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba</button>
+                        <button class="filter-trigger" data-filter="Epson Firmware">Epson</button>
+                        <button class="filter-trigger" data-filter="HP Firmware">HP</button>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <span class="dropbtn">Printer <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
+                    <div class="dropdown-content">
+                        <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
+                        <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <span class="dropbtn">Software License <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
+                    <div class="dropdown-content">
+                        <button class="filter-trigger" data-filter="Windows">Windows</button>
+                        <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
+                    </div>
+                </div>
+
+                <a href="html-page/software.html">Software</a>
             </div>
         </nav>
     </header>
@@ -65,8 +240,8 @@
     <!-- Featured Products Section -->
     <section class="featured-section">
         <div class="section-header-title">
-    <h2><i class="fa-solid fa-star"></i> Featured Products</h2>
-</div>
+            <h2><i class="fa-solid fa-star"></i> Featured Products</h2>
+        </div>
         <div class="featured-grid" id="featuredProductsGrid">
             <p style="grid-column: 1 / -1; text-align: center; color: #666; padding: 20px;">កំពុងផ្ទុកទំនិញលេចធ្លោ...</p>
         </div>
@@ -102,6 +277,20 @@
                 navMenu.classList.toggle('active');
             });
         }
+
+        // Handle Filter Buttons to jump to store.html with parameter (Since index.html is in root, use store.html directly)
+        const filterTriggers = document.querySelectorAll('.filter-trigger');
+        filterTriggers.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const filterValue = button.getAttribute('data-filter');
+                if (filterValue === 'All') {
+                    window.location.href = 'store.html';
+                } else {
+                    window.location.href = `store.html?filter=${encodeURIComponent(filterValue)}`;
+                }
+            });
+        });
 
         // List of Images for Hero Carousel
         const imagesList = [
