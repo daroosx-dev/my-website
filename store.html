@@ -8,11 +8,8 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Styles (Cleaned up, no !important needed) -->
+    <!-- CSS Styles -->
     <style>
-        /* ========================================== */
-        /* GENERAL STYLES & RESET */
-        /* ========================================== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -42,9 +39,7 @@
             text-decoration: none;
         }
 
-        /* ========================================== */
-        /* APPLE HEADER & NAVIGATION */
-        /* ========================================== */
+        /* Apple Header & Navigation */
         .apple-header {
             background-color: #161617;
             color: #f5f5f7;
@@ -155,10 +150,10 @@
         /* Search Section */
         .search-section {
             text-align: center;
-            margin: 25px 0 15px 0;
+            margin: 15px 0 8px 0;
         }
         .search-box input {
-            padding: 12px 20px;
+            padding: 10px 20px;
             width: 100%;
             max-width: 500px;
             border: 1px solid #ddd;
@@ -168,14 +163,46 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* ========================================== */
-        /* PRODUCT CONTAINER & CARD GRID */
-        /* ========================================== */
+        /* Section Title Box Style */
+        .section-header-container {
+            max-width: 1400px;
+            margin: 2px auto 0px auto;
+            padding: 0 3%;
+        }
+
+        .section-title-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 6px 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .section-title-box h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title-box h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #0071e3;
+            border-radius: 2px;
+        }
+
+        /* Product Container & Cards (Grid 4 columns) */
         .product-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            padding: 20px 3%;
+            gap: 12px;
+            padding: 4px 3% 6px 3%;
             max-width: 1400px;
             margin: 0 auto;
             align-items: stretch;
@@ -241,7 +268,6 @@
             text-align: center;
         }
 
-        /* Price Styling */
         .price {
             font-size: 16px;
             font-weight: 800;
@@ -250,7 +276,6 @@
             text-align: center;
         }
 
-        /* TAGS & COLOR BAR */
         .tag-list {
             display: flex;
             flex-direction: column;
@@ -267,7 +292,7 @@
             display: block;
         }
 
-        /* 12-Color Ink Bar */
+        /* CMYK & Special Color Bars */
         .cmyk-bar {
             display: flex;
             height: 6px;
@@ -281,20 +306,7 @@
             flex: 1;
             height: 100%;
         }
-        .cmyk-bar span:nth-child(1)  { background: #000000; }
-        .cmyk-bar span:nth-child(2)  { background: #0088ff; }
-        .cmyk-bar span:nth-child(3)  { background: #ff0088; }
-        .cmyk-bar span:nth-child(4)  { background: #ffee00; }
-        .cmyk-bar span:nth-child(5)  { background: #00ffff; }
-        .cmyk-bar span:nth-child(6)  { background: #ff00ff; }
-        .cmyk-bar span:nth-child(7)  { background: #888888; }
-        .cmyk-bar span:nth-child(8)  { background: #333333; }
-        .cmyk-bar span:nth-child(9)  { background: #ff4500; }
-        .cmyk-bar span:nth-child(10) { background: #800080; }
-        .cmyk-bar span:nth-child(11) { background: #008000; }
-        .cmyk-bar span:nth-child(12) { background: #4169e1; }
 
-        /* SPECS TABLE */
         .specs-table {
             width: 100%;
             font-size: 10px;
@@ -326,7 +338,6 @@
             font-weight: 600;
         }
 
-        /* CARD ACTIONS */
         .card-actions {
             margin-top: auto;
             text-align: center;
@@ -354,13 +365,10 @@
             background-color: #1d4ed8;
         }
 
-        /* ========================================== */
-        /* RESPONSIVE DESIGN (MOBILE & TABLET) */
-        /* ========================================== */
         @media (max-width: 1024px) {
             .product-container {
                 grid-template-columns: repeat(2, 1fr);
-                padding: 15px 2%;
+                padding: 6px 2%;
             }
         }
 
@@ -403,35 +411,13 @@
 
             .dropdown-content button {
                 color: #f5f5f7;
-                padding-left: 20px;
+                padding-left: 25px;
             }
 
             .product-container {
                 grid-template-columns: repeat(2, 1fr);
-                padding: 8px;
+                padding: 6px;
                 gap: 8px;
-                align-items: stretch;
-            }
-
-            .product-card {
-                padding: 8px;
-            }
-
-            .card-img {
-                height: 100px;
-            }
-
-            .product-title {
-                font-size: 10px;
-                height: 26px;
-            }
-
-            .price {
-                font-size: 13px;
-            }
-
-            .specs-table {
-                font-size: 9px;
             }
         }
     </style>
@@ -505,11 +491,10 @@
         </div>
     </div>
 
-    <!-- Main Product Container -->
-    <main class="container">
-        <div id="product-grid" class="product-container">
-            <!-- ផលិតផលនឹងទាញយកមកបង្ហាញដោយស្វ័យប្រវត្តិពី store.js -->
-        </div>
+    <!-- MAIN DYNAMIC SECTIONS CONTAINER -->
+    <main class="container" id="main-content-container">
+        <!-- ពេលចូលដំបូង ឬចុច All វានឹងបង្ហាញជា Sections តាម Brand នីមួយៗ (Canon, Epson, HP...) ដោយស្វ័យប្រវត្តិ -->
+        <!-- ពេលចុច Filter ផ្សេងៗ វានឹងបង្ហាញក្នុង Grid តែមួយទូលំទូលាយ -->
     </main>
 
     <!-- JavaScript for Mobile Menu Toggle -->

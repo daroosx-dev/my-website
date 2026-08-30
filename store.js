@@ -5,7 +5,7 @@ fetch('products.json')
     .then(response => response.json())
     .then(data => {
         allProducts = data;
-        renderProducts(allProducts); 
+        renderHomeSections(allProducts); 
     })
     .catch(error => console.error('Error loading products.json:', error));
 
@@ -13,7 +13,6 @@ fetch('products.json')
 function forceBoldSpecs() {
     const valueCells = document.querySelectorAll('.specs-table td');
     valueCells.forEach(cell => {
-        // រើសយកតែ td ណាដែលនៅខាងស្តាំ (រំលង label និង colon)
         if (!cell.classList.contains('label') && !cell.classList.contains('colon')) {
             cell.style.setProperty('font-weight', '800', 'important');
             cell.style.setProperty('color', '#0f172a', 'important');
@@ -21,61 +20,68 @@ function forceBoldSpecs() {
     });
 }
 
-// Render Products Function
-function renderProducts(products) {
-    const grid = document.getElementById('product-grid');
-    if (!grid) return;
+// មុខងារបង្កើត HTML សម្រាប់ Product Card នីមួយៗ (គាំទ្រគ្រប់ប្រភេទពណ៌ទាំងអស់)
+function createProductCardHTML(product) {
+    let colorBarHTML = '';
     
-    grid.innerHTML = '';
-
-    if (products.length === 0) {
-        grid.innerHTML = '<p style="text-align: center; grid-column: 1 / -1; color: #777;">រកមិនឃើញផលិតផលដែលអ្នកកំពុងស្វែងរកឡើយ។</p>';
-        return;
+    if (product.color_bar_type === 'cmyklmlc') {
+        // ៦ ពណ៌ (CMYK + Light Cyan + Light Magenta)
+        colorBarHTML = `
+            <div class="cmyk-bar">
+                <span style="background: #000000;"></span>
+                <span style="background: #0088ff;"></span>
+                <span style="background: #ff0088;"></span>
+                <span style="background: #ffee00;"></span>
+                <span style="background: #00ffff;"></span>
+                <span style="background: #ff00ff;"></span>
+            </div>
+        `;
+    } else if (product.color_bar_type === '12-color') {
+        // ១២ ពណ៌សម្រាប់ម៉ាស៊ីន პლោតទ័រ អាជីព
+        colorBarHTML = `
+            <div class="cmyk-bar">
+                <span style="background: #000000;"></span>
+                <span style="background: #333333;"></span>
+                <span style="background: #0088ff;"></span>
+                <span style="background: #00ffff;"></span>
+                <span style="background: #ff0088;"></span>
+                <span style="background: #ff00ff;"></span>
+                <span style="background: #ffee00;"></span>
+                <span style="background: #ff4500;"></span>
+                <span style="background: #888888;"></span>
+                <span style="background: #800080;"></span>
+                <span style="background: #008000;"></span>
+                <span style="background: #4169e1;"></span>
+            </div>
+        `;
+    } else if (product.color_bar_type === 'cmyk') {
+        // ៤ ពណ៌ស្តង់ដារ (CMYK)
+        colorBarHTML = `
+            <div class="cmyk-bar">
+                <span style="background: #000000;"></span>
+                <span style="background: #0088ff;"></span>
+                <span style="background: #ff0088;"></span>
+                <span style="background: #ffee00;"></span>
+            </div>
+        `;
+    } else {
+        // បន្ទាត់ខ្មៅធម្មតា (Mono)
+        colorBarHTML = `
+            <div class="cmyk-bar">
+                <span style="flex: 1; background: #000000;"></span>
+            </div>
+        `;
     }
 
-    const fragment = document.createDocumentFragment();
+    let tagsHTML = '';
+    if (product.tags && product.tags.length > 0) {
+        product.tags.forEach(tag => {
+            tagsHTML += `<span class="tag-item">✓ ${tag}</span>`;
+        });
+    }
 
-    products.forEach(product => {
-        let colorBarHTML = '';
-        if (product.color_bar_type === 'cmyklmlc') {
-            colorBarHTML = `
-                <div class="cmyk-bar">
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                </div>
-            `;
-        } else if (product.color_bar_type === '12-color') {
-            colorBarHTML = `
-                <div class="cmyk-bar">
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                </div>
-            `;
-        } else if (product.color_bar_type === 'cmyk') {
-            colorBarHTML = `
-                <div class="cmyk-bar">
-                    <span></span><span></span><span></span><span></span>
-                </div>
-            `;
-        } else {
-            colorBarHTML = `
-                <div class="cmyk-bar">
-                    <span style="flex: 1; background: #000000;"></span>
-                </div>
-            `;
-        }
-
-        let tagsHTML = '';
-        if (product.tags && product.tags.length > 0) {
-            product.tags.forEach(tag => {
-                tagsHTML += `<span class="tag-item">✓ ${tag}</span>`;
-            });
-        }
-
-        const cardDiv = document.createElement('div');
-        cardDiv.className = 'product-card';
-        
-        // 🟢 បន្ថែម class="value" ចូលទៅក្នុង td ខាងស្តាំចំៗទីតាំងនេះ
-        cardDiv.innerHTML = `
+    return `
+        <div class="product-card">
             <div>
                 <div class="brand-logo-text">${product.brand || ''}</div>
                 <div class="card-img" data-id="${product.id}">
@@ -112,19 +118,78 @@ function renderProducts(products) {
             <div class="card-actions">
                 <button class="btn-detail" data-id="${product.id}">Detail</button>
             </div>
-        `;
+        </div>
+    `;
+}
 
-        cardDiv.querySelector('.card-img').addEventListener('click', () => viewDetail(product.id));
-        cardDiv.querySelector('.product-title').addEventListener('click', () => viewDetail(product.id));
-        cardDiv.querySelector('.btn-detail').addEventListener('click', () => viewDetail(product.id));
+// មុខងារបង្ហាញទំនិញបែងចែកជា Section តាម Brand (អាចប្ដូរយក 3 ឬ 4 Brand តាមចិត្តចង់)
+function renderHomeSections(products) {
+    const mainContainer = document.getElementById('main-content-container');
+    if (!mainContainer) return;
 
-        fragment.appendChild(cardDiv);
+    mainContainer.innerHTML = '';
+
+    // បងអាចកែបន្ថែម ឬកាត់បន្ថយឈ្មោះ Brand ក្នុងរង្វង់ក្រចកទතුទាំងនេះបាន (ចង់ដាក់ 3 ឬ 4 ម៉ាកតាមចិត្ត)
+    const targetBrands = ['Canon', 'Epson',]; 
+
+    targetBrands.forEach(brand => {
+        const brandProducts = products.filter(p => p.brand && p.brand.toLowerCase() === brand.toLowerCase()).slice(0, 8);
+        
+        if (brandProducts.length > 0) {
+            const sectionHTML = `
+                <div class="section-header-container">
+                    <div class="section-title-box">
+                        <h2>${brand} Products</h2>
+                    </div>
+                </div>
+                <div class="product-container" id="grid-${brand.toLowerCase().replace(/\s+/g, '-')}" style="margin-bottom: 20px;">
+                    ${brandProducts.map(product => createProductCardHTML(product)).join('')}
+                </div>
+            `;
+            mainContainer.insertAdjacentHTML('beforeend', sectionHTML);
+        }
     });
 
-    grid.appendChild(fragment);
-
-    // ហៅមុខងារបង្ខំឱ្យអក្សរដិតខ្លាំងភ្លាមៗក្រោយពេល Render ចប់
+    attachCardEvents(mainContainer);
     setTimeout(forceBoldSpecs, 10);
+}
+
+// មុខងារបង្ហាញទំនិញក្នុង Grid តែមួយ (ពេលអ្នកប្រើប្រាស់ធ្វើการ Search ឬ Filter រកម៉ាកជាក់លាក់ណាមួយ)
+function renderFilteredGrid(products, title = "Search Results") {
+    const mainContainer = document.getElementById('main-content-container');
+    if (!mainContainer) return;
+
+    mainContainer.innerHTML = '';
+
+    if (products.length === 0) {
+        mainContainer.innerHTML = '<p style="text-align: center; padding: 40px; color: #777; grid-column: 1 / -1;">រកមិនឃើញផលិតផលដែលអ្នកកំពុងស្វែងរកឡើយ។</p>';
+        return;
+    }
+
+    const sectionHTML = `
+        <div class="section-header-container">
+            <div class="section-title-box">
+                <h2>${title} (${products.length})</h2>
+            </div>
+        </div>
+        <div class="product-container" id="filtered-product-grid">
+            ${products.map(product => createProductCardHTML(product)).join('')}
+        </div>
+    `;
+
+    mainContainer.innerHTML = sectionHTML;
+    attachCardEvents(mainContainer);
+    setTimeout(forceBoldSpecs, 10);
+}
+
+// ភ្ជាប់ព្រឹត្តិការណ៍ចុចលើកាត (Click Events)
+function attachCardEvents(container) {
+    container.querySelectorAll('.card-img, .product-title, .btn-detail').forEach(element => {
+        element.addEventListener('click', (e) => {
+            const id = e.currentTarget.getAttribute('data-id');
+            if (id) viewDetail(id);
+        });
+    });
 }
 
 // Search functionality
@@ -132,27 +197,30 @@ const searchInput = document.getElementById('searchInput');
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
         const keyword = e.target.value.toLowerCase().trim();
+        if (keyword === '') {
+            renderHomeSections(allProducts);
+            return;
+        }
         const filtered = allProducts.filter(p => 
             p.name.toLowerCase().includes(keyword) || 
             (p.brand && p.brand.toLowerCase().includes(keyword)) ||
             (p.machine_type && p.machine_type.toLowerCase().includes(keyword)) ||
             (p.category && p.category.toLowerCase().includes(keyword))
         );
-        renderProducts(filtered);
+        renderFilteredGrid(filtered, `Search: "${keyword}"`);
     });
 }
 
-// Filter functionality
+// Filter functionality (សម្រាប់ប៊ូតុង Store, HP, Canon, Epson, វីនដូ, ជាដើម)
 const filterButtons = document.querySelectorAll('.filter-trigger, .filter-btn, .dropdown-content a, .dropdown-menu a, nav a');
 filterButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         let filterValue = e.currentTarget.getAttribute('data-filter') || e.currentTarget.textContent.trim();
-        
         if (!filterValue) return;
         const keyword = filterValue.toLowerCase().trim();
 
         if (keyword === 'all' || keyword === 'store' || keyword === 'ទំនិញទាំងអស់') {
-            renderProducts(allProducts);
+            renderHomeSections(allProducts);
         } else {
             const filtered = allProducts.filter(p => {
                 const pBrand = p.brand ? p.brand.toLowerCase() : '';
@@ -163,7 +231,6 @@ filterButtons.forEach(button => {
                 const pName = p.name ? p.name.toLowerCase() : '';
                 
                 const keywords = keyword.split(' ');
-                
                 return keywords.every(kw => 
                     pBrand.includes(kw) || 
                     pCat.includes(kw) || 
@@ -174,7 +241,7 @@ filterButtons.forEach(button => {
                 );
             });
             
-            renderProducts(filtered);
+            renderFilteredGrid(filtered, filterValue);
         }
     });
 });
