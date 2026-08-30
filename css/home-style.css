@@ -47,7 +47,7 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
 .carousel-item.hidden { opacity: 0; transform: translateX(0) scale(0.5); pointer-events: none; }
 
 /* ========================================== */
-/* PRODUCTS & FEATURES SECTIONS              */
+/* PRODUCTS & FEATURES SECTIONS               */
 /* ========================================== */
 .tech-btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
 .btn-primary-tech { background: #0071e3; color: #fff; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
@@ -78,11 +78,13 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
     color: inherit;
     padding: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    transition: 0.2s;
+    /* បន្ថែមចលនារលូនពេល Hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .product-card-home:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transform: translateY(-8px) !important; /* ឱ្យកាតហើបឡើងលើ */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12) !important;
     border-color: #0071e3;
 }
 
@@ -94,12 +96,19 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
     justify-content: center;
     position: relative;
     margin-bottom: 10px;
+    overflow: hidden; /* ទប់រូបភាពមិនឱ្យហៀរពេល Zoom */
 }
 
 .card-img-wrap img {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
+    /* បន្ថែមចលនារូបភាពរីកធំ */
+    transition: transform 0.5s ease !important;
+}
+
+.product-card-home:hover .card-img-wrap img {
+    transform: scale(1.08) !important; /* រូបភាពរីកធំ ១០៨% */
 }
 
 .brand-tag-floating { position: absolute; top: 10px; left: 10px; background: rgba(0,113,227,0.1); color: #0071e3; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
@@ -111,7 +120,6 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
     justify-content: space-between;
 }
 
-/* Unified & Optimized card-title (No warnings, perfectly styled) */
 .card-title {
     font-size: 14px;
     font-weight: 600;
@@ -132,7 +140,6 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
     margin-bottom: 12px;
 }
 
-/* Actions Row (Cart, Heart, Details) */
 .card-actions-row {
     display: flex;
     align-items: center;
@@ -225,4 +232,117 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
 
     .tech-features { grid-template-columns: 1fr; }
     .top-bar { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+/* ========================================== */
+/* SITE FOOTER STYLES                         */
+/* ========================================== */
+.site-footer {
+    background-color: #161618;
+    color: #f5f5f7;
+    padding: 60px 20px 20px 20px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    font-size: 13px;
+    color: #86868b;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #86868b;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #0071e3;
+    padding-left: 4px;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.footer-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.footer-social-icons a:hover {
+    background: #0071e3;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #86868b;
+}
+
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
 }

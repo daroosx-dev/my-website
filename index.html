@@ -120,6 +120,26 @@
             cursor: pointer;
         }
 
+        /* ========================================== */
+        /* PRODUCT CARD ANIMATIONS & HOVER EFFECTS    */
+        /* ========================================== */
+        .product-card-home {
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .product-card-home:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .card-img-wrap img {
+            transition: transform 0.5s ease !important;
+        }
+
+        .product-card-home:hover .card-img-wrap img {
+            transform: scale(1.08) !important;
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block !important;
@@ -266,6 +286,58 @@
         </div>
     </div>
 
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- ជួរទី ១៖ អំពីហាង -->
+            <div class="footer-col">
+                <h3><span class="logo-blue" style="color: #0071e3; font-weight: bold;">daro</span>printer</h3>
+                <p>ជាកន្លែងផ្ដល់ជូននូវដំណោះស្រាយបច្ចេកវិទ្យាទំនើប ម៉ាស៊ីនព្រីន ម៉ាស៊ីនថតចម្លង Firmware និង Software License ដ៏គួរឱ្យទុកចិត្ត។</p>
+                <div class="footer-social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://t.me/your_telegram_id" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+
+            <!-- ជួរទី ២៖ តំណរភ្ជាប់រហ័ស -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">ទំព័រដើម (Home)</a></li>
+                    <li><a href="store.html">ហាងទំនិញ (Store)</a></li>
+                    <li><a href="html-page/software.html">ផ្នែក Software</a></li>
+                </ul>
+            </div>
+
+            <!-- ជួរទី ៣៖ ប្រភេទផលិតផល -->
+            <div class="footer-col">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="store.html?filter=Canon+Firmware">Canon Firmware</a></li>
+                    <li><a href="store.html?filter=Epson+Firmware">Epson Firmware</a></li>
+                    <li><a href="store.html?filter=Ink+Printer">Ink Printer</a></li>
+                    <li><a href="store.html?filter=Windows">Windows License</a></li>
+                </ul>
+            </div>
+
+            <!-- ជួរទី ៤៖ ព័ត៌មានទំនាក់ទំនង -->
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-headset"></i> Phone: 010 111 222 | 097 333 444</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: support@daroprinter.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> ទីតាំង៖ រាជធានីភ្នំពេញ, ប្រទេសកម្ពុជា</p>
+            </div>
+        </div>
+
+        <!-- ផ្នែកក្រោមបង្អស់ (Copyright) -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 daroPrinter. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+            <p>Designed with Apple Style UI</p>
+        </div>
+    </footer>
+
     <!-- JavaScript -->
     <script>
         // Toggle Mobile Menu
@@ -278,7 +350,7 @@
             });
         }
 
-        // Handle Filter Buttons to jump to store.html with parameter (Since index.html is in root, use store.html directly)
+        // Handle Filter Buttons to jump to store.html with parameter
         const filterTriggers = document.querySelectorAll('.filter-trigger');
         filterTriggers.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -367,15 +439,12 @@
                 if (!response.ok) throw new Error('Cannot load products.json');
                 const products = await response.json();
 
-                // 🌟 កន្លែងនេះបងអាចដូរ Category តាមចិត្តចង់បាន
                 const targetCategory = "Software Firmware"; 
 
-                // ចម្រាញ់យកទំនិញណាដែលត្រូវនឹង Category នេះ
                 const filteredProducts = products.filter(prod => 
                     prod.category && prod.category.trim().toLowerCase() === targetCategory.toLowerCase()
                 );
 
-                // យក 4 ផលិតផលដំបូងមកបង្ហាញ
                 const featured = filteredProducts.slice(0, 4);
 
                 if (featured.length === 0) {
@@ -387,7 +456,6 @@
                 featured.forEach(prod => {
                     let imgSrc = 'images/default.png';
                     
-                    // កែសម្រួលផ្លូវរូបភាព (Image Path) ឱ្យត្រូវជាមួយ index.html (Root Folder)
                     let rawImg = '';
                     if (prod.images && prod.images.length > 0) {
                         rawImg = prod.images[0];
@@ -405,7 +473,6 @@
                         }
                     }
 
-                    // តំណភ្ជាប់ទៅកាន់ single-product.html តាម id
                     let productLink = `pages/single-product.html?id=${prod.id}`;
 
                     htmlContent += `
