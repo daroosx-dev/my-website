@@ -5,16 +5,27 @@ fetch('products.json')
     .then(response => response.json())
     .then(data => {
         allProducts = data;
-        renderProducts(allProducts); // បង្ហាញផលិតផលទាំងអស់ពេលចូលដំបូង (Store)
+        renderProducts(allProducts); 
     })
     .catch(error => console.error('Error loading products.json:', error));
 
-// Render Products Function (កែលម្អល្បឿនដោយប្រើ DocumentFragment)
+// មុខងារបង្ខំឱ្យអក្សរដិតខ្លាំង ១០០% គ្រប់តម្លៃទាំងអស់
+function forceBoldSpecs() {
+    const valueCells = document.querySelectorAll('.specs-table td');
+    valueCells.forEach(cell => {
+        // រើសយកតែ td ណាដែលនៅខាងស្តាំ (រំលង label និង colon)
+        if (!cell.classList.contains('label') && !cell.classList.contains('colon')) {
+            cell.style.setProperty('font-weight', '800', 'important');
+            cell.style.setProperty('color', '#0f172a', 'important');
+        }
+    });
+}
+
+// Render Products Function
 function renderProducts(products) {
     const grid = document.getElementById('product-grid');
     if (!grid) return;
     
-    // សម្អាតទិន្នន័យចាស់ចេញជាមុន
     grid.innerHTML = '';
 
     if (products.length === 0) {
@@ -22,30 +33,37 @@ function renderProducts(products) {
         return;
     }
 
-    // ប្រើប្រាស់ DocumentFragment ដើម្បីបង្កើនល្បឿន Render មិនឱ្យគាំង Browser
     const fragment = document.createDocumentFragment();
 
     products.forEach(product => {
-        // Color Bar HTML
         let colorBarHTML = '';
-        if (product.color_bar_type === 'cmyk') {
+        if (product.color_bar_type === 'cmyklmlc') {
             colorBarHTML = `
                 <div class="cmyk-bar">
-                    <span class="c-black"></span>
-                    <span class="c-cyan"></span>
-                    <span class="c-magenta"></span>
-                    <span class="c-yellow"></span>
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            `;
+        } else if (product.color_bar_type === '12-color') {
+            colorBarHTML = `
+                <div class="cmyk-bar">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            `;
+        } else if (product.color_bar_type === 'cmyk') {
+            colorBarHTML = `
+                <div class="cmyk-bar">
+                    <span></span><span></span><span></span><span></span>
                 </div>
             `;
         } else {
             colorBarHTML = `
                 <div class="cmyk-bar">
-                    <span class="c-black" style="flex: 1;"></span>
+                    <span style="flex: 1; background: #000000;"></span>
                 </div>
             `;
         }
 
-        // Tags HTML
         let tagsHTML = '';
         if (product.tags && product.tags.length > 0) {
             product.tags.forEach(tag => {
@@ -53,10 +71,10 @@ function renderProducts(products) {
             });
         }
 
-        // Card Element Creation
         const cardDiv = document.createElement('div');
         cardDiv.className = 'product-card';
         
+        // 🟢 បន្ថែម class="value" ចូលទៅក្នុង td ខាងស្តាំចំៗទីតាំងនេះ
         cardDiv.innerHTML = `
             <div>
                 <div class="brand-logo-text">${product.brand || ''}</div>
@@ -76,17 +94,17 @@ function renderProducts(products) {
                     <tr>
                         <td class="label">Machine Type</td>
                         <td class="colon">:</td>
-                        <td class="value">${product.machine_type || 'N/A'}</td>
+                        <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.machine_type || 'N/A'}</td>
                     </tr>
                     <tr>
                         <td class="label">Functions</td>
                         <td class="colon">:</td>
-                        <td class="value">${product.functions || 'N/A'}</td>
+                        <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.functions || 'N/A'}</td>
                     </tr>
                     <tr>
                         <td class="label">Copier Type</td>
                         <td class="colon">:</td>
-                        <td class="value">${product.copier_type || 'N/A'}</td>
+                        <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.copier_type || 'N/A'}</td>
                     </tr>
                 </table>
             </div>
@@ -96,7 +114,6 @@ function renderProducts(products) {
             </div>
         `;
 
-        // Event Listener សុវត្ថិភាពជាងការប្រើ inline onclick
         cardDiv.querySelector('.card-img').addEventListener('click', () => viewDetail(product.id));
         cardDiv.querySelector('.product-title').addEventListener('click', () => viewDetail(product.id));
         cardDiv.querySelector('.btn-detail').addEventListener('click', () => viewDetail(product.id));
@@ -104,8 +121,10 @@ function renderProducts(products) {
         fragment.appendChild(cardDiv);
     });
 
-    // បញ្ចូលម្ដងទាំងអស់គ្នា ធ្វើឱ្យល្បឿនលឿនជាងមុនឆ្ងាយណាស់
     grid.appendChild(fragment);
+
+    // ហៅមុខងារបង្ខំឱ្យអក្សរដិតខ្លាំងភ្លាមៗក្រោយពេល Render ចប់
+    setTimeout(forceBoldSpecs, 10);
 }
 
 // Search functionality

@@ -233,7 +233,7 @@
     "machine_type": "A3+ 6-Color Ink Tank Photo Printer",
     "functions": "Print, Wi-Fi, CD/DVD/PVC Card Printing",
     "copier_type": "Ink Tank System (6-Color)",
-    "color_bar_type": "cmyk",
+    "color_bar_type": "cmyklmlc",
     "specs": [
       {
         "category": "GENERAL SPECIFICATIONS",
