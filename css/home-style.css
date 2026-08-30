@@ -1,5 +1,5 @@
 /* ========================================== */
-/* BASE & GLOBAL STYLES                       */
+/* BASE & GLOBAL STYLES                      */
 /* ========================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
 body { background-color: #f5f5f7; color: #1d1d1f; }
@@ -47,7 +47,7 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
 .carousel-item.hidden { opacity: 0; transform: translateX(0) scale(0.5); pointer-events: none; }
 
 /* ========================================== */
-/* PRODUCTS & FEATURES SECTIONS               */
+/* PRODUCTS & FEATURES SECTIONS              */
 /* ========================================== */
 .tech-btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
 .btn-primary-tech { background: #0071e3; color: #fff; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
@@ -60,48 +60,10 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
 .view-all-link { font-size: 14px; color: #0071e3; text-decoration: none; font-weight: 600; }
 .view-all-link:hover { text-decoration: underline; }
 
-.featured-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.product-card-home { background: #fff; border: 1px solid #e1e4e8; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: 0.2s; }
-.product-card-home:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); border-color: #0071e3; }
-.card-img-wrap { height: 180px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; padding: 15px; border-bottom: 1px solid #f0f0f0; position: relative; }
-.card-img-wrap img { max-height: 100%; max-width: 100%; object-fit: contain; }
-.brand-tag-floating { position: absolute; top: 10px; left: 10px; background: rgba(0,113,227,0.1); color: #0071e3; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
-.card-body-content { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
-.card-title { font-size: 15px; font-weight: 600; color: #24292e; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.card-footer-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid #f1f1f1; padding-top: 10px; }
-.card-price { font-size: 16px; font-weight: 700; color: #0071e3; }
-.card-btn-detail { background: #f1f8ff; color: #0071e3; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 650; }
-
-.tech-features { max-width: 1300px; margin: 40px auto 60px; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-.feature-card { background: #fff; border: 1px solid #e1e4e8; border-radius: 12px; padding: 25px 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
-.feature-icon { font-size: 30px; color: #0071e3; margin-bottom: 15px; }
-.feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #24292e; }
-.feature-card p { font-size: 13px; color: #586069; line-height: 1.5; }
-
-/* ========================================== */
-/* RESPONSIVE MEDIA QUERIES                   */
-/* ========================================== */
-@media (max-width: 1024px) { .featured-grid { grid-template-columns: repeat(2, 1fr); } }
-
-@media (max-width: 768px) {
-    .menu-toggle { display: block; }
-    .nav-menu { display: none; position: absolute; top: 52px; left: 0; width: 100%; background: #1a1a1a; flex-direction: column; padding: 20px; gap: 15px; border-bottom: 1px solid #333; }
-    .nav-menu.active { display: flex; }
-    .dropdown-content { position: static; box-shadow: none; background: transparent; border: none; padding-left: 15px; }
-    
-    .carousel-container { height: 300px; }
-    .carousel-item.active { width: 280px; height: 280px; }
-    .carousel-item.next { transform: translateX(180px) scale(0.75); width: 220px; height: 220px; }
-    .carousel-item.prev { transform: translateX(-180px) scale(0.75); width: 220px; height: 220px; }
-    .carousel-item.far-right, .carousel-item.far-left { display: none; }
-
-    .featured-grid, .tech-features { grid-template-columns: 1fr; }
-    .top-bar { flex-direction: column; gap: 8px; text-align: center; }
-}
 /* Featured Products Grid (Responsive: 2 on Phone, 4 on Desktop) */
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* កុំព្យូទ័របង្ហាញ ៤ ជួរ */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
@@ -140,6 +102,8 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
     object-fit: contain;
 }
 
+.brand-tag-floating { position: absolute; top: 10px; left: 10px; background: rgba(0,113,227,0.1); color: #0071e3; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+
 .card-body-content {
     display: flex;
     flex-direction: column;
@@ -147,16 +111,18 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
     justify-content: space-between;
 }
 
+/* Unified & Optimized card-title (No warnings, perfectly styled) */
 .card-title {
     font-size: 14px;
     font-weight: 600;
     color: #1d1d1f;
     margin-bottom: 8px;
+    line-height: 1.4;
     display: -webkit-box;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    line-height: 1.4;
 }
 
 .card-price {
@@ -210,10 +176,33 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
     background: #0077ed;
 }
 
-/* Responsive: ធានាថានៅលើ Phone ចេញ ២ជួរ */
+.tech-features { max-width: 1300px; margin: 40px auto 60px; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.feature-card { background: #fff; border: 1px solid #e1e4e8; border-radius: 12px; padding: 25px 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+.feature-icon { font-size: 30px; color: #0071e3; margin-bottom: 15px; }
+.feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #24292e; }
+.feature-card p { font-size: 13px; color: #586069; line-height: 1.5; }
+
+/* ========================================== */
+/* RESPONSIVE MEDIA QUERIES                   */
+/* ========================================== */
+@media (max-width: 1024px) { 
+    .featured-grid { grid-template-columns: repeat(2, 1fr); } 
+}
+
 @media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-menu { display: none; position: absolute; top: 52px; left: 0; width: 100%; background: #1a1a1a; flex-direction: column; padding: 20px; gap: 15px; border-bottom: 1px solid #333; }
+    .nav-menu.active { display: flex; }
+    .dropdown-content { position: static; box-shadow: none; background: transparent; border: none; padding-left: 15px; }
+    
+    .carousel-container { height: 300px; }
+    .carousel-item.active { width: 280px; height: 280px; }
+    .carousel-item.next { transform: translateX(180px) scale(0.75); width: 220px; height: 220px; }
+    .carousel-item.prev { transform: translateX(-180px) scale(0.75); width: 220px; height: 220px; }
+    .carousel-item.far-right, .carousel-item.far-left { display: none; }
+
     .featured-grid {
-        grid-template-columns: repeat(2, 1fr); /* ទូរស័ព្ទបង្ហាញ ២ ជួរ */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
     .product-card-home {
@@ -233,4 +222,7 @@ body { background-color: #f5f5f7; color: #1d1d1f; }
         padding: 4px 10px;
         font-size: 11px;
     }
+
+    .tech-features { grid-template-columns: 1fr; }
+    .top-bar { flex-direction: column; gap: 8px; text-align: center; }
 }
