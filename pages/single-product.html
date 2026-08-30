@@ -343,7 +343,7 @@
                     }
 
                     // ទាញយក custom_link (Telegram Link) មកដាក់បើមាន ឬប្រើតំណរភ្ជាប់លំនាំដើម
-                    let telegramLink = product.custom_link ? product.custom_link : "https://t.me/your_telegram_username";
+                    let telegramLink = product.custom_link ? product.custom_link : "#";
 
                     container.innerHTML = `
                         <!-- Left: Image Gallery -->
@@ -381,12 +381,12 @@
 
                             <!-- ប៊ូតុង Telegram ភ្ជាប់ទៅកាន់ Link របស់ទំនិញនីមួយៗផ្ទាល់ -->
                             <a href="${telegramLink}" target="_blank" class="btn-contact-us">
-                                <i class="fa-brands fa-telegram"></i> កុម្ម៉ង់ទិញ ឬសាកសួរព័ត៌មានតាម Telegram
+                                <i class="fa-brands fa-telegram"></i> Contact Us Telegram
                             </a>
 
                             <div class="delivery-stock-info">
-                                <p class="delivery-text"><i class="fa-solid fa-truck-fast"></i> សេវាដឹកជញ្ជូនរហ័ស ស្ថាប័ននិងខេត្ត-ក្រុង</p>
-                                <p class="stock-status"><i class="fa-solid fa-box"></i> ក្នុងស្តុក (In Stock)</p>
+                                <p class="delivery-text"><i class="fa-solid fa-truck-fast"></i> សេវាដឹកជញ្ជូនរ </p>
+                                <p class="stock-status"><i class="fa-solid fa-box"></i> In Stock</p>
                             </div>
                         </div>
                     `;
