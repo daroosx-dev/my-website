@@ -1,0 +1,348 @@
+/* ========================================== */
+/* GENERAL STYLES & RESET */
+/* ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Leelawadee UI', 'Khmer OS Siemreap', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f5f6f8;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* ========================================== */
+/* APPLE HEADER & NAVIGATION */
+/* ========================================== */
+.apple-header {
+    background-color: #161617;
+    color: #f5f5f7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.apple-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    position: relative;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    flex-shrink: 0; /* ការពារកុំឱ្យ Logo រួមតូចពេលអេក្រង់ចង្អៀត */
+}
+
+.logo-blue {
+    color: #0071e3;
+}
+
+/* Desktop Menu Styles (ដាក់មកកណ្ដាលស្អាត) */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-menu > a, .dropbtn {
+    color: #f5f5f7;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-menu > a:hover, .dropbtn:hover {
+    color: #0071e3;
+}
+
+/* Dropdown Menu Styles (Desktop) */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    z-index: 1000;
+    border-radius: 6px;
+    padding: 8px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block !important;
+}
+
+.dropdown-content a {
+    color: #333333 !important;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block !important;
+    text-align: left;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f7;
+    color: #0071e3 !important;
+}
+
+/* Mobile Menu Toggle Button (ប៊ូតុង ៣ ខ្សែសម្រាប់ទូរស័ព្ទ) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* ========================================== */
+/* PRODUCT CONTAINER & CARD GRID */
+/* ========================================== */
+.product-container {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    padding: 30px 3% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.brand-logo-text {
+    font-size: 12px;
+    font-weight: 800;
+    color: #003399;
+    letter-spacing: 0.5px;
+    text-align: left;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.card-img {
+    text-align: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.card-img img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.product-title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 4px 0 6px 0;
+    cursor: pointer;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 800;
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+/* ========================================== */
+/* TAGS & COLOR BAR */
+/* ========================================== */
+.tag-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.tag-item {
+    background-color: #e6f7ff;
+    border-left: 3px solid #00aeef;
+    padding: 4px 8px;
+    font-size: 11px;
+    color: #333333;
+}
+
+.cmyk-bar {
+    height: 7px;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #000000 25%, #00aeef 25% 50%, #ec008c 50% 75%, #fff200 75%);
+}
+
+/* ========================================== */
+/* SPECS TABLE */
+/* ========================================== */
+.specs-table {
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.specs-table td {
+    padding: 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.specs-table td.label {
+    width: 38%;
+    color: #555;
+    font-weight: 500;
+}
+
+.specs-table td.colon {
+    width: 5%;
+    text-align: center;
+}
+
+.specs-table td.value {
+    width: 57%;
+    color: #111;
+}
+
+/* ========================================== */
+/* CARD ACTIONS */
+/* ========================================== */
+.card-actions {
+    margin-top: 12px;
+}
+
+.btn-detail {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #00aeef;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-detail:hover {
+    background-color: #0090c7;
+}
+
+/* ========================================== */
+/* RESPONSIVE DESIGN (TABLET & MOBILE) */
+/* ========================================== */
+@media (max-width: 1024px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 20px 2% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* បង្ហាញប៊ូតុង ៣ ខ្សែលើទូរស័ព្ទ */
+    .menu-toggle {
+        display: block !important;
+    }
+
+    /* លាក់ម៉ឺនុយ Desktop ធម្មតា ហើយរៀបចំវាឱ្យទម្លាក់ចុះក្រោមពេលចុចប៊ូតុង ៣ ខ្សែ */
+    .nav-menu {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #161617;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        gap: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        transform: none !important;
+    }
+
+    .nav-menu.active {
+        display: flex !important;
+    }
+
+    .nav-menu > a, .dropbtn {
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #222223;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .dropdown-content a {
+        color: #f5f5f7 !important;
+        padding-left: 20px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #2a2a2b;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-container {
+        grid-template-columns: 1fr !important;
+        padding: 15px !important;
+        gap: 15px !important;
+    }
+
+    .product-card {
+        padding: 14px;
+    }
+
+    .card-img img {
+        height: 160px;
+    }
+}
