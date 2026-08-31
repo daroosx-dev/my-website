@@ -147,15 +147,117 @@
             cursor: pointer;
         }
 
+        /* --- SHOP LAYOUT WRAPPER (Sidebar + Main Content) --- */
+        .shop-layout-wrapper {
+            max-width: 1450px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        /* Sidebar ខាងឆ្វេង (Sticky ជាប់នៅនឹងមួយកន្លែងពេល Scroll) */
+        .shop-sidebar {
+            width: 270px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            position: sticky;
+            top: 80px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            z-index: 99;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-header h3 {
+            font-size: 15px;
+            color: #1e293b;
+            font-weight: 700;
+        }
+
+        .close-sidebar {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .sidebar-category-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            margin: 15px 0 8px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .shop-sidebar .filter-trigger {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #334155;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+        }
+
+        .shop-sidebar .filter-trigger:hover, 
+        .shop-sidebar .filter-trigger.active {
+            background-color: #eff6ff;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* ផ្នែកខាងស្តាំ (Main Content) */
+        .shop-main-content {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        /* ប៊ូតុងបង្ហាញ Menu លើទូរស័ព្ទ */
+        .mobile-filter-toggle {
+            display: none;
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
         /* Search Section */
         .search-section {
             text-align: center;
-            margin: 15px 0 8px 0;
+            margin-bottom: 15px;
         }
         .search-box input {
             padding: 10px 20px;
             width: 100%;
-            max-width: 500px;
             border: 1px solid #ddd;
             border-radius: 30px;
             outline: none;
@@ -165,21 +267,20 @@
 
         /* Section Title Box Style */
         .section-header-container {
-            max-width: 1400px;
-            margin: 2px auto 0px auto;
-            padding: 0 3%;
+            max-width: 100%;
+            margin: 15px 0 5px 0;
         }
 
         .section-title-box {
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 8px;
-            padding: 6px 15px;
+            padding: 8px 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
         .section-title-box h2 {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #1e293b;
             margin: 0;
@@ -192,7 +293,7 @@
             content: "";
             display: inline-block;
             width: 4px;
-            height: 18px;
+            height: 16px;
             background-color: #0071e3;
             border-radius: 2px;
         }
@@ -202,9 +303,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
-            padding: 4px 3% 6px 3%;
-            max-width: 1400px;
-            margin: 0 auto;
+            padding: 8px 0;
             align-items: stretch;
         }
 
@@ -292,7 +391,6 @@
             display: block;
         }
 
-        /* CMYK & Special Color Bars */
         .cmyk-bar {
             display: flex;
             height: 6px;
@@ -338,12 +436,6 @@
             font-weight: 600;
         }
 
-        .card-actions {
-            margin-top: auto;
-            text-align: center;
-            padding-top: 4px;
-        }
-
         .btn-detail {
             display: inline-flex;
             align-items: center;
@@ -365,14 +457,50 @@
             background-color: #1d4ed8;
         }
 
+        /* --- RESPONSIVE FOR MOBILE --- */
         @media (max-width: 1024px) {
             .product-container {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 6px 2%;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
+            .shop-layout-wrapper {
+                flex-direction: column;
+                padding: 0 10px;
+            }
+
+            .mobile-filter-toggle {
+                display: flex;
+            }
+
+            .shop-sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100%;
+                z-index: 9999;
+                background: #ffffff;
+                transition: left 0.3s ease-in-out;
+                box-shadow: 10px 0 25px rgba(0, 0, 0, 0.15);
+                overflow-y: auto;
+                border-radius: 0;
+            }
+
+            .shop-sidebar.active {
+                left: 0;
+            }
+
+            .close-sidebar {
+                display: block;
+            }
+
+            .product-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
             .menu-toggle {
                 display: block;
             }
@@ -396,7 +524,7 @@
                 display: flex;
             }
 
-            .nav-menu > a, .dropbtn, .filter-trigger {
+            .nav-menu > a, .dropbtn {
                 width: 100%;
                 text-align: left;
             }
@@ -412,12 +540,6 @@
             .dropdown-content button {
                 color: #f5f5f7;
                 padding-left: 25px;
-            }
-
-            .product-container {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 6px;
-                gap: 8px;
             }
         }
     </style>
@@ -460,6 +582,7 @@
                         <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba</button>
                         <button class="filter-trigger" data-filter="Epson Firmware">Epson</button>
                         <button class="filter-trigger" data-filter="HP Firmware">HP</button>
+                        <button class="filter-trigger" data-filter="Sharp Firmware">Sharp</button>
                     </div>
                 </div>
 
@@ -468,6 +591,7 @@
                     <div class="dropdown-content">
                         <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
                         <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
+                        <button class="filter-trigger" data-filter="Large Format Printer">Large Format Printer</button>
                     </div>
                 </div>
 
@@ -476,28 +600,71 @@
                     <div class="dropdown-content">
                         <button class="filter-trigger" data-filter="Windows">Windows</button>
                         <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
+                        <button class="filter-trigger" data-filter="Utilities Software">Utilities Software</button>
                     </div>
                 </div>
 
-                <a href="html-page/software.html">software</a>
+                <a href="html-page/software.html">Software</a>
             </div>
         </nav>
     </header>
 
-    <!-- Search Bar Section -->
-    <div class="search-section">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="ស្វែងរក...">
-        </div>
+    <!-- SHOP LAYOUT WRAPPER (Sidebar + Main Content) -->
+    <div class="shop-layout-wrapper">
+        
+        <!-- Sidebar Menu ខាងឆ្វេង (Categories) - បានបញ្ចូលគ្រប់ប្រភេទទាំងអស់នៅទីនេះ -->
+        <aside class="shop-sidebar" id="shopSidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-solid fa-list"></i> Categories</h3>
+                <button class="close-sidebar" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="sidebar-menu-list">
+                <button class="filter-trigger active" data-filter="All">Products (All)</button>
+                
+                <div class="sidebar-category-title">Software Firmware</div>
+                <button class="filter-trigger" data-filter="Canon Firmware">Canon Firmware</button>
+                <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba Firmware</button>
+                <button class="filter-trigger" data-filter="Ricoh Firmware">Ricoh Firmware</button>
+                <button class="filter-trigger" data-filter="HP Firmware">HP Firmware</button>
+                                
+                <div class="sidebar-category-title">Printers</div>
+                <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
+                <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
+                <button class="filter-trigger" data-filter="Large Format Printer">Large Format Printer</button>
+
+                <div class="sidebar-category-title">Printer Parts & Accessories</div>
+                <button class="filter-trigger" data-filter="Printer Parts">Printer Parts</button>
+                <button class="filter-trigger" data-filter="Toner and Ink">Toner & Ink</button>
+
+                <div class="sidebar-category-title">Software License</div>
+                <button class="filter-trigger" data-filter="Windows">Windows</button>
+                <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
+                <button class="filter-trigger" data-filter="Utilities Software">Utilities Software</button>
+            </div>
+        </aside>
+
+        <!-- ផ្ទាំងខាងស្តាំសម្រាប់បង្ហាញ Search Bar និងផលិតផល -->
+        <main class="shop-main-content">
+            <!-- ប៊ូតុងបើក Menu លើទូរស័ព្ទ -->
+            <button class="mobile-filter-toggle" id="mobileFilterToggle">
+                <i class="fa-solid fa-filter"></i> All Products Menu
+            </button>
+
+            <!-- Search Bar -->
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="ស្វែងរកម៉ូឌែលម៉ាស៊ីន ឬ Firmware...">
+                </div>
+            </div>
+
+            <!-- ទីតាំងបង្ហាញបញ្ជីទំនិញ ឬ Sections តាម JS -->
+            <div id="main-content-container">
+                <!-- ផលិតផលនឹងរត់ចូលមកទីនេះដោយស្វ័យប្រវត្តិ -->
+            </div>
+        </main>
     </div>
 
-    <!-- MAIN DYNAMIC SECTIONS CONTAINER -->
-    <main class="container" id="main-content-container">
-        <!-- ពេលចូលដំបូង ឬចុច All វានឹងបង្ហាញជា Sections តាម Brand នីមួយៗ (Canon, Epson, HP...) ដោយស្វ័យប្រវត្តិ -->
-        <!-- ពេលចុច Filter ផ្សេងៗ វានឹងបង្ហាញក្នុង Grid តែមួយទូលំទូលាយ -->
-    </main>
-
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript for Mobile Menu & Sidebar Toggle -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
@@ -505,6 +672,28 @@
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
+
+        const mobileFilterToggle = document.getElementById('mobileFilterToggle');
+        const shopSidebar = document.getElementById('shopSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+
+        if (mobileFilterToggle && shopSidebar) {
+            mobileFilterToggle.addEventListener('click', () => {
+                shopSidebar.classList.add('active');
+            });
+
+            if (closeSidebar) {
+                closeSidebar.addEventListener('click', () => {
+                    shopSidebar.classList.remove('active');
+                });
+            }
+
+            document.addEventListener('click', (e) => {
+                if (!shopSidebar.contains(e.target) && !mobileFilterToggle.contains(e.target)) {
+                    shopSidebar.classList.remove('active');
+                }
+            });
+        }
     </script>
 
     <!-- Connect External JavaScript -->
