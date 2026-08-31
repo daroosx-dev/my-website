@@ -133,7 +133,7 @@ function renderHomeSections(products) {
     const targetSections = [
         { title: 'Software Firmware Canon', filterKey: 'category', filterValue: 'Firmware' },
         { title: 'Epson Printer', filterKey: 'brand', filterValue: 'Epson' },
-        { title: 'Hp Printer', filterKey: 'brand', filterValue: 'Hp' }
+        { title: 'Hp Printer', filterKey: 'brand', filterValue: '' }
     ];
 
     targetSections.forEach(section => {
