@@ -37,7 +37,7 @@ function createProductCardHTML(product) {
             </div>
         `;
     } else if (product.color_bar_type === '12-color') {
-        // ១២ ពណ៌សម្រាប់ម៉ាស៊ីន პლោតទ័រ អាជីព
+        // ១២ ពណ៌សម្រាប់ម៉ាស៊ីន ផ្លូតទ័រ អាជីព
         colorBarHTML = `
             <div class="cmyk-bar">
                 <span style="background: #000000;"></span>
@@ -122,28 +122,35 @@ function createProductCardHTML(product) {
     `;
 }
 
-// មុខងារបង្ហាញទំនិញបែងចែកជា Section តាម Brand (អាចប្ដូរយក 3 ឬ 4 Brand តាមចិត្តចង់)
+// មុខងារបង្ហាញទំនិញបែងចែកជា Section តាមប្រភេទ និង Brand យ៉ាងសំបូរបែប
 function renderHomeSections(products) {
     const mainContainer = document.getElementById('main-content-container');
     if (!mainContainer) return;
 
     mainContainer.innerHTML = '';
 
-    // បងអាចកែបន្ថែម ឬកាត់បន្ថយឈ្មោះ Brand ក្នុងរង្វង់ក្រចកទතුទាំងនេះបាន (ចង់ដាក់ 3 ឬ 4 ម៉ាកតាមចិត្ត)
-    const targetBrands = ['Canon', 'Epson',]; 
+    // បងអាចកែបន្ថែម កាត់បន្ថយ ឬប្ដូរឈ្មោះ Section ទាំងនេះបានតាមចិត្តចង់!
+    const targetSections = [
+        { title: 'Software Firmware Canon', filterKey: 'category', filterValue: 'Firmware' },
+        { title: 'Epson', filterKey: 'brand', filterValue: 'Epson' }
+    ];
 
-    targetBrands.forEach(brand => {
-        const brandProducts = products.filter(p => p.brand && p.brand.toLowerCase() === brand.toLowerCase()).slice(0, 8);
+    targetSections.forEach(section => {
+        const matchedProducts = products.filter(p => {
+            if (!p) return false;
+            const val = p[section.filterKey] ? String(p[section.filterKey]).toLowerCase() : '';
+            return val.includes(section.filterValue.toLowerCase());
+        }).slice(0, 8); // កំណត់បង្ហាញត្រឹម 8 ផលិតផលក្នុងមួយ Section
         
-        if (brandProducts.length > 0) {
+        if (matchedProducts.length > 0) {
             const sectionHTML = `
                 <div class="section-header-container">
                     <div class="section-title-box">
-                        <h2>${brand} Products</h2>
+                        <h2>${section.title}</h2>
                     </div>
                 </div>
-                <div class="product-container" id="grid-${brand.toLowerCase().replace(/\s+/g, '-')}" style="margin-bottom: 20px;">
-                    ${brandProducts.map(product => createProductCardHTML(product)).join('')}
+                <div class="product-container" id="grid-${section.title.toLowerCase().replace(/\s+/g, '-')}" style="margin-bottom: 20px;">
+                    ${matchedProducts.map(product => createProductCardHTML(product)).join('')}
                 </div>
             `;
             mainContainer.insertAdjacentHTML('beforeend', sectionHTML);
@@ -154,7 +161,7 @@ function renderHomeSections(products) {
     setTimeout(forceBoldSpecs, 10);
 }
 
-// មុខងារបង្ហាញទំនិញក្នុង Grid តែមួយ (ពេលអ្នកប្រើប្រាស់ធ្វើการ Search ឬ Filter រកម៉ាកជាក់លាក់ណាមួយ)
+// មុខងារបង្ហាញទំនិញក្នុង Grid តែមួយ (ពេលអ្នកប្រើប្រាស់ធ្វើการ Search ឬ Filter រកម៉ាក ឬប្រភេទជាក់លាក់ណាមួយ)
 function renderFilteredGrid(products, title = "Search Results") {
     const mainContainer = document.getElementById('main-content-container');
     if (!mainContainer) return;
