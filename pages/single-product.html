@@ -8,11 +8,29 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Link CSS (ថយក្រោយមួយថតដើម្បីហៅ style.css) -->
+    <!-- Link CSS -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="single-product.css">
 
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Leelawadee UI', 'Khmer OS Siemreap', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f5f6f8;
+            color: #333333;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar Header (លុបចោល ឬលាក់ទុក) */
+        .top-bar {
+            display: none;
+        }
+
         /* Apple Header & Navigation Styles */
         .apple-header {
             background-color: #161617;
@@ -161,18 +179,8 @@
 </head>
 <body>
 
-    <!-- Top Bar Header -->
-    <div class="top-bar">
-        <div class="top-info">
-            <span><i class="fa-solid fa-headset"></i> Phone: 010 266 767 | 097 876 5494</span>
-        </div>
-        <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-        </div>
-    </div>
+    <!-- Top Bar Header (លុបចោលទាំងស្រុង) -->
+    <div class="top-bar"></div>
 
     <!-- Main Navigation Header -->
     <header class="apple-header">

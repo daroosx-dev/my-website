@@ -27,24 +27,15 @@
             overflow-x: hidden;
         }
 
-        /* Top Bar Header */
+        /* Top Bar Header (លុបចោល ឬលាក់ទុក) */
         .top-bar {
             background-color: #222;
             color: #fff;
             padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
+            display: none; /* លាក់ Top Bar ចោលទាំងស្រុង */
+            justify-content: flex-end;
             align-items: center;
             font-size: 13px;
-        }
-        .social-icons a {
-            color: #fff;
-            margin-left: 15px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .social-icons a:hover {
-            color: #0071e3;
         }
 
         /* Apple Header & Navigation */
@@ -357,18 +348,8 @@
 </head>
 <body>
 
-    <!-- Top Bar Header -->
-    <div class="top-bar">
-        <div class="top-info">
-            <span><i class="fa-solid fa-headset"></i> Phone: 010 266 767 | 097 876 5494</span>
-        </div>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-telegram"></i></a>
-        </div>
-    </div>
+    <!-- Top Bar Header (លុបចោលទាំងស្រុង) -->
+    <div class="top-bar"></div>
 
     <!-- Main Navigation Header -->
     <header class="apple-header">
@@ -515,7 +496,6 @@
 
             let filtered = [];
             if (type === 'Driver') {
-                // Displays Printer, Copier, or Label Printer
                 filtered = allSoftwareData.filter(item => {
                     let cat = (item.category || '').toLowerCase();
                     let name = (item.name || '').toLowerCase();
@@ -523,7 +503,6 @@
                            name.includes('printer') || name.includes('copier') || name.includes('label');
                 });
             } else if (type === 'Computer') {
-                // Displays Windows or Mac
                 filtered = allSoftwareData.filter(item => {
                     let cat = (item.category || '').toLowerCase();
                     let name = (item.name || '').toLowerCase();
@@ -541,7 +520,6 @@
                 if (!response.ok) throw new Error('Cannot load software.json');
                 allSoftwareData = await response.json();
 
-                // Default display 'Driver' tab on load
                 let initialFiltered = allSoftwareData.filter(item => {
                     let cat = (item.category || '').toLowerCase();
                     let name = (item.name || '').toLowerCase();

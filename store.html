@@ -29,14 +29,9 @@
             color: #fff;
             padding: 8px 5%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             font-size: 13px;
-        }
-        .social-icons a {
-            color: #fff;
-            margin-left: 15px;
-            text-decoration: none;
         }
 
         /* Apple Header & Navigation */
@@ -546,18 +541,9 @@
 </head>
 <body>
 
-    <!-- Top Bar Header -->
-    <div class="top-bar">
-        <div class="top-info">
-            <span><i class="fa-solid fa-headset"></i> Phone: 010 266 767 | 097 876 5494</span>
-        </div>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://t.me/Mac_error404"><i class="fa-brands fa-telegram"></i></a>
-        </div>
-    </div>
+    <!-- Top Bar Header (លុបទាំងលេខទូរស័ព្ទ និង Social Icons ចេញរួចរាល់) -->
+    <!-- ប្រសិនបើមិនចង់ឱ្យមានបន្ទាត់ខ្មៅខាងលើនេះទាល់តែសោះ បងអាចលុប tag <div class="top-bar">...</div> នេះចេញបាន -->
+    <div class="top-bar" style="display: none;"></div>
 
     <!-- Main Navigation Header -->
     <header class="apple-header">
@@ -612,7 +598,7 @@
     <!-- SHOP LAYOUT WRAPPER (Sidebar + Main Content) -->
     <div class="shop-layout-wrapper">
         
-        <!-- Sidebar Menu ខាងឆ្វេង (Categories) - បានបញ្ចូលគ្រប់ប្រភេទទាំងអស់នៅទីនេះ -->
+        <!-- Sidebar Menu ខាងឆ្វេង (Categories) -->
         <aside class="shop-sidebar" id="shopSidebar">
             <div class="sidebar-header">
                 <h3><i class="fa-solid fa-list"></i> Categories</h3>
@@ -626,7 +612,7 @@
                 <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba Firmware</button>
                 <button class="filter-trigger" data-filter="Ricoh Firmware">Ricoh Firmware</button>
                 <button class="filter-trigger" data-filter="HP Firmware">HP Firmware</button>
-                                
+                            
                 <div class="sidebar-category-title">Printers</div>
                 <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
                 <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
