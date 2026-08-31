@@ -132,7 +132,8 @@ function renderHomeSections(products) {
     // បងអាចកែបន្ថែម កាត់បន្ថយ ឬប្ដូរឈ្មោះ Section ទាំងនេះបានតាមចិត្តចង់!
     const targetSections = [
         { title: 'Software Firmware Canon', filterKey: 'category', filterValue: 'Firmware' },
-        { title: 'Epson', filterKey: 'brand', filterValue: 'Epson' }
+        { title: 'Epson Printer', filterKey: 'brand', filterValue: 'Epson' },
+        { title: 'Hp Printer', filterKey: 'brand', filterValue: 'Hp' }
     ];
 
     targetSections.forEach(section => {
