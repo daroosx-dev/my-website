@@ -90,10 +90,11 @@
     "brand": "HP",
     "category": "Laser printer",
     "subtitle": "A4 Color Wireless All-in-One Laser Printer",
-    "price": "450$",
+    "price": "Contact$",
     "images": [
-      "images/hp-m283fdw-1.png",
-      "images/hp-m283fdw-2.png"
+      "images/laser printer/hp/m283/m283-1.webp",
+      "images/laser printer/hp/m283/m283-2.webp",
+      "images/laser printer/hp/m283/m283-3.webp"
     ],
     "tags": [
       "Wireless & Mobile Printing",
@@ -136,15 +137,15 @@
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A4 All-in-One Ink Tank Printer with EcoTank System",
-    "price": "165$",
+    "price": "Contact",
     "images": [
-      "images/epson-l3210-1.png",
-      "images/epson-l3210-2.png"
+      "images/ink printer/epson/l3210/l3210-1.png",
+      "images/ink printer/epson/l3210/l3210-2.png"
     ],
     "tags": [
       "High Yield Ink Bottles",
       "Borderless Printing up to 4R",
-      "Compact Integrated Tank Design"
+      "USB2.0"
     ],
     "description": "Epson L3210 all-in-one ink tank printer delivers high-yield printing, low printing costs, and convenient multi-functions (Print, Scan, Copy) for home and office use.",
     "machine_type": "A4 All-in-One Ink Tank Printer",
@@ -177,10 +178,10 @@
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A4 Wi-Fi All-in-One Ink Tank Printer with Wireless Printing",
-    "price": "185$",
+    "price": "Contact",
     "images": [
-      "images/epson-l3250-1.png",
-      "images/epson-l3250-2.png"
+      "images/ink printer/epson/l3250/l3250-1.png",
+      "images/ink printer/epson/l3250/l3250-2.png"
     ],
     "tags": [
       "Wireless & Wi-Fi Direct Printing",
@@ -218,10 +219,9 @@
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A3+ 6-Color Photo Printer with Wi-Fi & EcoTank System",
-    "price": "650$",
+    "price": "Contact",
     "images": [
-      "images/epson-l18050-1.png",
-      "images/epson-l18050-2.png"
+      "images/ink printer/epson/l18050/l18050-1.png"  
     ],
     "tags": [
       "6-Color Dye-Based Inks",
@@ -260,22 +260,23 @@
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A4 6-Color Photo Printer with Wi-Fi & EcoTank System",
-    "price": "450$",
+    "price": "Contact",
     "images": [
-      "images/epson-l8050-1.png",
-      "images/epson-l8050-2.png"
+      "images/ink printer/epson/l8050/l8050-1.jpg",
+      "images/ink printer/epson/l8050/l8050-2.jpg",
+      "images/ink printer/epson/l8050/l8050-3.jpg"
     ],
     "tags": [
       "6-Color Dye-Based Inks",
       "A4 Borderless Photo Printing",
       "Direct Printing on CDs, DVDs & PVC Cards",
-      "USB 2.0, Ethernet"
+      "✓ Wireless & Wi-Fi Direct"
     ],
     "description": "Epson EcoTank L8050 A4 photo printer provides exceptional, vibrant photo printing at an ultra-low cost, featuring a 6-color ink system and convenient connectivity for studios and photographers.",
     "machine_type": "A4 6-Color Ink Tank Photo Printer",
     "functions": "Print, USB 2.0, Ethernet, CD/DVD/PVC Card Printing",
     "copier_type": "Ink Tank System (6-Color)",
-    "color_bar_type": "cmyk",
+    "color_bar_type": "cmyklmlc",
     "specs": [
       {
         "category": "GENERAL SPECIFICATIONS",
@@ -302,10 +303,12 @@
     "brand": "Epson",
     "category": "printer",
     "subtitle": "8-Inch Industrial Color Inkjet Label Printer with Auto-Cutter",
-    "price": "3,250$",
+    "price": "Contact",
     "images": [
-      "images/epson-cw6530a-1.png",
-      "images/epson-cw6530a-2.png"
+      "images/ink printer/epson/cw-c6530a/c6530a-1.png",
+      "images/ink printer/epson/cw-c6530a/c6530a-2.png",
+      "images/ink printer/epson/cw-c6530a/c6830a-4.jpg",
+      "images/ink printer/epson/cw-c6530a/CW-C6530A-01.jpg"
     ],
     "tags": [
       "4-Color Pigment Inks",
@@ -344,10 +347,10 @@
     "brand": "HP",
     "category": "printer",
     "subtitle": "A4 Monochrome Wireless Laser Printer with Duplex",
-    "price": "280$",
+    "price": "Contact $",
     "images": [
-      "images/hp-4003dw-1.png",
-      "images/hp-4003dw-2.png"
+      "images/laser printer/hp/4003/4003-1.png",
+      "images/laser printer/hp/4003/4003-2.png"
     ],
     "tags": [
       "Wireless & Wi-Fi Direct Printing",
@@ -464,11 +467,13 @@
     "brand": "Epson",
     "category": "printer",
     "subtitle": "A4 Print, Scan, Copy, Fax with ADF & Wi-Fi Direct",
-    "price": "420$",
+    "price": "Contact - $",
     "images": [
-      "images/epson-l6390-1.png",
-      "images/epson-l6390-2.png"
-    ],
+      "images/ink printer/epson/l6390/l6390-1.jpg",
+      "images/ink printer/epson/l6390/l6390-2.png",
+      "images/ink printer/epson/l6390/l6390-3.jpg",
+      "images/ink printer/epson/l6390/l6390-4.jpg"
+          ],
     "tags": [
       "Print, Scan, Copy, Fax with ADF",
       "Automatic Two-Sided Printing",
