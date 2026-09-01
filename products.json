@@ -49,7 +49,7 @@
     "brand": "Canon",
     "category": "Software Firmware",
     "subtitle": "A3 Color Digital Multifunction Copier",
-    "price": "0$",
+    "price": "Firmware only",
     "images": [
       "images/canon-c3530i-iii-1.png",
       "images/canon-c3530i-iii-2.png"
@@ -389,7 +389,7 @@
     "brand": "Canon",
     "category": "Software Firmware",
     "subtitle": "A3 Black and White Copier - Software & Firmware",
-    "price": "0.00$",
+    "price": "Firmware only",
     "images": [
       "images/software-firmware/canon/5050/canon-5050-1.png",
       "images/software-firmware/canon/5050/canon-5050-2.png"
@@ -428,7 +428,7 @@
     "brand": "Canon",
     "category": "Software Firmware",
     "subtitle": "A3 Black and White Copier - Software & Firmware",
-    "price": "0.00$",
+    "price": "Firmware only",
     "images": [
       "images/software-firmware/canon/ir-adv-4242-1.png",
       "images/software-firmware/canon/ir-adv-4242-2.png"
