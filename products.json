@@ -469,11 +469,9 @@
     "subtitle": "A4 Print, Scan, Copy, Fax with ADF & Wi-Fi Direct",
     "price": "Contact - $",
     "images": [
-      "images/ink printer/epson/l6390/l6390-1.jpg",
-      "images/ink printer/epson/l6390/l6390-2.png",
-      "images/ink printer/epson/l6390/l6390-3.jpg",
-      "images/ink printer/epson/l6390/l6390-4.jpg"
-          ],
+      "images/ink printer/epson/l6390/l6390-1.webp",
+      "images/ink printer/epson/l6390/l6390-2.webp"
+    ],
     "tags": [
       "Print, Scan, Copy, Fax with ADF",
       "Automatic Two-Sided Printing",
