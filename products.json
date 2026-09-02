@@ -499,5 +499,45 @@
         ]
       }
     ]
+  }ុ,{
+    "id": "canon_dx_c3730",
+    "name": "Canon imageRUNNER ADVANCE DX C3730",
+    "custom_title": "Canon imageRUNNER ADVANCE DX C3730",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Color Smart Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Canon/dx3730/canon-dx-c3730-1.png",
+      "images/software-firmware/Canon/dx3730/canon-dx-c3730-2.png"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE DX C3730 offers smart and secure integration, high-speed scanning, and reliable color output designed for modern digital office environments.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Send, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "30 Pages Per Minute" },
+          { "label": "Speed Color", "val": "30 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 100 Sheet Stack Bypass" },
+          { "label": "Max Monthly Volume", "val": "80,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "36,000 Impressions" },
+          { "label": "Toner Impressions Color", "val": "19,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
   }
 ]
