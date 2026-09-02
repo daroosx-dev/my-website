@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "canon_c7580i_iii",
     "name": "Canon imageRUNNER ADVANCE C7580i III",
     "custom_title": "Canon imageRUNNER ADVANCE C7580i III",
     "custom_link": "https://t.me/your_telegram_username",
@@ -28,7 +28,7 @@
         "rows": [
           { "label": "Speed B/W", "val": "80 Pages Per Minute" },
           { "label": "Speed Color", "val": "70 Pages Per Minute" },
-          { "label": "Resolution", "val": "2400 x 2400 dpi" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
           { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 1100 Sheet Drawers" },
           { "label": "Max Monthly Volume", "val": "800,000 Impressions" },
           { "label": "Toner Impressions B/W", "val": "82,000 Impressions" },
@@ -50,7 +50,7 @@
     "subtitle": "A3 Color Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
-      "images/software-firmware/Canon/ir3530i/canon-c3530i-iii-.png",
+      "images/software-firmware/Canon/ir3530i/canon-c3530i-iii-1.png",
       "images/software-firmware/Canon/ir3530i/canon-c3530i-iii-2.png"
     ],
     "tags": [
@@ -82,7 +82,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": "hp_m283fdw",
     "name": "HP Color LaserJet Pro MFP M283fdw",
     "custom_title": "HP Color LaserJet Pro MFP M283fdw",
     "custom_link": "https://t.me/your_telegram_username",
@@ -123,13 +123,13 @@
           { "label": "Color Capability", "val": "4-Color Laser Toner (CMYK)" },
           { "label": "Ink Code", "val": "HP 206A / 206X Toner Cartridges (Black, Cyan, Magenta, Yellow)" },
           { "label": "Properties", "val": "Print, Scan, Copy, Fax" },
-          { "label": "EcoTank", "val": "Laser Toner System (Recommended monthly volume: 150 to 2,500 pages)" }
+          { "label": "Duty Cycle", "val": "Laser Toner System (Recommended monthly volume: 150 to 2,500 pages)" }
         ]
       }
     ]
   },
   {
-    "id": "3",
+    "id": "epson_l3210",
     "name": "Epson EcoTank L3210 All-in-One Ink Tank Printer",
     "custom_title": "Epson EcoTank L3210 All-in-One Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
@@ -170,7 +170,7 @@
     ]
   },
   {
-    "id": "4",
+    "id": "epson_l3250",
     "name": "Epson EcoTank L3250 Wi-Fi All-in-One Ink Tank Printer",
     "custom_title": "Epson EcoTank L3250 Wi-Fi All-in-One Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
@@ -211,7 +211,7 @@
     ]
   },
   {
-    "id": "5",
+    "id": "epson_l18050",
     "name": "Epson EcoTank Photo L18050 A3+ Wi-Fi Ink Tank Printer",
     "custom_title": "Epson EcoTank Photo L18050 A3+ Wi-Fi Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
@@ -220,7 +220,7 @@
     "subtitle": "A3+ 6-Color Photo Printer with Wi-Fi & EcoTank System",
     "price": "Contact",
     "images": [
-      "images/ink printer/epson/l18050/l18050-1.png"  
+      "images/ink printer/epson/l18050/l18050-1.png"
     ],
     "tags": [
       "6-Color Dye-Based Inks",
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "id": "6",
+    "id": "epson_l8050",
     "name": "Epson EcoTank Photo L8050 A4 Wi-Fi Ink Tank Printer",
     "custom_title": "Epson EcoTank Photo L8050 A4 Wi-Fi Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
@@ -269,7 +269,7 @@
       "6-Color Dye-Based Inks",
       "A4 Borderless Photo Printing",
       "Direct Printing on CDs, DVDs & PVC Cards",
-      "✓ Wireless & Wi-Fi Direct"
+      "Wireless & Wi-Fi Direct"
     ],
     "description": "Epson EcoTank L8050 A4 photo printer provides exceptional, vibrant photo printing at an ultra-low cost, featuring a 6-color ink system and convenient connectivity for studios and photographers.",
     "machine_type": "A4 6-Color Ink Tank Photo Printer",
@@ -295,7 +295,7 @@
     ]
   },
   {
-    "id": "7",
+    "id": "epson_cw_c6530a",
     "name": "Epson ColorWorks CW-C6530A Industrial Label Printer",
     "custom_title": "Epson ColorWorks CW-C6530A Industrial Label Printer",
     "custom_link": "https://t.me/your_telegram_username",
@@ -339,7 +339,7 @@
     ]
   },
   {
-    "id": "8",
+    "id": "hp_4003dw",
     "name": "HP LaserJet Pro 4003dw Wireless Printer",
     "custom_title": "HP LaserJet Pro 4003dw Wireless Printer",
     "custom_link": "https://t.me/your_telegram_username",
@@ -459,7 +459,7 @@
     ]
   },
   {
-    "id": "epson_l6390_01",
+    "id": "epson_l6390",
     "name": "Epson EcoTank L6390 Wi-Fi All-in-One Ink Tank Printer",
     "custom_title": "Epson EcoTank L6390 Wi-Fi All-in-One Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
