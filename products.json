@@ -499,7 +499,8 @@
         ]
       }
     ]
-  }ុ,{
+  },
+  {
     "id": "canon_dx_c3730",
     "name": "Canon imageRUNNER ADVANCE DX C3730",
     "custom_title": "Canon imageRUNNER ADVANCE DX C3730",
@@ -539,5 +540,904 @@
         ]
       }
     ]
+  },{
+    "id": "canon_dx_c3935",
+    "name": "Canon imageRUNNER ADVANCE DX C3935",
+    "custom_title": "Canon imageRUNNER ADVANCE DX C3935",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Color Smart Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Canon/dx3935/canon-dx-c3935-1.png",
+      "images/software-firmware/Canon/dx3935/canon-dx-c3935-2.png"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE DX C3935 delivers advanced color productivity, high-speed secure scanning, and intelligent cloud integration for modern high-demand office workflows.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Send, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "35 Pages Per Minute" },
+          { "label": "Speed Color", "val": "35 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 100 Sheet Stack Bypass" },
+          { "label": "Max Monthly Volume", "val": "90,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "38,000 Impressions" },
+          { "label": "Toner Impressions Color", "val": "23,500 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "canon_ir_adv_6055",
+    "name": "Canon imageRUNNER ADVANCE 6055",
+    "custom_title": "Canon imageRUNNER ADVANCE 6055",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White High-Volume Digital Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Canon/6055/canon-ir6055-1.webp",
+      "images/software-firmware/Canon/6055/canon-ir6055-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE 6055 is a high-performance black and white digital multifunction system designed for demanding corporate offices and print-for-pay environments.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Send, Fax (Optional)",
+    "copier_type": "High-Volume Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "55 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 1,500 Sheet Drawers" },
+          { "label": "Max Monthly Volume", "val": "300,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "56,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "canon_ir_adv_4545",
+    "name": "Canon imageRUNNER ADVANCE 4545",
+    "custom_title": "Canon imageRUNNER ADVANCE 4545",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Canon/4545/canon-4545-1.webp",
+      "images/software-firmware/Canon/4545/canon-4545-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE 4545 delivers efficient monochrome performance, streamlined workflows, and powerful device management capabilities tailored for modern office productivity.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Send, Fax (Optional)",
+    "copier_type": "Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "45 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Paper Drawers / 80 Sheet Stack Bypass" },
+          { "label": "Max Monthly Volume", "val": "175,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "42,100 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "canon_dx_c5560i",
+    "name": "Canon imageRUNNER ADVANCE C5560i",
+    "custom_title": "Canon imageRUNNER ADVANCE C5560i",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Color Smart Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Canon/c5560i/canon-c5560i-1.webp",
+      "images/software-firmware/Canon/c5560i/canon-c5560i-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE C5560i delivers exceptional high-speed color output, advanced security features, and seamless workflow integration for high-volume office environments.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Send, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "60 Pages Per Minute" },
+          { "label": "Speed Color", "val": "55 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 2,100 Sheet Drawers" },
+          { "label": "Max Monthly Volume", "val": "120,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "69,000 Impressions" },
+          { "label": "Toner Impressions Color", "val": "60,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "canon_ir_adv_4751",
+    "name": "Canon imageRUNNER ADVANCE 4751",
+    "custom_title": "Canon imageRUNNER ADVANCE 4751",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White Smart Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Canon/4751/canon-4751-1.webp",
+      "images/software-firmware/Canon/4751/canon-4751-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE 4751 is designed to deliver efficient black-and-white productivity, advanced security, and streamlined cloud-based workflows for high-volume office environments.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Print, Copy, Scan, Send, Fax (Optional)",
+    "copier_type": "Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "51 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 1,500 Sheet Drawers" },
+          { "label": "Max Monthly Volume", "val": "200,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "41,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "canon_ir_adv_4025",
+    "name": "Canon imageRUNNER ADVANCE 4025",
+    "custom_title": "Canon imageRUNNER ADVANCE 4025",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Canon/4025/canon-4025-1.webp",
+      "images/software-firmware/Canon/4025/canon-4025-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE 4025 provides reliable black-and-white performance, intuitive operation, and robust device management tailored for efficient general office workflows.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Send, Fax (Optional)",
+    "copier_type": "Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "25 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Paper Drawers / 80 Sheet Stack Bypass" },
+          { "label": "Max Monthly Volume", "val": "100,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "30,200 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "canon_ir_adv_6255",
+    "name": "Canon imageRUNNER ADVANCE 6255",
+    "custom_title": "Canon imageRUNNER ADVANCE 6255",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Canon",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White High-Volume Digital Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Canon/6255/canon-ir6255-1.webp",
+      "images/software-firmware/Canon/6255/canon-ir6255-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Canon imageRUNNER ADVANCE 6255 delivers exceptional high-speed monochrome performance, advanced document collaboration, and heavy-duty reliability for busy enterprise office environments.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Send, Fax (Optional)",
+    "copier_type": "High-Volume Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "55 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 1,500 Sheet Drawers" },
+          { "label": "Max Monthly Volume", "val": "300,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "56,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_556_856",
+    "name": "Toshiba e-STUDIO 556 / 856",
+    "custom_title": "Toshiba e-STUDIO 556 / 856",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White High-Volume Digital Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/556-856/toshiba-556-1.webp",
+      "images/software-firmware/Toshiba/556-856/toshiba-556-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 556 and 856 are high-speed monochrome multifunction systems engineered for heavy-duty corporate workloads, advanced security, and reliable document management.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Fax (Optional)",
+    "copier_type": "High-Volume Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "55 / 85 Pages Per Minute" },
+          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
+          { "label": "Max Monthly Volume", "val": "Up to 600,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "36,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_557_857",
+    "name": "Toshiba e-STUDIO 557 / 857",
+    "custom_title": "Toshiba e-STUDIO 557 / 857",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White High-Volume Digital Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/557-857/toshiba-557-1.webp",
+      "images/software-firmware/Toshiba/557-857/toshiba-557-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 557 and 857 deliver powerful performance, advanced security features, and exceptional high-speed monochrome output designed for high-demand enterprise environments.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Fax (Optional)",
+    "copier_type": "High-Volume Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "55 / 85 Pages Per Minute" },
+          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
+          { "label": "Max Monthly Volume", "val": "Up to 600,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "36,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_5506ac_7506ac",
+    "name": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
+    "custom_title": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-1.webp",
+      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 5506AC, 6506AC, and 7506AC series deliver high-speed, vibrant color output, advanced document workflows, and heavy-duty reliability designed for corporate workgroups.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "55 / 65 / 75 Pages Per Minute" },
+          { "label": "Speed Color", "val": "55 / 65 / 70 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
+          { "label": "Max Monthly Volume", "val": "Up to 300,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "39,000 Impressions" },
+          { "label": "Toner Impressions Color", "val": "33,600 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_5506ac_7506ac",
+    "name": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
+    "custom_title": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-1.webp",
+      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 5506AC, 6506AC, and 7506AC series deliver high-speed, vibrant color output, advanced document workflows, and heavy-duty reliability designed for corporate workgroups.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "65 / 75 / 85 Pages Per Minute" },
+          { "label": "Speed Color", "val": "55 / 65 / 75 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
+          { "label": "Max Monthly Volume", "val": "Up to 600,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
+          { "label": "Toner Impressions Color", "val": "39,200 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_5518a_8518a",
+    "name": "Toshiba e-STUDIO 5518A / 6518A / 7518A / 8518A",
+    "custom_title": "Toshiba e-STUDIO 5518A / 6518A / 7518A / 8518A",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White High-Volume Digital Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/5518a-8518a/toshiba-5518a-1.webp",
+      "images/software-firmware/Toshiba/5518a-8518a/toshiba-5518a-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 5518A, 6518A, 7518A, and 8518A series deliver ultra-high-speed monochrome performance, advanced e-BRIDGE Next technology, and heavy-duty reliability for large corporate workgroups.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Fax (Optional)",
+    "copier_type": "High-Volume Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "55 / 65 / 75 / 85 Pages Per Minute" },
+          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder (Up to 6,020 Sheets)" },
+          { "label": "Max Monthly Volume", "val": "Up to 720,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_2018a_5018a",
+    "name": "Toshiba e-STUDIO 2018A / 2518A / 3018A / 3518A / 4518A / 5018A",
+    "custom_title": "Toshiba e-STUDIO 2018A - 5018A",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White Smart Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/2018a-5018a/toshiba-5018a-1.webp",
+      "images/software-firmware/Toshiba/2018a-5018a/toshiba-5018a-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 2018A to 5018A series brings enhanced reliability, advanced security, and seamless cloud connectivity, engineered to streamline mid-to-large office document workflows.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Fax (Optional)",
+    "copier_type": "Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "20 / 25 / 30 / 35 / 45 / 50 Pages Per Minute" },
+          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
+          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 3,200 Sheets max)" },
+          { "label": "Max Monthly Volume", "val": "Up to 150,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "43,900 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_2505ac_5005ac",
+    "name": "Toshiba e-STUDIO 2505AC / 3005AC / 3505AC / 4505AC / 5005AC",
+    "custom_title": "Toshiba e-STUDIO 2505AC - 5005AC",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 Color Smart Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/2505ac-5005ac/toshiba-5005ac-1.webp",
+      "images/software-firmware/Toshiba/2505ac-5005ac/toshiba-5005ac-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 2505AC to 5005AC series provides vibrant, high-quality color output, advanced e-BRIDGE Next technology, and intuitive tablet-style operation for modern office environments.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "25 / 30 / 35 / 45 / 50 Pages Per Minute" },
+          { "label": "Speed Color", "val": "25 / 30 / 35 / 45 / 50 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 3,200 Sheets max)" },
+          { "label": "Max Monthly Volume", "val": "Up to 210,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "38,400 Impressions" },
+          { "label": "Toner Impressions Color", "val": "33,600 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_5506ac",
+    "name": "Toshiba e-STUDIO 5506AC",
+    "custom_title": "Toshiba e-STUDIO 5506AC",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-1.webp",
+      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 5506AC delivers high-speed, vibrant color output, advanced document workflows, and heavy-duty reliability designed for corporate workgroups.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "65 Pages Per Minute" },
+          { "label": "Speed Color", "val": "55 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
+          { "label": "Max Monthly Volume", "val": "Up to 300,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
+          { "label": "Toner Impressions Color", "val": "39,200 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_5508a_8508a",
+    "name": "Toshiba e-STUDIO 5508A / 6508A / 7508A / 8508A",
+    "custom_title": "Toshiba e-STUDIO 5508A - 8508A",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White High-Volume Digital Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/5508a-8508a/toshiba-5508a-1.webp",
+      "images/software-firmware/Toshiba/5508a-8508a/toshiba-5508a-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 5508A, 6508A, 7508A, and 8508A series deliver high-speed monochrome performance, e-BRIDGE Next technology, and heavy-duty durability built for demanding enterprise environments.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Copy, Print, Scan, Fax (Optional)",
+    "copier_type": "High-Volume Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "55 / 65 / 75 / 85 Pages Per Minute" },
+          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder (Up to 6,020 Sheets)" },
+          { "label": "Max Monthly Volume", "val": "Up to 720,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_7506ac",
+    "name": "Toshiba e-STUDIO 7506AC",
+    "custom_title": "Toshiba e-STUDIO 7506AC",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/7506ac/toshiba-7506ac-1.webp",
+      "images/software-firmware/Toshiba/7506ac/toshiba-7506ac-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 7506AC delivers ultra-high-speed color output, advanced document workflows, and heavy-duty enterprise reliability designed for high-volume corporate environments.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "85 Pages Per Minute" },
+          { "label": "Speed Color", "val": "75 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
+          { "label": "Max Monthly Volume", "val": "Up to 350,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
+          { "label": "Toner Impressions Color", "val": "39,200 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "ricoh_mp_c3003",
+    "name": "Ricoh MP C3003",
+    "custom_title": "Ricoh MP C3003",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Ricoh",
+    "category": "Software Firmware",
+    "subtitle": "A3 Color Smart Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Ricoh/mp-c3003/ricoh-mpc3003-1.webp",
+      "images/software-firmware/Ricoh/mp-c3003/ricoh-mpc3003-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Ricoh MP C3003 delivers high-quality color output, intuitive operation, and advanced workflow capabilities designed to boost productivity in mid-sized office environments.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "30 Pages Per Minute" },
+          { "label": "Speed Color", "val": "30 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 4,700 Sheets max)" },
+          { "label": "Max Monthly Volume", "val": "Up to 40,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "29,500 Impressions" },
+          { "label": "Toner Impressions Color", "val": "18,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "ricoh_mp_c2003sp_2503sp",
+    "name": "Ricoh MP C2003SP / MP C2503SP",
+    "custom_title": "Ricoh MP C2003SP / MP C2503SP",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Ricoh",
+    "category": "Software Firmware",
+    "subtitle": "A3 Color Smart Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Ricoh/mp-c2003sp-2503sp/ricoh-mpc2003sp-1.webp",
+      "images/software-firmware/Ricoh/mp-c2003sp-2503sp/ricoh-mpc2003sp-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Ricoh MP C2003SP and MP C2503SP deliver efficient color and black-and-white output, intuitive touchscreen control, and compact design tailored for small-to-medium office workgroups.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "20 / 25 Pages Per Minute" },
+          { "label": "Speed Color", "val": "20 / 25 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 2,300 Sheets max)" },
+          { "label": "Max Monthly Volume", "val": "Up to 20,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "15,000 Impressions" },
+          { "label": "Toner Impressions Color", "val": "9,500 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "ricoh_mp_4002_5002",
+    "name": "Ricoh MP 4002 / MP 5002",
+    "custom_title": "Ricoh MP 4002 / MP 5002",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Ricoh",
+    "category": "Software Firmware",
+    "subtitle": "A3 Black and White Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Ricoh/mp-4002-5002/ricoh-mp4002-1.webp",
+      "images/software-firmware/Ricoh/mp-4002-5002/ricoh-mp4002-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Ricoh MP 4002 and MP 5002 series deliver robust black-and-white performance, advanced security features, and reliable document management tailored for busy office environments.",
+    "machine_type": "A3 Black and White Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Office Digital System",
+    "color_bar_type": "monochrome",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "40 / 50 Pages Per Minute" },
+          { "label": "Resolution", "val": "600 x 600 dpi" },
+          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 4,400 Sheets max)" },
+          { "label": "Max Monthly Volume", "val": "Up to 150,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "30,000 Impressions" },
+          { "label": "Copier Type", "val": "Office Copier" },
+          { "label": "Color Capability", "val": "Black and White Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
+  },{
+    "id": "hp_color_laserjet_pro_m282",
+    "name": "HP Color LaserJet Pro M282",
+    "custom_title": "HP Color LaserJet Pro M282",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "HP",
+    "category": "Software Firmware",
+    "subtitle": "A4 Color Wireless Laser Multifunction Printer",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/HP/m282/hp-m282-1.webp",
+      "images/software-firmware/HP/m282/hp-m282-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "HP Color LaserJet Pro M282 multifunction printer delivers efficient color printing, seamless wireless connectivity, and essential office productivity features for small-to-medium workflows.",
+    "machine_type": "A4 Color MFP",
+    "functions": "Print, Copy, Scan",
+    "copier_type": "Color Laser Multifunction Printer",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "Up to 22 Pages Per Minute" },
+          { "label": "Speed Color", "val": "Up to 22 Pages Per Minute" },
+          { "label": "Resolution", "val": "Up to 600 x 600 dpi" },
+          { "label": "Paper Capacity", "val": "Standard 250-sheet input tray" },
+          { "label": "Max Monthly Volume", "val": "Up to 40,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "1,350 Impressions (Standard)" },
+          { "label": "Toner Impressions Color", "val": "1,250 Impressions (Standard)" },
+          { "label": "Copier Type", "val": "Desktop Color MFP" },
+          { "label": "Color Capability", "val": "Color Printer" },
+          { "label": "Properties", "val": "Print, Copy, Scan, Wireless" }
+        ]
+      }
+    ]
+  },{
+    "id": "hp_color_laserjet_pro_m285",
+    "name": "HP Color LaserJet Pro M285",
+    "custom_title": "HP Color LaserJet Pro M285",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "HP",
+    "category": "Software Firmware",
+    "subtitle": "A4 Color Wireless Laser Multifunction Printer",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/HP/m285/hp-m285-1.webp",
+      "images/software-firmware/HP/m285/hp-m285-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "HP Color LaserJet Pro M285 multifunction printer delivers fast, high-quality color printing, advanced scanning capabilities, and reliable wireless performance designed for modern office productivity.",
+    "machine_type": "A4 Color MFP",
+    "functions": "Print, Copy, Scan, Fax",
+    "copier_type": "Color Laser Multifunction Printer",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "Up to 22 Pages Per Minute" },
+          { "label": "Speed Color", "val": "Up to 22 Pages Per Minute" },
+          { "label": "Resolution", "val": "Up to 600 x 600 dpi" },
+          { "label": "Paper Capacity", "val": "Standard 250-sheet input tray" },
+          { "label": "Max Monthly Volume", "val": "Up to 40,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "1,350 Impressions (Standard)" },
+          { "label": "Toner Impressions Color", "val": "1,250 Impressions (Standard)" },
+          { "label": "Copier Type", "val": "Desktop Color MFP" },
+          { "label": "Color Capability", "val": "Color Printer" },
+          { "label": "Properties", "val": "Print, Copy, Scan, Fax, Wireless" }
+        ]
+      }
+    ]
+  },{
+    "id": "toshiba_estudio_5506ac",
+    "name": "Toshiba e-STUDIO 5506AC",
+    "custom_title": "Toshiba e-STUDIO 5506AC",
+    "custom_link": "https://t.me/your_telegram_username",
+    "brand": "Toshiba",
+    "category": "Software Firmware",
+    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
+    "price": "Firmware only",
+    "images": [
+      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-1.webp",
+      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-2.webp"
+    ],
+    "tags": [
+      "100% Working & Safe Software",
+      "Permanent Firmware Reset",
+      "Instant Download via Telegram"
+    ],
+    "description": "Toshiba e-STUDIO 5506AC delivers high-speed color output, advanced document workflows, and heavy-duty reliability designed specifically for corporate workgroups requiring fast color performance.",
+    "machine_type": "A3 Color Copier",
+    "functions": "Print, Copy, Scan, Fax (Optional)",
+    "copier_type": "Color Digital Multifunction Copier",
+    "color_bar_type": "cmyk",
+    "specs": [
+      {
+        "category": "GENERAL SPECIFICATIONS",
+        "rows": [
+          { "label": "Speed B/W", "val": "65 Pages Per Minute" },
+          { "label": "Speed Color", "val": "55 Pages Per Minute" },
+          { "label": "Resolution", "val": "1200 x 1200 dpi" },
+          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
+          { "label": "Max Monthly Volume", "val": "Up to 300,000 Impressions" },
+          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
+          { "label": "Toner Impressions Color", "val": "39,200 Impressions" },
+          { "label": "Copier Type", "val": "Office Color Copier" },
+          { "label": "Color Capability", "val": "Color Copier" },
+          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+        ]
+      }
+    ]
   }
+  
 ]
