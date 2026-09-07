@@ -177,6 +177,10 @@
             gap: 5px;
         }
 
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
         .form-group label {
             font-size: 13px;
             font-weight: 600;
@@ -188,6 +192,11 @@
             border: 1px solid #ccc;
             border-radius: 6px;
             font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         .btn-primary {
@@ -204,6 +213,23 @@
 
         .btn-primary:hover {
             background-color: #005bb5;
+        }
+
+        .btn-secondary {
+            background-color: #8e8e93;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            margin-left: 10px;
+            display: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #636366;
         }
 
         /* Products Table */
@@ -233,11 +259,30 @@
             border-radius: 4px;
         }
 
+        .action-btns {
+            display: flex;
+            gap: 6px;
+        }
+
+        .btn-edit {
+            background-color: #0071e3;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .btn-edit:hover {
+            background-color: #005bb5;
+        }
+
         .btn-danger {
             background-color: #ff3b30;
             color: white;
             border: none;
-            padding: 6px 12px;
+            padding: 6px 10px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 12px;
@@ -328,14 +373,15 @@
                 </button>
             </div>
 
-            <!-- Form បន្ថែមទំនិញថ្មី -->
+            <!-- Form បន្ថែម/កែសម្រួលទំនិញ -->
             <div class="card-box">
-                <h2><i class="fa-solid fa-plus-circle"></i> បន្ថែមទំនិញថ្មី</h2>
+                <h2 id="formTitle"><i class="fa-solid fa-plus-circle"></i> បន្ថែមទំនិញថ្មី</h2>
                 <form id="addProductForm">
+                    <input type="hidden" id="editIndex" value="-1">
                     <div class="form-grid">
                         <div class="form-group">
                             <label>ឈ្មោះទំនិញ (Name)</label>
-                            <input type="text" id="prodName" required placeholder="ឧ. Canon imageRUNNER...">
+                            <input type="text" id="prodName" required placeholder="ឧ. Canon imageRUNNER 2425">
                         </div>
                         <div class="form-group">
                             <label>ប្រេន (Brand)</label>
@@ -355,12 +401,20 @@
                             <label>តម្លៃ (Price)</label>
                             <input type="text" id="prodPrice" placeholder="ឧ. $150 ឬ តម្លៃទំនាក់ទំនង">
                         </div>
-                        <div class="form-group" style="grid-column: 1 / -1;">
+                        <div class="form-group full-width">
                             <label>តំណភ្ជាប់រូបភាព (Image URL / Path)</label>
-                            <input type="text" id="prodImage" placeholder="ឧ. images/canon-c3530.jpg">
+                            <input type="text" id="prodImage" placeholder="ឧ. images/canon-ir2425.jpg">
+                        </div>
+                        <!-- ប្រអប់ Description រួមបញ្ចូលគ្នា (Short & Full Description ក្នុងប្រអប់តែមួយ) -->
+                        <div class="form-group full-width">
+                            <label>បរិយាយព័ត៌មានទំនិញ (Description)</label>
+                            <textarea id="prodDescription" placeholder="សរសេរព័ត៌មានលម្អិត ឬសេចក្តីសង្ខេបរបស់ទំនិញនៅទីនេះ..."></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary"><i class="fa-solid fa-save"></i> រក្សាទុកទំនិញ</button>
+                    <div>
+                        <button type="submit" class="btn-primary" id="saveButton"><i class="fa-solid fa-save"></i> រក្សាទុកទំនិញ</button>
+                        <button type="button" class="btn-secondary" id="cancelBtn" onclick="resetForm()"><i class="fa-solid fa-xmark"></i> បោះបង់</button>
+                    </div>
                 </form>
             </div>
 
@@ -431,15 +485,19 @@
                 if (!img.startsWith('../') && !img.startsWith('http')) {
                     img = '../' + img;
                 }
+                let descText = item.description || item.subtitle || '';
                 return `
                     <tr>
                         <td><img src="${img}" alt="img"></td>
-                        <td><strong>${item.name}</strong></td>
+                        <td><strong>${item.name}</strong><br><small style="color:#666;">${descText.substring(0, 40)}...</small></td>
                         <td>${item.brand || ''}</td>
                         <td>${item.category || ''}</td>
                         <td>${item.price || 'ទំនាក់ទំនង'}</td>
                         <td>
-                            <button class="btn-danger" onclick="deleteProduct(${index})"><i class="fa-solid fa-trash"></i> លុប</button>
+                            <div class="action-btns">
+                                <button class="btn-edit" onclick="editProduct(${index})"><i class="fa-solid fa-pen-to-square"></i> កែ</button>
+                                <button class="btn-danger" onclick="deleteProduct(${index})"><i class="fa-solid fa-trash"></i> លុប</button>
+                            </div>
                         </td>
                     </tr>
                 `;
@@ -459,27 +517,63 @@
             }, 3000);
         }
 
-        // មុខងារបន្ថែមទំនិញថ្មី
+        // មុខងារ Add ឬ Update ទំនិញ
         document.getElementById('addProductForm').addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const newProduct = {
-                id: 'prod-' + Date.now(),
+            const editIndex = parseInt(document.getElementById('editIndex').value);
+            const fullDesc = document.getElementById('prodDescription').value || '';
+            
+            const productDataObj = {
+                id: editIndex > -1 ? productsData[editIndex].id : ('prod-' + Date.now()),
                 name: document.getElementById('prodName').value,
                 brand: document.getElementById('prodBrand').value,
                 category: document.getElementById('prodCategory').value,
                 price: document.getElementById('prodPrice').value || 'តម្លៃទំនាក់ទំនង',
                 image: document.getElementById('prodImage').value || 'images/default.png',
-                description: 'ទំនិញបន្ថែមថ្មីតាមរយៈ Admin Dashboard'
+                subtitle: fullDesc, // ដាក់បញ្ចូលគ្នាជា subtitle ផង
+                description: fullDesc // ដាក់បញ្ចូលគ្នាជា description ផង
             };
 
-            productsData.unshift(newProduct);
+            if (editIndex > -1) {
+                productsData[editIndex] = productDataObj;
+                showToast('បានកែប្រែផលិតផលដោយជោគជ័យ!');
+            } else {
+                productsData.unshift(productDataObj);
+                showToast('បានបន្ថែមផលិតផលថ្មីដោយជោគជ័យ!');
+            }
+
             localStorage.setItem('daro_products', JSON.stringify(productsData));
             renderAdminTable(productsData);
-
-            document.getElementById('addProductForm').reset();
-            showToast('បានបន្ថែមផលិតផលថ្មីដោយជោគជ័យ!');
+            resetForm();
         });
+
+        // មុខងារទាញទិន្នន័យមកដាក់ក្នុង Form ដើម្បីកែប្រែ
+        function editProduct(index) {
+            const item = productsData[index];
+            document.getElementById('editIndex').value = index;
+            document.getElementById('prodName').value = item.name || '';
+            document.getElementById('prodBrand').value = item.brand || '';
+            document.getElementById('prodCategory').value = item.category || 'Laser Printer';
+            document.getElementById('prodPrice').value = item.price || '';
+            document.getElementById('prodImage').value = item.image || '';
+            document.getElementById('prodDescription').value = item.description || item.subtitle || '';
+
+            document.getElementById('formTitle').innerHTML = `<i class="fa-solid fa-pen-to-square"></i> កែសម្រួលទំនិញ: ${item.name}`;
+            document.getElementById('saveButton').innerHTML = `<i class="fa-solid fa-save"></i> ធ្វើបច្ចុប្បន្នភាព (Update)`;
+            document.getElementById('cancelBtn').style.display = 'inline-block';
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // មុខងារ Reset Form វិញ
+        function resetForm() {
+            document.getElementById('addProductForm').reset();
+            document.getElementById('editIndex').value = -1;
+            document.getElementById('formTitle').innerHTML = `<i class="fa-solid fa-plus-circle"></i> បន្ថែមទំនិញថ្មី`;
+            document.getElementById('saveButton').innerHTML = `<i class="fa-solid fa-save"></i> រក្សាទុកទំនិញ`;
+            document.getElementById('cancelBtn').style.display = 'none';
+        }
 
         // មុខងារលុបទំនិញ
         function deleteProduct(index) {
