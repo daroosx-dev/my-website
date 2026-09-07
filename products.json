@@ -1,5 +1,32 @@
 [
   {
+    "id": "prod-1788790998040",
+    "name": "canon ir2425",
+    "brand": "canon",
+    "category": "Laser Printer",
+    "price": "0",
+    "image": "images/default.png",
+    "description": "ទំនិញបន្ថែមថ្មីតាមរយៈ Admin Dashboard"
+  },
+  {
+    "id": "prod-1788790705151",
+    "name": "canon ir2525",
+    "brand": "canon",
+    "category": "Laser Printer",
+    "price": "0",
+    "image": "images/default.png",
+    "description": "ទំនិញបន្ថែមថ្មីតាមរយៈ Admin Dashboard"
+  },
+  {
+    "id": "prod-1788790654048",
+    "name": "Canon imageRUNNER ADVANCE C3530i III",
+    "brand": "Canon",
+    "category": "Canon Firmware",
+    "price": "0",
+    "image": "images/default.png",
+    "description": "ទំនិញបន្ថែមថ្មីតាមរយៈ Admin Dashboard"
+  },
+  {
     "id": "canon_c7580i_iii",
     "name": "Canon imageRUNNER ADVANCE C7580i III",
     "custom_title": "Canon imageRUNNER ADVANCE C7580i III",
@@ -26,57 +53,46 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "80 Pages Per Minute" },
-          { "label": "Speed Color", "val": "70 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 1100 Sheet Drawers" },
-          { "label": "Max Monthly Volume", "val": "800,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "82,000 Impressions" },
-          { "label": "Toner Impressions Color", "val": "66,500 Impressions" },
-          { "label": "Copier Type", "val": "Digital Press, Office Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "canon_c3530i_iii",
-    "name": "Canon imageRUNNER ADVANCE C3530i III",
-    "custom_title": "Canon imageRUNNER ADVANCE C3530i III",
-    "custom_link": "https://t.me/your_telegram_username",
-    "brand": "Canon",
-    "category": "Software Firmware",
-    "subtitle": "A3 Color Digital Multifunction Copier",
-    "price": "Firmware only",
-    "images": [
-      "images/software-firmware/Canon/ir3530i/canon-c3530i-iii-1.png",
-      "images/software-firmware/Canon/ir3530i/canon-c3530i-iii-2.png"
-    ],
-    "tags": [
-      "100% Working & Safe Software",
-      "Permanent Firmware Reset",
-      "Instant Download via Telegram"
-    ],
-    "description": "Canon imageRUNNER ADVANCE C3530i III delivers seamless color productivity, high security, and smart workflow integration for modern office environments.",
-    "machine_type": "A3 Color Copier",
-    "functions": "Print, Copy, Scan, Send, Fax (Optional)",
-    "copier_type": "Color Digital Multifunction Copier",
-    "color_bar_type": "cmyk",
-    "specs": [
-      {
-        "category": "GENERAL SPECIFICATIONS",
-        "rows": [
-          { "label": "Speed B/W", "val": "30 Pages Per Minute" },
-          { "label": "Speed Color", "val": "30 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 100 Sheet Stack Bypass" },
-          { "label": "Max Monthly Volume", "val": "80,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "36,000 Impressions" },
-          { "label": "Toner Impressions Color", "val": "19,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "80 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "70 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers Dual 1100 Sheet Drawers"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "800,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "82,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "66,500 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Digital Press, Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
@@ -109,21 +125,66 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Type", "val": "A4 Color Wireless All-in-One Laser Printer" },
-          { "label": "Technology", "val": "Laser Printing Technology" },
-          { "label": "Display", "val": "2.7-inch (6.8 cm) Color Graphic Touchscreen" },
-          { "label": "Connectivity", "val": "Hi-Speed USB 2.0, Gigabit Ethernet, Dual-band Wi-Fi, Wi-Fi Direct, USB Host" },
-          { "label": "Copying Speed", "val": "Up to 21 cpm (Black) / 21 cpm (Colour)" },
-          { "label": "Printing Speed", "val": "Up to 21 ppm (Mono) / 21 ppm (Color)" },
-          { "label": "Scanning Speed", "val": "Up to 26 ppm (Mono) / 22 ppm (Color)" },
-          { "label": "ADF", "val": "50-sheet Automatic Document Feeder (ADF)" },
-          { "label": "Resolution", "val": "Up to 600 x 600 dpi (Print & Copy)" },
-          { "label": "Paper Feed Sizes", "val": "Input Tray: Up to 250 sheets (A4, A5, A6, B5, Envelopes, Legal)" },
-          { "label": "Duplex", "val": "Automatic (standard) duplex printing" },
-          { "label": "Color Capability", "val": "4-Color Laser Toner (CMYK)" },
-          { "label": "Ink Code", "val": "HP 206A / 206X Toner Cartridges (Black, Cyan, Magenta, Yellow)" },
-          { "label": "Properties", "val": "Print, Scan, Copy, Fax" },
-          { "label": "Duty Cycle", "val": "Laser Toner System (Recommended monthly volume: 150 to 2,500 pages)" }
+          {
+            "label": "Type",
+            "val": "A4 Color Wireless All-in-One Laser Printer"
+          },
+          {
+            "label": "Technology",
+            "val": "Laser Printing Technology"
+          },
+          {
+            "label": "Display",
+            "val": "2.7-inch (6.8 cm) Color Graphic Touchscreen"
+          },
+          {
+            "label": "Connectivity",
+            "val": "Hi-Speed USB 2.0, Gigabit Ethernet, Dual-band Wi-Fi, Wi-Fi Direct, USB Host"
+          },
+          {
+            "label": "Copying Speed",
+            "val": "Up to 21 cpm (Black) / 21 cpm (Colour)"
+          },
+          {
+            "label": "Printing Speed",
+            "val": "Up to 21 ppm (Mono) / 21 ppm (Color)"
+          },
+          {
+            "label": "Scanning Speed",
+            "val": "Up to 26 ppm (Mono) / 22 ppm (Color)"
+          },
+          {
+            "label": "ADF",
+            "val": "50-sheet Automatic Document Feeder (ADF)"
+          },
+          {
+            "label": "Resolution",
+            "val": "Up to 600 x 600 dpi (Print & Copy)"
+          },
+          {
+            "label": "Paper Feed Sizes",
+            "val": "Input Tray: Up to 250 sheets (A4, A5, A6, B5, Envelopes, Legal)"
+          },
+          {
+            "label": "Duplex",
+            "val": "Automatic (standard) duplex printing"
+          },
+          {
+            "label": "Color Capability",
+            "val": "4-Color Laser Toner (CMYK)"
+          },
+          {
+            "label": "Ink Code",
+            "val": "HP 206A / 206X Toner Cartridges (Black, Cyan, Magenta, Yellow)"
+          },
+          {
+            "label": "Properties",
+            "val": "Print, Scan, Copy, Fax"
+          },
+          {
+            "label": "Duty Cycle",
+            "val": "Laser Toner System (Recommended monthly volume: 150 to 2,500 pages)"
+          }
         ]
       }
     ]
@@ -155,16 +216,46 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Type", "val": "A4 Print, Scan, Copy with EcoTank" },
-          { "label": "Technology", "val": "On-demand inkjet (Piezoelectric)" },
-          { "label": "Printing Speed", "val": "Up to 33 ppm (Mono) / 15 ppm (Color)" },
-          { "label": "Resolution", "val": "5760 x 1440 dpi" },
-          { "label": "Connectivity", "val": "USB 2.0" },
-          { "label": "Paper Feed Sizes", "val": "Legal, Indian-Legal, Letter, A4, A5, A6, B5, Envelopes" },
-          { "label": "Color Capability", "val": "4-Color EcoTank (CMYK)" },
-          { "label": "Ink Code", "val": "Epson 003 (Black, Cyan, Magenta, Yellow)" },
-          { "label": "Properties", "val": "Print, Scan, Copy" },
-          { "label": "EcoTank", "val": "Ultra-low-cost ink bottles (Yield up to 4,500 pages B/W / 7,500 pages Color)" }
+          {
+            "label": "Type",
+            "val": "A4 Print, Scan, Copy with EcoTank"
+          },
+          {
+            "label": "Technology",
+            "val": "On-demand inkjet (Piezoelectric)"
+          },
+          {
+            "label": "Printing Speed",
+            "val": "Up to 33 ppm (Mono) / 15 ppm (Color)"
+          },
+          {
+            "label": "Resolution",
+            "val": "5760 x 1440 dpi"
+          },
+          {
+            "label": "Connectivity",
+            "val": "USB 2.0"
+          },
+          {
+            "label": "Paper Feed Sizes",
+            "val": "Legal, Indian-Legal, Letter, A4, A5, A6, B5, Envelopes"
+          },
+          {
+            "label": "Color Capability",
+            "val": "4-Color EcoTank (CMYK)"
+          },
+          {
+            "label": "Ink Code",
+            "val": "Epson 003 (Black, Cyan, Magenta, Yellow)"
+          },
+          {
+            "label": "Properties",
+            "val": "Print, Scan, Copy"
+          },
+          {
+            "label": "EcoTank",
+            "val": "Ultra-low-cost ink bottles (Yield up to 4,500 pages B/W / 7,500 pages Color)"
+          }
         ]
       }
     ]
@@ -196,16 +287,46 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Type", "val": "A4 Print, Scan, Copy with Wi-Fi & EcoTank" },
-          { "label": "Technology", "val": "On-demand inkjet (Piezoelectric)" },
-          { "label": "Printing Speed", "val": "Up to 33 ppm (Mono) / 15 ppm (Color)" },
-          { "label": "Resolution", "val": "5760 x 1440 dpi" },
-          { "label": "Connectivity", "val": "USB 2.0, Wi-Fi, Wi-Fi Direct" },
-          { "label": "Mobile/Software", "val": "Epson Smart Panel, Epson Connect" },
-          { "label": "Paper Feed Sizes", "val": "Legal, Indian-Legal, Letter, A4, A5, A6, B5, Envelopes" },
-          { "label": "Color Capability", "val": "4-Color EcoTank (CMYK)" },
-          { "label": "Ink Code", "val": "Epson 003 (Black, Cyan, Magenta, Yellow)" },
-          { "label": "EcoTank", "val": "Ultra-low-cost ink bottles (Yield up to 4,500 pages B/W / 7,500 pages Color)" }
+          {
+            "label": "Type",
+            "val": "A4 Print, Scan, Copy with Wi-Fi & EcoTank"
+          },
+          {
+            "label": "Technology",
+            "val": "On-demand inkjet (Piezoelectric)"
+          },
+          {
+            "label": "Printing Speed",
+            "val": "Up to 33 ppm (Mono) / 15 ppm (Color)"
+          },
+          {
+            "label": "Resolution",
+            "val": "5760 x 1440 dpi"
+          },
+          {
+            "label": "Connectivity",
+            "val": "USB 2.0, Wi-Fi, Wi-Fi Direct"
+          },
+          {
+            "label": "Mobile/Software",
+            "val": "Epson Smart Panel, Epson Connect"
+          },
+          {
+            "label": "Paper Feed Sizes",
+            "val": "Legal, Indian-Legal, Letter, A4, A5, A6, B5, Envelopes"
+          },
+          {
+            "label": "Color Capability",
+            "val": "4-Color EcoTank (CMYK)"
+          },
+          {
+            "label": "Ink Code",
+            "val": "Epson 003 (Black, Cyan, Magenta, Yellow)"
+          },
+          {
+            "label": "EcoTank",
+            "val": "Ultra-low-cost ink bottles (Yield up to 4,500 pages B/W / 7,500 pages Color)"
+          }
         ]
       }
     ]
@@ -237,16 +358,46 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Type", "val": "A3+ Photo Printer with Wi-Fi & EcoTank" },
-          { "label": "Technology", "val": "Micro Piezo Print Head (6-Color)" },
-          { "label": "Printing Speed", "val": "Up to 22 ppm (Mono/Color) / Approx. 27 sec per 4x6 photo" },
-          { "label": "Resolution", "val": "5760 x 1440 dpi" },
-          { "label": "Connectivity", "val": "USB 2.0, Wi-Fi, Wi-Fi Direct" },
-          { "label": "Mobile/Software", "val": "Epson Smart Panel, Epson iPrint" },
-          { "label": "Paper Feed Sizes", "val": "A3+, A3, A4, A5, A6, B5, Letter, Legal, 4x6\", Envelopes, CD/DVD/PVC Cards" },
-          { "label": "Color Capability", "val": "6-Color EcoTank (Black, Cyan, Magenta, Yellow, Light Cyan, Light Magenta)" },
-          { "label": "Ink Code", "val": "Epson 057 Ink Bottles (70ml each)" },
-          { "label": "EcoTank", "val": "High-yield photo printing (Yield up to 2,100 photos / 4R)" }
+          {
+            "label": "Type",
+            "val": "A3+ Photo Printer with Wi-Fi & EcoTank"
+          },
+          {
+            "label": "Technology",
+            "val": "Micro Piezo Print Head (6-Color)"
+          },
+          {
+            "label": "Printing Speed",
+            "val": "Up to 22 ppm (Mono/Color) / Approx. 27 sec per 4x6 photo"
+          },
+          {
+            "label": "Resolution",
+            "val": "5760 x 1440 dpi"
+          },
+          {
+            "label": "Connectivity",
+            "val": "USB 2.0, Wi-Fi, Wi-Fi Direct"
+          },
+          {
+            "label": "Mobile/Software",
+            "val": "Epson Smart Panel, Epson iPrint"
+          },
+          {
+            "label": "Paper Feed Sizes",
+            "val": "A3+, A3, A4, A5, A6, B5, Letter, Legal, 4x6\", Envelopes, CD/DVD/PVC Cards"
+          },
+          {
+            "label": "Color Capability",
+            "val": "6-Color EcoTank (Black, Cyan, Magenta, Yellow, Light Cyan, Light Magenta)"
+          },
+          {
+            "label": "Ink Code",
+            "val": "Epson 057 Ink Bottles (70ml each)"
+          },
+          {
+            "label": "EcoTank",
+            "val": "High-yield photo printing (Yield up to 2,100 photos / 4R)"
+          }
         ]
       }
     ]
@@ -280,16 +431,46 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Type", "val": "A4 Photo Printer with Ethernet & EcoTank" },
-          { "label": "Technology", "val": "Micro Piezo Print Head (6-Color)" },
-          { "label": "Printing Speed", "val": "Up to 22 ppm (Mono/Color) / Approx. 25 sec per 4x6 photo" },
-          { "label": "Resolution", "val": "5760 x 1440 dpi" },
-          { "label": "Connectivity", "val": "USB 2.0, Ethernet" },
-          { "label": "Mobile/Software", "val": "Epson Smart Panel, Epson iPrint" },
-          { "label": "Paper Feed Sizes", "val": "A4, A5, B5, Letter, Legal, 4x6\", 5x7\", Envelopes, CD/DVD/PVC Cards" },
-          { "label": "Color Capability", "val": "6-Color EcoTank (Black, Cyan, Magenta, Yellow, Light Cyan, Light Magenta)" },
-          { "label": "Ink Code", "val": "Epson 057 Ink Bottles (70ml each)" },
-          { "label": "EcoTank", "val": "High-yield photo printing (Yield up to 2,100 photos / 4R)" }
+          {
+            "label": "Type",
+            "val": "A4 Photo Printer with Ethernet & EcoTank"
+          },
+          {
+            "label": "Technology",
+            "val": "Micro Piezo Print Head (6-Color)"
+          },
+          {
+            "label": "Printing Speed",
+            "val": "Up to 22 ppm (Mono/Color) / Approx. 25 sec per 4x6 photo"
+          },
+          {
+            "label": "Resolution",
+            "val": "5760 x 1440 dpi"
+          },
+          {
+            "label": "Connectivity",
+            "val": "USB 2.0, Ethernet"
+          },
+          {
+            "label": "Mobile/Software",
+            "val": "Epson Smart Panel, Epson iPrint"
+          },
+          {
+            "label": "Paper Feed Sizes",
+            "val": "A4, A5, B5, Letter, Legal, 4x6\", 5x7\", Envelopes, CD/DVD/PVC Cards"
+          },
+          {
+            "label": "Color Capability",
+            "val": "6-Color EcoTank (Black, Cyan, Magenta, Yellow, Light Cyan, Light Magenta)"
+          },
+          {
+            "label": "Ink Code",
+            "val": "Epson 057 Ink Bottles (70ml each)"
+          },
+          {
+            "label": "EcoTank",
+            "val": "High-yield photo printing (Yield up to 2,100 photos / 4R)"
+          }
         ]
       }
     ]
@@ -324,16 +505,46 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Type", "val": "8-Inch Industrial Color Inkjet Label Printer" },
-          { "label": "Technology", "val": "PrecisionCore TFP with Nozzle Verification" },
-          { "label": "Printing Speed", "val": "Up to 119 mm/sec" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Connectivity", "val": "USB 2.0, Ethernet 1000BASE-T/100BASE-TX/10BASE-T" },
-          { "label": "Media Width", "val": "Max. 212 mm (8.34 inches)" },
-          { "label": "Auto-Cutter", "val": "Included (Built-in)" },
-          { "label": "Color Capability", "val": "4-Color Pigment Ink (CMYK)" },
-          { "label": "Ink Code", "val": "Epson SJIC40P Ink Cartridges" },
-          { "label": "EcoTank", "val": "High-capacity individual ink cartridges" }
+          {
+            "label": "Type",
+            "val": "8-Inch Industrial Color Inkjet Label Printer"
+          },
+          {
+            "label": "Technology",
+            "val": "PrecisionCore TFP with Nozzle Verification"
+          },
+          {
+            "label": "Printing Speed",
+            "val": "Up to 119 mm/sec"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Connectivity",
+            "val": "USB 2.0, Ethernet 1000BASE-T/100BASE-TX/10BASE-T"
+          },
+          {
+            "label": "Media Width",
+            "val": "Max. 212 mm (8.34 inches)"
+          },
+          {
+            "label": "Auto-Cutter",
+            "val": "Included (Built-in)"
+          },
+          {
+            "label": "Color Capability",
+            "val": "4-Color Pigment Ink (CMYK)"
+          },
+          {
+            "label": "Ink Code",
+            "val": "Epson SJIC40P Ink Cartridges"
+          },
+          {
+            "label": "EcoTank",
+            "val": "High-capacity individual ink cartridges"
+          }
         ]
       }
     ]
@@ -366,16 +577,46 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Type", "val": "A4 Monochrome Wireless Laser Printer" },
-          { "label": "Technology", "val": "Laser Printing Technology" },
-          { "label": "Printing Speed", "val": "Up to 40 ppm (A4)" },
-          { "label": "Resolution", "val": "Fine Lines (1200 x 1200 dpi)" },
-          { "label": "Connectivity", "val": "Hi-Speed USB 2.0, Gigabit Ethernet, Dual-band Wi-Fi, Bluetooth Low Energy" },
-          { "label": "Mobile/Software", "val": "HP Smart App, Apple AirPrint, Mopria Certified" },
-          { "label": "Paper Feed Sizes", "val": "Tray 1: A4, A5, A6, Envelopes; Tray 2: A4, A5, A6" },
-          { "label": "Duplex Printing", "val": "Automatic (standard)" },
-          { "label": "Ink Code", "val": "HP 151A / 151X Black LaserJet Toner Cartridge" },
-          { "label": "Duty Cycle", "val": "Recommended monthly volume up to 4,000 pages" }
+          {
+            "label": "Type",
+            "val": "A4 Monochrome Wireless Laser Printer"
+          },
+          {
+            "label": "Technology",
+            "val": "Laser Printing Technology"
+          },
+          {
+            "label": "Printing Speed",
+            "val": "Up to 40 ppm (A4)"
+          },
+          {
+            "label": "Resolution",
+            "val": "Fine Lines (1200 x 1200 dpi)"
+          },
+          {
+            "label": "Connectivity",
+            "val": "Hi-Speed USB 2.0, Gigabit Ethernet, Dual-band Wi-Fi, Bluetooth Low Energy"
+          },
+          {
+            "label": "Mobile/Software",
+            "val": "HP Smart App, Apple AirPrint, Mopria Certified"
+          },
+          {
+            "label": "Paper Feed Sizes",
+            "val": "Tray 1: A4, A5, A6, Envelopes; Tray 2: A4, A5, A6"
+          },
+          {
+            "label": "Duplex Printing",
+            "val": "Automatic (standard)"
+          },
+          {
+            "label": "Ink Code",
+            "val": "HP 151A / 151X Black LaserJet Toner Cartridge"
+          },
+          {
+            "label": "Duty Cycle",
+            "val": "Recommended monthly volume up to 4,000 pages"
+          }
         ]
       }
     ]
@@ -407,14 +648,38 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "50 Pages Per Minute" },
-          { "label": "Resolution", "val": "600 X 600 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Paper Drawer/Dual 1,500 Impressions Sheet Paper Drawer" },
-          { "label": "Max Monthly Volume", "val": "200000" },
-          { "label": "Toner Impressions B/W", "val": "48,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "50 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "600 X 600 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Paper Drawer/Dual 1,500 Impressions Sheet Paper Drawer"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "200000"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "48,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
@@ -446,14 +711,38 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "42 Pages Per Minute" },
-          { "label": "Resolution", "val": "600 x 600 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Paper Drawer/Dual 1,500 Impressions Sheet Paper Drawer" },
-          { "label": "Max Monthly Volume", "val": "200,000" },
-          { "label": "Toner Impressions B/W", "val": "48,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "42 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "600 x 600 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Paper Drawer/Dual 1,500 Impressions Sheet Paper Drawer"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "200,000"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "48,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
@@ -486,16 +775,46 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Type", "val": "A4 Print, Scan, Copy, Fax with ADF" },
-          { "label": "Technology", "val": "PrecisionCore Printhead Technology" },
-          { "label": "Printing Speed", "val": "Up to 17 ipm (Mono) / 9.5 ipm (Colour)" },
-          { "label": "Resolution", "val": "4800 x 1200 dpi" },
-          { "label": "Connectivity", "val": "USB 2.0, Ethernet, Wi-Fi, Wi-Fi Direct" },
-          { "label": "Automatic Document Feeder", "val": "Supported (ADF)" },
-          { "label": "Duplex Printing", "val": "Automatic Duplex" },
-          { "label": "Ink Code", "val": "Epson 003 Ink Bottles (Black, Cyan, Magenta, Yellow)" },
-          { "label": "Paper Capacity", "val": "250 sheets input tray" },
-          { "label": "Mobile/Software", "val": "Epson Smart Panel, iPrint, Email Print" }
+          {
+            "label": "Type",
+            "val": "A4 Print, Scan, Copy, Fax with ADF"
+          },
+          {
+            "label": "Technology",
+            "val": "PrecisionCore Printhead Technology"
+          },
+          {
+            "label": "Printing Speed",
+            "val": "Up to 17 ipm (Mono) / 9.5 ipm (Colour)"
+          },
+          {
+            "label": "Resolution",
+            "val": "4800 x 1200 dpi"
+          },
+          {
+            "label": "Connectivity",
+            "val": "USB 2.0, Ethernet, Wi-Fi, Wi-Fi Direct"
+          },
+          {
+            "label": "Automatic Document Feeder",
+            "val": "Supported (ADF)"
+          },
+          {
+            "label": "Duplex Printing",
+            "val": "Automatic Duplex"
+          },
+          {
+            "label": "Ink Code",
+            "val": "Epson 003 Ink Bottles (Black, Cyan, Magenta, Yellow)"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "250 sheets input tray"
+          },
+          {
+            "label": "Mobile/Software",
+            "val": "Epson Smart Panel, iPrint, Email Print"
+          }
         ]
       }
     ]
@@ -527,20 +846,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "30 Pages Per Minute" },
-          { "label": "Speed Color", "val": "30 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 100 Sheet Stack Bypass" },
-          { "label": "Max Monthly Volume", "val": "80,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "36,000 Impressions" },
-          { "label": "Toner Impressions Color", "val": "19,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "30 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "30 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers Dual 100 Sheet Stack Bypass"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "80,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "36,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "19,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "canon_dx_c3935",
     "name": "Canon imageRUNNER ADVANCE DX C3935",
     "custom_title": "Canon imageRUNNER ADVANCE DX C3935",
@@ -567,20 +917,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "35 Pages Per Minute" },
-          { "label": "Speed Color", "val": "35 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 100 Sheet Stack Bypass" },
-          { "label": "Max Monthly Volume", "val": "90,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "38,000 Impressions" },
-          { "label": "Toner Impressions Color", "val": "23,500 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "35 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "35 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers Dual 100 Sheet Stack Bypass"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "90,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "38,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "23,500 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "canon_ir_adv_6055",
     "name": "Canon imageRUNNER ADVANCE 6055",
     "custom_title": "Canon imageRUNNER ADVANCE 6055",
@@ -607,18 +988,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "55 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 1,500 Sheet Drawers" },
-          { "label": "Max Monthly Volume", "val": "300,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "56,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "55 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 1,500 Sheet Drawers"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "300,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "56,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "canon_ir_adv_4545",
     "name": "Canon imageRUNNER ADVANCE 4545",
     "custom_title": "Canon imageRUNNER ADVANCE 4545",
@@ -645,18 +1051,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "45 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Paper Drawers / 80 Sheet Stack Bypass" },
-          { "label": "Max Monthly Volume", "val": "175,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "42,100 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "45 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Paper Drawers / 80 Sheet Stack Bypass"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "175,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "42,100 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "canon_dx_c5560i",
     "name": "Canon imageRUNNER ADVANCE C5560i",
     "custom_title": "Canon imageRUNNER ADVANCE C5560i",
@@ -683,20 +1114,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "60 Pages Per Minute" },
-          { "label": "Speed Color", "val": "55 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 2,100 Sheet Drawers" },
-          { "label": "Max Monthly Volume", "val": "120,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "69,000 Impressions" },
-          { "label": "Toner Impressions Color", "val": "60,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "60 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "55 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers Dual 2,100 Sheet Drawers"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "120,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "69,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "60,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "canon_ir_adv_4751",
     "name": "Canon imageRUNNER ADVANCE 4751",
     "custom_title": "Canon imageRUNNER ADVANCE 4751",
@@ -723,18 +1185,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "51 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers Dual 1,500 Sheet Drawers" },
-          { "label": "Max Monthly Volume", "val": "200,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "41,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "51 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers Dual 1,500 Sheet Drawers"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "200,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "41,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "canon_ir_adv_4025",
     "name": "Canon imageRUNNER ADVANCE 4025",
     "custom_title": "Canon imageRUNNER ADVANCE 4025",
@@ -761,18 +1248,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "25 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Paper Drawers / 80 Sheet Stack Bypass" },
-          { "label": "Max Monthly Volume", "val": "100,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "30,200 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "25 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Paper Drawers / 80 Sheet Stack Bypass"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "100,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "30,200 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "canon_ir_adv_6255",
     "name": "Canon imageRUNNER ADVANCE 6255",
     "custom_title": "Canon imageRUNNER ADVANCE 6255",
@@ -799,18 +1311,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "55 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 1,500 Sheet Drawers" },
-          { "label": "Max Monthly Volume", "val": "300,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "56,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "55 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 1,500 Sheet Drawers"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "300,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "56,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_556_856",
     "name": "Toshiba e-STUDIO 556 / 856",
     "custom_title": "Toshiba e-STUDIO 556 / 856",
@@ -837,18 +1374,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "55 / 85 Pages Per Minute" },
-          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
-          { "label": "Max Monthly Volume", "val": "Up to 600,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "36,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "55 / 85 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "2400 x 600 dpi (with smoothing)"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 600,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "36,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_557_857",
     "name": "Toshiba e-STUDIO 557 / 857",
     "custom_title": "Toshiba e-STUDIO 557 / 857",
@@ -875,18 +1437,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "55 / 85 Pages Per Minute" },
-          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
-          { "label": "Max Monthly Volume", "val": "Up to 600,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "36,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "55 / 85 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "2400 x 600 dpi (with smoothing)"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 600,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "36,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_5506ac_7506ac",
     "name": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
     "custom_title": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
@@ -913,20 +1500,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "55 / 65 / 75 Pages Per Minute" },
-          { "label": "Speed Color", "val": "55 / 65 / 70 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
-          { "label": "Max Monthly Volume", "val": "Up to 300,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "39,000 Impressions" },
-          { "label": "Toner Impressions Color", "val": "33,600 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "55 / 65 / 75 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "55 / 65 / 70 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 300,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "39,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "33,600 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_5506ac_7506ac",
     "name": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
     "custom_title": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
@@ -953,20 +1571,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "65 / 75 / 85 Pages Per Minute" },
-          { "label": "Speed Color", "val": "55 / 65 / 75 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
-          { "label": "Max Monthly Volume", "val": "Up to 600,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
-          { "label": "Toner Impressions Color", "val": "39,200 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "65 / 75 / 85 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "55 / 65 / 75 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 600,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "106,600 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "39,200 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_5518a_8518a",
     "name": "Toshiba e-STUDIO 5518A / 6518A / 7518A / 8518A",
     "custom_title": "Toshiba e-STUDIO 5518A / 6518A / 7518A / 8518A",
@@ -993,18 +1642,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "55 / 65 / 75 / 85 Pages Per Minute" },
-          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder (Up to 6,020 Sheets)" },
-          { "label": "Max Monthly Volume", "val": "Up to 720,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "55 / 65 / 75 / 85 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "2400 x 600 dpi (with smoothing)"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder (Up to 6,020 Sheets)"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 720,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "106,600 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_2018a_5018a",
     "name": "Toshiba e-STUDIO 2018A / 2518A / 3018A / 3518A / 4518A / 5018A",
     "custom_title": "Toshiba e-STUDIO 2018A - 5018A",
@@ -1031,18 +1705,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "20 / 25 / 30 / 35 / 45 / 50 Pages Per Minute" },
-          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
-          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 3,200 Sheets max)" },
-          { "label": "Max Monthly Volume", "val": "Up to 150,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "43,900 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "20 / 25 / 30 / 35 / 45 / 50 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "2400 x 600 dpi (with smoothing)"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Standard 1,200 Sheets (Up to 3,200 Sheets max)"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 150,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "43,900 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_2505ac_5005ac",
     "name": "Toshiba e-STUDIO 2505AC / 3005AC / 3505AC / 4505AC / 5005AC",
     "custom_title": "Toshiba e-STUDIO 2505AC - 5005AC",
@@ -1069,20 +1768,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "25 / 30 / 35 / 45 / 50 Pages Per Minute" },
-          { "label": "Speed Color", "val": "25 / 30 / 35 / 45 / 50 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 3,200 Sheets max)" },
-          { "label": "Max Monthly Volume", "val": "Up to 210,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "38,400 Impressions" },
-          { "label": "Toner Impressions Color", "val": "33,600 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "25 / 30 / 35 / 45 / 50 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "25 / 30 / 35 / 45 / 50 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Standard 1,200 Sheets (Up to 3,200 Sheets max)"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 210,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "38,400 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "33,600 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_5506ac",
     "name": "Toshiba e-STUDIO 5506AC",
     "custom_title": "Toshiba e-STUDIO 5506AC",
@@ -1109,20 +1839,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "65 Pages Per Minute" },
-          { "label": "Speed Color", "val": "55 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
-          { "label": "Max Monthly Volume", "val": "Up to 300,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
-          { "label": "Toner Impressions Color", "val": "39,200 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "65 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "55 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 300,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "106,600 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "39,200 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_5508a_8508a",
     "name": "Toshiba e-STUDIO 5508A / 6508A / 7508A / 8508A",
     "custom_title": "Toshiba e-STUDIO 5508A - 8508A",
@@ -1149,18 +1910,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "55 / 65 / 75 / 85 Pages Per Minute" },
-          { "label": "Resolution", "val": "2400 x 600 dpi (with smoothing)" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder (Up to 6,020 Sheets)" },
-          { "label": "Max Monthly Volume", "val": "Up to 720,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "55 / 65 / 75 / 85 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "2400 x 600 dpi (with smoothing)"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder (Up to 6,020 Sheets)"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 720,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "106,600 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_7506ac",
     "name": "Toshiba e-STUDIO 7506AC",
     "custom_title": "Toshiba e-STUDIO 7506AC",
@@ -1187,20 +1973,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "85 Pages Per Minute" },
-          { "label": "Speed Color", "val": "75 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
-          { "label": "Max Monthly Volume", "val": "Up to 350,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
-          { "label": "Toner Impressions Color", "val": "39,200 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "85 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "75 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 350,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "106,600 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "39,200 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "ricoh_mp_c3003",
     "name": "Ricoh MP C3003",
     "custom_title": "Ricoh MP C3003",
@@ -1227,20 +2044,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "30 Pages Per Minute" },
-          { "label": "Speed Color", "val": "30 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 4,700 Sheets max)" },
-          { "label": "Max Monthly Volume", "val": "Up to 40,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "29,500 Impressions" },
-          { "label": "Toner Impressions Color", "val": "18,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "30 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "30 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Standard 1,200 Sheets (Up to 4,700 Sheets max)"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 40,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "29,500 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "18,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "ricoh_mp_c2003sp_2503sp",
     "name": "Ricoh MP C2003SP / MP C2503SP",
     "custom_title": "Ricoh MP C2003SP / MP C2503SP",
@@ -1267,20 +2115,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "20 / 25 Pages Per Minute" },
-          { "label": "Speed Color", "val": "20 / 25 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 2,300 Sheets max)" },
-          { "label": "Max Monthly Volume", "val": "Up to 20,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "15,000 Impressions" },
-          { "label": "Toner Impressions Color", "val": "9,500 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "20 / 25 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "20 / 25 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Standard 1,200 Sheets (Up to 2,300 Sheets max)"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 20,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "15,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "9,500 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "ricoh_mp_4002_5002",
     "name": "Ricoh MP 4002 / MP 5002",
     "custom_title": "Ricoh MP 4002 / MP 5002",
@@ -1307,18 +2186,43 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "40 / 50 Pages Per Minute" },
-          { "label": "Resolution", "val": "600 x 600 dpi" },
-          { "label": "Paper Capacity", "val": "Standard 1,200 Sheets (Up to 4,400 Sheets max)" },
-          { "label": "Max Monthly Volume", "val": "Up to 150,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "30,000 Impressions" },
-          { "label": "Copier Type", "val": "Office Copier" },
-          { "label": "Color Capability", "val": "Black and White Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "40 / 50 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "600 x 600 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Standard 1,200 Sheets (Up to 4,400 Sheets max)"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 150,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "30,000 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Black and White Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "hp_color_laserjet_pro_m282",
     "name": "HP Color LaserJet Pro M282",
     "custom_title": "HP Color LaserJet Pro M282",
@@ -1345,20 +2249,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "Up to 22 Pages Per Minute" },
-          { "label": "Speed Color", "val": "Up to 22 Pages Per Minute" },
-          { "label": "Resolution", "val": "Up to 600 x 600 dpi" },
-          { "label": "Paper Capacity", "val": "Standard 250-sheet input tray" },
-          { "label": "Max Monthly Volume", "val": "Up to 40,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "1,350 Impressions (Standard)" },
-          { "label": "Toner Impressions Color", "val": "1,250 Impressions (Standard)" },
-          { "label": "Copier Type", "val": "Desktop Color MFP" },
-          { "label": "Color Capability", "val": "Color Printer" },
-          { "label": "Properties", "val": "Print, Copy, Scan, Wireless" }
+          {
+            "label": "Speed B/W",
+            "val": "Up to 22 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "Up to 22 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "Up to 600 x 600 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Standard 250-sheet input tray"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 40,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "1,350 Impressions (Standard)"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "1,250 Impressions (Standard)"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Desktop Color MFP"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Printer"
+          },
+          {
+            "label": "Properties",
+            "val": "Print, Copy, Scan, Wireless"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "hp_color_laserjet_pro_m285",
     "name": "HP Color LaserJet Pro M285",
     "custom_title": "HP Color LaserJet Pro M285",
@@ -1385,20 +2320,51 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "Up to 22 Pages Per Minute" },
-          { "label": "Speed Color", "val": "Up to 22 Pages Per Minute" },
-          { "label": "Resolution", "val": "Up to 600 x 600 dpi" },
-          { "label": "Paper Capacity", "val": "Standard 250-sheet input tray" },
-          { "label": "Max Monthly Volume", "val": "Up to 40,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "1,350 Impressions (Standard)" },
-          { "label": "Toner Impressions Color", "val": "1,250 Impressions (Standard)" },
-          { "label": "Copier Type", "val": "Desktop Color MFP" },
-          { "label": "Color Capability", "val": "Color Printer" },
-          { "label": "Properties", "val": "Print, Copy, Scan, Fax, Wireless" }
+          {
+            "label": "Speed B/W",
+            "val": "Up to 22 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "Up to 22 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "Up to 600 x 600 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Standard 250-sheet input tray"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 40,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "1,350 Impressions (Standard)"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "1,250 Impressions (Standard)"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Desktop Color MFP"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Printer"
+          },
+          {
+            "label": "Properties",
+            "val": "Print, Copy, Scan, Fax, Wireless"
+          }
         ]
       }
     ]
-  },{
+  },
+  {
     "id": "toshiba_estudio_5506ac",
     "name": "Toshiba e-STUDIO 5506AC",
     "custom_title": "Toshiba e-STUDIO 5506AC",
@@ -1425,19 +2391,48 @@
       {
         "category": "GENERAL SPECIFICATIONS",
         "rows": [
-          { "label": "Speed B/W", "val": "65 Pages Per Minute" },
-          { "label": "Speed Color", "val": "55 Pages Per Minute" },
-          { "label": "Resolution", "val": "1200 x 1200 dpi" },
-          { "label": "Paper Capacity", "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder" },
-          { "label": "Max Monthly Volume", "val": "Up to 300,000 Impressions" },
-          { "label": "Toner Impressions B/W", "val": "106,600 Impressions" },
-          { "label": "Toner Impressions Color", "val": "39,200 Impressions" },
-          { "label": "Copier Type", "val": "Office Color Copier" },
-          { "label": "Color Capability", "val": "Color Copier" },
-          { "label": "Properties", "val": "Copier-Printer-Scan-fax" }
+          {
+            "label": "Speed B/W",
+            "val": "65 Pages Per Minute"
+          },
+          {
+            "label": "Speed Color",
+            "val": "55 Pages Per Minute"
+          },
+          {
+            "label": "Resolution",
+            "val": "1200 x 1200 dpi"
+          },
+          {
+            "label": "Paper Capacity",
+            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
+          },
+          {
+            "label": "Max Monthly Volume",
+            "val": "Up to 300,000 Impressions"
+          },
+          {
+            "label": "Toner Impressions B/W",
+            "val": "106,600 Impressions"
+          },
+          {
+            "label": "Toner Impressions Color",
+            "val": "39,200 Impressions"
+          },
+          {
+            "label": "Copier Type",
+            "val": "Office Color Copier"
+          },
+          {
+            "label": "Color Capability",
+            "val": "Color Copier"
+          },
+          {
+            "label": "Properties",
+            "val": "Copier-Printer-Scan-fax"
+          }
         ]
       }
     ]
   }
-  
 ]
