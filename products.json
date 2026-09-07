@@ -15,7 +15,8 @@
     "category": "Laser Printer",
     "price": "0",
     "image": "images/default.png",
-    "description": "ទំនិញបន្ថែមថ្មីតាមរយៈ Admin Dashboard"
+    "subtitle": "{\n  \"id\": \"canon-ir2525\",\n  \"name\": \"Canon imageRUNNER 2525\",\n  \"brand\": \"canon\",\n  \"category\": \"Laser Printer\",\n  \"price\": \"$850\",\n  \"image\": \"images/canon-ir2525.jpg\",\n  \"subtitle\": \"A3 Monochrome Digital Multifunction Printer\",\n  \"description\": \"Canon imageRUNNER 2525 គឺជាម៉ាស៊ីនព្រីនពហុមុខងារស្ដង់ដារសម្រាប់ ការិយាល័យ និងអាជីវកម្មខ្នាតតូចដល់មធ្យម ដែលផ្ដល់នូវល្បឿនលឿន គុណភាពព្រីនច្បាស់ និងភាពធន់ខ្ពស់។\\n\\n- Function: Print, Copy, Scan\\n- Speed: 25 Pages Per Minute (B/W)\\n- Resolution: 600 x 600 dpi\\n- Paper Size: A4, A3, A5\\n- Network / USB Connectivity\"\n}",
+    "description": "{\n  \"id\": \"canon-ir2525\",\n  \"name\": \"Canon imageRUNNER 2525\",\n  \"brand\": \"canon\",\n  \"category\": \"Laser Printer\",\n  \"price\": \"$850\",\n  \"image\": \"images/canon-ir2525.jpg\",\n  \"subtitle\": \"A3 Monochrome Digital Multifunction Printer\",\n  \"description\": \"Canon imageRUNNER 2525 គឺជាម៉ាស៊ីនព្រីនពហុមុខងារស្ដង់ដារសម្រាប់ ការិយាល័យ និងអាជីវកម្មខ្នាតតូចដល់មធ្យម ដែលផ្ដល់នូវល្បឿនលឿន គុណភាពព្រីនច្បាស់ និងភាពធន់ខ្ពស់។\\n\\n- Function: Print, Copy, Scan\\n- Speed: 25 Pages Per Minute (B/W)\\n- Resolution: 600 x 600 dpi\\n- Paper Size: A4, A3, A5\\n- Network / USB Connectivity\"\n}"
   },
   {
     "id": "prod-1788790654048",
