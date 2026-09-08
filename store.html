@@ -69,7 +69,7 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -85,6 +85,7 @@
             cursor: pointer;
             padding: 5px 0;
             text-transform: capitalize;
+            white-space: nowrap;
         }
 
         .nav-menu > a:hover, .dropbtn:hover, .filter-trigger:hover {
@@ -541,8 +542,6 @@
 </head>
 <body>
 
-    <!-- Top Bar Header (លុបទាំងលេខទូរស័ព្ទ និង Social Icons ចេញរួចរាល់) -->
-    <!-- ប្រសិនបើមិនចង់ឱ្យមានបន្ទាត់ខ្មៅខាងលើនេះទាល់តែសោះ បងអាចលុប tag <div class="top-bar">...</div> នេះចេញបាន -->
     <div class="top-bar" style="display: none;"></div>
 
     <!-- Main Navigation Header -->
@@ -559,6 +558,9 @@
             <div class="nav-menu" id="navMenu">
                 <a href="index.html">Home</a>
                 <button class="filter-trigger" data-filter="All">Store</button>
+
+                <!-- Copier ដាក់នៅខាងក្រៅជា Main Menu ផ្ទាល់ -->
+                <button class="filter-trigger" data-filter="Copier">Copier</button>
 
                 <div class="dropdown">
                     <span class="dropbtn">Software Firmware <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
@@ -607,6 +609,10 @@
             <div class="sidebar-menu-list">
                 <button class="filter-trigger active" data-filter="All">Products (All)</button>
                 
+                <!-- Copier ដាក់នៅផ្នែកខាងលើនៃ Sidebar ផ្ទាល់ -->
+                <div class="sidebar-category-title">Copier Machine</div>
+                <button class="filter-trigger" data-filter="Copier">Copier</button>
+
                 <div class="sidebar-category-title">Software Firmware</div>
                 <button class="filter-trigger" data-filter="Canon Firmware">Canon Firmware</button>
                 <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba Firmware</button>

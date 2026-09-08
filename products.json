@@ -1,32 +1,5 @@
 [
   {
-    "id": "prod-1788790998040",
-    "name": "canon ir2425",
-    "brand": "canon",
-    "category": "Laser Printer",
-    "price": "0",
-    "image": "images/default.png",
-    "description": "ទំនិញបន្ថែមថ្មីតាមរយៈ Admin Dashboard"
-  },
-  {
-    "id": "prod-1788790705151",
-    "name": "canon ir2525",
-    "brand": "canon",
-    "category": "Laser Printer",
-    "price": "0",
-    "image": "images/default.png",
-    "description": "ទំនិញបន្ថែមថ្មីតាមរយៈ Admin Dashboard"
-  },
-  {
-    "id": "prod-1788790654048",
-    "name": "Canon imageRUNNER ADVANCE C3530i III",
-    "brand": "Canon",
-    "category": "Canon Firmware",
-    "price": "0",
-    "image": "images/default.png",
-    "description": "ទំនិញបន្ថែមថ្មីតាមរយៈ Admin Dashboard"
-  },
-  {
     "id": "canon_c7580i_iii",
     "name": "Canon imageRUNNER ADVANCE C7580i III",
     "custom_title": "Canon imageRUNNER ADVANCE C7580i III",
@@ -2434,5 +2407,56 @@
         ]
       }
     ]
-  }
+  },{
+  "id": "prod-canon-ir2425",
+  "name": "Canon imageRUNNER 2425",
+  "custom_title": "Canon imageRUNNER 2425",
+  "custom_link": "https://t.me/your_telegram_username",
+  "brand": "Canon",
+  "category": "Copier",
+  "subtitle": "A3 Monochrome Digital Multifunction Printer",
+  "price": "ទំនាក់ទំនងតម្លៃ",
+  "images": [
+    "images/copiers/canon/ir2425/canon-ir2425-1.webp",
+    "images/copiers/canon/ir2425/canon-ir2425-2.webp"
+  ],
+  "image": "images/copiers/canon/ir2425/canon-ir2425-1.webp",
+  "tags": [
+    "A3 Monochrome Copier",
+    "Print, Copy, Scan",
+    "Network & Mobile Printing"
+  ],
+  "description": "ម៉ាស៊ីនព្រីនពហុមុខងារ Canon imageRUNNER 2425 គឺជាជម្រើសដ៏ស័ក្តិសមបំផុតសម្រាប់កន្លែងការិយាល័យ និងអាជីវកម្មខ្នាតតូចដល់មធ្យម ដែលត្រូវការភាពរហ័សរួន ស្ថិរភាពខ្ពស់ និងសន្សំសំចៃថាមពល។ វាគាំទ្រការបញ្ជាពីទូរស័ព្ទដៃ និងបណ្តាញ Network យ៉ាងងាយស្រួល។",
+  "machine_type": "A3 Monochrome Copier",
+  "functions": "Print, Copy, Scan, Network, Wi-Fi (Optional)",
+  "copier_type": "A3 Mono MFP",
+  "specs": [
+    {
+      "category": "MAIN SPECIFICATIONS",
+      "rows": [
+        {"label": "Machine Type", "val": "A3 Monochrome Laser Multifunctional"},
+        {"label": "Core Functions", "val": "Print, Copy, and Scan"},
+        {"label": "Control Panel", "val": "7-inch TFT LCD WVGA Color Touch Panel"},
+        {"label": "Memory", "val": "2.0 GB RAM"},
+        {"label": "Interface Connection", "val": "Network: 100Base-TX/10Base-T, Wireless LAN (IEEE 802.11 b/g/n); USB 2.0"}
+      ]
+    },
+    {
+      "category": "PRINT SPECIFICATIONS",
+      "rows": [
+        {"label": "Print Speed", "val": "Up to 25 ppm (A4), Up to 15 ppm (A3)"},
+        {"label": "Print Resolution", "val": "600 x 600 dpi"},
+        {"label": "Double-Sided Printing", "val": "Automatic (Standard)"}
+      ]
+    },
+    {
+      "category": "COPY & SCAN SPECIFICATIONS",
+      "rows": [
+        {"label": "Copy Speed", "val": "Up to 25 ppm (A4)"},
+        {"label": "Copy Resolution", "val": "600 x 600 dpi"},
+        {"label": "Scan Type", "val": "Standard DADF (Duplex Automatic Document Feeder)"}
+      ]
+    }
+  ]
+}
 ]
