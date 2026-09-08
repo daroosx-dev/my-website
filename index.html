@@ -13,25 +13,27 @@
     <link rel="stylesheet" href="css/home-style.css">
 
     <style>
-        /* Top Bar Header (លុបចោល ឬលាក់ទុក) */
+        /* Top Bar Header */
         .top-bar {
             background-color: #222;
             color: #fff;
             padding: 8px 5%;
-            display: none; /* លាក់ Top Bar ចោលទាំងស្រុង */
+            display: none;
             justify-content: flex-end;
             align-items: center;
             font-size: 13px;
         }
 
-        /* Apple Header & Navigation Styles */
+        /* Samsung-style Header & Navigation Styles */
         .apple-header {
-            background-color: #161617;
-            color: #f5f5f7;
+            background-color: #ffffff;
+            color: #000000;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #e5e5e5;
+            width: 100%;
         }
 
         .apple-nav {
@@ -40,16 +42,17 @@
             justify-content: space-between;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 12px 20px;
-            position: relative;
+            padding: 0 30px;
+            height: 70px;
         }
 
         .nav-logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
+            font-size: 22px;
+            font-weight: 800;
+            color: #000000;
             text-decoration: none;
             flex-shrink: 0;
+            letter-spacing: -0.5px;
         }
 
         .logo-blue {
@@ -59,67 +62,182 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 30px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            gap: 25px;
+            height: 100%;
         }
 
         .nav-menu > a, .dropbtn, .filter-trigger {
-            color: #f5f5f7;
+            color: #111111;
             text-decoration: none;
             font-size: 14px;
+            font-weight: 500;
             transition: color 0.2s;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 5px;
+            position: relative;
         }
 
         .nav-menu > a:hover, .dropbtn:hover, .filter-trigger:hover {
             color: #0071e3;
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        .dropdown.active .dropbtn::after,
+        .dropdown:hover .dropbtn::after,
+        .nav-menu > a.active::after,
+        .nav-menu > a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #0071e3;
+            animation: slideIn 0.2s ease;
         }
 
-        .dropdown-content {
+        @keyframes slideIn {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        .dropdown {
+            position: static;
+            display: inline-block;
+            height: 100%;
+        }
+
+        .mega-menu-content {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #ffffff;
-            min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-            z-index: 1000;
-            border-radius: 6px;
-            padding: 8px 0;
-            text-align: left;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block !important;
-        }
-
-        .dropdown-content button {
-            color: #333333 !important;
-            padding: 10px 16px;
-            text-decoration: none;
-            display: block !important;
-            text-align: left;
-            font-size: 14px;
+            right: 0;
             width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0px 15px 30px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 40px 10%;
+            border-top: 1px solid #eaeaea;
+            box-sizing: border-box;
+        }
+
+        .dropdown:hover .mega-menu-content,
+        .dropdown.show-mega .mega-menu-content {
+            display: flex !important;
+            justify-content: space-between;
+            animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mega-grid-section {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            padding-right: 40px;
+            border-right: 1px solid #eaeaea;
+            align-content: start;
+        }
+
+        .mega-item {
+            text-align: center;
+            text-decoration: none;
             background: none;
             border: none;
             cursor: pointer;
-            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.2s;
         }
 
-        .dropdown-content button:hover {
-            background-color: #f5f5f7;
-            color: #0071e3 !important;
+        .mega-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .mega-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .mega-item span {
+            font-size: 13px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 1.3;
+        }
+
+        .mega-discover-section {
+            width: 250px;
+            padding-left: 40px;
+        }
+
+        .mega-discover-section h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #777777;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .mega-discover-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mega-discover-section ul li a,
+        .mega-discover-section ul li button {
+            text-decoration: none;
+            color: #222223;
+            font-size: 14px;
+            font-weight: 400;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            text-align: left;
+            transition: color 0.2s;
+        }
+
+        .mega-discover-section ul li a:hover,
+        .mega-discover-section ul li button:hover {
+            color: #0071e3;
+            text-decoration: underline;
+        }
+
+        .nav-right-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-right-icons a {
+            color: #111111;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-right-icons a:hover {
+            color: #0071e3;
         }
 
         .menu-toggle {
@@ -127,13 +245,10 @@
             background: none;
             border: none;
             font-size: 22px;
-            color: #ffffff;
+            color: #111111;
             cursor: pointer;
         }
 
-        /* ========================================== */
-        /* PRODUCT CARD ANIMATIONS & HOVER EFFECTS    */
-        /* ========================================== */
         .product-card-home {
             transition: transform 0.3s ease, box-shadow 0.3s ease !important;
         }
@@ -151,7 +266,127 @@
             transform: scale(1.08) !important;
         }
 
-        @media (max-width: 768px) {
+        /* Live Search Modal Styles */
+        .search-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 80px;
+            animation: fadeInOverlay 0.2s ease;
+        }
+
+        .search-modal-container {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-input-wrapper {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eaeaea;
+            gap: 12px;
+        }
+
+        .search-input-wrapper i {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #111;
+            background: transparent;
+        }
+
+        .search-close-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .search-close-btn:hover {
+            color: #000;
+        }
+
+        .search-results-box {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover {
+            background-color: #f5f5f7;
+        }
+
+        .search-result-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 6px;
+            background: #f9f9f9;
+            padding: 4px;
+        }
+
+        .search-result-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 5px 0;
+            color: #111;
+        }
+
+        .search-result-info span {
+            font-size: 13px;
+            color: #0071e3;
+            font-weight: 500;
+        }
+
+        .search-no-result {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 992px) {
+            .apple-nav {
+                height: auto;
+                padding: 15px 20px;
+            }
             .menu-toggle {
                 display: block !important;
             }
@@ -161,38 +396,47 @@
                 top: 100% !important;
                 left: 0 !important;
                 width: 100% !important;
-                background-color: #161617 !important;
+                background-color: #ffffff !important;
                 flex-direction: column !important;
                 align-items: flex-start !important;
-                padding: 15px 20px !important;
+                padding: 20px !important;
                 gap: 15px !important;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
-                transform: none !important;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+                height: auto !important;
             }
             .nav-menu.active {
                 display: flex !important;
             }
-            .nav-menu > a, .dropbtn, .filter-trigger {
-                width: 100% !important;
-                text-align: left !important;
+            .nav-menu > a, .dropbtn {
+                height: auto !important;
+                padding: 10px 0 !important;
             }
-            .dropdown-content {
+            .dropdown {
+                height: auto !important;
+                width: 100%;
+            }
+            .mega-menu-content {
                 position: static !important;
+                flex-direction: column !important;
+                padding: 15px !important;
                 box-shadow: none !important;
-                background-color: #222223 !important;
-                width: 100% !important;
-                margin-top: 5px !important;
             }
-            .dropdown-content button {
-                color: #f5f5f7 !important;
-                padding-left: 20px !important;
+            .mega-grid-section {
+                grid-template-columns: repeat(2, 1fr) !important;
+                border-right: none !important;
+                padding-right: 0 !important;
+            }
+            .mega-discover-section {
+                width: 100% !important;
+                padding-left: 0 !important;
+                margin-top: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar Header (លុបចោលទាំងស្រុង) -->
+    <!-- Top Bar Header -->
     <div class="top-bar"></div>
 
     <!-- Main Navigation Header -->
@@ -207,47 +451,108 @@
             </button>
 
             <div class="nav-menu" id="navMenu">
-                <a href="index.html" style="color: #0071e3; font-weight: bold;">Home</a>
-                <button class="filter-trigger" data-filter="All">Store</button>
-
-                <div class="dropdown">
-                    <span class="dropbtn">Software Firmware <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
-                    <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Canon Firmware">Canon</button>
-                        <button class="filter-trigger" data-filter="Ricoh Firmware">Ricoh</button>
-                        <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba</button>
-                        <button class="filter-trigger" data-filter="Epson Firmware">Epson</button>
-                        <button class="filter-trigger" data-filter="HP Firmware">HP</button>
+                <a href="index.html" class="active">HOME</a>
+                
+                <!-- Mega Menu សម្រាប់ Printer & Copier -->
+                <div class="dropdown" id="dropPrinter">
+                    <button class="dropbtn">COPIER & PRINTER <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 5px;"></i></button>
+                    <div class="mega-menu-content">
+                        <div class="mega-grid-section">
+                            <button class="filter-trigger mega-item" data-filter="Ink Printer">
+                                <img src="images/my-home/image (1).webp" alt="Ink Printer" onerror="this.src='https://via.placeholder.com/70?text=Printer'">
+                                <span>Ink Printer</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Laser Printer">
+                                <img src="images/my-home/image (2).webp" alt="Laser Printer" onerror="this.src='https://via.placeholder.com/70?text=Laser'">
+                                <span>Laser Printer</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Canon Firmware">
+                                <img src="images/my-home/image (3).webp" alt="Canon" onerror="this.src='https://via.placeholder.com/70?text=Canon'">
+                                <span>Canon Firmware</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Epson Firmware">
+                                <img src="images/my-home/image (4).webp" alt="Epson" onerror="this.src='https://via.placeholder.com/70?text=Epson'">
+                                <span>Epson Firmware</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Ricoh Firmware">
+                                <img src="images/my-home/image (1).webp" alt="Ricoh" onerror="this.src='https://via.placeholder.com/70?text=Ricoh'">
+                                <span>Ricoh Firmware</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Toshiba Firmware">
+                                <img src="images/my-home/image (2).webp" alt="Toshiba" onerror="this.src='https://via.placeholder.com/70?text=Toshiba'">
+                                <span>Toshiba Firmware</span>
+                            </button>
+                        </div>
+                        <div class="mega-discover-section">
+                            <h4>Discover</h4>
+                            <ul>
+                                <li><button class="filter-trigger" data-filter="All">Printer Buying Guide</button></li>
+                                <li><button class="filter-trigger" data-filter="Software Firmware">Firmware Update Guide</button></li>
+                                <li><a href="store.html">Special Offers & Discounts</a></li>
+                                <li><a href="https://t.me/Mac_error404" target="_blank">Technical Support</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="dropdown">
-                    <span class="dropbtn">Printer <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
-                    <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
-                        <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
+                <!-- Mega Menu សម្រាប់ Software & License -->
+                <div class="dropdown" id="dropSoftware">
+                    <button class="dropbtn">SOFTWARE & LICENSE <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 5px;"></i></button>
+                    <div class="mega-menu-content">
+                        <div class="mega-grid-section">
+                            <button class="filter-trigger mega-item" data-filter="Windows">
+                                <img src="images/my-home/image (1).webp" alt="Windows" onerror="this.src='https://via.placeholder.com/70?text=Win'">
+                                <span>Windows License</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Microsoft Office">
+                                <img src="images/my-home/image (2).webp" alt="Office" onerror="this.src='https://via.placeholder.com/70?text=Office'">
+                                <span>Microsoft Office</span>
+                            </button>
+                        </div>
+                        <div class="mega-discover-section">
+                            <h4>Discover Software</h4>
+                            <ul>
+                                <li><button class="filter-trigger" data-filter="Windows">Activated Windows</button></li>
+                                <li><button class="filter-trigger" data-filter="Microsoft Office">Office Lifetime License</button></li>
+                                <li><a href="html-page/software.html">All Software Utilities</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="dropdown">
-                    <span class="dropbtn">Software License <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></span>
-                    <div class="dropdown-content">
-                        <button class="filter-trigger" data-filter="Windows">Windows</button>
-                        <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
-                    </div>
-                </div>
+                <a href="store.html">STORE</a>
+                <a href="html-page/software.html">SOFTWARE</a>
+            </div>
 
-                <a href="html-page/software.html">Software</a>
+            <!-- Header Right Icons -->
+            <div class="nav-right-icons">
+                <a href="#" id="openSearchModal" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="store.html" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="https://t.me/Mac_error404" target="_blank" aria-label="Account"><i class="fa-solid fa-user"></i></a>
             </div>
         </nav>
     </header>
 
+    <!-- Search Modal Overlay -->
+    <div class="search-modal-overlay" id="searchModalOverlay">
+        <div class="search-modal-container">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="liveSearchInput" placeholder="Search...">
+                <button class="search-close-btn" id="searchCloseModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="search-results-box" id="searchResultsBox">
+                <div class="search-no-result">Search products...</div>
+            </div>
+        </div>
+    </div>
+
     <!-- 3D Coverflow Hero Carousel -->
     <section class="tech-hero">
         <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack">
-                <!-- រូបភាពនឹងត្រូវបានទាញមកបញ្ចូលស្វ័យប្រវត្តិដោយ JavaScript -->
-            </div>
+            <div class="carousel-track" id="carouselTrack"></div>
         </div>
         
         <!-- Shop Now Button -->
@@ -272,7 +577,7 @@
     <div class="tech-features">
         <div class="feature-card">
             <div class="feature-icon"><i class="fa-solid fa-print"></i></div>
-            <h3>Printer & Copier</h3>
+            <h3>COPIER & PRINTER</h3>
             <p>មានលក់ម៉ាស៊ីនព្រីន និងម៉ាស៊ីនថតចម្លងគ្រប់ម៉ាកល្បីៗ ធានាគុណភាពជូន។</p>
         </div>
         <div class="feature-card">
@@ -290,7 +595,6 @@
     <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-container">
-            <!-- ជួរទី ១៖ អំពីហាង -->
             <div class="footer-col">
                 <h3><span class="logo-blue" style="color: #0071e3; font-weight: bold;">daro</span>printer</h3>
                 <p>ជាកន្លែងផ្ដល់ជូននូវដំណោះស្រាយបច្ចេកវិទ្យាទំនើប ម៉ាស៊ីនព្រីន ម៉ាស៊ីនថតចម្លង Firmware និង Software License ដ៏គួរឱ្យទុកចិត្ត។</p>
@@ -302,7 +606,6 @@
                 </div>
             </div>
 
-            <!-- ជួរទី ២៖ តំណរភ្ជាប់រហ័ស -->
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul>
@@ -312,18 +615,16 @@
                 </ul>
             </div>
 
-            <!-- ជួរទី ៣៖ ប្រភេទផលិតផល -->
             <div class="footer-col">
                 <h3>Categories</h3>
                 <ul>
-                    <li><a href="store.html?filter=Canon+Firmware">Canon Firmware</a></li>
-                    <li><a href="store.html?filter=Epson+Firmware">Epson Firmware</a></li>
-                    <li><a href="store.html?filter=Ink+Printer">Ink Printer</a></li>
-                    <li><a href="store.html?filter=Windows">Windows License</a></li>
+                    <li><a href="store.html?category=Canon+Firmware">Canon Firmware</a></li>
+                    <li><a href="store.html?category=Epson+Firmware">Epson Firmware</a></li>
+                    <li><a href="store.html?category=Ink+Printer">Ink Printer</a></li>
+                    <li><a href="store.html?category=Windows">Windows License</a></li>
                 </ul>
             </div>
 
-            <!-- ជួរទី ៤៖ ព័ត៌មានទំនាក់ទំនង -->
             <div class="footer-col">
                 <h3>Contact Info</h3>
                 <p><i class="fa-solid fa-headset"></i> Phone: 010 266 767 | 097 876 5494</p>
@@ -332,7 +633,6 @@
             </div>
         </div>
 
-        <!-- ផ្នែកក្រោមបង្អស់ (Copyright) -->
         <div class="footer-bottom">
             <p>&copy; 2026 daroPrinter. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
             <p>Designed with dARO</p>
@@ -351,7 +651,22 @@
             });
         }
 
-        // Handle Filter Buttons to jump to store.html with parameter
+        // មុខងារបន្ថែម JavaScript ដើម្បីឱ្យការអូស Mouse លើ Mega Menu កាន់តែរលូន
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(drop => {
+            let timeout;
+            drop.addEventListener('mouseenter', () => {
+                clearTimeout(timeout);
+                drop.classList.add('show-mega');
+            });
+            drop.addEventListener('mouseleave', () => {
+                timeout = setTimeout(() => {
+                    drop.classList.remove('show-mega');
+                }, 150);
+            });
+        });
+
+        // Handle Filter Buttons & Mega Menu Links (ផ្ញើ parameter ឈ្មោះ category ទៅ store.html)
         const filterTriggers = document.querySelectorAll('.filter-trigger');
         filterTriggers.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -360,7 +675,7 @@
                 if (filterValue === 'All') {
                     window.location.href = 'store.html';
                 } else {
-                    window.location.href = `store.html?filter=${encodeURIComponent(filterValue)}`;
+                    window.location.href = `store.html?category=${encodeURIComponent(filterValue)}`;
                 }
             });
         });
@@ -371,7 +686,6 @@
             "images/my-home/image (2).webp",
             "images/my-home/image (3).webp",
             "images/my-home/image (4).webp"
-           
         ];
 
         const track = document.getElementById('carouselTrack');
@@ -395,7 +709,7 @@
         const items = document.querySelectorAll('.carousel-item');
         let currentIndex = 0;
 
-        function updateCarousel() {
+        const updateCarousel = () => {
             if (items.length === 0) return;
 
             items.forEach((item, i) => {
@@ -418,12 +732,92 @@
             });
 
             currentIndex = (currentIndex + 1) % items.length;
-        }
+        };
 
         if (items.length > 0) {
             updateCarousel();
             setInterval(updateCarousel, 3000);
         }
+
+        // Live Search Modal Script Integration
+        document.addEventListener("DOMContentLoaded", () => {
+            const openSearchBtn = document.getElementById('openSearchModal');
+            const searchModal = document.getElementById('searchModalOverlay');
+            const closeSearchBtn = document.getElementById('searchCloseModal');
+            const liveSearchInput = document.getElementById('liveSearchInput');
+            const searchResultsBox = document.getElementById('searchResultsBox');
+
+            if (openSearchBtn) {
+                openSearchBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    searchModal.style.display = 'flex';
+                    liveSearchInput.focus();
+                });
+            }
+
+            if (closeSearchBtn) {
+                closeSearchBtn.addEventListener('click', () => {
+                    searchModal.style.display = 'none';
+                });
+            }
+
+            if (searchModal) {
+                searchModal.addEventListener('click', (e) => {
+                    if (e.target === searchModal) {
+                        searchModal.style.display = 'none';
+                    }
+                });
+            }
+
+            // Live Search Logic from products.json
+            if (liveSearchInput) {
+                let allProductsCache = [];
+
+                fetch('products.json')
+                    .then(res => res.json())
+                    .then(data => { allProductsCache = data; })
+                    .catch(err => console.error("Error loading products for search:", err));
+
+                liveSearchInput.addEventListener('input', (e) => {
+                    const keyword = e.target.value.trim().toLowerCase();
+                    if (!keyword) {
+                        searchResultsBox.innerHTML = '<div class="search-no-result">វាយបញ្ចូលឈ្មោះទំនិញដើម្បីស្វែងរក...</div>';
+                        return;
+                    }
+
+                    const filtered = allProductsCache.filter(p => 
+                        (p.name && p.name.toLowerCase().includes(keyword)) ||
+                        (p.category && p.category.toLowerCase().includes(keyword)) ||
+                        (p.brand && p.brand.toLowerCase().includes(keyword))
+                    );
+
+                    if (filtered.length === 0) {
+                        searchResultsBox.innerHTML = '<div class="search-no-result">រកមិនឃើញទំនិញដែលអ្នកស្វែងរកទេ</div>';
+                        return;
+                    }
+
+                    let resultsHTML = '';
+                    filtered.forEach(prod => {
+                        let imgSrc = 'images/default.png';
+                        let rawImg = prod.images?.[0] || prod.image || '';
+                        if (rawImg) {
+                            imgSrc = rawImg.startsWith('../') ? rawImg.replace('../', '') : (rawImg.startsWith('pages/') ? rawImg.replace('pages/', '') : rawImg);
+                        }
+
+                        resultsHTML += `
+                            <a href="pages/single-product.html?id=${prod.id}" class="search-result-item">
+                                <img src="${imgSrc}" alt="${prod.name}" onerror="this.src='https://via.placeholder.com/50?text=No+Img'">
+                                <div class="search-result-info">
+                                    <h4>${prod.name}</h4>
+                                    <span>${prod.price || ''}</span>
+                                </div>
+                            </a>
+                        `;
+                    });
+                    searchResultsBox.innerHTML = resultsHTML;
+                });
+            }
+        });
 
         // Fetch Featured Products Filtered by Category
         document.addEventListener("DOMContentLoaded", async () => {
@@ -472,23 +866,21 @@
                     htmlContent += `
                         <a href="${productLink}" class="product-card-home">
                             <div class="card-img-wrap">
-                                <span class="brand-tag-floating">${prod.brand || 'dAROPRINTER'}</span>
+                                <span class="brand-tag-floating">${prod.brand || 'dAROprinter'}</span>
                                 <img src="${imgSrc}" alt="${prod.name}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
                             </div>
-                            <div class="card-body-content">
-                                <h3 class="card-title">${prod.name}</h3>
-                                <div class="card-footer-row">
-                                    <span class="card-price">${prod.price}</span>
-                                    <span class="card-btn-detail">មើលលម្អិត</span>
-                                </div>
+                            <div class="card-info-home">
+                                <h3>${prod.name}</h3>
+                                <p class="price">${prod.price || ''}</p>
                             </div>
                         </a>
                     `;
                 });
+
                 gridContainer.innerHTML = htmlContent;
             } catch (err) {
-                console.error(err);
-                gridContainer.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red;">មានបញ្ហាក្នុងការទាញយកទិន្នន័យផលិតផលមកបង្ហាញ។</p>';
+                console.error("Error loading featured products:", err);
+                gridContainer.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: red;">មានបញ្ហាในการទាញយកទំនិញ</p>`;
             }
         });
     </script>
