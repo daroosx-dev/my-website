@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error('Error loading footer:', error));
 });
 
-// មុខងារគ្រប់គ្រង Search Modal និង Button ផ្សេងៗក្នុង Header
+// មុខងារគ្រប់គ្រង Search Modal, Mobile Menu និង Dropdown ក្នុង Header
 function initHeaderScript() {
+    // ផ្នែក Search Modal
     const openSearchModal = document.getElementById('openSearchModal');
     const searchModalOverlay = document.getElementById('searchModalOverlay');
     const searchCloseModal = document.getElementById('searchCloseModal');
@@ -51,4 +52,39 @@ function initHeaderScript() {
             }
         });
     }
+
+    // ផ្នែក Mobile Menu Toggle (ប៊ូតុងបីឆ្នូតលើទូរស័ព្ទ)
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    if (menuToggle && navMenu && menuIcon) {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+
+            if (navMenu.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // ផ្នែក Dropdown ពេលស្ថិតនៅលើទូរស័ព្ទ (Screen ≤ 992px)
+    const dropdowns = document.querySelectorAll('.apple-nav .dropdown');
+    dropdowns.forEach(dropdown => {
+        const dropbtn = dropdown.querySelector('.dropbtn');
+        if (dropbtn) {
+            dropbtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                }
+            });
+        }
+    });
 }

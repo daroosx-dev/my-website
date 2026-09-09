@@ -266,6 +266,7 @@
         background: #f8fafc;
         border: 1px solid #e2e8f0;
         transition: all 0.2s;
+        width: 100%;
     }
 
     .mega-item:hover {
@@ -507,7 +508,7 @@
 
 <!-- JavaScript for Mobile Menu, Dropdown, & Live Search Modal -->
 <script>
-    (function() {
+    document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
         const menuIcon = document.getElementById('menuIcon');
@@ -612,5 +613,5 @@
                 searchResultsBox.innerHTML = resultsHTML;
             });
         }
-    })();
+    });
 </script>
