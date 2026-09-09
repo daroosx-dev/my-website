@@ -1,0 +1,112 @@
+<!-- Top Bar Header -->
+    <div class="top-bar"></div>
+
+    <!-- Main Navigation Header -->
+    <header class="apple-header">
+        <nav class="apple-nav">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-blue">dARO</span>printer
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html">HOME</a>
+                
+                <!-- Mega Menu សម្រាប់ Printer & Copier -->
+                <div class="dropdown" id="dropPrinter">
+                    <button class="dropbtn">COPIER & PRINTER <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 5px;"></i></button>
+                    <div class="mega-menu-content">
+                        <div class="mega-grid-section">
+                            <button class="filter-trigger mega-item" data-filter="Ink Printer">
+                                <img src="images/ink printer/epson/l6390/L6390-1.webp" alt="Ink Printer" onerror="this.src='https://via.placeholder.com/70?text=Printer'">
+                                <span>Ink Printer</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Laser Printer">
+                                <img src="images/laser printer/hp/m283/m283-1.webp" alt="Laser Printer" onerror="this.src='https://via.placeholder.com/70?text=Laser'">
+                                <span>Laser Printer</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Canon Firmware">
+                                <img src="images/my-home/image (3).webp" alt="Canon" onerror="this.src='https://via.placeholder.com/70?text=Canon'">
+                                <span>Canon Firmware</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Epson Firmware">
+                                <img src="images/my-home/image (4).webp" alt="Epson" onerror="this.src='https://via.placeholder.com/70?text=Epson'">
+                                <span>Epson Firmware</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Ricoh Firmware">
+                                <img src="images/my-home/image (1).webp" alt="Ricoh" onerror="this.src='https://via.placeholder.com/70?text=Ricoh'">
+                                <span>Ricoh Firmware</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Toshiba Firmware">
+                                <img src="images/my-home/image (2).webp" alt="Toshiba" onerror="this.src='https://via.placeholder.com/70?text=Toshiba'">
+                                <span>Toshiba Firmware</span>
+                            </button>
+                        </div>
+                        <div class="mega-discover-section">
+                            <h4>Discover</h4>
+                            <ul>
+                                <li><button class="filter-trigger" data-filter="All">Printer Buying Guide</button></li>
+                                <li><button class="filter-trigger" data-filter="Software Firmware">Firmware Update Guide</button></li>
+                                <li><a href="store.html">Special Offers & Discounts</a></li>
+                                <li><a href="https://t.me/Mac_error404" target="_blank">Technical Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mega Menu សម្រាប់ Software & License -->
+                <div class="dropdown" id="dropSoftware">
+                    <button class="dropbtn">SOFTWARE & LICENSE <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 5px;"></i></button>
+                    <div class="mega-menu-content">
+                        <div class="mega-grid-section">
+                            <button class="filter-trigger mega-item" data-filter="Windows">
+                                <img src="images/my-home/image (1).webp" alt="Windows" onerror="this.src='https://via.placeholder.com/70?text=Win'">
+                                <span>Windows License</span>
+                            </button>
+                            <button class="filter-trigger mega-item" data-filter="Microsoft Office">
+                                <img src="images/my-home/image (2).webp" alt="Office" onerror="this.src='https://via.placeholder.com/70?text=Office'">
+                                <span>Microsoft Office</span>
+                            </button>
+                        </div>
+                        <div class="mega-discover-section">
+                            <h4>Discover Software</h4>
+                            <ul>
+                                <li><button class="filter-trigger" data-filter="Windows">Activated Windows</button></li>
+                                <li><button class="filter-trigger" data-filter="Microsoft Office">Office Lifetime License</button></li>
+                                <li><a href="html-page/software.html">All Software Utilities</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="store.html">STORE</a>
+                <a href="html-page/software.html">SOFTWARE</a>
+            </div>
+
+            <!-- Header Right Icons -->
+            <div class="nav-right-icons">
+                <a href="#" id="openSearchModal" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="store.html" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="https://t.me/Mac_error404" target="_blank" aria-label="Account"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Modal Overlay -->
+    <div class="search-modal-overlay" id="searchModalOverlay">
+        <div class="search-modal-container">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="liveSearchInput" placeholder="Search...">
+                <button class="search-close-btn" id="searchCloseModal" aria-label="Close Search">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="search-results-box" id="searchResultsBox">
+                <div class="search-no-result">Search products...</div>
+            </div>
+        </div>
+    </div>
