@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dAROPrinter - Store</title>
+    <title>dAROPrinter</title>
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -89,6 +89,48 @@
         }
 
         .nav-menu > a:hover, .dropbtn:hover, .filter-trigger:hover {
+            color: #0071e3;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+            z-index: 1000;
+            border-radius: 6px;
+            padding: 8px 0;
+            text-align: left;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content button {
+            color: #333333;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #f5f5f7;
             color: #0071e3;
         }
 
@@ -219,6 +261,39 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
+        /* Section Title Box Style */
+        .section-header-container {
+            max-width: 100%;
+            margin: 15px 0 5px 0;
+        }
+
+        .section-title-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .section-title-box h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title-box h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background-color: #0071e3;
+            border-radius: 2px;
+        }
+
         /* Product Container & Cards (Grid 4 columns) */
         .product-container {
             display: grid;
@@ -246,6 +321,16 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
+        .brand-logo-text {
+            font-size: 11px;
+            font-weight: 800;
+            color: #003399;
+            letter-spacing: 0.5px;
+            text-align: left;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
         .card-img {
             text-align: center;
             margin: 6px 0;
@@ -254,32 +339,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* ទប់មិនឱ្យរូបភាពរត់ចេញក្រៅប្រអប់ */
         }
 
         .card-img img {
-            width: 100%;       /* កំណត់ទទឹងឱ្យពេញប្រអប់ */
-            height: 100%;      /* កំណត់កម្ពស់ឱ្យពេញប្រអប់ */
-            object-fit: contain; /* រក្សាទម្រង់រូបភាពមិនឱ្យបែកទ្រង់ទ្រាយ */
             max-width: 100%;
             max-height: 100%;
+            object-fit: contain;
         }
 
         .product-title {
-            font-size: 11px;
-            font-weight: 700;
-            line-height: 1.3;
-            height: 28px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            margin: 4px 0;
-            cursor: pointer;
-            color: #0044cc;
-            text-align: center;
-        }
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.3;
+    height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* បន្ថែមបន្ទាត់នេះដើម្បីបំបាត់ Warning */
+    -webkit-box-orient: vertical;
+    margin: 4px 0;
+    cursor: pointer;
+    color: #0044cc;
+    text-align: center;
+}
 
         .price {
             font-size: 16px;
@@ -287,6 +370,67 @@
             color: #e11d48; 
             margin-bottom: 8px;
             text-align: center;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin-bottom: 6px;
+        }
+
+        .tag-item {
+            background-color: #e6f7ff;
+            border-left: 3px solid #00aeef;
+            padding: 3px 6px;
+            font-size: 9px;
+            color: #333333;
+            display: block;
+        }
+
+        .cmyk-bar {
+            display: flex;
+            height: 6px;
+            width: 100%;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 6px 0;
+            background: #ddd;
+        }
+        .cmyk-bar span {
+            flex: 1;
+            height: 100%;
+        }
+
+        .specs-table {
+            width: 100%;
+            font-size: 10px;
+            border-collapse: collapse;
+            margin-top: auto;
+            margin-bottom: 6px;
+        }
+
+        .specs-table td {
+            padding: 2px 0;
+            vertical-align: top;
+        }
+
+        .specs-table td.label {
+            width: 40%;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .specs-table td.colon {
+            width: 5%;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .specs-table td.value {
+            width: 55%;
+            color: #1e293b;
+            font-weight: 600;
         }
 
         .btn-detail {
@@ -376,13 +520,31 @@
             .nav-menu.active {
                 display: flex;
             }
+
+            .nav-menu > a, .dropbtn {
+                width: 100%;
+                text-align: left;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background-color: #222223;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .dropdown-content button {
+                color: #f5f5f7;
+                padding-left: 25px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ទីតាំងទាញយក Header ដោយស្វ័យប្រវត្តិ -->
-    <div id="site-header-container"></div>
+    <!-- ១. ទីតាំងសម្រាប់ទាញយក header.html មកដាក់ដោយស្វ័យប្រវត្តិ -->
+    <div id="header-placeholder"></div>
 
     <!-- SHOP LAYOUT WRAPPER (Sidebar + Main Content) -->
     <div class="shop-layout-wrapper">
@@ -396,6 +558,7 @@
             <div class="sidebar-menu-list">
                 <button class="filter-trigger active" data-filter="All">Products (All)</button>
                 
+                <!-- Copier ដាក់នៅផ្នែកខាងលើនៃ Sidebar ផ្ទាល់ -->
                 <div class="sidebar-category-title">Copier Machine</div>
                 <button class="filter-trigger" data-filter="Copier">Copier</button>
 
@@ -404,7 +567,7 @@
                 <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba Firmware</button>
                 <button class="filter-trigger" data-filter="Ricoh Firmware">Ricoh Firmware</button>
                 <button class="filter-trigger" data-filter="HP Firmware">HP Firmware</button>
-                    
+                            
                 <div class="sidebar-category-title">Printers</div>
                 <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
                 <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
@@ -423,75 +586,65 @@
 
         <!-- ផ្ទាំងខាងស្តាំសម្រាប់បង្ហាញ Search Bar និងផលិតផល -->
         <main class="shop-main-content">
+            <!-- ប៊ូតុងបើក Menu លើទូរស័ព្ទ -->
             <button class="mobile-filter-toggle" id="mobileFilterToggle">
                 <i class="fa-solid fa-filter"></i> All Products Menu
             </button>
 
+            <!-- Search Bar -->
             <div class="search-section">
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="ស្វែងរកម៉ូឌែលម៉ាស៊ីន ឬ Firmware...">
                 </div>
             </div>
 
+            <!-- ទីតាំងបង្ហាញបញ្ជីទំនិញ ឬ Sections តាម JS -->
             <div id="main-content-container">
-                <!-- ផលិតផលនឹងរត់ចូលមកទីនេះដោយស្វ័យប្រវត្តិពី store.js -->
+                <!-- ផលិតផលនឹងរត់ចូលមកទីនេះដោយស្វ័យប្រវត្តិ -->
             </div>
         </main>
     </div>
 
-    <!-- ទីតាំងទាញយក Footer ដោយស្វ័យប្រវត្តិ -->
-    <div id="site-footer-container"></div>
+    <!-- ២. ទីតាំងសម្រាប់ទាញយក footer.html មកដាក់ដោយស្វ័យប្រវត្តិ -->
+    <div id="footer-placeholder"></div>
 
-    <!-- JavaScript សម្រាប់ទាញយក Header និង Footer -->
+    <!-- JavaScript for Mobile Menu & Sidebar Toggle -->
     <script>
-      // ទាញយក header.html
-      fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('site-header-container').innerHTML = data;
-          
-          // បើកដំណើរការ Menu Toggle ក្រោយពេល Header ត្រូវបាន Load រួច
-          const menuToggle = document.getElementById('menuToggle');
-          const navMenu = document.getElementById('navMenu');
-          if (menuToggle && navMenu) {
-              menuToggle.addEventListener('click', () => {
-                  navMenu.classList.toggle('active');
-              });
-          }
-        });
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
 
-      // ទាញយក footer.html
-      fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('site-footer-container').innerHTML = data;
-        });
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
 
-      // JavaScript សម្រាប់ Sidebar Toggle លើទូរស័ព្ទ
-      const mobileFilterToggle = document.getElementById('mobileFilterToggle');
-      const shopSidebar = document.getElementById('shopSidebar');
-      const closeSidebar = document.getElementById('closeSidebar');
+        const mobileFilterToggle = document.getElementById('mobileFilterToggle');
+        const shopSidebar = document.getElementById('shopSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
 
-      if (mobileFilterToggle && shopSidebar) {
-          mobileFilterToggle.addEventListener('click', () => {
-              shopSidebar.classList.add('active');
-          });
+        if (mobileFilterToggle && shopSidebar) {
+            mobileFilterToggle.addEventListener('click', () => {
+                shopSidebar.classList.add('active');
+            });
 
-          if (closeSidebar) {
-              closeSidebar.addEventListener('click', () => {
-                  shopSidebar.classList.remove('active');
-              });
-          }
+            if (closeSidebar) {
+                closeSidebar.addEventListener('click', () => {
+                    shopSidebar.classList.remove('active');
+                });
+            }
 
-          document.addEventListener('click', (e) => {
-              if (!shopSidebar.contains(e.target) && !mobileFilterToggle.contains(e.target)) {
-                  shopSidebar.classList.remove('active');
-              }
-          });
-      }
+            document.addEventListener('click', (e) => {
+                if (!shopSidebar.contains(e.target) && !mobileFilterToggle.contains(e.target)) {
+                    shopSidebar.classList.remove('active');
+                }
+            });
+        }
     </script>
 
-    <!-- Connect External JavaScript -->
+    <!-- Connect External JavaScript (include.js សម្រាប់ទាញ Header/Footer និង store.js សម្រាប់ទិន្នន័យទំនិញ) -->
+    <script src="include.js"></script>
     <script src="store.js"></script>
+    
 </body>
 </html>

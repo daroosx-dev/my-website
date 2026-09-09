@@ -25,7 +25,6 @@ function createProductCardHTML(product) {
     let colorBarHTML = '';
     
     if (product.color_bar_type === 'cmyklmlc') {
-        // ៦ ពណ៌ (CMYK + Light Cyan + Light Magenta)
         colorBarHTML = `
             <div class="cmyk-bar">
                 <span style="background: #000000;"></span>
@@ -37,7 +36,6 @@ function createProductCardHTML(product) {
             </div>
         `;
     } else if (product.color_bar_type === '12-color') {
-        // ១២ ពណ៌សម្រាប់ម៉ាស៊ីន ផ្លូតទ័រ អាជីព
         colorBarHTML = `
             <div class="cmyk-bar">
                 <span style="background: #000000;"></span>
@@ -55,7 +53,6 @@ function createProductCardHTML(product) {
             </div>
         `;
     } else if (product.color_bar_type === 'cmyk') {
-        // ៤ ពណ៌ស្តង់ដារ (CMYK)
         colorBarHTML = `
             <div class="cmyk-bar">
                 <span style="background: #000000;"></span>
@@ -65,7 +62,6 @@ function createProductCardHTML(product) {
             </div>
         `;
     } else {
-        // បន្ទាត់ខ្មៅធម្មតា (Mono)
         colorBarHTML = `
             <div class="cmyk-bar">
                 <span style="flex: 1; background: #000000;"></span>
@@ -122,17 +118,16 @@ function createProductCardHTML(product) {
     `;
 }
 
-// មុខងារបង្ហាញទំនិញបែងចែកជា Section តាមប្រភេទ និង Brand យ៉ាងសំបូរបែប
+// មុខងារបង្ហាញទំនិញបែងចែកជា Section តាមប្រភេទ និង Brand
 function renderHomeSections(products) {
     const mainContainer = document.getElementById('main-content-container');
     if (!mainContainer) return;
 
     mainContainer.innerHTML = '';
 
-    // បងអាចកែបន្ថែម កាត់បន្ថយ ឬប្ដូរឈ្មោះ Section ទាំងនេះបានតាមចិត្តចង់!
     const targetSections = [
         { title: 'Software Firmware Canon', filterKey: 'category', filterValue: 'Firmware' },
-        { title: 'EEPSON Printer', filterKey: 'brand', filterValue: 'Epson' },
+        { title: 'EPSON Printer', filterKey: 'brand', filterValue: 'Epson' },
         { title: 'HP Printer', filterKey: 'brand', filterValue: 'Hp' }
     ];
 
@@ -141,7 +136,7 @@ function renderHomeSections(products) {
             if (!p) return false;
             const val = p[section.filterKey] ? String(p[section.filterKey]).toLowerCase() : '';
             return val.includes(section.filterValue.toLowerCase());
-        }).slice(0, 8); // កំណត់បង្ហាញត្រឹម 8 ផលិតផលក្នុងមួយ Section
+        }).slice(0, 8);
         
         if (matchedProducts.length > 0) {
             const sectionHTML = `
@@ -162,7 +157,7 @@ function renderHomeSections(products) {
     setTimeout(forceBoldSpecs, 10);
 }
 
-// មុខងារបង្ហាញទំនិញក្នុង Grid តែមួយ (ពេលអ្នកប្រើប្រាស់ធ្វើการ Search ឬ Filter រកម៉ាក ឬប្រភេទជាក់លាក់ណាមួយ)
+// មុខងារបង្ហាញទំនិញក្នុង Grid តែមួយ ពេល Filter រកម៉ាក ឬប្រភេទជាក់លាក់
 function renderFilteredGrid(products, title = "Search Results") {
     const mainContainer = document.getElementById('main-content-container');
     if (!mainContainer) return;
@@ -219,39 +214,48 @@ if (searchInput) {
     });
 }
 
-// Filter functionality (សម្រាប់ប៊ូតុង Store, HP, Canon, Epson, វីនដូ, ជាដើម)
-const filterButtons = document.querySelectorAll('.filter-trigger, .filter-btn, .dropdown-content a, .dropdown-menu a, nav a');
-filterButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        let filterValue = e.currentTarget.getAttribute('data-filter') || e.currentTarget.textContent.trim();
-        if (!filterValue) return;
-        const keyword = filterValue.toLowerCase().trim();
+// ប្រព័ន្ធ Filter ទាំង Sidebar និង Mega Menu
+document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.filter-trigger, .dropdown-content button, .dropdown-content a, .mega-item');
+    if (!trigger) return;
 
-        if (keyword === 'all' || keyword === 'store' || keyword === 'ទំនិញទាំងអស់') {
-            renderHomeSections(allProducts);
-        } else {
-            const filtered = allProducts.filter(p => {
-                const pBrand = p.brand ? p.brand.toLowerCase() : '';
-                const pCat = p.category ? p.category.toLowerCase() : '';
-                const pType = p.type ? p.type.toLowerCase() : '';
-                const pMachine = p.machine_type ? p.machine_type.toLowerCase() : '';
-                const pCopier = p.copier_type ? p.copier_type.toLowerCase() : '';
-                const pName = p.name ? p.name.toLowerCase() : '';
-                
-                const keywords = keyword.split(' ');
-                return keywords.every(kw => 
-                    pBrand.includes(kw) || 
-                    pCat.includes(kw) || 
-                    pType.includes(kw) || 
-                    pMachine.includes(kw) || 
-                    pCopier.includes(kw) ||
-                    pName.includes(kw)
-                );
-            });
-            
-            renderFilteredGrid(filtered, filterValue);
+    let filterValue = trigger.getAttribute('data-filter') || trigger.textContent.trim();
+    if (!filterValue) return;
+
+    const keyword = filterValue.toLowerCase().trim();
+
+    if (keyword === 'all' || keyword === 'products (all)' || keyword === 'store' || keyword === 'home') {
+        renderHomeSections(allProducts);
+        return;
+    }
+
+    document.querySelectorAll('.filter-trigger').forEach(btn => btn.classList.remove('active'));
+    if (trigger.classList.contains('filter-trigger')) {
+        trigger.classList.add('active');
+    }
+
+    const filtered = allProducts.filter(p => {
+        const pBrand = p.brand ? p.brand.toLowerCase() : '';
+        const pCat = p.category ? p.category.toLowerCase() : '';
+        const pType = p.type ? p.type.toLowerCase() : '';
+        const pMachine = p.machine_type ? p.machine_type.toLowerCase() : '';
+        const pCopier = p.copier_type ? p.copier_type.toLowerCase() : '';
+        const pName = p.name ? p.name.toLowerCase() : '';
+
+        if (keyword.includes('firmware')) {
+            const brandPart = keyword.replace('firmware', '').trim();
+            return pCat.includes('firmware') && (pBrand.includes(brandPart) || pName.includes(brandPart));
         }
+
+        return pBrand.includes(keyword) || 
+               pCat.includes(keyword) || 
+               pType.includes(keyword) || 
+               pMachine.includes(keyword) || 
+               pCopier.includes(keyword) ||
+               pName.includes(keyword);
     });
+
+    renderFilteredGrid(filtered, filterValue);
 });
 
 // View Detail Redirect Function
