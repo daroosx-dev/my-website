@@ -409,9 +409,24 @@
             .apple-nav {
                 height: auto;
                 padding: 15px 20px;
+                display: flex;
+                justify-content: space-between; /* រុញ Logo ទៅឆ្វេង និងប៊ូតុង Menu ទៅស្តាំបំផុត */
+                align-items: center;
+                flex-wrap: wrap;
             }
             .menu-toggle {
                 display: block !important;
+                order: 2; /* ធានាថាប៊ូតុង Menu នៅខាងស្តាំ */
+            }
+            .nav-logo {
+                order: 1; /* Logo នៅខាងឆ្វេង */
+            }
+            .nav-right-icons {
+                order: 3; /* រក្សារアイコンផ្សេងទៀតប្រសិនបើមាន */
+                width: 100%;
+                justify-content: flex-end;
+                margin-top: 10px;
+                display: none; /* បើចង់លាក់ ឬបង្ហាញអាចកែបាន */
             }
             .nav-menu {
                 display: none !important;
@@ -427,6 +442,7 @@
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
                 height: auto !important;
                 transform: none !important;
+                order: 4;
             }
             .nav-menu.active {
                 display: flex !important;
