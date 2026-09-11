@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ពិនិត្យមើលថាតើទំពរបច្ចុប្បន្នស្ថិតក្នុងថត ror (folder) ណាមួយ ដូចជា pages ឬ html-page
+    // ពិនិត្យមើលថាតើទំពរបច្ចុប្បន្នស្ថិតក្នុងថតរង (folder) ណាមួយ ដូចជា pages ឬ html-page
     const pathName = window.location.pathname;
-    const isSubFolder = pathName.includes('/pages/') || pathName.includes('/html-page/');
+    // ពង្រីកការឆែកឱ្យកាន់តែទូលំទូលាយដើម្បីចាប់យកគ្រប់ថតរងទាំងអស់
+    const isSubFolder = pathName.includes('/pages/') || pathName.includes('/html-page/') || (pathName.split('/').length > 2 && !pathName.endsWith('index.html') && pathName !== '/');
 
     // ១. ទាញយក header.html (បើស្ថិតក្នុងថតរង ត្រូវថយក្រោយ ../header.html បើនៅថតមេ ប្រើ header.html ធម្មតា)
     const headerUrl = isSubFolder ? "../header.html" : "header.html";
@@ -21,7 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     const links = headerPlaceholder.querySelectorAll("a");
                     links.forEach(link => {
                         let href = link.getAttribute("href");
-                        if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("tel:") && !href.startsWith("mailto:")) {
+                        if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("tel:") && !href.startsWith("mailto:") && !href.startsWith("javascript:")) {
+                            if (href.startsWith("/")) {
+                                href = href.substring(1);
+                            }
                             if (!href.startsWith("../")) {
                                 link.setAttribute("href", "../" + href);
                             }
@@ -32,10 +36,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     images.forEach(img => {
                         let src = img.getAttribute("src");
                         if (src && !src.startsWith("http") && !src.startsWith("../")) {
+                            if (src.startsWith("/")) {
+                                src = src.substring(1);
+                            }
                             img.setAttribute("src", "../" + src);
                         }
                     });
                 }
+
+                // === កំណត់បន្ទាត់ខៀវ (Active Menu) ឱ្យចំតាមទំព័របច្ចុប្បន្ន ===
+                const currentFileName = window.location.pathname.split("/").pop();
+                if (currentFileName === "software.html") {
+                    headerPlaceholder.querySelectorAll(".apple-nav a").forEach(a => {
+                        a.classList.remove("active");
+                        if (a.getAttribute("href").includes("software.html")) {
+                            a.classList.add("active");
+                        }
+                    });
+                }
+                // ========================================================
 
                 initHeaderScript();
             }
@@ -59,7 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     const footerLinks = footerPlaceholder.querySelectorAll("a");
                     footerLinks.forEach(link => {
                         let href = link.getAttribute("href");
-                        if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("tel:") && !href.startsWith("mailto:")) {
+                        if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("tel:") && !href.startsWith("mailto:") && !href.startsWith("javascript:")) {
+                            if (href.startsWith("/")) {
+                                href = href.substring(1);
+                            }
                             if (!href.startsWith("../")) {
                                 link.setAttribute("href", "../" + href);
                             }
