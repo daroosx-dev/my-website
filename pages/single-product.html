@@ -8,7 +8,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Link CSS -->
+    <!-- Link CSS (ប្តូរ Path ថយក្រោយ 1 កម្រិតព្រោះស្ថិតក្នុងថត ror) -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="single-product.css">
 
@@ -24,220 +24,272 @@
             background-color: #f5f6f8;
             color: #333333;
             overflow-x: hidden;
+            padding-top: 70px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
         }
 
-        /* Top Bar Header (លុបចោល ឬលាក់ទុក) */
-        .top-bar {
-            display: none;
-        }
-
-        /* Apple Header & Navigation Styles */
-        .apple-header {
-            background-color: #161617;
-            color: #f5f5f7;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .apple-nav {
+        /* --- SHOP LAYOUT WRAPPER (Sidebar + Main Content) --- */
+        .shop-layout-wrapper {
+            max-width: 1450px;
+            margin: 20px auto;
+            padding: 0 20px;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 12px 20px;
-            position: relative;
+            gap: 25px;
+            align-items: flex-start;
         }
 
-        .nav-logo {
-            font-size: 20px;
+        /* Sidebar ខាងឆ្វេង (Sticky ជាប់ពេល Scroll) */
+        .shop-sidebar {
+            width: 270px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            position: sticky;
+            top: 90px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            z-index: 99;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-header h3 {
+            font-size: 15px;
+            color: #1e293b;
             font-weight: 700;
-            color: #ffffff;
-            text-decoration: none;
+        }
+
+        .close-sidebar {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .sidebar-category-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            margin: 12px 0 4px 0;
+            letter-spacing: 0.5px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #d4af37; /* ពណ៌មាស */
+        }
+
+        .shop-sidebar .filter-trigger {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            padding: 6px 10px;
+            font-size: 14px;
+            color: #334155;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 2px;
+        }
+
+        .shop-sidebar .filter-trigger:hover {
+            background-color: #eff6ff;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        
+        .shop-sidebar .brand-btn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            padding: 6px 10px;
+        }
+
+        .shop-sidebar .brand-btn img.brand-logo-icon {
+            width: 45px;
+            height: 16px;
+            object-fit: contain;
             flex-shrink: 0;
         }
 
-        .logo-blue {
-            color: #0071e3;
+        /* ផ្នែកខាងស្តាំ (Main Content) */
+        .shop-main-content {
+            flex-grow: 1;
+            min-width: 0;
         }
 
-        .nav-menu {
-            display: flex;
+        .mobile-filter-toggle {
+            display: none;
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            cursor: pointer;
             align-items: center;
-            gap: 30px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            gap: 8px;
         }
 
-        .nav-menu > a, .dropbtn, .filter-trigger {
-            color: #f5f5f7;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px 0;
+        .mobile-filter-toggle i {
+            font-size: 16px;
+            color: #1e293b;
         }
 
-        .nav-menu > a:hover, .dropbtn:hover, .filter-trigger:hover {
-            color: #0071e3;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #ffffff;
-            min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-            z-index: 1000;
-            border-radius: 6px;
-            padding: 8px 0;
-            text-align: left;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block !important;
-        }
-
-        .dropdown-content button {
-            color: #333333 !important;
-            padding: 10px 16px;
-            text-decoration: none;
-            display: block !important;
-            text-align: left;
-            font-size: 14px;
-            width: 100%;
-            background: none;
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .dropdown-content button:hover {
-            background-color: #f5f5f7;
-            color: #0071e3 !important;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 22px;
-            color: #ffffff;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block !important;
+        /* --- RESPONSIVE FOR MOBILE --- */
+        @media (max-width: 900px) {
+            .shop-layout-wrapper {
+                flex-direction: column;
+                padding: 0 10px;
             }
-            .nav-menu {
-                display: none !important;
-                position: absolute !important;
-                top: 100% !important;
-                left: 0 !important;
-                width: 100% !important;
-                background-color: #161617 !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                padding: 15px 20px !important;
-                gap: 15px !important;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
-                transform: none !important;
+
+            .mobile-filter-toggle {
+                display: flex;
             }
-            .nav-menu.active {
-                display: flex !important;
+
+            .shop-sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100%;
+                z-index: 99999;
+                background: #ffffff;
+                transition: left 0.3s ease-in-out;
+                box-shadow: 10px 0 25px rgba(0, 0, 0, 0.15);
+                overflow-y: auto;
+                border-radius: 0;
             }
-            .nav-menu > a, .dropbtn, .filter-trigger {
-                width: 100% !important;
-                text-align: left !important;
+
+            .shop-sidebar.active {
+                left: 0;
             }
-            .dropdown-content {
-                position: static !important;
-                box-shadow: none !important;
-                background-color: #222223 !important;
-                width: 100% !important;
-                margin-top: 5px !important;
-            }
-            .dropdown-content button {
-                color: #f5f5f7 !important;
-                padding-left: 20px !important;
+
+            .close-sidebar {
+                display: block;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar Header (លុបចោលទាំងស្រុង) -->
-    <div class="top-bar"></div>
+    <!-- ១. ទីតាំងសម្រាប់ទាញយក header.html មកដាក់ដោយស្វ័យប្រវត្តិ -->
+    <div id="header-placeholder"></div>
 
-    <!-- Main Navigation Header -->
-    <header class="apple-header">
-        <nav class="apple-nav">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-blue">dARO</span>printer
-            </a>
-            
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fa-solid fa-bars"></i>
+    <!-- SHOP LAYOUT WRAPPER (Sidebar + Product Detail Content) -->
+    <div class="shop-layout-wrapper">
+        
+        <!-- Sidebar Menu ខាងឆ្វេង (Categories) -->
+        <aside class="shop-sidebar" id="shopSidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-solid fa-list"></i> Categories</h3>
+                <button class="close-sidebar" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="sidebar-menu-list">
+                <button class="filter-trigger" data-filter="All">Products (All)</button>
+                
+                <div class="sidebar-category-title">Copier Machine</div>
+                <button class="filter-trigger" data-filter="Copier">Copier</button>
+
+                <div class="sidebar-category-title">Software Firmware</div>
+                <button class="filter-trigger brand-btn" data-filter="Canon Firmware">
+                    <img src="../images/Logo/canon.png" alt="Canon" class="brand-logo-icon"> <span>Canon Firmware</span>
+                </button>
+                <button class="filter-trigger brand-btn" data-filter="Toshiba Firmware">
+                    <img src="../images/Logo/toshiba.png" alt="Toshiba" class="brand-logo-icon"> <span>Toshiba Firmware</span>
+                </button>
+                <button class="filter-trigger brand-btn" data-filter="Ricoh Firmware">
+                    <img src="../images/Logo/ricoh.png" alt="Ricoh" class="brand-logo-icon"> <span>Ricoh Firmware</span>
+                </button>
+         
+                <div class="sidebar-category-title">Printers</div>
+                <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
+                <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
+                <button class="filter-trigger" data-filter="Large Format Printer">Large Format Printer</button>
+
+                <div class="sidebar-category-title">Printer Parts & Accessories</div>
+                <button class="filter-trigger" data-filter="Printer Parts">Printer Parts</button>
+                <button class="filter-trigger" data-filter="Toner and Ink">Toner & Ink</button>
+
+                <div class="sidebar-category-title">Software License</div>
+                <button class="filter-trigger" data-filter="Windows">Windows</button>
+                <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
+                <button class="filter-trigger" data-filter="Utilities Software">Utilities Software</button>
+            </div>
+        </aside>
+        
+        <!-- ផ្នែកខាងស្តាំសម្រាប់បង្ហាញព័ត៌មានលម្អិតទំនិញ -->
+        <main class="shop-main-content">
+            <!-- ប៊ូតុងបើក Menu លើទូរស័ព្ទ (Categories ≡) -->
+            <button class="mobile-filter-toggle" id="mobileFilterToggle">
+                Categories <i class="fa-solid fa-bars"></i>
             </button>
 
-            <div class="nav-menu" id="navMenu">
-                <a href="../index.html">Home</a>
-                <button class="filter-trigger" data-filter="All">Store</button>
-
-                <a href="../html-page/software.html">Software</a>
+            <!-- Breadcrumb -->
+            <div class="breadcrumb-container" style="margin-bottom: 15px;">
+                <nav class="breadcrumb">
+                    <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
+                    <span id="breadcrumbCategory" class="current">Products</span> <span class="separator">/</span> 
+                    <span class="current" id="breadcrumbName">ព័ត៌មានលម្អិត</span>
+                </nav>
             </div>
-        </nav>
-    </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-container">
-        <nav class="breadcrumb">
-            <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
-            <span id="breadcrumbCategory" class="current">Products</span> <span class="separator">/</span> 
-            <span class="current" id="breadcrumbName">ព័ត៌មានលម្អិត</span>
-        </nav>
+            <!-- Main Product Section -->
+            <div class="single-product-main">
+                <div class="product-layout" id="productDetailContainer">
+                    <p style="text-align: center; grid-column: 1 / -1; padding: 40px;">កំពុងផ្ទុកទិន្នន័យផលិតផល...</p>
+                </div>
+
+                <!-- Detailed Information Box (Specs Style) -->
+                <section class="detailed-info-container" id="specsSection" style="display: none; margin-top: 20px;">
+                    <table class="specs-table" id="specsContainerTable">
+                        <!-- Data specs នឹងរៀបចំដាក់ទីនេះស្វ័យប្រវត្តិ -->
+                    </table>
+                </section>
+            </div>
+        </main>
     </div>
 
-    <!-- Main Product Section -->
-    <main class="single-product-main">
-        <div class="product-layout" id="productDetailContainer">
-            <p style="text-align: center; grid-column: 1 / -1; padding: 40px;">កំពុងផ្ទុកទិន្នន័យផលិតផល...</p>
-        </div>
+    <!-- ២. ទីតាំងសម្រាប់ទាញយក footer.html មកដាក់ដោយស្វ័យប្រវត្តិ -->
+    <div id="footer-placeholder"></div>
 
-        <!-- Detailed Information Box (Specs Style) -->
-        <section class="detailed-info-container" id="specsSection" style="display: none;">
-            <table class="specs-table" id="specsContainerTable">
-                <!-- Data specs នឹងរៀបចំដាក់ទីនេះស្វ័យប្រវត្តិ -->
-            </table>
-        </section>
-    </main>
-
-    <!-- JavaScript for Single Product Page Data Binding -->
+    <!-- JavaScript for Mobile Menu, Sidebar Toggle & Product Details -->
     <script>
-        // Toggle Mobile Menu
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
+        const mobileFilterToggle = document.getElementById('mobileFilterToggle');
+        const shopSidebar = document.getElementById('shopSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
 
-        if (menuToggle && navMenu) {
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
+        if (mobileFilterToggle && shopSidebar) {
+            mobileFilterToggle.addEventListener('click', () => {
+                shopSidebar.classList.add('active');
+            });
+
+            if (closeSidebar) {
+                closeSidebar.addEventListener('click', () => {
+                    shopSidebar.classList.remove('active');
+                });
+            }
+
+            document.addEventListener('click', (e) => {
+                if (!shopSidebar.contains(e.target) && !mobileFilterToggle.contains(e.target)) {
+                    shopSidebar.classList.remove('active');
+                }
             });
         }
 
-        // Handle Filter Buttons to jump to store.html with parameter
+        // Handle Filter Buttons in Sidebar to jump to store.html with parameter
         const filterTriggers = document.querySelectorAll('.filter-trigger');
         filterTriggers.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -268,7 +320,7 @@
             const breadcrumbCategory = document.getElementById('breadcrumbCategory');
             const pageTitle = document.getElementById('pageTitle');
 
-            // 1. ទាញយក ID ពី URL (ឧទាហរណ៍: single-product.html?id=1)
+            // 1. ទាញយក ID ពី URL
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
 
@@ -277,14 +329,16 @@
                 return;
             }
 
-            // 2. ទាញយកទិន្នន័យពី products.json (ស្ថិតនៅថ្នាក់ក្រៅ pages/ ដូច្នេះត្រូវប្រើ ../products.json)
+            // 2. ទាញយកទិន្នន័យពី products.json
             fetch('../products.json')
                 .then(response => {
                     if (!response.ok) throw new Error('Network response was not ok');
                     return response.json();
                 })
                 .then(products => {
-                    // 3. ស្វែងរកទំនិញដែលត្រូវនឹង ID
+                    // រក្សាទុកកែវ variable ឱ្យ live search ក្នុង header អាចប្រើបាន
+                    window.allProducts = products;
+
                     const product = products.find(p => String(p.id) === String(productId));
 
                     if (!product) {
@@ -357,7 +411,7 @@
                                 <p id="productDesc">${product.description || 'គ្មានការពន្យល់លម្អិត។'}</p>
                             </div>
 
-                            <!-- ប៊ូតុង Telegram ភ្ជាប់ទៅកាន់ Link របស់ទំនិញនីមួយៗផ្ទាល់ -->
+                            <!-- ប៊ូតុង Telegram -->
                             <a href="https://t.me/Mac_error404" target="_blank" class="btn-contact-us">
                                 <i class="fa-brands fa-telegram"></i> Contact Us Telegram
                             </a>
@@ -402,5 +456,8 @@
                 });
         });
     </script>
+
+    <!-- Connect External JavaScript for Header/Footer Loading -->
+    <script src="../include.js"></script>
 </body>
 </html>
