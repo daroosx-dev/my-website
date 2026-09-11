@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // ពង្រីកការឆែកឱ្យកាន់តែទូលំទូលាយដើម្បីចាប់យកគ្រប់ថតរងទាំងអស់
     const isSubFolder = pathName.includes('/pages/') || pathName.includes('/html-page/') || (pathName.split('/').length > 2 && !pathName.endsWith('index.html') && pathName !== '/');
 
-    // ១. ទាញយក header.html (បើស្ថិតក្នុងថតរង ត្រូវថយក្រោយ ../header.html បើនៅថតមេ ប្រើ header.html ធម្មតា)
-    const headerUrl = isSubFolder ? "../header.html" : "header.html";
+    // ១. ទាញយក header.html ដោយប្រើ Absolute Path ពី Root ដើម្បីធានាថាវាដើរបានទាំង Local និង Hosting អនឡាញ
+    const headerUrl = "/header.html";
 
     fetch(headerUrl)
         .then(response => {
@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error('Error loading header:', error));
 
-    // ២. ទាញយក footer.html
-    const footerUrl = isSubFolder ? "../footer.html" : "footer.html";
+    // ២. ទាញយក footer.html តាមរយៈ Absolute Path ពី Root ដូចគ្នា
+    const footerUrl = "/footer.html";
 
     fetch(footerUrl)
         .then(response => {
