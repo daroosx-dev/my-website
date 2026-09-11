@@ -75,7 +75,7 @@
             transform: translateX(-50%);
         }
 
-        .nav-menu > a, .dropbtn, .filter-trigger {
+        .nav-menu > a, .dropbtn {
             color: #f5f5f7;
             text-decoration: none;
             font-size: 14px;
@@ -88,7 +88,7 @@
             white-space: nowrap;
         }
 
-        .nav-menu > a:hover, .dropbtn:hover, .filter-trigger:hover {
+        .nav-menu > a:hover, .dropbtn:hover {
             color: #0071e3;
         }
 
@@ -191,28 +191,32 @@
             color: #64748b;
         }
 
+        /* ថែមបន្ទាត់ពណ៌មាស និងកំណត់គម្លាតចំណងជើងធំៗ */
         .sidebar-category-title {
             font-size: 11px;
             font-weight: 800;
             color: #64748b;
             text-transform: uppercase;
-            margin: 15px 0 8px 0;
+            margin: 12px 0 4px 0;
             letter-spacing: 0.5px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #d4af37; /* ពណ៌មាស (Gold) */
         }
 
+        /* កាត់បន្ថយគម្លាតលើក្រោម និង Padding របស់ប៊ូតុងក្នុង Sidebar ឱ្យស្មើគ្នា */
         .shop-sidebar .filter-trigger {
             display: block;
             width: 100%;
             text-align: left;
             background: transparent;
             border: none;
-            padding: 8px 12px;
+            padding: 6px 10px;
             font-size: 14px;
             color: #334155;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .shop-sidebar .filter-trigger:hover, 
@@ -220,6 +224,20 @@
             background-color: #eff6ff;
             color: #2563eb;
             font-weight: 600;
+        }
+
+        /* ស្ទីលសម្រាប់ប៊ូតុង Brand Firmware ឱ្យអក្សរនិងរូបតំណាងកៀកគ្នាស្អាត */
+        .shop-sidebar .brand-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .shop-sidebar .brand-btn i {
+            font-size: 14px;
+            color: #0071e3;
+            width: 18px;
+            text-align: center;
         }
 
         /* ផ្នែកខាងស្តាំ (Main Content) */
@@ -231,19 +249,21 @@
         /* ប៊ូតុងបង្ហាញ Menu លើទូរស័ព្ទ */
         .mobile-filter-toggle {
             display: none;
-            width: 100%;
-            background-color: #2563eb;
-            color: white;
+            background: none;
             border: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
+            padding: 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
             margin-bottom: 15px;
             cursor: pointer;
             align-items: center;
-            justify-content: center;
             gap: 8px;
+        }
+
+        .mobile-filter-toggle i {
+            font-size: 16px;
+            color: #1e293b;
         }
 
         /* Search Section */
@@ -348,21 +368,21 @@
         }
 
         .product-title {
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1.3;
-    height: 28px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2; /* បន្ថែមបន្ទាត់នេះដើម្បីបំបាត់ Warning */
-    -webkit-box-orient: vertical;
-    margin: 4px 0;
-    cursor: pointer;
-    color: #0044cc;
-    text-align: center;
-}
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.3;
+            height: 28px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin: 4px 0;
+            cursor: pointer;
+            color: #0044cc;
+            text-align: center;
+        }
 
         .price {
             font-size: 16px;
@@ -452,6 +472,13 @@
 
         .btn-detail:hover {
             background-color: #1d4ed8;
+        }
+        /* ស្ទីលសម្រាប់កំណត់ទំហំ Logo ក្នុងប៊ូតុង Firmware */
+        .shop-sidebar .brand-btn img.brand-logo-icon {
+            width: 18px;       /* កំណត់ទទឹង Logo ឱ្យស្មើនឹងទំហំ Icon កន្លងមក */
+            height: 18px;      /* កំណត់កម្ពស់ Logo */
+            object-fit: contain; /* រក្សាចំរូងរូបភាពមិនឱ្យទ្រុឌទ្រោម */
+            text-align: center;
         }
 
         /* --- RESPONSIVE FOR MOBILE --- */
@@ -558,15 +585,26 @@
             <div class="sidebar-menu-list">
                 <button class="filter-trigger active" data-filter="All">Products (All)</button>
                 
-                <!-- Copier ដាក់នៅផ្នែកខាងលើនៃ Sidebar ផ្ទាល់ -->
                 <div class="sidebar-category-title">Copier Machine</div>
                 <button class="filter-trigger" data-filter="Copier">Copier</button>
 
                 <div class="sidebar-category-title">Software Firmware</div>
-                <button class="filter-trigger" data-filter="Canon Firmware">Canon Firmware</button>
-                <button class="filter-trigger" data-filter="Toshiba Firmware">Toshiba Firmware</button>
-                <button class="filter-trigger" data-filter="Ricoh Firmware">Ricoh Firmware</button>
-                <button class="filter-trigger" data-filter="HP Firmware">HP Firmware</button>
+                
+                <button class="filter-trigger brand-btn" data-filter="Canon Firmware">
+                    <img src="canon-logo.png" alt="Canon" class="brand-logo-icon"> <span>Canon Firmware</span>
+                </button>
+                
+                <button class="filter-trigger brand-btn" data-filter="Toshiba Firmware">
+                    <img src="toshiba-logo.png" alt="Toshiba" class="brand-logo-icon"> <span>Toshiba Firmware</span>
+                </button>
+                
+                <button class="filter-trigger brand-btn" data-filter="Ricoh Firmware">
+                    <img src="ricoh-logo.png" alt="Ricoh" class="brand-logo-icon"> <span>Ricoh Firmware</span>
+                </button>
+                
+                <button class="filter-trigger brand-btn" data-filter="HP Firmware">
+                    <img src="hp-logo.png" alt="HP" class="brand-logo-icon"> <span>HP Firmware</span>
+                </button>
                             
                 <div class="sidebar-category-title">Printers</div>
                 <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
@@ -583,20 +621,20 @@
                 <button class="filter-trigger" data-filter="Utilities Software">Utilities Software</button>
             </div>
         </aside>
-
+        
         <!-- ផ្ទាំងខាងស្តាំសម្រាប់បង្ហាញ Search Bar និងផលិតផល -->
         <main class="shop-main-content">
-            <!-- ប៊ូតុងបើក Menu លើទូរស័ព្ទ -->
-            <button class="mobile-filter-toggle" id="mobileFilterToggle">
-                <i class="fa-solid fa-filter"></i> All Products Menu
-            </button>
-
             <!-- Search Bar -->
             <div class="search-section">
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="ស្វែងរកម៉ូឌែលម៉ាស៊ីន ឬ Firmware...">
                 </div>
             </div>
+
+            <!-- ប៊ូតុងបើក Menu លើទូរស័ព្ទ (Categories ≡) -->
+            <button class="mobile-filter-toggle" id="mobileFilterToggle">
+                Categories <i class="fa-solid fa-bars"></i>
+            </button>
 
             <!-- ទីតាំងបង្ហាញបញ្ជីទំនិញ ឬ Sections តាម JS -->
             <div id="main-content-container">
