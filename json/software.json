@@ -46,12 +46,12 @@
   },
   {
     "id": 6,
-    "name": "Epson EcoTank & L-Series Full Driver Package",
-    "category": "printer",
+    "name": "Hiren’s BootCD PE x64",
+    "category": "windows",
     "date": "3 DAYS AGO",
-    "description": "Complete printer driver and scanner utility software for Epson EcoTank series printers.",
-    "image": "images/c3530.png",
-    "custom_link": "#"
+    "description": "Hiren's BootCD PE (Preinstallation Environment) is a restored edition of Hiren's BootCD based on Windows 11 PE x64. supporting UEFI booting and ...",
+    "image": "images/Software License/Hiren’s BootCD PE x64.png",
+    "custom_link": "https://drive.google.com/file/d/15r0q5tG0DCXJZD_JoZEleKWrGe4VeeLg/view?usp=sharing"
   },
   {
     "id": 7,
