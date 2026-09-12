@@ -1,4 +1,8 @@
 let allProducts = [];
+let currentPage = 1;
+const itemsPerPage = 8;
+let currentFilteredProducts = [];
+let isHomeView = true;
 
 // Fetch data from products.json
 fetch('products.json')
@@ -20,7 +24,7 @@ function forceBoldSpecs() {
     });
 }
 
-// មុខងារបង្កើត HTML សម្រាប់ Product Card នីមួយៗ (គាំទ្រគ្រប់ប្រភេទពណ៌ទាំងអស់)
+// មុខងារបង្កើត HTML សម្រាប់ Product Card (គ្មានលេខរៀងនៅជ្រុងខាងស្ដាំលើទៀតទេ)
 function createProductCardHTML(product) {
     let colorBarHTML = '';
     
@@ -77,7 +81,7 @@ function createProductCardHTML(product) {
     }
 
     return `
-        <div class="product-card">
+        <div class="product-card" style="position: relative;">
             <div>
                 <div class="brand-logo-text">${product.brand || ''}</div>
                 <div class="card-img" data-id="${product.id}">
@@ -118,25 +122,36 @@ function createProductCardHTML(product) {
     `;
 }
 
-// មុខងារបង្ហាញទំនិញបែងចែកជា Section តាមប្រភេទ និង Brand
+// មុខងារបង្ហាញទំនិញបែងចែកជា 3 Section ពេលចូលមកដំបូង
 function renderHomeSections(products) {
+    isHomeView = true;
+    currentPage = 1;
     const mainContainer = document.getElementById('main-content-container');
     if (!mainContainer) return;
 
     mainContainer.innerHTML = '';
 
     const targetSections = [
-        { title: 'Software Firmware Canon', filterKey: 'category', filterValue: 'Firmware' },
-        { title: 'EPSON Printer', filterKey: 'brand', filterValue: 'Epson' },
-        { title: 'HP Printer', filterKey: 'brand', filterValue: 'Hp' }
+        { title: 'Software Firmware Canon', filterKey: 'category', filterValue: 'Firmware', brandCheck: 'canon' },
+        { title: 'Software Firmware Toshiba', filterKey: 'category', filterValue: 'Firmware', brandCheck: 'toshiba' },
+        { title: 'EPSON Printer', filterKey: 'brand', filterValue: 'Epson' }
     ];
 
     targetSections.forEach(section => {
         const matchedProducts = products.filter(p => {
             if (!p) return false;
-            const val = p[section.filterKey] ? String(p[section.filterKey]).toLowerCase() : '';
-            return val.includes(section.filterValue.toLowerCase());
-        }).slice(0, 8);
+            const cat = p.category ? String(p.category).toLowerCase() : '';
+            const brand = p.brand ? String(p.brand).toLowerCase() : '';
+            const name = p.name ? String(p.name).toLowerCase() : '';
+
+            if (section.brandCheck) {
+                return (cat.includes('firmware') || name.includes('firmware')) && 
+                       (brand.includes(section.brandCheck) || name.includes(section.brandCheck));
+            } else {
+                const val = p[section.filterKey] ? String(p[section.filterKey]).toLowerCase() : '';
+                return val.includes(section.filterValue.toLowerCase());
+            }
+        }).slice(0, 4);
         
         if (matchedProducts.length > 0) {
             const sectionHTML = `
@@ -153,12 +168,17 @@ function renderHomeSections(products) {
         }
     });
 
+    // លុប Pagination ចោលពេលនៅหน้า Home
+    removePagination();
+
     attachCardEvents(mainContainer);
     setTimeout(forceBoldSpecs, 10);
 }
 
-// មុខងារបង្ហាញទំនិញក្នុង Grid តែមួយ ពេល Filter រកម៉ាក ឬប្រភេទជាក់លាក់
+// មុខងារបង្ហាញ Filtered Grid ព្រមទាំងបង្កើត Pagination នៅខាងក្រោម
 function renderFilteredGrid(products, title = "Search Results") {
+    isHomeView = false;
+    currentFilteredProducts = products;
     const mainContainer = document.getElementById('main-content-container');
     if (!mainContainer) return;
 
@@ -166,8 +186,14 @@ function renderFilteredGrid(products, title = "Search Results") {
 
     if (products.length === 0) {
         mainContainer.innerHTML = '<p style="text-align: center; padding: 40px; color: #777; grid-column: 1 / -1;">រកមិនឃើញផលិតផលដែលអ្នកកំពុងស្វែងរកឡើយ។</p>';
+        removePagination();
         return;
     }
+
+    // คำนวณตัดหน้า (Pagination slicing)
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedItems = products.slice(startIndex, endIndex);
 
     const sectionHTML = `
         <div class="section-header-container">
@@ -176,16 +202,67 @@ function renderFilteredGrid(products, title = "Search Results") {
             </div>
         </div>
         <div class="product-container" id="filtered-product-grid">
-            ${products.map(product => createProductCardHTML(product)).join('')}
+            ${paginatedItems.map(product => createProductCardHTML(product)).join('')}
         </div>
     `;
 
     mainContainer.innerHTML = sectionHTML;
+    renderPagination(products.length);
     attachCardEvents(mainContainer);
     setTimeout(forceBoldSpecs, 10);
 }
 
-// ភ្ជាប់ព្រឹត្តិការណ៍ចុចលើកាត (Click Events)
+// បង្កើតប៊ូតុង Pagination នៅខាងក្រោម (ស្ទីលដូច Software Page)
+function renderPagination(totalItems) {
+    let paginationContainer = document.getElementById('pagination-container');
+    if (!paginationContainer) {
+        paginationContainer = document.createElement('div');
+        paginationContainer.id = 'pagination-container';
+        paginationContainer.style.cssText = 'display: flex; justify-content: center; align-items: center; gap: 8px; margin: 30px 0;';
+        
+        const mainContainer = document.getElementById('main-content-container');
+        if (mainContainer && mainContainer.parentNode) {
+            mainContainer.parentNode.insertBefore(paginationContainer, mainContainer.nextSibling);
+        }
+    }
+
+    paginationContainer.innerHTML = '';
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    if (totalPages <= 1) return;
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.textContent = i;
+        pageBtn.style.cssText = `
+            padding: 6px 14px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid ${i === currentPage ? '#2563eb' : '#cbd5e1'};
+            background-color: ${i === currentPage ? '#2563eb' : '#ffffff'};
+            color: ${i === currentPage ? '#ffffff' : '#334155'};
+        `;
+
+        pageBtn.addEventListener('click', () => {
+            currentPage = i;
+            renderFilteredGrid(currentFilteredProducts, document.querySelector('.section-title-box h2').textContent.split('(')[0].trim());
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        paginationContainer.appendChild(pageBtn);
+    }
+}
+
+function removePagination() {
+    const paginationContainer = document.getElementById('pagination-container');
+    if (paginationContainer) {
+        paginationContainer.innerHTML = '';
+    }
+}
+
+// ភ្ជាប់ព្រឹត្តិការណ៍ចុចលើកាត
 function attachCardEvents(container) {
     container.querySelectorAll('.card-img, .product-title, .btn-detail').forEach(element => {
         element.addEventListener('click', (e) => {
@@ -200,6 +277,7 @@ const searchInput = document.getElementById('searchInput');
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
         const keyword = e.target.value.toLowerCase().trim();
+        currentPage = 1;
         if (keyword === '') {
             renderHomeSections(allProducts);
             return;
@@ -216,23 +294,22 @@ if (searchInput) {
 
 // ប្រព័ន្ធ Filter ទាំង Sidebar និង Mega Menu
 document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('.filter-trigger, .dropdown-content button, .dropdown-content a, .mega-item');
+    const trigger = e.target.closest('.filter-trigger, .dropdown-content button, .dropdown-content a, .mega-item, .software-sidebar a');
     if (!trigger) return;
 
     let filterValue = trigger.getAttribute('data-filter') || trigger.textContent.trim();
     if (!filterValue) return;
 
     const keyword = filterValue.toLowerCase().trim();
+    currentPage = 1;
 
-    if (keyword === 'all' || keyword === 'products (all)' || keyword === 'store' || keyword === 'home') {
+    if (keyword.includes('all') || keyword === 'store' || keyword === 'home' || keyword.includes('products (all)')) {
         renderHomeSections(allProducts);
         return;
     }
 
-    document.querySelectorAll('.filter-trigger').forEach(btn => btn.classList.remove('active'));
-    if (trigger.classList.contains('filter-trigger')) {
-        trigger.classList.add('active');
-    }
+    document.querySelectorAll('.filter-trigger, .software-sidebar a').forEach(btn => btn.classList.remove('active'));
+    trigger.classList.add('active');
 
     const filtered = allProducts.filter(p => {
         const pBrand = p.brand ? p.brand.toLowerCase() : '';
@@ -244,7 +321,8 @@ document.addEventListener('click', (e) => {
 
         if (keyword.includes('firmware')) {
             const brandPart = keyword.replace('firmware', '').trim();
-            return pCat.includes('firmware') && (pBrand.includes(brandPart) || pName.includes(brandPart));
+            return (pCat.includes('firmware') || pName.includes('firmware')) && 
+                   (pBrand.includes(brandPart) || pName.includes(brandPart));
         }
 
         return pBrand.includes(keyword) || 

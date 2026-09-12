@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Microsoft Office 2019",
-    "category": "Software",
+    "category": "utilities",
     "date": "1 DAY AGO",
     "description": "Microsoft Office 2019 professional productivity suite designed for modern office environments and document workflows.",
     "image": "images/c7580.png",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "Microsoft Office 2024",
-    "category": "Software",
+    "category": "utilities",
     "date": "1 DAY AGO",
     "description": "Microsoft Office 2024 delivers seamless document productivity, high security, and smart workflow integration.",
     "image": "images/c3530.png",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Windows 11 Pro Driver & Utility Package",
-    "category": "PC Driver",
+    "category": "windows",
     "date": "2 DAYS AGO",
     "description": "Essential motherboard, chipset, LAN, and audio drivers package for Windows 11 PC workstations.",
     "image": "images/5050.png",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "MacBook / iMac macOS Utility & Driver Pack",
-    "category": "Mac Driver",
+    "category": "mac",
     "date": "2 DAYS AGO",
     "description": "Official support utilities and helper drivers optimized for Apple macOS systems and peripherals.",
     "image": "images/4242.png",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Canon imageRUNNER Universal Printer Driver",
-    "category": "Printer Driver",
+    "category": "printer",
     "date": "3 DAYS AGO",
     "description": "Official PCL6 / UFR II printer and copier driver for Canon multi-function devices compatible with Windows and Mac.",
     "image": "images/software-firmware/Canon/7580/irc7580iii.webp",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "Epson EcoTank & L-Series Full Driver Package",
-    "category": "Printer Driver",
+    "category": "printer",
     "date": "3 DAYS AGO",
     "description": "Complete printer driver and scanner utility software for Epson EcoTank series printers.",
     "image": "images/c3530.png",
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "name": "Sharp & Ricoh Copier Universal PCL Driver",
-    "category": "Copier Driver",
+    "category": "copier",
     "date": "4 DAYS AGO",
     "description": "Network printing and scanning driver bundle for office digital copiers and multi-function printers.",
     "image": "images/5050.png",
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "name": "PDFgear",
-    "category": "Software",
+    "category": "utilities",
     "date": "1 DAY AGO",
     "description": "PDFgear all-in-one PDF reader, editor, and converter tool designed for fast office document management.",
     "image": "images/4242.png",

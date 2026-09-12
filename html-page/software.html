@@ -25,55 +25,87 @@
             background-color: #f5f6f8;
             color: #333333;
             overflow-x: hidden;
-            padding-top: 70px; /* ទប់កុំឱ្យ Header បាំងមាតិកា */
+            padding-top: 70px;
         }
 
-        /* Software Container & Tabs Styling */
-        .software-container {
-            max-width: 900px;
+        .software-page-wrapper {
+            max-width: 1200px;
             margin: 30px auto 50px auto;
             padding: 0 15px;
-        }
-
-        .software-tabs {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 25px;
+            align-items: flex-start;
         }
 
-        .sw-tab-btn {
-            background-color: #e2e8f0;
-            color: #334155;
-            border: none;
-            padding: 12px 25px;
-            font-size: 15px;
+        /* ស្ទីល Sidebar Categories ខាងឆ្វេង */
+        .software-sidebar {
+            flex: 0 0 280px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .software-sidebar h3 {
+            font-size: 18px;
             font-weight: 700;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            color: #1e293b;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #cbd5e1;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .sw-tab-btn:hover {
-            background-color: #cbd5e1;
+        .sidebar-category-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
-        .sw-tab-btn.active {
-            background-color: #2563eb;
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        .sidebar-category-list li a {
+            display: block;
+            padding: 10px 12px;
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
 
-        /* Software List Grid */
+        .sidebar-category-list li a:hover,
+        .sidebar-category-list li a.active {
+            background-color: #eff6ff;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .sidebar-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            margin: 15px 0 5px 10px;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #d4af37; /* បន្ទាត់ពណ៌មាស */
+            padding-bottom: 4px;
+        }
+
+        .software-main-content {
+            flex: 1;
+            min-width: 0;
+        }
+
         .software-list-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
+        /* ស្ទីលសម្រាប់កាតទំនិញ */
         .software-card-item {
             display: flex;
             background: #ffffff;
@@ -82,11 +114,25 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             border-radius: 6px;
+            position: relative;
         }
 
         .software-card-item:hover {
             border-color: #2563eb;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* ស្ទីលសម្រាប់លេខរៀង (Number Badge) ពណ៌មាស */
+        .sw-item-number {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background-color: #d4af37;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
         }
 
         .sw-img-box {
@@ -113,6 +159,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            padding-right: 30px;
         }
 
         .sw-header-row {
@@ -170,9 +217,44 @@
             text-decoration: underline;
         }
 
+        /* Pagination Buttons Style */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 30px;
+        }
+
+        .page-btn {
+            background-color: #ffffff;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+            padding: 8px 14px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .page-btn:hover {
+            background-color: #eff6ff;
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        .page-btn.active {
+            background-color: #2563eb;
+            border-color: #2563eb;
+            color: #ffffff;
+        }
+
         @media (max-width: 992px) {
-            .software-tabs {
+            .software-page-wrapper {
                 flex-direction: column;
+            }
+            .software-sidebar {
+                width: 100%;
             }
             .software-card-item {
                 flex-direction: column;
@@ -188,35 +270,51 @@
 </head>
 <body>
 
-    <!-- ទីតាំងសម្រាប់ទាញយក Header ដោយស្វ័យប្រវត្តិពី include.js -->
+    <!-- Header Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Software Container with 2 Main Tabs -->
-    <div class="software-container">
-        <!-- Main 2 Tabs: Driver vs Computer -->
-        <div class="software-tabs">
-            <button class="sw-tab-btn active" onclick="filterSoftwareCategory('Driver', event)">
-                <i class="fa-solid fa-print" aria-hidden="true"></i> Driver
-            </button>
-            <button class="sw-tab-btn" onclick="filterSoftwareCategory('Computer', event)">
-                <i class="fa-solid fa-laptop" aria-hidden="true"></i> Computer
-            </button>
+    <div class="software-page-wrapper">
+        
+        <!-- Sidebar Categories ខាងឆ្វេង -->
+        <aside class="software-sidebar">
+            <h3><i class="fa-solid fa-list" aria-hidden="true"></i> Categories</h3>
+            <ul class="sidebar-category-list">
+                <li><a href="#" onclick="filterByCategory('all', event)" class="active" id="cat-all">Products (All)</a></li>
+
+                <div class="sidebar-section-title">SOFTWARE</div>
+                <li><a href="#" onclick="filterByCategory('windows', event)" id="cat-windows">Windows Software</a></li>
+                <li><a href="#" onclick="filterByCategory('mac', event)" id="cat-mac">Mac Software</a></li>
+                <li><a href="#" onclick="filterByCategory('utilities', event)" id="cat-utilities">Utilities Software</a></li>
+
+                <div class="sidebar-section-title">DRIVERS & FIRMWARE</div>
+                <li><a href="#" onclick="filterByCategory('printer', event)" id="cat-printer">Printer Driver</a></li>
+                <li><a href="#" onclick="filterByCategory('label', event)" id="cat-label">Label Printer Driver</a></li>
+                <li><a href="#" onclick="filterByCategory('copier', event)" id="cat-copier">Copier Driver</a></li>
+            </ul>
+        </aside>
+
+        <!-- Software Main Content -->
+        <div class="software-main-content">
+            <div class="software-list-container" id="softwareListGrid">
+                <p style="text-align: center; color: #666; padding: 40px;">កំពុងផ្ទុកទិន្នន័យ...</p>
+            </div>
+            <!-- Pagination Control Box -->
+            <div class="pagination-container" id="paginationContainer"></div>
         </div>
 
-        <!-- Software List Grid -->
-        <div class="software-list-container" id="softwareListGrid">
-            <p style="text-align: center; color: #666; padding: 40px;">កំពុងផ្ទុកទិន្នន័យ...</p>
-        </div>
     </div>
 
-    <!-- ទីតាំងសម្រាប់ទាញយក Footer ដោយស្វ័យប្រវត្តិពី include.js -->
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- JavaScript សម្រាប់ដំណើរការទំព័រ -->
+    <!-- JavaScript សម្រាប់គ្រប់គ្រងទិន្នន័យ លេខរៀង និង Pagination -->
     <script>
         let allSoftwareData = [];
+        let currentFilteredData = [];
+        let currentPage = 1;
+        const itemsPerPage = 5; // កំណត់បង្ហាញ 5 ទំនិញក្នុងមួយទំព័រ
 
-        function createSoftwareCard(prod) {
+        function createSoftwareCard(prod, index) {
             let imgSrc = '../images/default.png';
             if (prod.images && prod.images.length > 0) {
                 imgSrc = prod.images[0].startsWith('../') ? prod.images[0] : '../' + prod.images[0];
@@ -232,6 +330,7 @@
 
             return `
                 <div class="software-card-item">
+                    <div class="sw-item-number">${index + 1}</div>
                     <div class="sw-img-box" onclick="window.open('${targetLink}', '_blank')">
                         <img src="${imgSrc}" alt="${displayTitle}">
                     </div>
@@ -252,36 +351,63 @@
             `;
         }
 
-        function renderSoftwareList(list) {
+        function renderPageData() {
             const gridContainer = document.getElementById('softwareListGrid');
-            if (list.length === 0) {
+            if (currentFilteredData.length === 0) {
                 gridContainer.innerHTML = '<p style="text-align: center; color: #666; padding: 30px;">មិនមានទិន្នន័យសម្រាប់បង្ហាញក្នុងផ្នែកនេះទេ</p>';
+                document.getElementById('paginationContainer').innerHTML = '';
                 return;
             }
-            gridContainer.innerHTML = list.map(prod => createSoftwareCard(prod)).join('');
+
+            let start = (currentPage - 1) * itemsPerPage;
+            let end = start + itemsPerPage;
+            let paginatedItems = currentFilteredData.slice(start, end);
+
+            gridContainer.innerHTML = paginatedItems.map((prod, idx) => createSoftwareCard(prod, start + idx)).join('');
+            renderPaginationControls();
         }
 
-        function filterSoftwareCategory(type, event) {
-            document.querySelectorAll('.sw-tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+        function renderPaginationControls() {
+            const paginationContainer = document.getElementById('paginationContainer');
+            let totalPages = Math.ceil(currentFilteredData.length / itemsPerPage);
 
-            let filtered = [];
-            if (type === 'Driver') {
-                filtered = allSoftwareData.filter(item => {
+            if (totalPages <= 1) {
+                paginationContainer.innerHTML = '';
+                return;
+            }
+
+            let buttonsHtml = '';
+            for (let i = 1; i <= totalPages; i++) {
+                let activeClass = (i === currentPage) ? 'active' : '';
+                buttonsHtml += `<button class="page-btn ${activeClass}" onclick="changePage(${i})">${i}</button>`;
+            }
+            paginationContainer.innerHTML = buttonsHtml;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderPageData();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterByCategory(catKey, event) {
+            if (event) event.preventDefault();
+            
+            document.querySelectorAll('.sidebar-category-list a').forEach(a => a.classList.remove('active'));
+            let activeEl = document.getElementById('cat-' + catKey);
+            if (activeEl) activeEl.classList.add('active');
+
+            currentPage = 1; // Reset ទៅទំព័រទី១ វិញពេលប្តូរ Category
+
+            if (catKey === 'all') {
+                currentFilteredData = allSoftwareData;
+            } else {
+                currentFilteredData = allSoftwareData.filter(item => {
                     let cat = (item.category || '').toLowerCase();
-                    let name = (item.name || '').toLowerCase();
-                    return cat.includes('printer') || cat.includes('copier') || cat.includes('label') || 
-                           name.includes('printer') || name.includes('copier') || name.includes('label');
-                });
-            } else if (type === 'Computer') {
-                filtered = allSoftwareData.filter(item => {
-                    let cat = (item.category || '').toLowerCase();
-                    let name = (item.name || '').toLowerCase();
-                    return cat.includes('windows') || cat.includes('mac') || 
-                           name.includes('windows') || name.includes('mac') || name.includes('office');
+                    return cat === catKey.toLowerCase();
                 });
             }
-            renderSoftwareList(filtered);
+            renderPageData();
         }
 
         document.addEventListener("DOMContentLoaded", async () => {
@@ -291,13 +417,8 @@
                 if (!response.ok) throw new Error('Cannot load software.json');
                 allSoftwareData = await response.json();
 
-                let initialFiltered = allSoftwareData.filter(item => {
-                    let cat = (item.category || '').toLowerCase();
-                    let name = (item.name || '').toLowerCase();
-                    return cat.includes('printer') || cat.includes('copier') || cat.includes('label') || 
-                           name.includes('printer') || name.includes('copier') || name.includes('label');
-                });
-                renderSoftwareList(initialFiltered);
+                currentFilteredData = allSoftwareData;
+                renderPageData();
 
             } catch (err) {
                 console.error(err);
@@ -306,7 +427,7 @@
         });
     </script>
 
-    <!-- Linking include.js (ស្ថិតនៅថត Root ខាងក្រៅ ដូច្នេះត្រូវថយក្រោយ ១ កម្រិត ../include.js) -->
+    <!-- Linking include.js -->
     <script src="../include.js"></script>
 </body>
 </html>
