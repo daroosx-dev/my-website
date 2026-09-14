@@ -26,27 +26,25 @@
         }
 
         /* ----------------------------------
-           TRANSPARENT TO STICKY HEADER 
-           ---------------------------------- */
+            TRANSPARENT TO STICKY HEADER 
+            ---------------------------------- */
         .site-header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: transparent; /* ដំបូងអត់មានពណ៌ផ្ទៃខាងក្រោយ */
+            background: transparent;
             transition: background 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease, padding 0.3s ease;
             border-bottom: 1px solid transparent;
         }
 
-        /* ពេលអូសចុះក្រោម (Adding scrolled class via JS) */
         .site-header.scrolled {
-            background: rgba(17, 17, 17, 0.85); /* ពេលអូសចេញមកមានពណ៌ប្រផេះដិតព្រាល */
+            background: rgba(17, 17, 17, 0.85);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Container ដាក់កណ្ដាលអេក្រង់ Desktop (Max-width 1200px) */
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -57,7 +55,6 @@
             transition: padding 0.3s ease;
         }
 
-        /* ពេលអូសចុះក្រោមរួច បង្រួមPadding បន្តិចឱ្យស្អាត */
         .site-header.scrolled .header-container {
             padding: 15px 20px;
         }
@@ -133,17 +130,17 @@
         /* Mobile Menu Toggle Button */
         .mobile-menu-btn {
             display: none;
-            background: #ffffff;
-            border: 2px solid #1a1a1a;
-            border-radius: 10px;
-            width: 45px;
-            height: 40px;
-            align-items: center;
-            justify-content: center;
+            background: transparent;
+            border: none;
             cursor: pointer;
-            color: #002D62;
-            font-size: 18px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            color: #fff;
+            font-size: 24px;
+            padding: 5px;
+            transition: opacity 0.2s;
+        }
+
+        .mobile-menu-btn:hover {
+            opacity: 0.7;
         }
 
         /* Full-Screen Mobile Menu Drawer */
@@ -176,23 +173,19 @@
             padding-bottom: 20px;
         }
 
+        /* កែសម្រួលប៊ូតុងបិទ (X) ឱ្យចេញជាសញ្ញា X ពណ៌សធម្មតា អត់មានប្រអប់ស និងស៊ុម */
         .drawer-close-btn {
-            background: #ffffff;
-            border: 2px solid #1a1a1a;
-            border-radius: 10px;
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: transparent;
+            border: none;
             cursor: pointer;
-            color: #002D62;
-            font-size: 18px;
-            transition: transform 0.2s;
+            color: #ffffff;
+            font-size: 24px;
+            padding: 5px;
+            transition: opacity 0.2s;
         }
 
         .drawer-close-btn:hover {
-            transform: scale(1.05);
+            opacity: 0.7;
         }
 
         .drawer-links {
@@ -449,7 +442,7 @@
 </head>
 <body>
 
-    <!-- Header (Transparent នៅខាងលើពេលមិនទាន់អូស និង Sticky មានពណ៌ពេលអូសចុះក្រោម) -->
+    <!-- Header -->
     <header class="site-header" id="siteHeader">
         <div class="header-container">
             <a href="index.html" class="header-logo">
@@ -507,7 +500,7 @@
         </div>
     </div>
 
-    <!-- Hero Section ពេញអេក្រង់ -->
+    <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="hero-overlay"></div>
         
@@ -573,9 +566,8 @@
         </div>
     </section>
 
-    <!-- JavaScript សម្រាប់គ្រប់គ្រង Header និង Mobile Menu -->
+    <!-- JavaScript -->
     <script>
-        // Scroll Effect សម្រាប់ប្ដូរផ្ទៃ Header ពេលអូសចុះក្រោម
         const siteHeader = document.getElementById('siteHeader');
         
         window.addEventListener('scroll', () => {
@@ -586,7 +578,6 @@
             }
         });
 
-        // Mobile Menu Drawer Controls
         const openMenuBtn = document.getElementById('openMenuBtn');
         const closeMenuBtn = document.getElementById('closeMenuBtn');
         const mobileDrawer = document.getElementById('mobileDrawer');
