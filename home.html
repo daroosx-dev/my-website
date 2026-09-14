@@ -10,68 +10,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Link ទៅកាន់ home.css ដែលនៅកន្លែងជាមួយគ្នា -->
+    <!-- Link ទៅកាន់ home.css -->
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="site-header" id="siteHeader">
-        <div class="header-container">
-            <a href="home.html" class="header-logo">
-                <img src="images/512-x-512.png" alt="Logo" onerror="this.src='https://via.placeholder.com/40?text=D'">
-                <div class="logo-text-box">
-                    <span class="logo-title">daroPrinter</span>
-                    <span class="logo-sub">ដារ៉ូ ព្រីនធើរ</span>
-                </div>
-            </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="header-nav">
-                <a href="home.html" class="active">Home</a>
-                <a href="store.html">STORE</a>
-                <a href="html-page/software.html">Software</a>
-                <a href="#">Gallery</a>
-                <a href="#" target="_blank">Blog</a>
-                <a href="#" target="_blank">About</a>
-                <a href="#" target="_blank">Contact Us</a>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Open Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Drawer Overlay -->
-    <div class="drawer-overlay" id="drawerOverlay"></div>
-
-    <!-- Mobile Slide-out Menu Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
-        <div class="drawer-header">
-            <a href="home.html" class="header-logo" style="text-decoration: none;">
-                <img src="images/512-x-512.png" alt="Logo" onerror="this.src='https://via.placeholder.com/40?text=D'">
-                <div class="logo-text-box">
-                    <span class="logo-title" style="color:#fff;">daroPrinter</span>
-                    <span class="logo-sub" style="color:#ffeaa7;">ដារ៉ូ ព្រីនធើរ</span>
-                </div>
-            </a>
-            <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Close Menu">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-
-        <div class="drawer-links">
-            <a href="home.html">HOME</a>
-            <a href="store.html">STORE</a>
-            <a href="html-page/software.html">SOFTWARE</a>
-            <a href="store.html">GALLERY</a>
-            <a href="#" target="_blank">BLOG</a>
-            <a href="#" target="_blank">ABOUT</a>
-            <a href="#" target="_blank">CONTACT Us</a>
-        </div>
-    </div>
+    <!-- Header Placeholder (ទាញយក Header ដោយស្វ័យប្រវត្តិពី header/include.js) -->
+    <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
@@ -139,41 +84,10 @@
         </div>
     </section>
 
-    <!-- JavaScript -->
-    <script>
-        const siteHeader = document.getElementById('siteHeader');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                siteHeader.classList.add('scrolled');
-            } else {
-                siteHeader.classList.remove('scrolled');
-            }
-        });
+    <!-- ហៅ JavaScript សម្រាប់ Header -->
+    <script src="header/include.js"></script>
 
-        const openMenuBtn = document.getElementById('openMenuBtn');
-        const closeMenuBtn = document.getElementById('closeMenuBtn');
-        const mobileDrawer = document.getElementById('mobileDrawer');
-        const drawerOverlay = document.getElementById('drawerOverlay');
-
-        const openDrawer = () => {
-            mobileDrawer.classList.add('open');
-            drawerOverlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        };
-
-        const closeDrawer = () => {
-            mobileDrawer.classList.remove('open');
-            drawerOverlay.classList.remove('open');
-            document.body.style.overflow = 'auto';
-        };
-
-        if(openMenuBtn) openMenuBtn.addEventListener('click', openDrawer);
-        if(closeMenuBtn) closeMenuBtn.addEventListener('click', closeDrawer);
-        if(drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
-    </script>
-
-    <!-- ហៅ JavaScript ពីថត footer មកទាញយក footer.html ដោយស្វ័យប្រវត្តិ -->
+    <!-- ហៅ JavaScript សម្រាប់ Footer -->
     <script src="footer/include.js"></script>
 </body>
 </html>
