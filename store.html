@@ -38,7 +38,7 @@
                 </button>
 
                 <button class="filter-trigger brand-btn" data-filter="Toshiba Firmware">
-                <img src="images/Logo/toshiba.png" alt="Toshiba" class="brand-logo-icon"> <span>FIRMWARE</span>
+                <img src="images/logo/toshiba.png" alt="Toshiba" class="brand-logo-icon"> <span>FIRMWARE</span>
                 </button>
         
                 <button class="filter-trigger brand-btn" data-filter="Ricoh Firmware">
@@ -82,7 +82,7 @@
         </main>
     </div>
 
-    <!-- ទីតាំងសម្រាប់ទាញយក footer.html មកដាក់ដោយស្វ័យប្រវត្តិ -->
+    <!-- ទីតាំងសម្រាប់ទាញយក footer/footer.html មកដាក់ដោយស្វ័យប្រវត្តិ -->
     <div id="footer-placeholder"></div>
 
     <!-- JavaScript for Mobile Menu & Sidebar Toggle -->
@@ -123,5 +123,14 @@
     <script src="include.js"></script>
     <script src="store.js"></script>
     
+    <!-- Script សម្រាប់ទាញយក Footer មកដាក់តាម id="footer-placeholder" -->
+    <script>
+        fetch('footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 </html>
