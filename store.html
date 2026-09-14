@@ -10,9 +10,6 @@
 
     <!-- External CSS Styles -->
     <link rel="stylesheet" href="css/store.css">
-    
-    <!-- បន្ថែម Link CSS របស់ Footer ទីនេះ ដើម្បីឱ្យវាស្គាល់ Style ស្របពេលໂຫຼດ -->
-    <link rel="stylesheet" href="footer/footer.css">
 </head>
 <body>
 
@@ -127,6 +124,13 @@
     <script src="store.js"></script>
     
     <!-- Script សម្រាប់ទាញយក Footer មកដាក់តាម id="footer-placeholder" -->
-    <script src="footer/include.js"></script>
+    <script>
+        fetch('footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 </html>
