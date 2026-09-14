@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/home-style.css">
     <link rel="stylesheet" href="../store.css">
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="../header/header.css">
 
     <style>
         * {
@@ -25,7 +27,7 @@
             background-color: #f5f6f8;
             color: #333333;
             overflow-x: hidden;
-            padding-top: 70px;
+            padding-top: 80px; /* เว้นระยะให้ header แบบ fixed */
         }
 
         .software-page-wrapper {
@@ -90,7 +92,7 @@
             color: #64748b;
             margin: 15px 0 5px 10px;
             letter-spacing: 0.5px;
-            border-bottom: 2px solid #d4af37; /* បន្ទាត់ពណ៌មាស */
+            border-bottom: 2px solid #d4af37;
             padding-bottom: 4px;
         }
 
@@ -105,7 +107,6 @@
             gap: 20px;
         }
 
-        /* ស្ទីលសម្រាប់កាតទំនិញ */
         .software-card-item {
             display: flex;
             background: #ffffff;
@@ -122,7 +123,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
-        /* ស្ទីលសម្រាប់លេខរៀង (Number Badge) ពណ៌មាស */
         .sw-item-number {
             position: absolute;
             top: 10px;
@@ -217,7 +217,6 @@
             text-decoration: underline;
         }
 
-        /* Pagination Buttons Style */
         .pagination-container {
             display: flex;
             justify-content: center;
@@ -298,7 +297,6 @@
             <div class="software-list-container" id="softwareListGrid">
                 <p style="text-align: center; color: #666; padding: 40px;">កំពុងផ្ទុកទិន្នន័យ...</p>
             </div>
-            <!-- Pagination Control Box -->
             <div class="pagination-container" id="paginationContainer"></div>
         </div>
 
@@ -312,7 +310,7 @@
         let allSoftwareData = [];
         let currentFilteredData = [];
         let currentPage = 1;
-        const itemsPerPage = 5; // កំណត់បង្ហាញ 5 ទំនិញក្នុងមួយទំព័រ
+        const itemsPerPage = 5;
 
         function createSoftwareCard(prod, index) {
             let imgSrc = '../images/default.png';
@@ -397,7 +395,7 @@
             let activeEl = document.getElementById('cat-' + catKey);
             if (activeEl) activeEl.classList.add('active');
 
-            currentPage = 1; // Reset ទៅទំព័រទី១ វិញពេលប្តូរ Category
+            currentPage = 1;
 
             if (catKey === 'all') {
                 currentFilteredData = allSoftwareData;
@@ -427,7 +425,7 @@
         });
     </script>
 
-    <!-- Linking include.js -->
-    <script src="../include.js"></script>
+    <!-- Linking include.js ត្រូវដាក់ឱ្យត្រូវថត header/ -->
+    <script src="../header/include.js"></script>
 </body>
 </html>

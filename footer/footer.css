@@ -3,7 +3,7 @@
 /* ========================================== */
 
 .site-footer {
-    background-color: #111827; /* ពណ៌ផ្ទៃខាងក្រោយក្រមៅស្អាតបែប Dark Mode */
+    background-color: #111827;
     color: #f3f4f6;
     padding: 60px 20px 20px 20px;
     font-family: 'Kantumruy Pro', 'Inter', sans-serif;
@@ -26,7 +26,6 @@
     margin-bottom: 40px;
 }
 
-/* Branch Card & Background Floating Number Effect */
 .footer-col {
     position: relative;
     background: rgba(255, 255, 255, 0.03);
@@ -41,7 +40,6 @@
     border-color: rgba(0, 113, 227, 0.4);
 }
 
-/* ចលនាលេខរៀងខាងក្រោយ (Floating Number) */
 .bg-number {
     position: absolute;
     top: 10px;
@@ -63,7 +61,6 @@
     }
 }
 
-/* Footer Headings & Text */
 .footer-col h3 {
     font-size: 18px;
     font-weight: 700;
@@ -82,7 +79,6 @@
     z-index: 1;
 }
 
-/* Footer Links */
 .footer-col ul {
     list-style: none;
     padding: 0;
@@ -107,7 +103,6 @@
     padding-left: 5px;
 }
 
-/* Social Icons */
 .footer-social-icons {
     display: flex;
     gap: 12px;
@@ -135,7 +130,6 @@
     transform: scale(1.1);
 }
 
-/* Footer Bottom Bar */
 .footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
@@ -155,7 +149,6 @@
     margin: 5px 0;
 }
 
-/* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .site-footer {
         padding: 40px 15px 15px 15px;

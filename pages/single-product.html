@@ -8,9 +8,11 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Link CSS (ប្តូរ Path ថយក្រោយ 1 កម្រិតព្រោះស្ថិតក្នុងថត ror) -->
+    <!-- Link CSS -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="single-product.css">
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="../header/header.css">
 
     <style>
         * {
@@ -24,7 +26,7 @@
             background-color: #f5f6f8;
             color: #333333;
             overflow-x: hidden;
-            padding-top: 70px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
+            padding-top: 80px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
         }
 
         /* --- SHOP LAYOUT WRAPPER (Sidebar + Main Content) --- */
@@ -336,7 +338,6 @@
                     return response.json();
                 })
                 .then(products => {
-                    // រក្សាទុកកែវ variable ឱ្យ live search ក្នុង header អាចប្រើបាន
                     window.allProducts = products;
 
                     const product = products.find(p => String(p.id) === String(productId));
@@ -452,12 +453,12 @@
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    container.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">មានបញ្ហាក្នុងការទាញយកទិន្នន័យ!</p>';
+                    container.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">មានបញ្ហាក្នុងการទាញយកទិន្នន័យ!</p>';
                 });
         });
     </script>
 
-    <!-- Connect External JavaScript for Header/Footer Loading -->
-    <script src="../include.js"></script>
+    <!-- Connect External JavaScript for Header/Footer Loading (ដាក់ឱ្យត្រូវថត header/) -->
+    <script src="../header/include.js"></script>
 </body>
 </html>
