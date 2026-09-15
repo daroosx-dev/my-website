@@ -1,17 +1,80 @@
+// --- 1. CONFIGURATIONS & GLOBAL STATE ---
 let allProducts = [];
 let currentPage = 1;
 const itemsPerPage = 8;
 let currentFilteredProducts = [];
 let isHomeView = true;
 
-// Fetch data from products.json
+// --- 2. INITIALIZATION & FETCH DATA ---
 fetch('products.json')
     .then(response => response.json())
     .then(data => {
         allProducts = data;
-        renderHomeSections(allProducts); 
+        handleURLFilter();
     })
     .catch(error => console.error('Error loading products.json:', error));
+
+// --- 3. CORE FILTER LOGIC (បានកែសម្រួលដើម្បីដោះស្រាយបញ្ហា Firmware រួចរាល់) ---
+function filterProducts(keyword) {
+    const cleanKeyword = keyword.toLowerCase().trim();
+
+    return allProducts.filter(p => {
+        const pBrand = p.brand ? p.brand.toLowerCase() : '';
+        const pCat = p.category ? p.category.toLowerCase() : '';
+        const pType = p.type ? p.type.toLowerCase() : '';
+        const pMachine = p.machine_type ? p.machine_type.toLowerCase() : '';
+        const pCopier = p.copier_type ? p.copier_type.toLowerCase() : '';
+        const pName = p.name ? p.name.toLowerCase() : '';
+
+        // លក្ខខណ្ឌពិសេសសម្រាប់ Firmware (ដោះស្រាយបញ្ហាចុចពី Sidebar ចេញទទេ)
+        if (cleanKeyword.includes('firmware')) {
+            const brandPart = cleanKeyword.replace('firmware', '').replace('software', '').trim();
+            const isFirmware = pCat.includes('firmware') || pName.includes('firmware') || pType.includes('firmware');
+            
+            if (brandPart === '') {
+                return isFirmware;
+            }
+            
+            return isFirmware && (pBrand.includes(brandPart) || pName.includes(brandPart));
+        }
+
+        // លក្ខខណ្ឌស្វែងរកទូទៅ
+        return pBrand.includes(cleanKeyword) || 
+               pCat.includes(cleanKeyword) || 
+               pType.includes(cleanKeyword) || 
+               pMachine.includes(cleanKeyword) || 
+               pCopier.includes(cleanKeyword) ||
+               pName.includes(cleanKeyword);
+    });
+}
+
+// មុខងារពិនិត្យ URL Parameter ពេលចូលមកពី single-product.html
+function handleURLFilter() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterFromURL = urlParams.get('filter');
+
+    if (filterFromURL) {
+        const filtered = filterProducts(filterFromURL);
+        renderFilteredGrid(filtered, filterFromURL);
+        updateActiveSidebarButton(filterFromURL);
+    } else {
+        renderHomeSections(allProducts);
+    }
+}
+
+// ប្ដូរ Active Class ឱ្យប៊ូតុង Sidebar ស្វ័យប្រវត្តិ
+function updateActiveSidebarButton(filterValue) {
+    document.querySelectorAll('.filter-trigger, .software-sidebar a').forEach(btn => {
+        const btnFilter = btn.getAttribute('data-filter') || btn.textContent.trim();
+        if (btnFilter.toLowerCase() === filterValue.toLowerCase()) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+// --- 4. UI RENDERING FUNCTIONS ---
 
 // មុខងារបង្ខំឱ្យអក្សរដិតខ្លាំង ១០០% គ្រប់តម្លៃទាំងអស់
 function forceBoldSpecs() {
@@ -90,10 +153,7 @@ function createProductCardHTML(product) {
                 <div class="product-title" data-id="${product.id}">${product.name}</div>
                 <div class="price">${product.price}</div>
 
-                <div class="tag-list">
-                    ${tagsHTML}
-                </div>
-
+                <div class="tag-list">${tagsHTML}</div>
                 ${colorBarHTML}
 
                 <table class="specs-table">
@@ -114,7 +174,6 @@ function createProductCardHTML(product) {
                     </tr>
                 </table>
             </div>
-
             <div class="card-actions">
                 <button class="btn-detail" data-id="${product.id}">Detail</button>
             </div>
@@ -122,7 +181,7 @@ function createProductCardHTML(product) {
     `;
 }
 
-// មុខងារបង្ហាញទំនិញបែងចែកជា 3 Section ពេលចូលមកដំបូង
+// មុខងារបង្ហាញទំនិញបែងចែកជា 3 Section ពេលនៅหน้า Home
 function renderHomeSections(products) {
     isHomeView = true;
     currentPage = 1;
@@ -173,7 +232,7 @@ function renderHomeSections(products) {
     setTimeout(forceBoldSpecs, 10);
 }
 
-// មុខងារបង្ហាញ Filtered Grid ព្រមទាំងបង្កើត Pagination នៅខាងក្រោម
+// មុខងារបង្ហាញ Filtered Grid និង Pagination
 function renderFilteredGrid(products, title = "Search Results") {
     isHomeView = false;
     currentFilteredProducts = products;
@@ -209,7 +268,7 @@ function renderFilteredGrid(products, title = "Search Results") {
     setTimeout(forceBoldSpecs, 10);
 }
 
-// បង្កើតប៊ូតុង Pagination នៅខាងក្រោម
+// បង្កើត Pagination ខាងក្រោម
 function renderPagination(totalItems) {
     let paginationContainer = document.getElementById('pagination-container');
     if (!paginationContainer) {
@@ -225,7 +284,6 @@ function renderPagination(totalItems) {
 
     paginationContainer.innerHTML = '';
     const totalPages = Math.ceil(totalItems / itemsPerPage);
-
     if (totalPages <= 1) return;
 
     for (let i = 1; i <= totalPages; i++) {
@@ -254,12 +312,11 @@ function renderPagination(totalItems) {
 
 function removePagination() {
     const paginationContainer = document.getElementById('pagination-container');
-    if (paginationContainer) {
-        paginationContainer.innerHTML = '';
-    }
+    if (paginationContainer) paginationContainer.innerHTML = '';
 }
 
-// ភ្ជាប់ព្រឹត្តិការណ៍ចុចលើកាត
+// --- 5. EVENT LISTENERS ---
+
 function attachCardEvents(container) {
     container.querySelectorAll('.card-img, .product-title, .btn-detail').forEach(element => {
         element.addEventListener('click', (e) => {
@@ -269,27 +326,22 @@ function attachCardEvents(container) {
     });
 }
 
-// Search functionality
+// Search Bar Input Event
 const searchInput = document.getElementById('searchInput');
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-        const keyword = e.target.value.toLowerCase().trim();
+        const keyword = e.target.value.trim();
         currentPage = 1;
         if (keyword === '') {
             renderHomeSections(allProducts);
             return;
         }
-        const filtered = allProducts.filter(p => 
-            p.name.toLowerCase().includes(keyword) || 
-            (p.brand && p.brand.toLowerCase().includes(keyword)) ||
-            (p.machine_type && p.machine_type.toLowerCase().includes(keyword)) ||
-            (p.category && p.category.toLowerCase().includes(keyword))
-        );
+        const filtered = filterProducts(keyword);
         renderFilteredGrid(filtered, `Search: "${keyword}"`);
     });
 }
 
-// ប្រព័ន្ធ Filter ទាំង Sidebar និង Mega Menu
+// Sidebar & Mega Menu Filter Click Event
 document.addEventListener('click', (e) => {
     const trigger = e.target.closest('.filter-trigger, .dropdown-content button, .dropdown-content a, .mega-item, .software-sidebar a');
     if (!trigger) return;
@@ -297,10 +349,10 @@ document.addEventListener('click', (e) => {
     let filterValue = trigger.getAttribute('data-filter') || trigger.textContent.trim();
     if (!filterValue) return;
 
-    const keyword = filterValue.toLowerCase().trim();
     currentPage = 1;
+    const cleanKeyword = filterValue.toLowerCase().trim();
 
-    if (keyword.includes('all') || keyword === 'store' || keyword === 'home' || keyword.includes('products (all)')) {
+    if (cleanKeyword.includes('all') || cleanKeyword === 'store' || cleanKeyword === 'home' || cleanKeyword.includes('products (all)')) {
         renderHomeSections(allProducts);
         return;
     }
@@ -308,28 +360,7 @@ document.addEventListener('click', (e) => {
     document.querySelectorAll('.filter-trigger, .software-sidebar a').forEach(btn => btn.classList.remove('active'));
     trigger.classList.add('active');
 
-    const filtered = allProducts.filter(p => {
-        const pBrand = p.brand ? p.brand.toLowerCase() : '';
-        const pCat = p.category ? p.category.toLowerCase() : '';
-        const pType = p.type ? p.type.toLowerCase() : '';
-        const pMachine = p.machine_type ? p.machine_type.toLowerCase() : '';
-        const pCopier = p.copier_type ? p.copier_type.toLowerCase() : '';
-        const pName = p.name ? p.name.toLowerCase() : '';
-
-        if (keyword.includes('firmware')) {
-            const brandPart = keyword.replace('firmware', '').trim();
-            return (pCat.includes('firmware') || pName.includes('firmware')) && 
-                   (pBrand.includes(brandPart) || pName.includes(brandPart));
-        }
-
-        return pBrand.includes(keyword) || 
-               pCat.includes(keyword) || 
-               pType.includes(keyword) || 
-               pMachine.includes(keyword) || 
-               pCopier.includes(keyword) ||
-               pName.includes(keyword);
-    });
-
+    const filtered = filterProducts(filterValue);
     renderFilteredGrid(filtered, filterValue);
 });
 
