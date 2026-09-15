@@ -168,7 +168,7 @@
     "custom_title": "Epson EcoTank L3210 All-in-One Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
-    "category": "printer",
+    "category": "Ink Printer",
     "subtitle": "A4 All-in-One Ink Tank Printer with EcoTank System",
     "price": "Contact",
     "images": [
@@ -239,7 +239,7 @@
     "custom_title": "Epson EcoTank L3250 Wi-Fi All-in-One Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
-    "category": "printer",
+    "category": "Ink Printer",
     "subtitle": "A4 Wi-Fi All-in-One Ink Tank Printer with Wireless Printing",
     "price": "Contact",
     "images": [
@@ -310,7 +310,7 @@
     "custom_title": "Epson EcoTank Photo L18050 A3+ Wi-Fi Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
-    "category": "printer",
+    "category": "Ink Printer",
     "subtitle": "A3+ 6-Color Photo Printer with Wi-Fi & EcoTank System",
     "price": "Contact",
     "images": [
@@ -381,7 +381,7 @@
     "custom_title": "Epson EcoTank Photo L8050 A4 Wi-Fi Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
-    "category": "printer",
+    "category": "Ink Printer",
     "subtitle": "A4 6-Color Photo Printer with Wi-Fi & EcoTank System",
     "price": "Contact",
     "images": [
@@ -454,7 +454,7 @@
     "custom_title": "Epson ColorWorks CW-C6530A Industrial Label Printer",
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
-    "category": "printer",
+    "category": "Ink Printer",
     "subtitle": "8-Inch Industrial Color Inkjet Label Printer with Auto-Cutter",
     "price": "Contact",
     "images": [
@@ -528,7 +528,7 @@
     "custom_title": "HP LaserJet Pro 4003dw Wireless Printer",
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "HP",
-    "category": "printer",
+    "category": "Laser printer",
     "subtitle": "A4 Monochrome Wireless Laser Printer with Duplex",
     "price": "Contact $",
     "images": [
@@ -726,7 +726,7 @@
     "custom_title": "Epson EcoTank L6390 Wi-Fi All-in-One Ink Tank Printer",
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Epson",
-    "category": "printer",
+    "category": "Ink Printer",
     "subtitle": "A4 Print, Scan, Copy, Fax with ADF & Wi-Fi Direct",
     "price": "Contact - $",
     "images": [
@@ -2407,7 +2407,8 @@
         ]
       }
     ]
-  },{
+  },
+  {
   "id": "prod-canon-ir2425",
   "name": "Canon imageRUNNER 2425",
   "custom_title": "Canon imageRUNNER 2425",
@@ -2455,6 +2456,42 @@
         {"label": "Copy Speed", "val": "Up to 25 ppm (A4)"},
         {"label": "Copy Resolution", "val": "600 x 600 dpi"},
         {"label": "Scan Type", "val": "Standard DADF (Duplex Automatic Document Feeder)"}
+      ]
+    }
+  ]
+},
+{
+  "id": "prod-windows-11-pro",
+  "name": "Windows 11 Pro Digital License",
+  "custom_title": "Windows 11 Pro Digital License",
+  "custom_link": "https://t.me/your_telegram_username",
+  "brand": "Microsoft",
+  "category": "Software License",
+  "subtitle": "Genuine Lifetime Activation Key for Windows 11 Professional",
+  "price": "ទំនាក់ទំនងតម្លៃ",
+  "images": [
+    "images/software/windows11-pro-1.webp",
+    "images/software/windows11-pro-2.webp"
+  ],
+  "image": "images/software/windows11-pro-1.webp",
+  "tags": [
+    "100% Genuine License",
+    "Lifetime Activation",
+    "Instant Delivery via Telegram"
+  ],
+  "description": "Windows 11 Pro គឺជាប្រព័ន្ធប្រតិបត្តិការជំនាន់ចុងក្រោយរបស់ Microsoft ដែលត្រូវបានរចនាឡើងយ៉ាងពិសេសសម្រាប់អាជីវកម្ម និងការប្រើប្រាស់ទូទៅ មានលក្ខណៈសុវត្ថិភាពខ្ពស់ និងលឿនរហ័ស។ លក់ជូនជា License សុទ្ធ ប្រើបានអចិន្ត្រៃយ៍ (Lifetime)។",
+  "machine_type": "Digital Software",
+  "functions": "Business & Advanced Security",
+  "license_type": "Digital License",
+  "specs": [
+    {
+      "category": "LICENSE SPECIFICATIONS",
+      "rows": [
+        {"label": "Software Type", "val": "Operating System"},
+        {"label": "Platform", "val": "Windows 11 Professional (64-bit)"},
+        {"label": "License Type", "val": "Retail / Digital Lifetime Key"},
+        {"label": "Activation", "val": "Online Activation (1 PC)"},
+        {"label": "Delivery", "val": "Instant Delivery via Telegram"}
       ]
     }
   ]

@@ -399,19 +399,21 @@ body {
     display: block;
 }
 
-.cmyk-bar {
+/* រង្វង់មូលពណ៌ដាច់ៗពីគ្នា (ជំនួសឱ្យរបារវែង) */
+.color-dots-container {
     display: flex;
-    height: 6px;
-    width: 100%;
-    border-radius: 3px;
-    overflow: hidden;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
     margin: 6px 0;
-    background: #ddd;
 }
 
-.cmyk-bar span {
-    flex: 1;
-    height: 100%;
+.color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .specs-table {
