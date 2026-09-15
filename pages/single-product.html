@@ -412,8 +412,8 @@
                                 <p id="productDesc">${product.description || 'គ្មានការពន្យល់លម្អិត។'}</p>
                             </div>
 
-                            <!-- ប៊ូតុង Telegram -->
-                            <a href="https://t.me/Mac_error404" target="_blank" class="btn-contact-us">
+                            <!-- ប៊ូតុង Telegram ដែលមាន ID សម្រាប់ភ្ជាប់ JavaScript -->
+                            <a href="#" id="telegramChatBtn" target="_blank" class="btn-contact-us">
                                 <i class="fa-brands fa-telegram"></i> Contact Us Telegram
                             </a>
 
@@ -425,6 +425,16 @@
                     `;
                     
                     specsSection.style.display = 'block';
+
+                    // ស្វ័យប្រវត្តិបង្កើត Link និងសារផ្ញើចូល Telegram របស់បង
+                    const telegramUsername = "Mac_error404"; // Username Telegram របស់បង
+                    const message = `Hello, I am interested in this product: ${product.name} (ID: ${product.id})`;
+                    const telegramUrl = `https://t.me/${telegramUsername}?text=${encodeURIComponent(message)}`;
+                    
+                    const telegramBtn = document.getElementById('telegramChatBtn');
+                    if (telegramBtn) {
+                        telegramBtn.href = telegramUrl;
+                    }
                     
                     // 5. តារាង Specs លម្អិត
                     let specsTableHTML = '';
@@ -453,12 +463,12 @@
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    container.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">មានបញ្ហាក្នុងการទាញយកទិន្នន័យ!</p>';
+                    container.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">មានបញ្ហាក្នុងការទាញយកទិន្នន័យ!</p>';
                 });
         });
     </script>
 
-    <!-- Connect External JavaScript for Header/Footer Loading (ដាក់ឱ្យត្រូវថត header/) -->
+    <!-- Connect External JavaScript for Header/Footer Loading -->
     <script src="../header/include.js"></script>
 </body>
 </html>
