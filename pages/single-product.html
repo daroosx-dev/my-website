@@ -8,9 +8,11 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Link CSS (ប្តូរ Path ថយក្រោយ 1 កម្រិតព្រោះស្ថិតក្នុងថត ror) -->
+    <!-- Link CSS -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="single-product.css">
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="../header/header.css">
 
     <style>
         * {
@@ -24,7 +26,7 @@
             background-color: #f5f6f8;
             color: #333333;
             overflow-x: hidden;
-            padding-top: 70px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
+            padding-top: 80px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
         }
 
         /* --- SHOP LAYOUT WRAPPER (Sidebar + Main Content) --- */
@@ -336,7 +338,6 @@
                     return response.json();
                 })
                 .then(products => {
-                    // រក្សាទុកកែវ variable ឱ្យ live search ក្នុង header អាចប្រើបាន
                     window.allProducts = products;
 
                     const product = products.find(p => String(p.id) === String(productId));
@@ -411,8 +412,8 @@
                                 <p id="productDesc">${product.description || 'គ្មានការពន្យល់លម្អិត។'}</p>
                             </div>
 
-                            <!-- ប៊ូតុង Telegram -->
-                            <a href="https://t.me/Mac_error404" target="_blank" class="btn-contact-us">
+                            <!-- ប៊ូតុង Telegram ដែលមាន ID សម្រាប់ភ្ជាប់ JavaScript -->
+                            <a href="#" id="telegramChatBtn" target="_blank" class="btn-contact-us">
                                 <i class="fa-brands fa-telegram"></i> Contact Us Telegram
                             </a>
 
@@ -424,6 +425,16 @@
                     `;
                     
                     specsSection.style.display = 'block';
+
+                    // ស្វ័យប្រវត្តិបង្កើត Link និងសារផ្ញើចូល Telegram របស់បង
+                    const telegramUsername = "Mac_error404"; // Username Telegram របស់បង
+                    const message = `Hello, I am interested in this product: ${product.name} (ID: ${product.id})`;
+                    const telegramUrl = `https://t.me/${telegramUsername}?text=${encodeURIComponent(message)}`;
+                    
+                    const telegramBtn = document.getElementById('telegramChatBtn');
+                    if (telegramBtn) {
+                        telegramBtn.href = telegramUrl;
+                    }
                     
                     // 5. តារាង Specs លម្អិត
                     let specsTableHTML = '';
@@ -458,6 +469,6 @@
     </script>
 
     <!-- Connect External JavaScript for Header/Footer Loading -->
-    <script src="../include.js"></script>
+    <script src="../header/include.js"></script>
 </body>
 </html>
