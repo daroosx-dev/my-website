@@ -257,25 +257,32 @@ body {
     margin: 0;
 }
 
-/* Telegram Button */
+/* --- Telegram Button (Pill Shape with Outline to Solid Hover) --- */
 .btn-contact-us {
-    background-color: #0088cc;
-    color: white;
+    background-color: transparent;
+    color: #0071e3;
+    border: 1.5px solid #555555;
     text-align: center;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 8px 24px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    transition: background 0.2s;
+    gap: 8px;
+    width: 80%;
+    margin: 0 auto 15px auto;
+    transition: all 0.3s ease;
 }
+
 .btn-contact-us:hover {
-    background-color: #0077b5;
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transform: translateY(-1px);
 }
 
 /* Delivery & Stock Info */
@@ -312,14 +319,14 @@ body {
     padding: 30px;
     margin-top: 25px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    overflow: hidden; /* ការពារមិនឱ្យមានអ្វីហៀរចេញក្រៅប្រអប់ */
+    overflow: hidden;
     box-sizing: border-box;
 }
 
 /* កំណត់តារាង Specs ទូទៅ */
 .specs-table {
     width: 100%;
-    table-layout: fixed; /* ចាក់ប្លង់តារាងឱ្យជាប់ទំហំប្រអប់ មិនឱ្យរីកហៀរ */
+    table-layout: fixed;
     border-collapse: collapse;
     background-color: transparent !important;
     font-family: inherit;
