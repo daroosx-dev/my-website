@@ -70,11 +70,11 @@ body {
     text-decoration: none;
 }
 
-/* --- Breadcrumb --- */
+/* --- Breadcrumb (កែសម្រួលដំឡើង margin-top កុំឱ្យស្អិតជាប់ Header) --- */
 .breadcrumb-container {
     max-width: 1200px;
-    margin: 15px auto 0 auto;
-    padding: 0 20px;
+    margin: 25px auto 0 auto;
+    padding: 10px 20px 0 20px;
 }
 .breadcrumb {
     font-size: 13px;
@@ -95,8 +95,8 @@ body {
 /* --- Main Product Layout --- */
 .single-product-main {
     max-width: 1200px;
-    margin: 20px auto 40px auto;
-    padding: 0 20px;
+    margin: 25px auto 90px auto; /* បង្កើន margin-bottom ពី 40px ទៅ 80px */
+    padding: 0 20px 40px 20px;   /* បន្ថែម padding-bottom 40px */
 }
 .product-layout {
     background: #ffffff;
