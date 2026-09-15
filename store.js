@@ -97,15 +97,18 @@ function forceBoldSpecs() {
 
 // មុខងារបង្កើត HTML សម្រាប់ Product Card (បែងចែក Specs និងបង្ហាញ Color Dots ស្វ័យប្រវត្តិ)
 function createProductCardHTML(product) {
-    // ពិនិត្យថាតើផលិតផលនេះជា Computer (Laptop ឬ Desktop) ឬអត់
-    const isComputer = (product.category && product.category.toLowerCase().includes('laptop')) || 
-                       (product.category && product.category.toLowerCase().includes('desktop')) ||
+    // 1. ពិនិត្យថាតើផលិតផលនេះជា Computer (Laptop ឬ Desktop) ឬអត់
+    const isComputer = (product.category && (product.category.toLowerCase().includes('laptop') || product.category.toLowerCase().includes('desktop'))) || 
                        (product.machine_type && (product.machine_type.toLowerCase().includes('laptop') || product.machine_type.toLowerCase().includes('desktop')));
+
+    // 2. ពិនិត្យមើលថាតើជា License ដែរឬទេ (ដក Color Dots ចេញតែ License បុណ្នោះ)
+    const checkStr = `${product.category || ''} ${product.type || ''} ${product.name || ''} ${product.machine_type || ''}`.toLowerCase();
+    const isLicense = checkStr.includes('license');
 
     let colorBarHTML = '';
     
-    // បើមិនមែនជា Computer ទើបបង្ហាញ Color Dots (សម្រាប់ព្រីនធ័រ)
-    if (!isComputer) {
+    // បង្ហាញ Color Dots លើគ្រប់ផលិតផលទាំងអស់ រួមទាំង Firmware/Software (លើកលែងតែ Computer និង License)
+    if (!isComputer && !isLicense) {
         const colorType = product.color_bar_type ? product.color_bar_type.toLowerCase().trim() : '';
         
         if (colorType === 'cmyklmlc') {
@@ -146,7 +149,7 @@ function createProductCardHTML(product) {
                 </div>
             `;
         } else {
-            // បង្ហាញពណ៌ K (Black) សម្រាប់ព្រីនធ័រម៉ូណូ ឬព្រីនធ័រផ្សេងទៀតដែលមិនមែនជា CMYK
+            // បង្ហាញពណ៌ K (Black) សម្រាប់ព្រីនធ័រម៉ូណូ ឬ Firmware/Software
             colorBarHTML = `
                 <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
                     <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black (K)"></span>
@@ -299,7 +302,7 @@ function renderFilteredGrid(products, title = "Search Results") {
     mainContainer.innerHTML = '';
 
     if (products.length === 0) {
-        mainContainer.innerHTML = '<p style="text-align: center; padding: 40px; color: #777; grid-column: 1 / -1;">រកមិនឃើញផលិតផលដែលអ្នកកំពុងស្វែងរកឡើយ។</p>';
+        mainContainer.innerHTML = '<p style="text-align: center; padding: 40px; color: #777; grid-column: 1 / -1;">រកមិនឃើញផលិតផលដែលអ្នកកំពុងស្វែងរកឡើយ political position.</p>';
         removePagination();
         return;
     }
