@@ -14,7 +14,7 @@ fetch('products.json')
     })
     .catch(error => console.error('Error loading products.json:', error));
 
-// --- 3. CORE FILTER LOGIC (បានកែសម្រួលដើម្បីដោះស្រាយបញ្ហា Firmware រួចរាល់) ---
+// --- 3. CORE FILTER LOGIC ---
 function filterProducts(keyword) {
     const cleanKeyword = keyword.toLowerCase().trim();
 
@@ -26,7 +26,7 @@ function filterProducts(keyword) {
         const pCopier = p.copier_type ? p.copier_type.toLowerCase() : '';
         const pName = p.name ? p.name.toLowerCase() : '';
 
-        // លក្ខខណ្ឌពិសេសសម្រាប់ Firmware (ដោះស្រាយបញ្ហាចុចពី Sidebar ចេញទទេ)
+        // លក្ខខណ្ឌពិសេសសម្រាប់ Firmware
         if (cleanKeyword.includes('firmware')) {
             const brandPart = cleanKeyword.replace('firmware', '').replace('software', '').trim();
             const isFirmware = pCat.includes('firmware') || pName.includes('firmware') || pType.includes('firmware');
@@ -36,6 +36,14 @@ function filterProducts(keyword) {
             }
             
             return isFirmware && (pBrand.includes(brandPart) || pName.includes(brandPart));
+        }
+
+        // លក្ខខណ្ឌពិសេសសម្រាប់ Laptop និង Desktop
+        if (cleanKeyword === 'laptop' || cleanKeyword === 'desktop') {
+            return pCat.includes(cleanKeyword) || 
+                   pType.includes(cleanKeyword) || 
+                   pMachine.includes(cleanKeyword) || 
+                   pName.includes(cleanKeyword);
         }
 
         // លក្ខខណ្ឌស្វែងរកទូទៅ
@@ -87,53 +95,61 @@ function forceBoldSpecs() {
     });
 }
 
-// មុខងារបង្កើត HTML សម្រាប់ Product Card (ជាមួយរង្វង់មូលពណ៌ដាច់ៗពីគ្នា)
+// មុខងារបង្កើត HTML សម្រាប់ Product Card (បែងចែក Specs និងដក Color Dots ចេញពី Computer)
 function createProductCardHTML(product) {
+    // ពិនិត្យថាតើផលិតផលនេះជា Computer (Laptop ឬ Desktop) ឬអត់
+    const isComputer = (product.category && product.category.toLowerCase().includes('laptop')) || 
+                       (product.category && product.category.toLowerCase().includes('desktop')) ||
+                       (product.machine_type && (product.machine_type.toLowerCase().includes('laptop') || product.machine_type.toLowerCase().includes('desktop')));
+
     let colorBarHTML = '';
     
-    if (product.color_bar_type === 'cmyklmlc') {
-        colorBarHTML = `
-            <div class="color-dots-container" style="display: flex; justify-content: center; gap: 6px; margin: 10px 0;">
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #0088ff; display: inline-block;" title="Cyan"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff0088; display: inline-block;" title="Magenta"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ffee00; display: inline-block;" title="Yellow"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #00ffff; display: inline-block;" title="Light Cyan"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff00ff; display: inline-block;" title="Light Magenta"></span>
-            </div>
-        `;
-    } else if (product.color_bar_type === '12-color') {
-        colorBarHTML = `
-            <div class="color-dots-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 10px 0;">
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #333333; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #0088ff; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #00ffff; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff0088; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff00ff; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ffee00; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff4500; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #888888; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #800080; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #008000; display: inline-block;"></span>
-                <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #4169e1; display: inline-block;"></span>
-            </div>
-        `;
-    } else if (product.color_bar_type === 'cmyk') {
-        colorBarHTML = `
-            <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
-                <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
-                <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #0088ff; display: inline-block;" title="Cyan"></span>
-                <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #ff0088; display: inline-block;" title="Magenta"></span>
-                <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #ffee00; display: inline-block;" title="Yellow"></span>
-            </div>
-        `;
-    } else {
-        colorBarHTML = `
-            <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
-                <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
-            </div>
-        `;
+    // បើមិនមែនជា Computer ទើបបង្ហាញ Color Dots (សម្រាប់ព្រីនធ័រ)
+    if (!isComputer) {
+        if (product.color_bar_type === 'cmyklmlc') {
+            colorBarHTML = `
+                <div class="color-dots-container" style="display: flex; justify-content: center; gap: 6px; margin: 10px 0;">
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #0088ff; display: inline-block;" title="Cyan"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff0088; display: inline-block;" title="Magenta"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ffee00; display: inline-block;" title="Yellow"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #00ffff; display: inline-block;" title="Light Cyan"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff00ff; display: inline-block;" title="Light Magenta"></span>
+                </div>
+            `;
+        } else if (product.color_bar_type === '12-color') {
+            colorBarHTML = `
+                <div class="color-dots-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 10px 0;">
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #333333; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #0088ff; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #00ffff; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff0088; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff00ff; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ffee00; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff4500; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #888888; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #800080; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #008000; display: inline-block;"></span>
+                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #4169e1; display: inline-block;"></span>
+                </div>
+            `;
+        } else if (product.color_bar_type === 'cmyk') {
+            colorBarHTML = `
+                <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
+                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
+                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #0088ff; display: inline-block;" title="Cyan"></span>
+                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #ff0088; display: inline-block;" title="Magenta"></span>
+                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #ffee00; display: inline-block;" title="Yellow"></span>
+                </div>
+            `;
+        } else if (product.color_bar_type === 'default') {
+            colorBarHTML = `
+                <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
+                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
+                </div>
+            `;
+        }
     }
 
     let tagsHTML = '';
@@ -141,6 +157,60 @@ function createProductCardHTML(product) {
         product.tags.forEach(tag => {
             tagsHTML += `<span class="tag-item">✓ ${tag}</span>`;
         });
+    }
+
+    let specsHTML = '';
+
+    if (isComputer) {
+        specsHTML = `
+            <table class="specs-table">
+                <tr>
+                    <td class="label">Processor</td>
+                    <td class="colon">:</td>
+                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.processor || 'N/A'}</td>
+                </tr>
+                <tr>
+                    <td class="label">Memory</td>
+                    <td class="colon">:</td>
+                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.memory || 'N/A'}</td>
+                </tr>
+                <tr>
+                    <td class="label">Storage</td>
+                    <td class="colon">:</td>
+                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.storage || 'N/A'}</td>
+                </tr>
+                <tr>
+                    <td class="label">Graphic</td>
+                    <td class="colon">:</td>
+                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.graphic || 'N/A'}</td>
+                </tr>
+                <tr>
+                    <td class="label">Power</td>
+                    <td class="colon">:</td>
+                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.power || 'N/A'}</td>
+                </tr>
+            </table>
+        `;
+    } else {
+        specsHTML = `
+            <table class="specs-table">
+                <tr>
+                    <td class="label">Machine Type</td>
+                    <td class="colon">:</td>
+                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.machine_type || 'N/A'}</td>
+                </tr>
+                <tr>
+                    <td class="label">Functions</td>
+                    <td class="colon">:</td>
+                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.functions || 'N/A'}</td>
+                </tr>
+                <tr>
+                    <td class="label">Copier Type</td>
+                    <td class="colon">:</td>
+                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.copier_type || 'N/A'}</td>
+                </tr>
+            </table>
+        `;
     }
 
     return `
@@ -156,23 +226,7 @@ function createProductCardHTML(product) {
                 <div class="tag-list">${tagsHTML}</div>
                 ${colorBarHTML}
 
-                <table class="specs-table">
-                    <tr>
-                        <td class="label">Machine Type</td>
-                        <td class="colon">:</td>
-                        <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.machine_type || 'N/A'}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Functions</td>
-                        <td class="colon">:</td>
-                        <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.functions || 'N/A'}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Copier Type</td>
-                        <td class="colon">:</td>
-                        <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.copier_type || 'N/A'}</td>
-                    </tr>
-                </table>
+                ${specsHTML}
             </div>
             <div class="card-actions">
                 <button class="btn-detail" data-id="${product.id}">Detail</button>

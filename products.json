@@ -2495,5 +2495,25 @@
       ]
     }
   ]
+},
+{
+  "id": "dell-laptop-01",
+  "name": "Dell Latitude 5420 Core i5 Gen 11",
+  "brand": "Dell",
+  "category": "Laptop",
+  "type": "Laptop",
+  "machine_type": "Laptop",
+  "functions": "Office & Business",
+  "copier_type": "N/A",
+  "price": "$550",
+  "images": [
+    "images/dell-laptop1.png"
+  ],
+  "tags": [
+    "100% Original",
+    "In Stock",
+    "Warranty 6 Months"
+  ],
+  "color_bar_type": "default"
 }
 ]
