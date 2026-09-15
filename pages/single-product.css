@@ -5,91 +5,100 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    padding-top: 90px; /* កើនឡើងបន្តិចដើម្បីទប់កុំឱ្យ Header បាំងខ្លឹមសារខាងក្រោម */
 }
 
-.top-bar {
-    background-color: #222;
-    color: #fff;
-    padding: 8px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-}
-.social-icons a {
-    color: #fff;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-.apple-header {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.apple-nav {
+/* --- Breadcrumb (Updated Box Style with Light Blue Background & Ellipsis) --- */
+.breadcrumb-container {
     max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-}
-.nav-logo {
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-}
-.logo-blue {
-    color: #0071e3;
-}
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.nav-menu a {
-    text-decoration: none;
-    color: #444;
-    font-size: 14px;
-    font-weight: 500;
-}
-.nav-menu a:hover {
-    color: #0071e3;
-}
-.nav-right {
-    display: flex;
-    gap: 15px;
-}
-.nav-icon {
-    color: #333;
-    font-size: 16px;
-    text-decoration: none;
+    margin: 25px auto 15px auto; /* បន្ថែម margin-top ពី ១៥px មក ២៥px ដើម្បីទម្លាក់ប្រអប់នេះឱ្យចុះក្រោមបន្តិចទៀត */
+    padding: 0 20px;
 }
 
-/* --- Breadcrumb --- */
+.breadcrumb {
+    background-color: #f0f7ff; /* ប្រអប់ផ្ទៃខៀវខ្ចី */
+    border: 1px solid #d0e2ff; /* គែមប្រអប់ពណ៌ខៀវស្រាល */
+    border-radius: 8px; /* កោងជ្រុងបន្តិចស្អាត */
+    padding: 10px 15px;
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* រៀបជួរដេក එකជួរ */
+    overflow: hidden;   /* កាត់ផ្នែកដែលហៀរចេញ */
+}
+
+.breadcrumb a {
+    color: #0071e3;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0; /* មិនឱ្យបង្រួមរូប Icon ឬ Link ដើម */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    margin: 0 8px;
+    color: #999;
+    flex-shrink: 0;
+}
+
+.breadcrumb .current {
+    color: #333;
+    font-weight: 500;
+    white-space: nowrap;      /* រក្សាអត្ថបទនៅជួរតែមួយ */
+    overflow: hidden;         /* កាត់អត្ថបទលើស */
+    text-overflow: ellipsis;  /* បង្ហាញសញ្ញា ... បើអត្ថបទវែងជ្រុល */
+    flex-grow: 1;             /* អនុញ្ញាតឱ្យឈ្មោះផលិតផលយកទំហំសល់ */
+    min-width: 0;             /* ការពារ flex item មិនឱ្យរត់ហៀរ */
+}
+
+/* --- Breadcrumb (Updated Box Style with Light Blue Background & Ellipsis) --- */
 .breadcrumb-container {
     max-width: 1200px;
     margin: 15px auto 0 auto;
     padding: 0 20px;
 }
 .breadcrumb {
+    background-color: #f0f7ff; /* ប្រអប់ផ្ទៃខៀវខ្ចី */
+    border: 1px solid #d0e2ff; /* គែមប្រអប់ពណ៌ខៀវស្រាល */
+    border-radius: 8px; /* កោងជ្រុងបន្តិចស្អាត */
+    padding: 10px 15px;
     font-size: 13px;
     color: #666;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* រៀបជួរដេក එකជួរ */
+    overflow: hidden;   /* កាត់ផ្នែកដែលហៀរចេញ */
 }
 .breadcrumb a {
     color: #0071e3;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0; /* មិនឱ្យបង្រួមរូប Icon ឬ Link ដើម */
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
 }
 .breadcrumb .separator {
-    margin: 0 5px;
+    margin: 0 8px;
     color: #999;
+    flex-shrink: 0;
 }
 .breadcrumb .current {
     color: #333;
+    font-weight: 500;
+    white-space: nowrap;      /* រក្សាអត្ថបទនៅជួរតែមួយ */
+    overflow: hidden;         /* កាត់អត្ថបទលើស */
+    text-overflow: ellipsis;  /* បង្ហាញសញ្ញា ... បើអត្ថបទវែងជ្រុល */
+    flex-grow: 1;             /* អនុញ្ញាតឱ្យឈ្មោះផលិតផលយកទំហំសល់ */
+    min-width: 0;             /* ការពារ flex item មិនឱ្យរត់ហៀរ */
 }
 
 /* --- Main Product Layout --- */

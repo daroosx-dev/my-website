@@ -150,15 +150,6 @@
             color: #1e293b;
         }
 
-        /* --- STYLING FOR BREADCRUMB LINKS --- */
-        .breadcrumb a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
         /* --- RESPONSIVE FOR MOBILE --- */
         @media (max-width: 900px) {
             .shop-layout-wrapper {
@@ -248,11 +239,13 @@
                 Categories <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Breadcrumb (កែសម្រួលដាក់ Link ឱ្យ Category អាចចុចបាន) -->
-            <div class="breadcrumb-container" style="margin-bottom: 15px;">
+            <!-- Breadcrumb (កែសម្រួលដាក់ប្រអប់ផ្ទៃខៀវខ្ចី មានរូបផ្ទះ និងទប់កុំឱ្យហៀរអត្ថបទវែង) -->
+            <div class="breadcrumb-container">
                 <nav class="breadcrumb">
-                    <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
-                    <a href="../store.html" id="breadcrumbCategoryLink"><span id="breadcrumbCategory" class="current">Products</span></a> <span class="separator">/</span> 
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> ទំព័រដើម</a> 
+                    <span class="separator">/</span> 
+                    <a href="../store.html" id="breadcrumbCategoryLink"><span id="breadcrumbCategory">Products</span></a> 
+                    <span class="separator">/</span> 
                     <span class="current" id="breadcrumbName">ព័ត៌មានលម្អិត</span>
                 </nav>
             </div>
@@ -264,7 +257,7 @@
                 </div>
 
                 <!-- Detailed Information Box (Specs Style) -->
-                <section class="detailed-info-container" id="specsSection" style="display: none; margin-top: 20px;">
+                <section class="detailed-info-container" id="specsSection" style="display: none;">
                     <table class="specs-table" id="specsContainerTable">
                         <!-- Data specs នឹងរៀបចំដាក់ទីនេះស្វ័យប្រវត្តិ -->
                     </table>
