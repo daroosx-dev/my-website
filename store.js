@@ -95,7 +95,7 @@ function forceBoldSpecs() {
     });
 }
 
-// មុខងារបង្កើត HTML សម្រាប់ Product Card (បែងចែក Specs និងដក Color Dots ចេញពី Computer)
+// មុខងារបង្កើត HTML សម្រាប់ Product Card (បែងចែក Specs និងបង្ហាញ Color Dots ស្វ័យប្រវត្តិ)
 function createProductCardHTML(product) {
     // ពិនិត្យថាតើផលិតផលនេះជា Computer (Laptop ឬ Desktop) ឬអត់
     const isComputer = (product.category && product.category.toLowerCase().includes('laptop')) || 
@@ -106,7 +106,9 @@ function createProductCardHTML(product) {
     
     // បើមិនមែនជា Computer ទើបបង្ហាញ Color Dots (សម្រាប់ព្រីនធ័រ)
     if (!isComputer) {
-        if (product.color_bar_type === 'cmyklmlc') {
+        const colorType = product.color_bar_type ? product.color_bar_type.toLowerCase().trim() : '';
+        
+        if (colorType === 'cmyklmlc') {
             colorBarHTML = `
                 <div class="color-dots-container" style="display: flex; justify-content: center; gap: 6px; margin: 10px 0;">
                     <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
@@ -117,7 +119,7 @@ function createProductCardHTML(product) {
                     <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff00ff; display: inline-block;" title="Light Magenta"></span>
                 </div>
             `;
-        } else if (product.color_bar_type === '12-color') {
+        } else if (colorType === '12-color') {
             colorBarHTML = `
                 <div class="color-dots-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 10px 0;">
                     <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block;"></span>
@@ -134,7 +136,7 @@ function createProductCardHTML(product) {
                     <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #4169e1; display: inline-block;"></span>
                 </div>
             `;
-        } else if (product.color_bar_type === 'cmyk') {
+        } else if (colorType === 'cmyk') {
             colorBarHTML = `
                 <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
                     <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
@@ -143,10 +145,11 @@ function createProductCardHTML(product) {
                     <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #ffee00; display: inline-block;" title="Yellow"></span>
                 </div>
             `;
-        } else if (product.color_bar_type === 'default') {
+        } else {
+            // បង្ហាញពណ៌ K (Black) សម្រាប់ព្រីនធ័រម៉ូណូ ឬព្រីនធ័រផ្សេងទៀតដែលមិនមែនជា CMYK
             colorBarHTML = `
                 <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
-                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
+                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black (K)"></span>
                 </div>
             `;
         }
