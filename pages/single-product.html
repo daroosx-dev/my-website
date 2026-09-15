@@ -29,39 +29,64 @@
             padding-top: 80px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
         }
 
-        /* --- BREADCRUMB STYLING --- */
+        /* --- BREADCRUMB STYLING (Center & Box Style with Ellipsis) --- */
         .breadcrumb-container {
-            margin-bottom: 15px;
-            font-size: 14px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center; /* ដាក់ចំកណ្ដាលផ្ដេក */
+            width: 100%;
+            padding: 0 15px;
         }
 
         .breadcrumb {
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            color: #64748b;
+            flex-wrap: nowrap; /* មិនឱ្យធ្លាក់ជួរចុះក្រោម */
+            background-color: #ffffff;
+            border: 1px solid #d2d2d7;
+            border-radius: 8px;
+            padding: 10px 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            font-size: 14px;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .breadcrumb a {
-            color: #2563eb;
+            color: #0071e3;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
             transition: color 0.2s;
         }
 
         .breadcrumb a:hover {
-            color: #1d4ed8;
+            color: #004080;
             text-decoration: underline;
         }
 
         .breadcrumb .separator {
             color: #94a3b8;
+            margin: 0 10px;
+            flex-shrink: 0;
             font-size: 12px;
         }
 
         .breadcrumb .current {
             color: #334155;
             font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /* បង្ហាញ ... បើអត្ថបទវែងពេក */
+            max-width: 350px; /* កម្រិតប្រវែងអតិបរមាសម្រាប់ Desktop */
+        }
+
+        @media (max-width: 600px) {
+            .breadcrumb .current {
+                max-width: 150px; /* កម្រិតខ្លីជាងមុននៅលើទូរស័ព្ទដៃ */
+            }
         }
 
         /* --- SHOP LAYOUT WRAPPER (Sidebar + Main Content) --- */
@@ -277,9 +302,9 @@
             <!-- Breadcrumb -->
             <div class="breadcrumb-container">
                 <nav class="breadcrumb">
-                    <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
+                    <a href="../index.html"><i class="fa-solid fa-house"></i></a> <span class="separator">/</span> 
                     <a href="../store.html" id="breadcrumbCategoryLink"><span id="breadcrumbCategory">Products</span></a> <span class="separator">/</span> 
-                    <span class="current" id="breadcrumbName">ព័ត៌មានលម្អិត</span>
+                    <span class="current" id="breadcrumbName" title="">ព័ត៌មានលម្អិត</span>
                 </nav>
             </div>
 
@@ -384,12 +409,13 @@
                     }
 
                     pageTitle.innerText = `${product.name} - daroprinter`;
-                    breadcrumbName.innerText = product.name;
                     
+                    // កំណត់ឈ្មោះផលិតផល និងដាក់ tooltip ឱ្យបង្ហាញឈ្មោះពេញពេលเอา Mouse ទៅចង្អុលចំ
+                    breadcrumbName.innerText = product.name;
+                    breadcrumbName.setAttribute('title', product.name);
+
                     const categoryName = product.category || 'Product';
                     breadcrumbCategory.innerText = categoryName;
-                    
-                    // កំណត់ Link របស់ Category ក្នុង Breadcrumb ឱ្យទៅកាន់ store.html ជាមួយ filter ស្របតាមប្រភេទផលិតផល
                     breadcrumbCategoryLink.href = `../store.html?filter=${encodeURIComponent(categoryName)}`;
 
                     // 4. រៀបចំផ្លូវរូបភាព ( Image Paths )
