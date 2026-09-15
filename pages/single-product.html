@@ -150,6 +150,15 @@
             color: #1e293b;
         }
 
+        /* --- STYLING FOR BREADCRUMB LINKS --- */
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
         /* --- RESPONSIVE FOR MOBILE --- */
         @media (max-width: 900px) {
             .shop-layout-wrapper {
@@ -239,11 +248,11 @@
                 Categories <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Breadcrumb -->
+            <!-- Breadcrumb (កែសម្រួលដាក់ Link ឱ្យ Category អាចចុចបាន) -->
             <div class="breadcrumb-container" style="margin-bottom: 15px;">
                 <nav class="breadcrumb">
                     <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
-                    <span id="breadcrumbCategory" class="current">Products</span> <span class="separator">/</span> 
+                    <a href="../store.html" id="breadcrumbCategoryLink"><span id="breadcrumbCategory" class="current">Products</span></a> <span class="separator">/</span> 
                     <span class="current" id="breadcrumbName">ព័ត៌មានលម្អិត</span>
                 </nav>
             </div>
@@ -320,6 +329,7 @@
             const specsSection = document.getElementById('specsSection');
             const breadcrumbName = document.getElementById('breadcrumbName');
             const breadcrumbCategory = document.getElementById('breadcrumbCategory');
+            const breadcrumbCategoryLink = document.getElementById('breadcrumbCategoryLink');
             const pageTitle = document.getElementById('pageTitle');
 
             // 1. ទាញយក ID ពី URL
@@ -349,7 +359,18 @@
 
                     pageTitle.innerText = `${product.name} - daroprinter`;
                     breadcrumbName.innerText = product.name;
-                    breadcrumbCategory.innerText = product.category || 'Product';
+                    
+                    const categoryName = product.category || 'Products';
+                    breadcrumbCategory.innerText = categoryName;
+
+                    // កំណត់ Link សម្រាប់ Category ក្នុង Breadcrumb ឱ្យអាចចុច Filter បានត្រឹមត្រូវ
+                    if (breadcrumbCategoryLink) {
+                        if (categoryName === 'Products' || categoryName === 'All') {
+                            breadcrumbCategoryLink.href = '../store.html';
+                        } else {
+                            breadcrumbCategoryLink.href = `../store.html?filter=${encodeURIComponent(categoryName)}`;
+                        }
+                    }
 
                     // 4. រៀបចំផ្លូវរូបភាព ( Image Paths )
                     let imagesList = [];
