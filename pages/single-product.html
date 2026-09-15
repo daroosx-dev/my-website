@@ -8,11 +8,9 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Link CSS -->
+    <!-- Link CSS (ប្តូរ Path ថយក្រោយ 1 កម្រិតព្រោះស្ថិតក្នុងថត ror) -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="single-product.css">
-    <!-- Header CSS -->
-    <link rel="stylesheet" href="../header/header.css">
 
     <style>
         * {
@@ -26,7 +24,7 @@
             background-color: #f5f6f8;
             color: #333333;
             overflow-x: hidden;
-            padding-top: 80px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
+            padding-top: 70px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
         }
 
         /* --- SHOP LAYOUT WRAPPER (Sidebar + Main Content) --- */
@@ -239,13 +237,11 @@
                 Categories <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Breadcrumb (កែសម្រួលដាក់ប្រអប់ផ្ទៃខៀវខ្ចី មានរូបផ្ទះ និងទប់កុំឱ្យហៀរអត្ថបទវែង) -->
-            <div class="breadcrumb-container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb-container" style="margin-bottom: 15px;">
                 <nav class="breadcrumb">
-                    <a href="../index.html"><i class="fa-solid fa-house"></i> ទំព័រដើម</a> 
-                    <span class="separator">/</span> 
-                    <a href="../store.html" id="breadcrumbCategoryLink"><span id="breadcrumbCategory">Products</span></a> 
-                    <span class="separator">/</span> 
+                    <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
+                    <span id="breadcrumbCategory" class="current">Products</span> <span class="separator">/</span> 
                     <span class="current" id="breadcrumbName">ព័ត៌មានលម្អិត</span>
                 </nav>
             </div>
@@ -257,7 +253,7 @@
                 </div>
 
                 <!-- Detailed Information Box (Specs Style) -->
-                <section class="detailed-info-container" id="specsSection" style="display: none;">
+                <section class="detailed-info-container" id="specsSection" style="display: none; margin-top: 20px;">
                     <table class="specs-table" id="specsContainerTable">
                         <!-- Data specs នឹងរៀបចំដាក់ទីនេះស្វ័យប្រវត្តិ -->
                     </table>
@@ -322,7 +318,6 @@
             const specsSection = document.getElementById('specsSection');
             const breadcrumbName = document.getElementById('breadcrumbName');
             const breadcrumbCategory = document.getElementById('breadcrumbCategory');
-            const breadcrumbCategoryLink = document.getElementById('breadcrumbCategoryLink');
             const pageTitle = document.getElementById('pageTitle');
 
             // 1. ទាញយក ID ពី URL
@@ -341,6 +336,7 @@
                     return response.json();
                 })
                 .then(products => {
+                    // រក្សាទុកកែវ variable ឱ្យ live search ក្នុង header អាចប្រើបាន
                     window.allProducts = products;
 
                     const product = products.find(p => String(p.id) === String(productId));
@@ -352,18 +348,7 @@
 
                     pageTitle.innerText = `${product.name} - daroprinter`;
                     breadcrumbName.innerText = product.name;
-                    
-                    const categoryName = product.category || 'Products';
-                    breadcrumbCategory.innerText = categoryName;
-
-                    // កំណត់ Link សម្រាប់ Category ក្នុង Breadcrumb ឱ្យអាចចុច Filter បានត្រឹមត្រូវ
-                    if (breadcrumbCategoryLink) {
-                        if (categoryName === 'Products' || categoryName === 'All') {
-                            breadcrumbCategoryLink.href = '../store.html';
-                        } else {
-                            breadcrumbCategoryLink.href = `../store.html?filter=${encodeURIComponent(categoryName)}`;
-                        }
-                    }
+                    breadcrumbCategory.innerText = product.category || 'Product';
 
                     // 4. រៀបចំផ្លូវរូបភាព ( Image Paths )
                     let imagesList = [];
@@ -426,8 +411,8 @@
                                 <p id="productDesc">${product.description || 'គ្មានការពន្យល់លម្អិត។'}</p>
                             </div>
 
-                            <!-- ប៊ូតុង Telegram ដែលមាន ID សម្រាប់ភ្ជាប់ JavaScript -->
-                            <a href="#" id="telegramChatBtn" target="_blank" class="btn-contact-us">
+                            <!-- ប៊ូតុង Telegram -->
+                            <a href="https://t.me/Mac_error404" target="_blank" class="btn-contact-us">
                                 <i class="fa-brands fa-telegram"></i> Contact Us Telegram
                             </a>
 
@@ -439,16 +424,6 @@
                     `;
                     
                     specsSection.style.display = 'block';
-
-                    // ស្វ័យប្រវត្តិបង្កើត Link និងសារផ្ញើចូល Telegram របស់បង
-                    const telegramUsername = "Mac_error404"; // Username Telegram របស់បង
-                    const message = `Hello, I am interested in this product: ${product.name} (ID: ${product.id})`;
-                    const telegramUrl = `https://t.me/${telegramUsername}?text=${encodeURIComponent(message)}`;
-                    
-                    const telegramBtn = document.getElementById('telegramChatBtn');
-                    if (telegramBtn) {
-                        telegramBtn.href = telegramUrl;
-                    }
                     
                     // 5. តារាង Specs លម្អិត
                     let specsTableHTML = '';
@@ -483,6 +458,6 @@
     </script>
 
     <!-- Connect External JavaScript for Header/Footer Loading -->
-    <script src="../header/include.js"></script>
+    <script src="../include.js"></script>
 </body>
 </html>
