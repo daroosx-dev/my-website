@@ -2497,23 +2497,73 @@
   ]
 },
 {
-  "id": "dell-laptop-01",
-  "name": "Dell Latitude 5420 Core i5 Gen 11",
+  "id": "prod-dell-g5-5587",
+  "name": "Dell G5 15 5587 Gaming Laptop",
+  "custom_title": "Dell G5 15 5587 Gaming Laptop",
+  "custom_link": "https://t.me/your_telegram_username",
   "brand": "Dell",
   "category": "Laptop",
-  "type": "Laptop",
+  "subtitle": "High Performance 15.6-inch Gaming & Working Laptop",
   "machine_type": "Laptop",
-  "functions": "Office & Business",
+  "functions": "Gaming, Programming, Video Editing, Office Works",
   "copier_type": "N/A",
-  "price": "$550",
+  "price": "0",
   "images": [
-    "images/dell-laptop1.png"
+    "images/laptops/dell/g5-5587/dell-g5-5587-1.webp",
+    "images/laptops/dell/g5-5587/dell-g5-5587-2.webp"
   ],
+  "image": "images/laptops/dell/g5-5587/dell-g5-5587-1.webp",
   "tags": [
-    "100% Original",
-    "In Stock",
-    "Warranty 6 Months"
+    "Out of stock",
+    "Gaming Laptop",
+    "Delivery"
   ],
-  "color_bar_type": "default"
+  "description": "កុំព្យូទ័រយួរដៃ Dell G5 15 5587 ត្រូវបានរចនាឡើងយ៉ាងពិសេសសម្រាប់ការលេងហ្គេម និងកិច្ចការងារធ្ងន់ៗ ដោយវាបំពាក់មកជាមួយខួរក្បាលជំនាន់ខ្ពស់ និងកាតក្រាហ្វិកខ្លាំងក្លា ធន់នឹងការប្រើប្រាស់យូរម៉ោង។",
+  "processor": "8th Gen Intel Core i7-8750H",
+  "memory": "16GB DDR4",
+  "storage": "256GB SSD + 1TB HDD",
+  "graphic": "NVIDIA GeForce GTX 1060 (6GB)",
+  "power": "180W AC Power Adapter",
+  "display": "15.6-inch FHD (1920 x 1080) Anti-Glare IPS",
+  "os": "Windows 10 Pro",
+  "webcam": "HD 720p with Dual Digital Microphones",
+  "audio": "Waves MaxxAudio Pro, Stereo Speakers",
+  "wireless": "802.11ac WiFi, Bluetooth 5.0",
+  "network": "Killer Networks E2500 Gigabit Ethernet",
+  "battery": "4-cell 56 Whr Lithium-ion",
+  "ports": "Thunderbolt 3, USB 3.1, HDMI 2.0, RJ-45, SD Card Reader",
+  "dimension": "24.95 mm x 389 mm x 274.7 mm",
+  "weight": "2.61 kg",
+  "code": "G5587",
+  "specs": [
+    {
+      "category": "MAIN SPECIFICATIONS",
+      "rows": [
+        {"label": "Processor", "val": "8th Gen Intel Core i7-8750H"},
+        {"label": "Display", "val": "15.6-inch FHD (1920 x 1080) Anti-Glare IPS"},
+        {"label": "Memory", "val": "16GB DDR4"},
+        {"label": "Storage", "val": "256GB SSD + 1TB HDD"},
+        {"label": "Operating System", "val": "Windows 10 Pro"}
+      ]
+    },
+    {
+      "category": "GRAPHIC & MULTIMEDIA",
+      "rows": [
+        {"label": "Graphic", "val": "NVIDIA GeForce GTX 1060 (6GB)"},
+        {"label": "Webcam", "val": "HD 720p with Dual Digital Microphones"},
+        {"label": "Audio", "val": "Waves MaxxAudio Pro, Stereo Speakers"}
+      ]
+    },
+    {
+      "category": "CONNECTIVITY & POWER",
+      "rows": [
+        {"label": "Wireless", "val": "802.11ac WiFi, Bluetooth 5.0"},
+        {"label": "Network", "val": "Killer Networks E2500 Gigabit Ethernet"},
+        {"label": "Ports", "val": "Thunderbolt 3, USB 3.1, HDMI 2.0, RJ-45, SD Card Reader"},
+        {"label": "Battery", "val": "4-cell 56 Whr Lithium-ion"},
+        {"label": "Power", "val": "180W AC Power Adapter"}
+      ]
+    }
+  ]
 }
 ]
