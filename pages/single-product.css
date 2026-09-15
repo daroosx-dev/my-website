@@ -5,33 +5,34 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    padding-top: 130px; /* បង្កើនពី 90px មក 130px ដើម្បីទម្លាក់ខ្លឹមសារទាំងអស់ចុះក្រោមផុតពី Header លើมือถือទាំងស្រុង */
+    /* បង្កើន padding-top ឱ្យធំល្មមគ្រប់គ្រាន់សម្រាប់គ្រប់ទូរស័ព្ទ ដើម្បីទប់កុំឱ្យ Header ធំមកបាំង */
+    padding-top: 150px !important; 
 }
 
 @media (max-width: 900px) {
     body {
-        padding-top: 110px; /* កوتទំហំល្មមសម្រាប់ទូរស័ព្ទ */
+        padding-top: 140px !important; /* កំណត់កម្ពស់សុវត្ថិភាពច្បាស់លាស់នៅលើអេក្រង់ទូរស័ព្ទ */
     }
 }
 
-/* --- Breadcrumb (Updated Box Style with Light Blue Background & Ellipsis) --- */
+/* --- Breadcrumb Box Style --- */
 .breadcrumb-container {
     max-width: 1200px;
-    margin: 10px auto 15px auto; /* កាត់បន្ថយ margin-top តិចតួចព្រោះ body បានទម្លាក់រួចជាស្រេច */
+    margin: 10px auto 15px auto;
     padding: 0 20px;
 }
 
 .breadcrumb {
-    background-color: #f0f7ff; /* ប្រអប់ផ្ទៃខៀវខ្ចី */
-    border: 1px solid #d0e2ff; /* គែមប្រអប់ពណ៌ខៀវស្រាល */
-    border-radius: 8px; /* កោងជ្រុងបន្តិចស្អាត */
+    background-color: #f0f7ff;
+    border: 1px solid #d0e2ff;
+    border-radius: 8px;
     padding: 10px 15px;
     font-size: 13px;
     color: #666;
     display: flex;
     align-items: center;
-    flex-wrap: nowrap; /* រៀបជួរដេក එකជួរ */
-    overflow: hidden;   /* កាត់ផ្នែកដែលហៀរចេញ */
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 .breadcrumb a {
@@ -40,7 +41,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    flex-shrink: 0; /* មិនឱ្យបង្រួមរូប Icon ឬ Link ដើម */
+    flex-shrink: 0;
 }
 
 .breadcrumb a:hover {
@@ -56,11 +57,11 @@ body {
 .breadcrumb .current {
     color: #333;
     font-weight: 500;
-    white-space: nowrap;      /* រក្សាអត្ថបទនៅជួរតែមួយ */
-    overflow: hidden;         /* កាត់អត្ថបទលើស */
-    text-overflow: ellipsis;  /* បង្ហាញសញ្ញា ... បើអត្ថបទវែងជ្រុល */
-    flex-grow: 1;             /* អនុញ្ញាតឱ្យឈ្មោះផលិតផលយកទំហំសល់ */
-    min-width: 0;             /* ការពារ flex item មិនឱ្យរត់ហៀរ */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    min-width: 0;
 }
 
 /* --- Breadcrumb (Updated Box Style with Light Blue Background & Ellipsis) --- */
