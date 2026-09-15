@@ -29,6 +29,41 @@
             padding-top: 80px; /* ទប់កុំឱ្យ Header បាំងអត្ថបទ */
         }
 
+        /* --- BREADCRUMB STYLING --- */
+        .breadcrumb-container {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            color: #64748b;
+        }
+
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        .breadcrumb .separator {
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        .breadcrumb .current {
+            color: #334155;
+            font-weight: 500;
+        }
+
         /* --- SHOP LAYOUT WRAPPER (Sidebar + Main Content) --- */
         .shop-layout-wrapper {
             max-width: 1450px;
@@ -240,10 +275,10 @@
             </button>
 
             <!-- Breadcrumb -->
-            <div class="breadcrumb-container" style="margin-bottom: 15px;">
+            <div class="breadcrumb-container">
                 <nav class="breadcrumb">
                     <a href="../index.html">ទំព័រដើម</a> <span class="separator">/</span> 
-                    <span id="breadcrumbCategory" class="current">Products</span> <span class="separator">/</span> 
+                    <a href="../store.html" id="breadcrumbCategoryLink"><span id="breadcrumbCategory">Products</span></a> <span class="separator">/</span> 
                     <span class="current" id="breadcrumbName">ព័ត៌មានលម្អិត</span>
                 </nav>
             </div>
@@ -320,6 +355,7 @@
             const specsSection = document.getElementById('specsSection');
             const breadcrumbName = document.getElementById('breadcrumbName');
             const breadcrumbCategory = document.getElementById('breadcrumbCategory');
+            const breadcrumbCategoryLink = document.getElementById('breadcrumbCategoryLink');
             const pageTitle = document.getElementById('pageTitle');
 
             // 1. ទាញយក ID ពី URL
@@ -349,7 +385,12 @@
 
                     pageTitle.innerText = `${product.name} - daroprinter`;
                     breadcrumbName.innerText = product.name;
-                    breadcrumbCategory.innerText = product.category || 'Product';
+                    
+                    const categoryName = product.category || 'Product';
+                    breadcrumbCategory.innerText = categoryName;
+                    
+                    // កំណត់ Link របស់ Category ក្នុង Breadcrumb ឱ្យទៅកាន់ store.html ជាមួយ filter ស្របតាមប្រភេទផលិតផល
+                    breadcrumbCategoryLink.href = `../store.html?filter=${encodeURIComponent(categoryName)}`;
 
                     // 4. រៀបចំផ្លូវរូបភាព ( Image Paths )
                     let imagesList = [];
