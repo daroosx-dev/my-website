@@ -1446,6 +1446,7 @@
       }
     ]
   },
+  
   {
     "id": "toshiba_estudio_5506ac_7506ac",
     "name": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
@@ -1456,79 +1457,8 @@
     "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
-      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-1.webp",
-      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-2.webp"
-    ],
-    "tags": [
-      "100% Working & Safe Software",
-      "Permanent Firmware Reset",
-      "Instant Download via Telegram"
-    ],
-    "description": "Toshiba e-STUDIO 5506AC, 6506AC, and 7506AC series deliver high-speed, vibrant color output, advanced document workflows, and heavy-duty reliability designed for corporate workgroups.",
-    "machine_type": "A3 Color Copier",
-    "functions": "Print, Copy, Scan, Fax (Optional)",
-    "copier_type": "Color Digital Multifunction Copier",
-    "color_bar_type": "cmyk",
-    "specs": [
-      {
-        "category": "GENERAL SPECIFICATIONS",
-        "rows": [
-          {
-            "label": "Speed B/W",
-            "val": "55 / 65 / 75 Pages Per Minute"
-          },
-          {
-            "label": "Speed Color",
-            "val": "55 / 65 / 70 Pages Per Minute"
-          },
-          {
-            "label": "Resolution",
-            "val": "1200 x 1200 dpi"
-          },
-          {
-            "label": "Paper Capacity",
-            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
-          },
-          {
-            "label": "Max Monthly Volume",
-            "val": "Up to 300,000 Impressions"
-          },
-          {
-            "label": "Toner Impressions B/W",
-            "val": "39,000 Impressions"
-          },
-          {
-            "label": "Toner Impressions Color",
-            "val": "33,600 Impressions"
-          },
-          {
-            "label": "Copier Type",
-            "val": "Office Color Copier"
-          },
-          {
-            "label": "Color Capability",
-            "val": "Color Copier"
-          },
-          {
-            "label": "Properties",
-            "val": "Copier-Printer-Scan-fax"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "toshiba_estudio_5506ac_7506ac",
-    "name": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
-    "custom_title": "Toshiba e-STUDIO 5506AC / 6506AC / 7506AC",
-    "custom_link": "https://t.me/your_telegram_username",
-    "brand": "Toshiba",
-    "category": "Software Firmware",
-    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
-    "price": "Firmware only",
-    "images": [
-      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-1.webp",
-      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-2.webp"
+      "images/software-firmware/Toshiba/5506AC/5506.webp",
+      "images/software-firmware/Toshiba/5506AC/5506.PNG"
     ],
     "tags": [
       "100% Working & Safe Software",
@@ -1598,8 +1528,8 @@
     "subtitle": "A3 Black and White High-Volume Digital Copier",
     "price": "Firmware only",
     "images": [
-      "images/software-firmware/Toshiba/5518a-8518a/toshiba-5518a-1.webp",
-      "images/software-firmware/Toshiba/5518a-8518a/toshiba-5518a-2.webp"
+      "images/software-firmware/Toshiba/e5518A_8518A/Toshiba e5518A_8518A.webp",
+      "images/software-firmware/Toshiba/e5518A_8518A/e-STUDIO5518A.PNG"
     ],
     "tags": [
       "100% Working & Safe Software",
@@ -1724,8 +1654,8 @@
     "subtitle": "A3 Color Smart Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
-      "images/software-firmware/Toshiba/2505AC-5005AC/e-Studio 2505AC-5005AC.webp",
-      "images/software-firmware/Toshiba/2505AC-5005AC/Toshiba e-Studio 2505AC-5005AC.PNG"
+      "images/software-firmware/Toshiba/5506AC/5506.webp",
+      "images/software-firmware/Toshiba/5506AC/5506.PNG"
     ],
     "tags": [
       "100% Working & Safe Software",
@@ -1768,77 +1698,6 @@
           {
             "label": "Toner Impressions Color",
             "val": "33,600 Impressions"
-          },
-          {
-            "label": "Copier Type",
-            "val": "Office Color Copier"
-          },
-          {
-            "label": "Color Capability",
-            "val": "Color Copier"
-          },
-          {
-            "label": "Properties",
-            "val": "Copier-Printer-Scan-fax"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "toshiba_estudio_5506ac",
-    "name": "Toshiba e-STUDIO 5506AC",
-    "custom_title": "Toshiba e-STUDIO 5506AC",
-    "custom_link": "https://t.me/your_telegram_username",
-    "brand": "Toshiba",
-    "category": "Software Firmware",
-    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
-    "price": "Firmware only",
-    "images": [
-      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-1.webp",
-      "images/software-firmware/Toshiba/5506ac/toshiba-5506ac-2.webp"
-    ],
-    "tags": [
-      "100% Working & Safe Software",
-      "Permanent Firmware Reset",
-      "Instant Download via Telegram"
-    ],
-    "description": "Toshiba e-STUDIO 5506AC delivers high-speed, vibrant color output, advanced document workflows, and heavy-duty reliability designed for corporate workgroups.",
-    "machine_type": "A3 Color Copier",
-    "functions": "Print, Copy, Scan, Fax (Optional)",
-    "copier_type": "Color Digital Multifunction Copier",
-    "color_bar_type": "cmyk",
-    "specs": [
-      {
-        "category": "GENERAL SPECIFICATIONS",
-        "rows": [
-          {
-            "label": "Speed B/W",
-            "val": "65 Pages Per Minute"
-          },
-          {
-            "label": "Speed Color",
-            "val": "55 Pages Per Minute"
-          },
-          {
-            "label": "Resolution",
-            "val": "1200 x 1200 dpi"
-          },
-          {
-            "label": "Paper Capacity",
-            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
-          },
-          {
-            "label": "Max Monthly Volume",
-            "val": "Up to 300,000 Impressions"
-          },
-          {
-            "label": "Toner Impressions B/W",
-            "val": "106,600 Impressions"
-          },
-          {
-            "label": "Toner Impressions Color",
-            "val": "39,200 Impressions"
           },
           {
             "label": "Copier Type",
@@ -1910,77 +1769,6 @@
           {
             "label": "Color Capability",
             "val": "Black and White Copier"
-          },
-          {
-            "label": "Properties",
-            "val": "Copier-Printer-Scan-fax"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "toshiba_estudio_7506ac",
-    "name": "Toshiba e-STUDIO 7506AC",
-    "custom_title": "Toshiba e-STUDIO 7506AC",
-    "custom_link": "https://t.me/your_telegram_username",
-    "brand": "Toshiba",
-    "category": "Software Firmware",
-    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
-    "price": "Firmware only",
-    "images": [
-      "images/software-firmware/Toshiba/7506ac/toshiba-7506ac-1.webp",
-      "images/software-firmware/Toshiba/7506ac/toshiba-7506ac-2.webp"
-    ],
-    "tags": [
-      "100% Working & Safe Software",
-      "Permanent Firmware Reset",
-      "Instant Download via Telegram"
-    ],
-    "description": "Toshiba e-STUDIO 7506AC delivers ultra-high-speed color output, advanced document workflows, and heavy-duty enterprise reliability designed for high-volume corporate environments.",
-    "machine_type": "A3 Color Copier",
-    "functions": "Print, Copy, Scan, Fax (Optional)",
-    "copier_type": "Color Digital Multifunction Copier",
-    "color_bar_type": "cmyk",
-    "specs": [
-      {
-        "category": "GENERAL SPECIFICATIONS",
-        "rows": [
-          {
-            "label": "Speed B/W",
-            "val": "85 Pages Per Minute"
-          },
-          {
-            "label": "Speed Color",
-            "val": "75 Pages Per Minute"
-          },
-          {
-            "label": "Resolution",
-            "val": "1200 x 1200 dpi"
-          },
-          {
-            "label": "Paper Capacity",
-            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
-          },
-          {
-            "label": "Max Monthly Volume",
-            "val": "Up to 350,000 Impressions"
-          },
-          {
-            "label": "Toner Impressions B/W",
-            "val": "106,600 Impressions"
-          },
-          {
-            "label": "Toner Impressions Color",
-            "val": "39,200 Impressions"
-          },
-          {
-            "label": "Copier Type",
-            "val": "Office Color Copier"
-          },
-          {
-            "label": "Color Capability",
-            "val": "Color Copier"
           },
           {
             "label": "Properties",
@@ -2337,77 +2125,7 @@
       }
     ]
   },
-  {
-    "id": "toshiba_estudio_5506ac",
-    "name": "Toshiba e-STUDIO 5506AC",
-    "custom_title": "Toshiba e-STUDIO 5506AC",
-    "custom_link": "https://t.me/your_telegram_username",
-    "brand": "Toshiba",
-    "category": "Software Firmware",
-    "subtitle": "A3 High-Speed Color Digital Multifunction Copier",
-    "price": "Firmware only",
-    "images": [
-      "images/software-firmware/Toshiba/5506AC/5506.webp",
-      "images/software-firmware/Toshiba/5506AC/5506.PNG"
-    ],
-    "tags": [
-      "100% Working & Safe Software",
-      "Permanent Firmware Reset",
-      "Instant Download via Telegram"
-    ],
-    "description": "Toshiba e-STUDIO 5506AC delivers high-speed color output, advanced document workflows, and heavy-duty reliability designed specifically for corporate workgroups requiring fast color performance.",
-    "machine_type": "A3 Color Copier",
-    "functions": "Print, Copy, Scan, Fax (Optional)",
-    "copier_type": "Color Digital Multifunction Copier",
-    "color_bar_type": "cmyk",
-    "specs": [
-      {
-        "category": "GENERAL SPECIFICATIONS",
-        "rows": [
-          {
-            "label": "Speed B/W",
-            "val": "65 Pages Per Minute"
-          },
-          {
-            "label": "Speed Color",
-            "val": "55 Pages Per Minute"
-          },
-          {
-            "label": "Resolution",
-            "val": "1200 x 1200 dpi"
-          },
-          {
-            "label": "Paper Capacity",
-            "val": "Dual 550 Sheet Drawers, Dual 2,000 Sheet Large Capacity Feeder"
-          },
-          {
-            "label": "Max Monthly Volume",
-            "val": "Up to 300,000 Impressions"
-          },
-          {
-            "label": "Toner Impressions B/W",
-            "val": "106,600 Impressions"
-          },
-          {
-            "label": "Toner Impressions Color",
-            "val": "39,200 Impressions"
-          },
-          {
-            "label": "Copier Type",
-            "val": "Office Color Copier"
-          },
-          {
-            "label": "Color Capability",
-            "val": "Color Copier"
-          },
-          {
-            "label": "Properties",
-            "val": "Copier-Printer-Scan-fax"
-          }
-        ]
-      }
-    ]
-  },
+
   {
   "id": "prod-canon-ir2425",
   "name": "Canon imageRUNNER 2425",
