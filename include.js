@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // ពិនិត្យមើលថាតើទំពរបច្ចុប្បន្នស្ថិតក្នុងថតរង (folder) ណាមួយ ដូចជា pages ឬ html-page
     const pathName = window.location.pathname;
-    // ពង្រីកការឆែកឱ្យកាន់តែទូលំទូលាយដើម្បីចាប់យកគ្រប់ថតរងទាំងអស់
     const isSubFolder = pathName.includes('/pages/') || pathName.includes('/html-page/') || (pathName.split('/').length > 2 && !pathName.endsWith('index.html') && pathName !== '/');
 
-    // ១. ទាញយក header.html ដោយប្រើ Absolute Path ពី Root ដើម្បីធានាថាវាដើរបានទាំង Local និង Hosting អនឡាញ
-    const headerUrl = "/header.html";
+    // ១. ទាញយក header.html
+    const headerUrl = isSubFolder ? "../header.html" : "/header.html"; // កែសម្រួលតាមទីតាំងជាក់ស្តែងរបស់ header.html របស់បង
 
     fetch(headerUrl)
         .then(response => {
@@ -23,12 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     links.forEach(link => {
                         let href = link.getAttribute("href");
                         if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("tel:") && !href.startsWith("mailto:") && !href.startsWith("javascript:")) {
-                            if (href.startsWith("/")) {
-                                href = href.substring(1);
-                            }
-                            if (!href.startsWith("../")) {
-                                link.setAttribute("href", "../" + href);
-                            }
+                            if (href.startsWith("/")) href = href.substring(1);
+                            if (!href.startsWith("../")) link.setAttribute("href", "../" + href);
                         }
                     });
 
@@ -36,9 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     images.forEach(img => {
                         let src = img.getAttribute("src");
                         if (src && !src.startsWith("http") && !src.startsWith("../")) {
-                            if (src.startsWith("/")) {
-                                src = src.substring(1);
-                            }
+                            if (src.startsWith("/")) src = src.substring(1);
                             img.setAttribute("src", "../" + src);
                         }
                     });
@@ -54,15 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     });
                 }
-                // ========================================================
 
                 initHeaderScript();
             }
         })
         .catch(error => console.error('Error loading header:', error));
 
-    // ២. ទាញយក footer.html តាមរយៈ Absolute Path ពី Root ដូចគ្នា
-    const footerUrl = "/footer.html";
+    // ២. ទាញយក footer/footer.html ស្វ័យប្រវត្តិ
+    const footerUrl = isSubFolder ? "../footer/footer.html" : "footer/footer.html";
 
     fetch(footerUrl)
         .then(response => {
@@ -74,17 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
             if (footerPlaceholder) {
                 footerPlaceholder.innerHTML = data;
 
+                // ប្រសិនបើស្ថិតក្នុងថតរង សូមកែតម្រូវ Link ក្នុង Footer ឱ្យថយក្រោយ (../) ស្វ័យប្រវត្តិ
                 if (isSubFolder) {
                     const footerLinks = footerPlaceholder.querySelectorAll("a");
                     footerLinks.forEach(link => {
                         let href = link.getAttribute("href");
                         if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("tel:") && !href.startsWith("mailto:") && !href.startsWith("javascript:")) {
-                            if (href.startsWith("/")) {
-                                href = href.substring(1);
-                            }
-                            if (!href.startsWith("../")) {
-                                link.setAttribute("href", "../" + href);
-                            }
+                            if (href.startsWith("/")) href = href.substring(1);
+                            if (!href.startsWith("../")) link.setAttribute("href", "../" + href);
                         }
                     });
                 }
@@ -93,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error('Error loading footer:', error));
 });
 
-// មុខងារគ្រប់គ្រង Search Modal, Mobile Menu និង Dropdown ក្នុង Header
+// មុខងារគ្រប់គ្រង Search Modal, Mobile Menu, Mega Menu និង Dropdown ក្នុង Header
 function initHeaderScript() {
     const openSearchModal = document.getElementById('openSearchModal');
     const searchModalOverlay = document.getElementById('searchModalOverlay');
