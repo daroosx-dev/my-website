@@ -12,260 +12,9 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/home-style.css">
     <link rel="stylesheet" href="../store.css">
-    <!-- Header CSS -->
     <link rel="stylesheet" href="../header/header.css">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Leelawadee UI', 'Khmer OS Siemreap', 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background-color: #f5f6f8;
-            color: #333333;
-            overflow-x: hidden;
-            padding-top: 80px; /* เว้นระยะให้ header แบบ fixed */
-        }
-
-        .software-page-wrapper {
-            max-width: 1200px;
-            margin: 30px auto 50px auto;
-            padding: 0 15px;
-            display: flex;
-            gap: 25px;
-            align-items: flex-start;
-        }
-
-        /* ស្ទីល Sidebar Categories ខាងឆ្វេង */
-        .software-sidebar {
-            flex: 0 0 280px;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-
-        .software-sidebar h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .sidebar-category-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .sidebar-category-list li a {
-            display: block;
-            padding: 10px 12px;
-            color: #334155;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .sidebar-category-list li a:hover,
-        .sidebar-category-list li a.active {
-            background-color: #eff6ff;
-            color: #2563eb;
-            font-weight: 600;
-        }
-
-        .sidebar-section-title {
-            font-size: 11px;
-            font-weight: 700;
-            color: #64748b;
-            margin: 15px 0 5px 10px;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 4px;
-        }
-
-        .software-main-content {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .software-list-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .software-card-item {
-            display: flex;
-            background: #ffffff;
-            border: 1px solid #dcdcdc;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border-radius: 6px;
-            position: relative;
-        }
-
-        .software-card-item:hover {
-            border-color: #2563eb;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        }
-
-        .sw-item-number {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background-color: #d4af37;
-            color: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-
-        .sw-img-box {
-            flex: 0 0 160px;
-            height: 120px;
-            background: #2b3e50;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .sw-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .sw-content-box {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding-right: 30px;
-        }
-
-        .sw-header-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 13px;
-        }
-
-        .sw-badge {
-            background-color: #555;
-            color: #fff;
-            padding: 3px 10px;
-            font-weight: bold;
-            border-radius: 3px 0 0 3px;
-            font-size: 11px;
-        }
-
-        .sw-category {
-            background-color: #eee;
-            color: #444;
-            padding: 3px 10px;
-            border-radius: 0 3px 3px 0;
-            border-left: 1px solid #ddd;
-            font-size: 12px;
-        }
-
-        .sw-title {
-            margin: 0 0 8px 0;
-            font-size: 18px;
-        }
-
-        .sw-title a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        .sw-title a:hover {
-            text-decoration: underline;
-        }
-
-        .sw-desc {
-            margin: 0;
-            font-size: 13px;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        .more-link {
-            color: #0073aa;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .more-link:hover {
-            text-decoration: underline;
-        }
-
-        .pagination-container {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 30px;
-        }
-
-        .page-btn {
-            background-color: #ffffff;
-            color: #334155;
-            border: 1px solid #cbd5e1;
-            padding: 8px 14px;
-            font-size: 14px;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .page-btn:hover {
-            background-color: #eff6ff;
-            border-color: #2563eb;
-            color: #2563eb;
-        }
-
-        .page-btn.active {
-            background-color: #2563eb;
-            border-color: #2563eb;
-            color: #ffffff;
-        }
-
-        @media (max-width: 992px) {
-            .software-page-wrapper {
-                flex-direction: column;
-            }
-            .software-sidebar {
-                width: 100%;
-            }
-            .software-card-item {
-                flex-direction: column;
-            }
-            .sw-img-box {
-                width: 100%;
-                height: 180px;
-                margin-right: 0;
-                margin-bottom: 12px;
-            }
-        }
-    </style>
+    <!-- Link ទៅកាន់ css/software.css -->
+    <link rel="stylesheet" href="../css/software.css">
 </head>
 <body>
 
@@ -274,22 +23,29 @@
 
     <div class="software-page-wrapper">
         
-        <!-- Sidebar Categories ខាងឆ្វេង -->
+        <!-- Sidebar Categories (Categories ☰ លើ Mobile) -->
         <aside class="software-sidebar">
-            <h3><i class="fa-solid fa-list" aria-hidden="true"></i> Categories</h3>
-            <ul class="sidebar-category-list">
-                <li><a href="#" onclick="filterByCategory('all', event)" class="active" id="cat-all">Products (All)</a></li>
+            <div class="sidebar-header-box" onclick="toggleMobileCatMenu()">
+                <span>Categories</span>
+                <i class="fa-solid fa-bars cat-icon" id="catMenuIcon"></i>
+            </div>
 
-                <div class="sidebar-section-title">SOFTWARE</div>
-                <li><a href="#" onclick="filterByCategory('windows', event)" id="cat-windows">Windows Software</a></li>
-                <li><a href="#" onclick="filterByCategory('mac', event)" id="cat-mac">Mac Software</a></li>
-                <li><a href="#" onclick="filterByCategory('utilities', event)" id="cat-utilities">Utilities Software</a></li>
+            <!-- បញ្ជី Categories លាក់ជាមុនលើ Mobile -->
+            <div class="sidebar-nav-content" id="sidebarNavContent">
+                <ul class="sidebar-category-list">
+                    <li><a href="#" onclick="filterByCategory('all', event)" class="active" id="cat-all">Products (All)</a></li>
 
-                <div class="sidebar-section-title">DRIVERS & FIRMWARE</div>
-                <li><a href="#" onclick="filterByCategory('printer', event)" id="cat-printer">Printer Driver</a></li>
-                <li><a href="#" onclick="filterByCategory('label', event)" id="cat-label">Label Printer Driver</a></li>
-                <li><a href="#" onclick="filterByCategory('copier', event)" id="cat-copier">Copier Driver</a></li>
-            </ul>
+                    <div class="sidebar-section-title">SOFTWARE</div>
+                    <li><a href="#" onclick="filterByCategory('windows', event)" id="cat-windows">Windows Software</a></li>
+                    <li><a href="#" onclick="filterByCategory('mac', event)" id="cat-mac">Mac Software</a></li>
+                    <li><a href="#" onclick="filterByCategory('utilities', event)" id="cat-utilities">Utilities Software</a></li>
+
+                    <div class="sidebar-section-title">DRIVERS & FIRMWARE</div>
+                    <li><a href="#" onclick="filterByCategory('printer', event)" id="cat-printer">Printer Driver</a></li>
+                    <li><a href="#" onclick="filterByCategory('label', event)" id="cat-label">Label Printer Driver</a></li>
+                    <li><a href="#" onclick="filterByCategory('copier', event)" id="cat-copier">Copier Driver</a></li>
+                </ul>
+            </div>
         </aside>
 
         <!-- Software Main Content -->
@@ -305,12 +61,29 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- JavaScript សម្រាប់គ្រប់គ្រងទិន្នន័យ លេខរៀង និង Pagination -->
+    <!-- JavaScript សម្រាប់ទិន្នន័យ & បិទបើក Menu Mobile -->
     <script>
         let allSoftwareData = [];
         let currentFilteredData = [];
         let currentPage = 1;
         const itemsPerPage = 5;
+
+        // ចុចបិទបើក Categories ☰ លើ Mobile
+        function toggleMobileCatMenu() {
+            if (window.innerWidth <= 992) {
+                const navContent = document.getElementById('sidebarNavContent');
+                const menuIcon = document.getElementById('catMenuIcon');
+                
+                navContent.classList.toggle('open');
+                if (navContent.classList.contains('open')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            }
+        }
 
         function createSoftwareCard(prod, index) {
             let imgSrc = '../images/default.png';
@@ -406,6 +179,19 @@
                 });
             }
             renderPageData();
+
+            // បិទ Dropdown វិញពេលចុចជ្រើសរើសរួចលើ Mobile
+            if (window.innerWidth <= 992) {
+                const navContent = document.getElementById('sidebarNavContent');
+                const menuIcon = document.getElementById('catMenuIcon');
+                if (navContent && navContent.classList.contains('open')) {
+                    navContent.classList.remove('open');
+                    if (menuIcon) {
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                }
+            }
         }
 
         document.addEventListener("DOMContentLoaded", async () => {
@@ -425,7 +211,7 @@
         });
     </script>
 
-    <!-- Linking include.js ត្រូវដាក់ឱ្យត្រូវថត header/ -->
+    <!-- Linking include.js -->
     <script src="../header/include.js"></script>
 </body>
 </html>

@@ -285,15 +285,18 @@ body {
     transform: translateY(-1px);
 }
 
-/* Delivery & Stock Info */
+/* Delivery & Stock Info (រត់មួយជួរដេក និងតម្រឹមមកចំកណ្ដាល Center) */
 .delivery-stock-info {
     font-size: 13px;
     color: #1d1d1f;
     border-top: 1px solid #eee;
     padding-top: 15px;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 .delivery-text {
     color: #0071e3;
@@ -301,6 +304,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
 .stock-status {
     color: #34c759;
@@ -309,6 +313,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
 
 /* --- Detailed Information Section (GSMArena Specs Style) --- */

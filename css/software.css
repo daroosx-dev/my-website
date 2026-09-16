@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Leelawadee UI', 'Khmer OS Siemreap', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f5f6f8;
+    color: #333333;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+.software-page-wrapper {
+    max-width: 1200px;
+    margin: 25px auto 50px auto;
+    padding: 0 15px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* --- ស្ទីល Sidebar Categories ខាងឆ្វេង (Desktop) --- */
+.software-sidebar {
+    flex: 0 0 280px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar-header-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #cbd5e1;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.sidebar-header-box i.cat-icon {
+    font-size: 17px;
+}
+
+.sidebar-category-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-category-list li a {
+    display: block;
+    padding: 10px 12px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-category-list li a:hover,
+.sidebar-category-list li a.active {
+    background-color: #eff6ff;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.sidebar-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    margin: 15px 0 5px 10px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 4px;
+}
+
+/* --- Software Main Content --- */
+.software-main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.software-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.software-card-item {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    position: relative;
+}
+
+.software-card-item:hover {
+    border-color: #2563eb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.sw-item-number {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: #d4af37;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.sw-img-box {
+    flex: 0 0 160px;
+    height: 120px;
+    background: #2b3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sw-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sw-content-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 30px;
+}
+
+.sw-header-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.sw-badge {
+    background-color: #555;
+    color: #fff;
+    padding: 3px 10px;
+    font-weight: bold;
+    border-radius: 3px 0 0 3px;
+    font-size: 11px;
+}
+
+.sw-category {
+    background-color: #eee;
+    color: #444;
+    padding: 3px 10px;
+    border-radius: 0 3px 3px 0;
+    border-left: 1px solid #ddd;
+    font-size: 12px;
+}
+
+.sw-title {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.sw-title a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.sw-title a:hover {
+    text-decoration: underline;
+}
+
+.sw-desc {
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.more-link {
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.more-link:hover {
+    text-decoration: underline;
+}
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.page-btn {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+    background-color: #eff6ff;
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.page-btn.active {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+}
+
+/* ----------------------------------
+   ស្ទីលលើទូរស័ព្ទ (Responsive Mobile) - លុបចន្លោះទំនេរ & លើកកាតឡើងលើ
+   ---------------------------------- */
+@media (max-width: 992px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .software-page-wrapper {
+        flex-direction: column;
+        gap: 12px;           /* ចន្លោះពី Categories មក Card ផលិតផល */
+        margin: 10px auto 40px auto;
+        padding: 0 12px;
+    }
+
+    /* ដក Size 280px ចាស់ចេញ ទុកតែកម្ពស់ Text Categories ☰ */
+    .software-sidebar {
+        flex: none;
+        width: 100%;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0 4px;
+        margin-bottom: 0;
+    }
+
+    /* អក្សរ Categories ☰ ដូចរូប */
+    .sidebar-header-box {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #0f172a;
+        cursor: pointer;
+        user-select: none;
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+    }
+
+    /* Dropdown List លាក់ជាមុន */
+    .sidebar-nav-content {
+        display: none;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin-top: 10px;
+    }
+
+    /* បង្ហាញពេលចុចបើក */
+    .sidebar-nav-content.open {
+        display: block;
+    }
+
+    .software-main-content {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .software-list-container {
+        gap: 15px;
+    }
+
+    /* Card ផលិតផលលើ Mobile */
+    .software-card-item {
+        flex-direction: column;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .sw-img-box {
+        width: 100%;
+        height: 190px;
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+
+    .sw-content-box {
+        padding-right: 0;
+    }
+}

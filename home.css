@@ -334,7 +334,31 @@ body, html {
 }
 
 /* ----------------------------------
-    CARD 1 (UIVERSE CARD - រក្សាទម្រង់ដើមដូចក្នុងរូប ១០០%)
+    KEYFRAMES (OPTIMIZED)
+    ---------------------------------- */
+@keyframes rotBGimg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ដំណើរការតែ Opacity & Scale កុំឱ្យស៊ី CPU */
+@keyframes blur-animation {
+    0% {
+        opacity: 0.8;
+        transform: scale(1) translateZ(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.03) translateZ(0);
+    }
+}
+
+/* ----------------------------------
+    CARD 1 (FIRMWARE ONLY - ROTATING BEAM)
     ---------------------------------- */
 .card {
     position: relative;
@@ -348,13 +372,13 @@ body, html {
     padding: 6px;
     transition: transform 0.3s ease;
     z-index: 1;
+    transform: translateZ(0);
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) translateZ(0);
 }
 
-/* ភ្លើងបន្ទះបង្វិល 360 ដឺក្រេ (Rotating Glow Beam) */
 .card::before {
     content: '';
     position: absolute;
@@ -371,18 +395,9 @@ body, html {
     );
     animation: rotBGimg 3.5s linear infinite;
     z-index: -2;
+    will-change: transform;
 }
 
-@keyframes rotBGimg {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* ផ្ទៃខាងក្នុងគ្របពីលើភ្លើងបង្វិល */
 .card::after {
     content: '';
     position: absolute;
@@ -402,7 +417,6 @@ body, html {
     overflow: hidden;
 }
 
-/* ចន្លោះខ្មៅខាងលើឆ្វេង */
 .card .top-section .border {
     border-bottom-right-radius: 10px;
     height: 36px;
@@ -440,7 +454,6 @@ body, html {
     box-shadow: -5px -5px 0 2px #07182E;
 }
 
-/* អក្សរ FIRMWARE ONLY */
 .card .top-section .border .badge-text {
     transform: skew(40deg);
     color: #ffffff;
@@ -499,7 +512,7 @@ body, html {
 }
 
 /* ----------------------------------
-    CARD 2 & CARD 3 (APPLE M2 GLOW STYLE)
+    CARD 2 & CARD 3 (APPLE M2 GLOW - SMOOTH)
     ---------------------------------- */
 .destination-card {
     position: relative;
@@ -511,9 +524,9 @@ body, html {
     text-align: left;
     transition: transform 0.3s ease;
     z-index: 1;
+    transform: translateZ(0);
 }
 
-/* ពន្លឺ Apple M2 ៤ ពណ៌ព័ទ្ធជុំវិញ */
 .destination-card::before {
     content: "";
     position: absolute;
@@ -529,10 +542,10 @@ body, html {
     z-index: -2;
     filter: blur(14px);
     animation: blur-animation 3s ease-in-out alternate infinite;
-    transition: filter 0.3s ease;
+    will-change: transform, opacity;
+    transform: translateZ(0);
 }
 
-/* ផ្ទៃខាងក្នុងពណ៌ស */
 .destination-card::after {
     content: '';
     position: absolute;
@@ -545,23 +558,8 @@ body, html {
     z-index: -1;
 }
 
-@keyframes blur-animation {
-    0% {
-        filter: blur(12px);
-        transform: scale(1);
-    }
-    100% {
-        filter: blur(22px);
-        transform: scale(1.03);
-    }
-}
-
 .destination-card:hover {
-    transform: translateY(-8px);
-}
-
-.destination-card:hover::before {
-    filter: blur(26px);
+    transform: translateY(-8px) translateZ(0);
 }
 
 .destination-img {
