@@ -1062,7 +1062,7 @@
   },
   {
     "id": "canon_dx_c5560i",
-    "name": "Canon imageRUNNER ADVANCE C5560i",
+    "name": "Canon imageRUNNER ADVANCE C5560",
     "custom_title": "Canon imageRUNNER ADVANCE C5560i",
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
@@ -1070,8 +1070,8 @@
     "subtitle": "A3 Color Smart Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
-      "images/software-firmware/Canon/c5560i/canon-c5560i-1.webp",
-      "images/software-firmware/Canon/c5560i/canon-c5560i-2.webp"
+      "images/software-firmware/Canon/irc5560/iAC-5560i.webp",
+      "images/software-firmware/Canon/irc5560/Firmware-for-Canon-ADVANCE-C5560i.png"
     ],
     "tags": [
       "100% Working & Safe Software",
