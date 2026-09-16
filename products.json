@@ -2565,5 +2565,149 @@
       ]
     }
   ]
+},
+{
+  "id": "prod-windows-10-pro",
+  "name": "Windows 10 Pro Digital License",
+  "custom_title": "Windows 10 Pro Digital License",
+  "custom_link": "https://t.me/your_telegram_username",
+  "brand": "Microsoft",
+  "category": "Software License",
+  "subtitle": "Genuine Lifetime Activation Key for Windows 10 Professional",
+  "price": "ទំនាក់ទំនងតម្លៃ",
+  "images": [
+    "images/software/windows10-pro-1.webp",
+    "images/software/windows10-pro-2.webp"
+  ],
+  "image": "images/software/windows10-pro-1.webp",
+  "tags": [
+    "100% Genuine License",
+    "Lifetime Activation",
+    "Instant Delivery via Telegram"
+  ],
+  "description": "Windows 10 Pro គឺជាប្រព័ន្ធប្រតិបត្តិការដ៏ពេញនិយម និងមានស្ថេរភាពខ្ពស់របស់ Microsoft ដែលត្រូវបានរចនាឡើងសម្រាប់កុំព្យូទ័រការិយាល័យ និងផ្ទាល់ខ្លួន មានដំណើរការលឿន និងសុវត្ថិភាពល្អ។ លក់ជូនជា License សុទ្ធ ប្រើបានអចិន្ត្រៃយ៍ (Lifetime)។",
+  "machine_type": "Digital Software",
+  "functions": "Business & Reliable Performance",
+  "license_type": "Digital License",
+  "specs": [
+    {
+      "category": "LICENSE SPECIFICATIONS",
+      "rows": [
+        {"label": "Software Type", "val": "Operating System"},
+        {"label": "Platform", "val": "Windows 10 Professional (32/64-bit)"},
+        {"label": "License Type", "val": "Retail / Digital Lifetime Key"},
+        {"label": "Activation", "val": "Online Activation (1 PC)"},
+        {"label": "Delivery", "val": "Instant Delivery via Telegram"}
+      ]
+    }
+  ]
+},
+{
+  "id": "prod-office-365",
+  "name": "Microsoft Office 365 Account / License",
+  "custom_title": "Microsoft Office 365 Account / License",
+  "custom_link": "https://t.me/your_telegram_username",
+  "brand": "Microsoft",
+  "category": "Software License",
+  "subtitle": "Office 365 ProPlus Account with Full Apps & Cloud Storage",
+  "price": "ទំនាក់ទំនងតម្លៃ",
+  "images": [
+    "images/software/office365-1.webp",
+    "images/software/office365-2.webp"
+  ],
+  "image": "images/software/office365-1.webp",
+  "tags": [
+    "100% Genuine Account",
+    "Latest Apps (Word, Excel, PPT)",
+    "Instant Delivery via Telegram"
+  ],
+  "description": "Microsoft Office 365 គឺជាកញ្ចប់កម្មវិធីការិយាល័យដ៏ល្បីល្បាញ ដែលរួមមាន Word, Excel, PowerPoint, Outlook និងកម្មវិធីជាច្រើនទៀត អាចប្រើប្រាស់បានទាំងលើកុំព្យូទ័រ ទូរស័ព្ទ និងតាមរយៈប្រព័ន្ធអនឡាញ (Cloud)។",
+  "machine_type": "Digital Software",
+  "functions": "Office Productivity & Cloud Collaboration",
+  "license_type": "Digital Account",
+  "specs": [
+    {
+      "category": "LICENSE SPECIFICATIONS",
+      "rows": [
+        {"label": "Software Type", "val": "Office Productivity Suite"},
+        {"label": "Platform", "val": "Windows, Mac, iOS, Android"},
+        {"label": "License Type", "val": "Subscription / Digital Account"},
+        {"label": "Activation", "val": "Online Cloud Activation (Up to 5 Devices)"},
+        {"label": "Delivery", "val": "Instant Delivery via Telegram"}
+      ]
+    }
+  ]
+},
+{
+  "id": "prod-office-2024",
+  "name": "Microsoft Office 2024 Home & Business",
+  "custom_title": "Microsoft Office 2024 Home & Business",
+  "custom_link": "https://t.me/your_telegram_username",
+  "brand": "Microsoft",
+  "category": "Software License",
+  "subtitle": "Genuine Lifetime Activation Key for Office 2024",
+  "price": "ទំនាក់ទំនងតម្លៃ",
+  "images": [
+    "images/software/office2024-1.webp",
+    "images/software/office2024-2.webp"
+  ],
+  "image": "images/software/office2024-1.webp",
+  "tags": [
+    "100% Genuine License",
+    "Lifetime Activation",
+    "Instant Delivery via Telegram"
+  ],
+  "description": "Microsoft Office 2024 គឺជាកញ្ចប់កម្មវិធីការិយាល័យជំនាន់ថ្មីចុងក្រោយរបស់ Microsoft ដែលរួមមាន Word, Excel, PowerPoint និង Outlook ដោយមិនចាំបាច់បង់ប្រាក់ប្រចាំខែ ប្រើប្រាស់បានអចិន្ត្រៃយ៍ (Lifetime) លើកុំព្យូទ័រចំនួន 1។",
+  "machine_type": "Digital Software",
+  "functions": "Office Productivity & Business",
+  "license_type": "Digital License",
+  "specs": [
+    {
+      "category": "LICENSE SPECIFICATIONS",
+      "rows": [
+        {"label": "Software Type", "val": "Office Productivity Suite"},
+        {"label": "Platform", "val": "Windows 10 / 11 & macOS"},
+        {"label": "License Type", "val": "Retail / Digital Lifetime Key"},
+        {"label": "Activation", "val": "Online Activation (1 PC / Mac)"},
+        {"label": "Delivery", "val": "Instant Delivery via Telegram"}
+      ]
+    }
+  ]
+},
+{
+  "id": "prod-photoshop-actions-bundle",
+  "name": "Photoshop Actions Kit (3x4, 4x6, Name Card, 9x5.6)",
+  "custom_title": "Photoshop Actions Kit (3x4, 4x6, Name Card, 9x5.6)",
+  "custom_link": "https://t.me/your_telegram_username",
+  "brand": "Adobe / Custom",
+  "category": "Software Tools & Actions",
+  "subtitle": "Professional Photoshop Action Preset for ID Photos & Cards",
+  "price": "ទំនាក់ទំនងតម្លៃ",
+  "images": [
+    "images/software/ps-actions-1.webp",
+    "images/software/ps-actions-2.webp"
+  ],
+  "image": "images/software/ps-actions-1.webp",
+  "tags": [
+    "Easy to Use",
+    "Save Time & Fast Workflow",
+    "Instant Delivery via Telegram"
+  ],
+  "description": "ឈុត Photoshop Actions ជំនួយការកាត់ត និងរៀបចំទំហំរូបភាពយ៉ាងងាយស្រួលនិងរហ័ស រួមមានទំហំរូបថត 3x4, 4x6, នាមប័ណ្ណ (Name Card) និងទំហំ 9x5.6 សាកសមបំផុតសម្រាប់ជាងថតរូប និងហាង प्रिន (Print Shop)។",
+  "machine_type": "Digital Software Tool",
+  "functions": "Photo Retouching & Auto Layout",
+  "license_type": "Digital File / Action Preset",
+  "specs": [
+    {
+      "category": "LICENSE SPECIFICATIONS",
+      "rows": [
+        {"label": "Software Type", "val": "Photoshop Actions (.atn)"},
+        {"label": "Compatibility", "val": "Adobe Photoshop CC / CS6"},
+        {"label": "Included Sizes", "val": "3x4, 4x6, Name Card, 9x5.6 cm"},
+        {"label": "Usage", "val": "Unlimited Personal & Commercial"},
+        {"label": "Delivery", "val": "Instant Delivery via Telegram"}
+      ]
+    }
+  ]
 }
 ]
