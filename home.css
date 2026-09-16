@@ -330,15 +330,181 @@ body, html {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 /* ----------------------------------
-    GLOW GRADIENT EFFECT (មានចលនារត់រលូន)
+    CARD 1 (UIVERSE CARD - រក្សាទម្រង់ដើមដូចក្នុងរូប ១០០%)
+    ---------------------------------- */
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #07182E;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ភ្លើងបន្ទះបង្វិល 360 ដឺក្រេ (Rotating Glow Beam) */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(
+        transparent, 
+        transparent, 
+        transparent, 
+        rgb(0, 183, 255), 
+        rgb(255, 48, 255)
+    );
+    animation: rotBGimg 3.5s linear infinite;
+    z-index: -2;
+}
+
+@keyframes rotBGimg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ផ្ទៃខាងក្នុងគ្របពីលើភ្លើងបង្វិល */
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #07182E;
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.card .top-section {
+    height: 220px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ចន្លោះខ្មៅខាងលើឆ្វេង */
+.card .top-section .border {
+    border-bottom-right-radius: 10px;
+    height: 36px;
+    width: 170px;
+    background: #07182E;
+    position: relative;
+    transform: skew(-40deg);
+    box-shadow: -10px -10px 0 0 #07182E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .top-section .border::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    right: -15px;
+    background: transparent;
+    border-top-left-radius: 10px;
+    box-shadow: -5px -5px 0 2px #07182E;
+}
+
+.card .top-section::before {
+    content: "";
+    position: absolute;
+    top: 36px;
+    left: 0;
+    background: transparent;
+    height: 15px;
+    width: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: -5px -5px 0 2px #07182E;
+}
+
+/* អក្សរ FIRMWARE ONLY */
+.card .top-section .border .badge-text {
+    transform: skew(40deg);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+.card .bottom-section {
+    padding: 25px 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .bottom-section .title {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.card .bottom-section .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.card .bottom-section .row .item {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    color: rgba(170, 222, 243, 0.85);
+}
+
+.card .bottom-section .row .item .big-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.card .bottom-section .row .item .regular-text {
+    font-size: 11px;
+}
+
+.card .bottom-section .row .item:nth-child(2) {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ----------------------------------
+    CARD 2 & CARD 3 (APPLE M2 GLOW STYLE)
     ---------------------------------- */
 .destination-card {
     position: relative;
     background: #ffffff;
-    border-radius: 14px;
+    border-radius: 18px;
     overflow: visible;
     display: flex;
     flex-direction: column;
@@ -347,30 +513,26 @@ body, html {
     z-index: 1;
 }
 
-/* ពន្លឺព្រុយរត់ជុំវិញកាតជាមួយ Linear Gradient និងចលនារស់រវើក */
+/* ពន្លឺ Apple M2 ៤ ពណ៌ព័ទ្ធជុំវិញ */
 .destination-card::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: -4px;
-    left: -4px;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    background: linear-gradient(
-        90deg, 
-        #ff0000, #ff7300, #fffb00, #48ff00, 
-        #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
-    );
-    background-size: 400%;
+    top: -6px;
+    left: -6px;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    background: radial-gradient(circle at 0 0, hsl(27deg 93% 60%), transparent 60%),
+                radial-gradient(circle at 100% 0, #00a6ff, transparent 60%),
+                radial-gradient(circle at 0 100%, #ff0056, transparent 60%),
+                radial-gradient(circle at 100% 100%, #6500ff, transparent 60%);
+    border-radius: 24px;
     z-index: -2;
-    animation: glowing 5s linear infinite;
-    filter: blur(12px);
-    border-radius: 18px;
-    opacity: 0.9;
-    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    filter: blur(14px);
+    animation: blur-animation 3s ease-in-out alternate infinite;
+    transition: filter 0.3s ease;
 }
 
-
-/* ផ្ទៃខាងក្នុងកាតពណ៌ស */
+/* ផ្ទៃខាងក្នុងពណ៌ស */
 .destination-card::after {
     content: '';
     position: absolute;
@@ -379,19 +541,18 @@ body, html {
     right: 0;
     bottom: 0;
     background: #ffffff;
-    border-radius: 14px;
+    border-radius: 18px;
     z-index: -1;
 }
 
-@keyframes glowing {
+@keyframes blur-animation {
     0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
+        filter: blur(12px);
+        transform: scale(1);
     }
     100% {
-        background-position: 0% 50%;
+        filter: blur(22px);
+        transform: scale(1.03);
     }
 }
 
@@ -400,16 +561,15 @@ body, html {
 }
 
 .destination-card:hover::before {
-    opacity: 1;
-    filter: blur(16px);
+    filter: blur(26px);
 }
 
 .destination-img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 
 .destination-body {
