@@ -2468,10 +2468,10 @@
   "brand": "Microsoft",
   "category": "Software License",
   "subtitle": "Genuine Lifetime Activation Key for Windows 11 Professional",
-  "price": "ទំនាក់ទំនងតម្លៃ",
+  "price": "10$",
   "images": [
-    "images/software/windows11-pro-1.webp",
-    "images/software/windows11-pro-2.webp"
+    "images/Software License/Windows11pro-1.webp",
+    "images/Software License/Windows11pro-1.webp"
   ],
   "image": "images/software/windows11-pro-1.webp",
   "tags": [
@@ -2574,10 +2574,10 @@
   "brand": "Microsoft",
   "category": "Software License",
   "subtitle": "Genuine Lifetime Activation Key for Windows 10 Professional",
-  "price": "ទំនាក់ទំនងតម្លៃ",
+  "price": "10$",
   "images": [
-    "images/software/windows10-pro-1.webp",
-    "images/software/windows10-pro-2.webp"
+    "images/Software License/win10pro-1.webp",
+    "images/Software License/win10pro-2.webp"
   ],
   "image": "images/software/windows10-pro-1.webp",
   "tags": [
@@ -2610,10 +2610,10 @@
   "brand": "Microsoft",
   "category": "Software License",
   "subtitle": "Office 365 ProPlus Account with Full Apps & Cloud Storage",
-  "price": "ទំនាក់ទំនងតម្លៃ",
+  "price": "10$",
   "images": [
-    "images/software/office365-1.webp",
-    "images/software/office365-2.webp"
+    "images/Software License/Office365-1.webp",
+    "images/Software License/Office365-2.webp"
   ],
   "image": "images/software/office365-1.webp",
   "tags": [
@@ -2682,11 +2682,10 @@
   "brand": "Adobe / Custom",
   "category": "Software Tools & Actions",
   "subtitle": "Professional Photoshop Action Preset for ID Photos & Cards",
-  "price": "ទំនាក់ទំនងតម្លៃ",
+  "price": "10$",
   "images": [
-    "images/software/ps-actions-1.webp",
-    "images/software/ps-actions-2.webp"
-  ],
+    "images/Software License/photoshop-1.webp"
+      ],
   "image": "images/software/ps-actions-1.webp",
   "tags": [
     "Easy to Use",
