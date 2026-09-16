@@ -2640,16 +2640,16 @@
 },
 {
   "id": "prod-office-2024",
-  "name": "Microsoft Office 2024 Home & Business",
+  "name": "Microsoft Office 2024 Professional Plus license",
   "custom_title": "Microsoft Office 2024 Home & Business",
   "custom_link": "https://t.me/your_telegram_username",
   "brand": "Microsoft",
   "category": "Software License",
   "subtitle": "Genuine Lifetime Activation Key for Office 2024",
-  "price": "ទំនាក់ទំនងតម្លៃ",
+  "price": "10$",
   "images": [
-    "images/software/office2024-1.webp",
-    "images/software/office2024-2.webp"
+    "images/Software License/office-2024 plus.png",
+    "images/Software License/office-2024 plus.png"
   ],
   "image": "images/software/office2024-1.webp",
   "tags": [
@@ -2666,7 +2666,7 @@
       "category": "LICENSE SPECIFICATIONS",
       "rows": [
         {"label": "Software Type", "val": "Office Productivity Suite"},
-        {"label": "Platform", "val": "Windows 10 / 11 & macOS"},
+        {"label": "Platform", "val": "Windows 10 / 11"},
         {"label": "License Type", "val": "Retail / Digital Lifetime Key"},
         {"label": "Activation", "val": "Online Activation (1 PC / Mac)"},
         {"label": "Delivery", "val": "Instant Delivery via Telegram"}
@@ -2696,6 +2696,7 @@
   "machine_type": "Digital Software Tool",
   "functions": "Photo Retouching & Auto Layout",
   "license_type": "Digital File / Action Preset",
+  "color_bar_type": "12-color",
   "specs": [
     {
       "category": "LICENSE SPECIFICATIONS",
