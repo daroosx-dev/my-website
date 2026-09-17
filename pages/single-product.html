@@ -237,6 +237,13 @@
             color: #1e293b;
         }
 
+        /* --- កូដ CSS ចលនា RGB Shimmer សម្រាប់ Firmware Only --- */
+        @keyframes rgbShimmerText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         /* --- RESPONSIVE FOR MOBILE --- */
         @media (max-width: 900px) {
             .shop-layout-wrapper {
@@ -504,8 +511,10 @@
                     }
 
                     container.innerHTML = `
-                        <!-- Left: Image Gallery -->
-                        <div class="product-gallery-section">
+                        <!-- Left: Image Gallery (មានដាក់ Badge RGB Gradient ព្រមទាំងមានចលនាភ្លឺរលោង) -->
+                        <div class="product-gallery-section" style="position: relative;">
+                            ${product.badge_text ? `<div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff4b2b, #ff416c, #9c27b0, #2196f3, #00e676); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 15px; text-transform: uppercase; z-index: 10; animation: rgbShimmerText 4s ease infinite; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));">${product.badge_text}</div>` : ''}
+                            
                             <div class="main-preview-img">
                                 <img id="productImage" src="${mainImgSrc}" alt="${product.name}">
                             </div>
@@ -537,7 +546,7 @@
                                 <p id="productDesc">${product.description || 'គ្មានការពន្យល់លម្អិត។'}</p>
                             </div>
 
-                            <!-- ប៊ូតុង Telegram ដែលមាន ID សម្រាប់ភ្ជាប់ JavaScript -->
+                            <!-- ប៊ូតុង Telegram -->
                             <a href="#" id="telegramChatBtn" target="_blank" class="btn-contact-us">
                                 <i class="fa-brands fa-telegram"></i> Contact Us Telegram
                             </a>
