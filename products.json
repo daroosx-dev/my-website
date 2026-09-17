@@ -6,6 +6,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Color Digital Copier & Production Press",
     "price": "Firmware only",
     "images": [
@@ -601,6 +602,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Black and White Copier - Software & Firmware",
     "price": "Firmware only",
     "images": [
@@ -664,6 +666,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Black and White Copier - Software & Firmware",
     "price": "Firmware only",
     "images": [
@@ -799,6 +802,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Color Smart Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
@@ -870,6 +874,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Color Smart Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
@@ -941,6 +946,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Black and White High-Volume Digital Copier",
     "price": "Firmware only",
     "images": [
@@ -1004,6 +1010,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Black and White Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
@@ -1067,6 +1074,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Color Smart Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
@@ -1138,6 +1146,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Black and White Smart Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
@@ -1201,6 +1210,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Black and White Digital Multifunction Copier",
     "price": "Firmware only",
     "images": [
@@ -1264,6 +1274,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Canon",
     "category": "Software Firmware",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Black and White High-Volume Digital Copier",
     "price": "Firmware only",
     "images": [
@@ -1327,7 +1338,7 @@
     "custom_link": "https://t.me/your_telegram_username",
     "brand": "Toshiba",
     "category": "Software Firmware",
-    "badge_text": "Firmware only",
+    "badge_text": "FIRMWARE ONLY",
     "subtitle": "A3 Black and White High-Volume Digital Copier",
     "price": "Firmware only",
     "images": [
@@ -2132,6 +2143,7 @@
   "custom_link": "https://t.me/your_telegram_username",
   "brand": "Canon",
   "category": "Copier",
+  "badge_text": "FIRMWARE ONLY",
   "subtitle": "A3 Monochrome Digital Multifunction Printer",
   "price": "ទំនាក់ទំនងតម្លៃ",
   "images": [
