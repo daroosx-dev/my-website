@@ -12,37 +12,62 @@
     <link rel="stylesheet" href="css/store.css">
 
     <style>
-        /* --- ស្ទីលបន្ថែមសម្រាប់រៀបចំ Firmware ឱ្យចេញជា ២ កូឡោន (Grid) --- */
-        .firmware-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            margin-top: 5px;
-            margin-bottom: 10px;
+        /* --- ស្ទីលសម្រាប់ Sidebar ឱ្យរត់ជា Grid ២ កូឡោនទាំងអស់គ្នា --- */
+        .sidebar-menu-list {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 8px !important;
         }
 
-        .shop-sidebar .firmware-grid .brand-btn {
+        /* ចំណងជើង Category និង All Products ឱ្យស៊ីប្រអប់ពេញ ២ កូឡោន */
+        .sidebar-category-title {
+            grid-column: span 2 !important;
+            margin-top: 15px !important;
+        }
+
+        .sidebar-menu-list > .filter-trigger[data-filter="All"] {
+            grid-column: span 2 !important;
+        }
+
+        .full-span {
+            grid-column: span 2 !important;
+        }
+
+        .shop-sidebar .sidebar-menu-list .filter-trigger.active {
+            background-color: #eff6ff !important;
+            border-color: #3b82f6 !important;
+            color: #2563eb !important;
+        }
+
+        /* --- ផ្នែក Brand Buttons (គ្រប់ប៊ូតុងទាំងអស់ដែលមាន Logo) --- */
+        .firmware-grid {
+            display: contents !important;
+        }
+
+        .shop-sidebar .brand-btn {
+            grid-column: span 1 !important;
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
             justify-content: center !important;
             text-align: center !important;
             padding: 10px 4px !important;
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
+            background-color: #f8fafc !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 8px !important;
             width: 100% !important;
-            height: 100%;
+            height: 100% !important;
             cursor: pointer;
             transition: all 0.2s;
+            margin-bottom: 0 !important;
         }
 
-        .shop-sidebar .firmware-grid .brand-btn:hover {
-            background-color: #eff6ff;
-            border-color: #3b82f6;
+        .shop-sidebar .brand-btn:hover {
+            background-color: #eff6ff !important;
+            border-color: #3b82f6 !important;
         }
 
-        .shop-sidebar .firmware-grid .brand-btn img.brand-logo-icon {
+        .shop-sidebar .brand-btn img.brand-logo-icon {
             width: 50px !important;
             height: auto !important;
             object-fit: contain;
@@ -50,10 +75,10 @@
             flex-shrink: 0;
         }
 
-        .shop-sidebar .firmware-grid .brand-btn span {
-            font-size: 11px;
-            font-weight: 600;
-            color: #334155;
+        .shop-sidebar .brand-btn span {
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            color: #334155 !important;
         }
     </style>
 </head>
@@ -72,44 +97,65 @@
                 <button class="close-sidebar" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="sidebar-menu-list">
-                <button class="filter-trigger active" data-filter="All">Products (All)</button>
+                <button class="filter-trigger active full-span" data-filter="All">Products (All)</button>
                 
                 <div class="sidebar-category-title">Copier Machine</div>
-                <button class="filter-trigger" data-filter="Copier">Copier</button>
+                <button class="filter-trigger full-span" data-filter="Copier">Copier</button>
 
                 <div class="sidebar-category-title">Software Firmware</div>
                 <div class="firmware-grid">
                     <button class="filter-trigger brand-btn" data-filter="Canon Firmware">
                         <img src="images/Logo/canon.png" alt="Canon" class="brand-logo-icon"> <span>FIRMWARE</span>
                     </button>
-
                     <button class="filter-trigger brand-btn" data-filter="Toshiba Firmware">
                         <img src="images/Logo/Toshiba.png" alt="Toshiba" class="brand-logo-icon"> <span>FIRMWARE</span>
                     </button>
-            
                     <button class="filter-trigger brand-btn" data-filter="Ricoh Firmware">
                         <img src="images/Logo/ricoh.png" alt="Ricoh" class="brand-logo-icon"> <span>FIRMWARE</span>
                     </button>
-
                     <button class="filter-trigger brand-btn" data-filter="HP Firmware">
                         <img src="images/Logo/hp.png" alt="HP" class="brand-logo-icon"> <span>FIRMWARE</span>
                     </button>
                 </div>
          
                 <div class="sidebar-category-title">Printers</div>
-                <button class="filter-trigger" data-filter="Ink Printer">Ink Printer</button>
-                <button class="filter-trigger" data-filter="Laser Printer">Laser Printer</button>
-                <button class="filter-trigger" data-filter="Large Format Printer">Large Format Printer</button>
+                <div class="firmware-grid">
+                    <button class="filter-trigger brand-btn" data-filter="Ink Printer">
+                        <img src="images/Logo/epson.png" alt="Ink Printer" class="brand-logo-icon"> <span>Ink Printer</span>
+                    </button>
+                    <button class="filter-trigger brand-btn" data-filter="Laser Printer">
+                        <img src="images/Logo/brother.png" alt="Laser Printer" class="brand-logo-icon"> <span>Laser Printer</span>
+                    </button>
+                    <button class="filter-trigger brand-btn full-span" data-filter="Large Format Printer">
+                        <img src="images/Logo/hp.png" alt="Large Format Printer" class="brand-logo-icon" style="width: 35px !important;"> <span>Large Format Printer</span>
+                    </button>
+                </div>
 
                 <div class="sidebar-category-title">Printer Parts & Accessories</div>
-                <button class="filter-trigger" data-filter="Printer Parts">Printer Parts</button>
-                <button class="filter-trigger" data-filter="Toner and Ink">Toner & Ink</button>
+                <div class="firmware-grid">
+                    <button class="filter-trigger brand-btn" data-filter="Printer Parts">
+                        <img src="images/Logo/canon.png" alt="Printer Parts" class="brand-logo-icon"> <span>Printer Parts</span>
+                    </button>
+                    <button class="filter-trigger brand-btn" data-filter="Toner and Ink">
+                        <img src="images/Logo/ricoh.png" alt="Toner & Ink" class="brand-logo-icon"> <span>Toner & Ink</span>
+                    </button>
+                </div>
 
                 <div class="sidebar-category-title">Software License</div>
-                <button class="filter-trigger" data-filter="Windows">Windows</button>
-                <button class="filter-trigger" data-filter="Microsoft Office">Microsoft Office</button>
-                <button class="filter-trigger" data-filter="Utilities Software">Utilities Software</button>
-                <button class="filter-trigger" data-filter="Software Tools & Actions">Software Tools & Actions</button>
+                <div class="firmware-grid">
+                    <button class="filter-trigger brand-btn" data-filter="Windows">
+                        <img src="images/Logo/windows.png" alt="Windows" class="brand-logo-icon"> <span>Windows</span>
+                    </button>
+                    <button class="filter-trigger brand-btn" data-filter="Microsoft Office">
+                        <img src="images/Logo/office.png" alt="Microsoft Office" class="brand-logo-icon"> <span>Microsoft Office</span>
+                    </button>
+                    <button class="filter-trigger brand-btn" data-filter="Utilities Software">
+                        <img src="images/Logo/utilities.png" alt="Utilities Software" class="brand-logo-icon"> <span>Utilities Software</span>
+                    </button>
+                    <button class="filter-trigger brand-btn" data-filter="Software Tools & Actions">
+                        <img src="images/Logo/tools.png" alt="Software Tools" class="brand-logo-icon"> <span>Software Tools</span>
+                    </button>
+                </div>
             </div>
         </aside>
         

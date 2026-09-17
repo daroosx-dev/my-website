@@ -212,10 +212,30 @@ body {
     font-weight: 600;
 }
 
-/* --- ផ្នែក Software Firmware ឱ្យចេញជា ២ កូឡោន (Grid) --- */
+.shop-sidebar .brand-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.shop-sidebar .brand-btn i {
+    font-size: 14px;
+    color: #0071e3;
+    width: 18px;
+    text-align: center;
+}
+
+.shop-sidebar .brand-btn img.brand-logo-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    text-align: center;
+}
+
+/* --- ផ្នែក Firmware Grid ឱ្យចេញជា ២ កូឡោនទាំងអស់គ្នា --- */
 .firmware-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* ចែកជា ២ ប្រអប់ស្មើគ្នាក្នុង១ជួរ */
     gap: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -223,7 +243,7 @@ body {
 
 .shop-sidebar .firmware-grid .brand-btn {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: column !important; /* ដាក់ឡូហ្គោពីលើ អត្ថបទពីក្រោម */
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
