@@ -37,19 +37,19 @@
 
                     <div class="sidebar-section-title">SOFTWARE</div>
                     <li>
-                        <a href="#" onclick="filterByCategory('windows', event)" id="cat-windows" class="brand-btn">
+                        <a href="#" onclick="filterByCategory('windows', event)" id="cat-windows">
                             <img src="../images/Logo/windows.png" alt="Windows" class="sidebar-logo-icon">
                             <span>Windows Software</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="filterByCategory('mac', event)" id="cat-mac" class="brand-btn">
+                        <a href="#" onclick="filterByCategory('mac', event)" id="cat-mac">
                             <img src="../images/Logo/office.png" alt="Mac" class="sidebar-logo-icon">
                             <span>Mac Software</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="filterByCategory('utilities', event)" id="cat-utilities" class="brand-btn">
+                        <a href="#" onclick="filterByCategory('utilities', event)" id="cat-utilities">
                             <img src="../images/Logo/utilities.png" alt="Utilities" class="sidebar-logo-icon">
                             <span>Utilities Software</span>
                         </a>
@@ -57,19 +57,19 @@
 
                     <div class="sidebar-section-title">DRIVERS & FIRMWARE</div>
                     <li>
-                        <a href="#" onclick="filterByCategory('printer', event)" id="cat-printer" class="brand-btn">
+                        <a href="#" onclick="filterByCategory('printer', event)" id="cat-printer">
                             <img src="../images/Logo/canon.png" alt="Printer" class="sidebar-logo-icon">
                             <span>Printer Driver</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="filterByCategory('label', event)" id="cat-label" class="brand-btn">
+                        <a href="#" onclick="filterByCategory('label', event)" id="cat-label">
                             <img src="../images/Logo/hp.png" alt="Label" class="sidebar-logo-icon">
                             <span>Label Driver</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="filterByCategory('copier', event)" id="cat-copier" class="brand-btn">
+                        <a href="#" onclick="filterByCategory('copier', event)" id="cat-copier">
                             <img src="../images/Logo/toshiba.png" alt="Copier" class="sidebar-logo-icon">
                             <span>Copier Driver</span>
                         </a>
@@ -80,6 +80,13 @@
 
         <!-- Software Main Content -->
         <div class="software-main-content">
+            
+            <!-- បន្ថែមប្រអប់ស្វែងរក (Search Bar Box) -->
+            <div class="sw-search-box">
+                <input type="text" id="softwareSearchInput" placeholder="Software Driver" onkeyup="handleSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
             <div class="software-list-container" id="softwareListGrid">
                 <p style="text-align: center; color: #666; padding: 40px;">កំពុងផ្ទុកទិន្នន័យ...</p>
             </div>
@@ -91,12 +98,13 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- JavaScript សម្រាប់ទិន្នន័យ & បិទបើក Menu Mobile -->
+    <!-- JavaScript សម្រាប់ទិន្នន័យ ការស្វែងរក និង Pagination -->
     <script>
         let allSoftwareData = [];
         let currentFilteredData = [];
         let currentPage = 1;
         const itemsPerPage = 5;
+        let activeCategoryKey = 'all';
 
         // ចុចបិទបើក Categories ☰ លើ Mobile
         function toggleMobileCatMenu() {
@@ -191,26 +199,17 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // បម្រុងទុកពេលចុច Filter តាម Category
         function filterByCategory(catKey, event) {
             if (event) event.preventDefault();
+            activeCategoryKey = catKey;
             
             document.querySelectorAll('.sidebar-category-list a').forEach(a => a.classList.remove('active'));
             let activeEl = document.getElementById('cat-' + catKey);
             if (activeEl) activeEl.classList.add('active');
 
-            currentPage = 1;
+            applyFiltersAndSearch();
 
-            if (catKey === 'all') {
-                currentFilteredData = allSoftwareData;
-            } else {
-                currentFilteredData = allSoftwareData.filter(item => {
-                    let cat = (item.category || '').toLowerCase();
-                    return cat === catKey.toLowerCase();
-                });
-            }
-            renderPageData();
-
-            // បិទ Dropdown វិញពេលចុចជ្រើសរើសរួចលើ Mobile
             if (window.innerWidth <= 992) {
                 const navContent = document.getElementById('sidebarNavContent');
                 const menuIcon = document.getElementById('catMenuIcon');
@@ -222,6 +221,33 @@
                     }
                 }
             }
+        }
+
+        // Function សម្រាប់ស្វែងរក (Search) រួមបញ្ចូលជាមួយ Category Filter
+        function handleSearch() {
+            currentPage = 1;
+            applyFiltersAndSearch();
+        }
+
+        function applyFiltersAndSearch() {
+            let searchText = document.getElementById('softwareSearchInput').value.toLowerCase().trim();
+
+            currentFilteredData = allSoftwareData.filter(item => {
+                let cat = (item.category || '').toLowerCase();
+                let name = (item.name || '').toLowerCase();
+                let customTitle = (item.custom_title || '').toLowerCase();
+                let desc = (item.description || '').toLowerCase();
+
+                // ឆែកមើល Category
+                let matchCategory = (activeCategoryKey === 'all') || (cat === activeCategoryKey.toLowerCase());
+                
+                // ឆែកមើលអត្ថបទស្វែងរក (Search Keyword)
+                let matchSearch = name.includes(searchText) || customTitle.includes(searchText) || desc.includes(searchText);
+
+                return matchCategory && matchSearch;
+            });
+
+            renderPageData();
         }
 
         document.addEventListener("DOMContentLoaded", async () => {

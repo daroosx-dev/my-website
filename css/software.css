@@ -34,6 +34,7 @@ body {
 .sidebar-header-box {
     display: flex !important;
     align-items: center !important;
+    justify-content: space-between !important;
     gap: 8px !important;
     margin-bottom: 12px !important;
     padding-bottom: 8px !important;
@@ -48,7 +49,7 @@ body {
     font-size: 16px !important;
 }
 
-/* --- ប្រព័ន្ធ Grid ២ កូឡោន --- */
+/* --- ប្រព័ន្ធ Grid ២ កូឡោនសម្រាប់ Sidebar --- */
 .sidebar-category-list {
     list-style: none !important;
     display: grid !important;
@@ -58,7 +59,6 @@ body {
     margin: 0 !important;
 }
 
-/* ចំណងជើង Section ឱ្យស៊ីប្រអប់ពេញ ២ កូឡោន */
 .sidebar-section-title {
     grid-column: span 2 !important;
     font-size: 11px !important;
@@ -71,7 +71,6 @@ body {
     text-transform: uppercase !important;
 }
 
-/* ប៊ូតុង Products (All) ឱ្យស៊ីប្រអប់ពេញ ២ កូឡោន */
 .sidebar-category-list > li:first-child {
     grid-column: span 2 !important;
 }
@@ -92,13 +91,11 @@ body {
     height: auto !important;
 }
 
-/* រាល់ List Items ផ្សេងទៀត */
 .sidebar-category-list > li:not(:first-child) {
     grid-column: span 1 !important;
     display: flex !important;
 }
 
-/* កំណត់ទំហំប្រអប់នីមួយៗឱ្យតូចជាការ៉េស្មើគ្នា (height: 64px) */
 .sidebar-category-list li a {
     display: flex !important;
     flex-direction: column !important;
@@ -122,7 +119,6 @@ body {
     color: #2563eb !important;
 }
 
-/* ទំហំរូបឡូហ្គោឱ្យតូចល្មមស្អាត */
 .sidebar-logo-icon {
     width: 32px !important;
     height: 18px !important;
@@ -131,7 +127,6 @@ body {
     flex-shrink: 0 !important;
 }
 
-/* អត្ថបទក្រោមឡូហ្គោ */
 .sidebar-category-list li a span {
     font-size: 10px !important;
     font-weight: 600 !important;
@@ -139,10 +134,43 @@ body {
     line-height: 1.2 !important;
 }
 
-/* --- Software Main Content --- */
+/* --- Software Main Content & Search Bar --- */
 .software-main-content {
     flex: 1;
     min-width: 0;
+}
+
+/* ស្ទីលប្រអប់ស្វែងរក (Search Bar Box) */
+.sw-search-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.sw-search-box input {
+    width: 100%;
+    padding: 12px 15px 12px 42px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #334155;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+.sw-search-box input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.sw-search-box i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 15px;
 }
 
 .software-list-container {
@@ -295,7 +323,7 @@ body {
     color: #ffffff;
 }
 
-/* --- Responsive Mobile --- */
+/* --- Responsive Mobile (បិទបើក Menu បីបន្ទាត់ ☰ ជាមួយ x ត្រឹមត្រូវ) --- */
 @media (max-width: 992px) {
     body {
         padding-top: 70px;
@@ -311,44 +339,52 @@ body {
     .software-sidebar {
         flex: none !important;
         width: 100% !important;
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 4px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        padding: 15px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+        position: static !important;
         margin-bottom: 0 !important;
     }
 
     .sidebar-header-box {
-        display: inline-flex !important;
+        display: flex !important;
+        justify-content: space-between !important;
         align-items: center !important;
-        gap: 8px !important;
-        font-size: 16px !important;
+        font-size: 15px !important;
         font-weight: 700 !important;
-        color: #0f172a !important;
-        cursor: pointer !important;
-        user-select: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        color: #1e293b !important;
         border-bottom: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        cursor: pointer !important;
     }
 
+    /* លាក់បញ្ជី Categories ជាមុននៅលើ Mobile ដើម្បីឱ្យប៊ូតុង ☰ ចុចបើក/បិទបាន */
     .sidebar-nav-content {
-        display: none;
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        margin-top: 10px;
+        display: none !important; 
+        background: #ffffff !important;
+        border-top: 1px solid #eee !important;
+        border-radius: 0 0 8px 8px !important;
+        padding-top: 12px !important;
+        margin-top: 10px !important;
     }
 
+    /* ពេលចុចលើកកាយ Menu វានឹងបង្ហាញឡើងតាមរយៈ JavaScript toggle */
     .sidebar-nav-content.open {
-        display: block;
+        display: block !important;
+    }
+
+    .sidebar-category-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
     }
 
     .software-main-content {
-        width: 100%;
-        margin-top: 0;
+        width: 100% !important;
+        margin-top: 0 !important;
     }
 
     .software-list-container {
