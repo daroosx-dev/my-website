@@ -457,17 +457,22 @@ body {
     margin-bottom: 6px;
 }
 
-/* --- ស្ទីល Tag Item ពណ៌ខៀវស្អាត ងាយស្រួលមើល --- */
+/* --- ស្ទីល Tag Item ឱ្យបង្ហាញជាអក្សរ ១ជួរត្រង់ (មិនធ្លាក់បន្ទាត់) --- */
 .tag-item {
     background-color: #eff6ff;  
     border-left: 4px solid #2563eb; 
-    padding: 4px 8px;
-    font-size: 9px;
-    font-weight: 600;
+    padding: 5px 8px;
+    font-size: 10px !important;    
+    font-weight: 600 !important;   
     color: #1e40af;              
     display: block;
     margin-bottom: 3px;
     border-radius: 4px;
+    
+    /* កូដសម្រាប់บังអោយនៅ១ជួរ និងកាត់កាកសំណល់អក្សរជ្រុលបើវែងពេក */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* --- COLOR DOTS & ANIMATIONS --- */
