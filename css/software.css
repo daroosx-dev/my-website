@@ -21,65 +21,122 @@ body {
     align-items: flex-start;
 }
 
-/* --- ស្ទីល Sidebar Categories ខាងឆ្វេង (Desktop) --- */
+/* --- ស្ទីល Sidebar Categories ខាងឆ្វេង --- */
 .software-sidebar {
-    flex: 0 0 280px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    flex: 0 0 270px !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
 }
 
 .sidebar-header-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #cbd5e1;
-    font-size: 18px;
-    font-weight: 700;
-    color: #1e293b;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid #eee !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    cursor: pointer !important;
 }
 
 .sidebar-header-box i.cat-icon {
-    font-size: 17px;
+    font-size: 16px !important;
 }
 
+/* --- ប្រព័ន្ធ Grid ២ កូឡោន --- */
 .sidebar-category-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    list-style: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
+/* ចំណងជើង Section ឱ្យស៊ីប្រអប់ពេញ ២ កូឡោន */
+.sidebar-section-title {
+    grid-column: span 2 !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    color: #64748b !important;
+    margin: 10px 0 4px 0 !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 2px solid #d4af37 !important;
+    padding-bottom: 4px !important;
+    text-transform: uppercase !important;
+}
+
+/* ប៊ូតុង Products (All) ឱ្យស៊ីប្រអប់ពេញ ២ កូឡោន */
+.sidebar-category-list > li:first-child {
+    grid-column: span 2 !important;
+}
+
+.sidebar-category-list > li:first-child a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 8px 4px !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    text-decoration: none !important;
+    height: auto !important;
+}
+
+/* រាល់ List Items ផ្សេងទៀត */
+.sidebar-category-list > li:not(:first-child) {
+    grid-column: span 1 !important;
+    display: flex !important;
+}
+
+/* កំណត់ទំហំប្រអប់នីមួយៗឱ្យតូចជាការ៉េស្មើគ្នា (height: 64px) */
 .sidebar-category-list li a {
-    display: block;
-    padding: 10px 12px;
-    color: #334155;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 6px;
-    transition: all 0.2s ease;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 6px 4px !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    height: 64px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
 }
 
 .sidebar-category-list li a:hover,
 .sidebar-category-list li a.active {
-    background-color: #eff6ff;
-    color: #2563eb;
-    font-weight: 600;
+    background-color: #eff6ff !important;
+    border-color: #3b82f6 !important;
+    color: #2563eb !important;
 }
 
-.sidebar-section-title {
-    font-size: 11px;
-    font-weight: 700;
-    color: #64748b;
-    margin: 15px 0 5px 10px;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid #d4af37;
-    padding-bottom: 4px;
+/* ទំហំរូបឡូហ្គោឱ្យតូចល្មមស្អាត */
+.sidebar-logo-icon {
+    width: 32px !important;
+    height: 18px !important;
+    object-fit: contain !important;
+    margin-bottom: 2px !important;
+    flex-shrink: 0 !important;
+}
+
+/* អត្ថបទក្រោមឡូហ្គោ */
+.sidebar-category-list li a span {
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    line-height: 1.2 !important;
 }
 
 /* --- Software Main Content --- */
@@ -238,9 +295,7 @@ body {
     color: #ffffff;
 }
 
-/* ----------------------------------
-    ស្ទីលលើទូរស័ព្ទ (Responsive Mobile)
-   ---------------------------------- */
+/* --- Responsive Mobile --- */
 @media (max-width: 992px) {
     body {
         padding-top: 70px;
@@ -254,31 +309,29 @@ body {
     }
 
     .software-sidebar {
-        flex: none;
-        width: 100%;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        padding: 0 4px;
-        margin-bottom: 0;
+        flex: none !important;
+        width: 100% !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 4px !important;
+        margin-bottom: 0 !important;
     }
 
-    /* អក្សរ Categories ☰ */
     .sidebar-header-box {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 16px;
-        font-weight: 700;
-        color: #0f172a;
-        cursor: pointer;
-        user-select: none;
-        margin: 0;
-        padding: 0;
-        border-bottom: none;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        color: #0f172a !important;
+        cursor: pointer !important;
+        user-select: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: none !important;
     }
 
-    /* Dropdown List លាក់ជាមុន */
     .sidebar-nav-content {
         display: none;
         background: #ffffff;
@@ -298,13 +351,11 @@ body {
         margin-top: 0;
     }
 
-    /* ទម្លាក់កាតផលិតផលទាំងអស់ឱ្យចុះក្រោមមានគម្លាតពី Categories ☰ */
     .software-list-container {
         margin-top: 15px;
         gap: 15px;
     }
 
-    /* Card ផលិតផលលើ Mobile */
     .software-card-item {
         flex-direction: column;
         padding: 12px;

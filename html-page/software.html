@@ -30,20 +30,50 @@
                 <i class="fa-solid fa-bars cat-icon" id="catMenuIcon"></i>
             </div>
 
-            <!-- បញ្ជី Categories លាក់ជាមុនលើ Mobile -->
+            <!-- បញ្ជី Categories -->
             <div class="sidebar-nav-content" id="sidebarNavContent">
                 <ul class="sidebar-category-list">
                     <li><a href="#" onclick="filterByCategory('all', event)" class="active" id="cat-all">Products (All)</a></li>
 
                     <div class="sidebar-section-title">SOFTWARE</div>
-                    <li><a href="#" onclick="filterByCategory('windows', event)" id="cat-windows">Windows Software</a></li>
-                    <li><a href="#" onclick="filterByCategory('mac', event)" id="cat-mac">Mac Software</a></li>
-                    <li><a href="#" onclick="filterByCategory('utilities', event)" id="cat-utilities">Utilities Software</a></li>
+                    <li>
+                        <a href="#" onclick="filterByCategory('windows', event)" id="cat-windows" class="brand-btn">
+                            <img src="../images/Logo/windows.png" alt="Windows" class="sidebar-logo-icon">
+                            <span>Windows Software</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="filterByCategory('mac', event)" id="cat-mac" class="brand-btn">
+                            <img src="../images/Logo/office.png" alt="Mac" class="sidebar-logo-icon">
+                            <span>Mac Software</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="filterByCategory('utilities', event)" id="cat-utilities" class="brand-btn">
+                            <img src="../images/Logo/utilities.png" alt="Utilities" class="sidebar-logo-icon">
+                            <span>Utilities Software</span>
+                        </a>
+                    </li>
 
                     <div class="sidebar-section-title">DRIVERS & FIRMWARE</div>
-                    <li><a href="#" onclick="filterByCategory('printer', event)" id="cat-printer">Printer Driver</a></li>
-                    <li><a href="#" onclick="filterByCategory('label', event)" id="cat-label">Label Printer Driver</a></li>
-                    <li><a href="#" onclick="filterByCategory('copier', event)" id="cat-copier">Copier Driver</a></li>
+                    <li>
+                        <a href="#" onclick="filterByCategory('printer', event)" id="cat-printer" class="brand-btn">
+                            <img src="../images/Logo/canon.png" alt="Printer" class="sidebar-logo-icon">
+                            <span>Printer Driver</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="filterByCategory('label', event)" id="cat-label" class="brand-btn">
+                            <img src="../images/Logo/hp.png" alt="Label" class="sidebar-logo-icon">
+                            <span>Label Driver</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="filterByCategory('copier', event)" id="cat-copier" class="brand-btn">
+                            <img src="../images/Logo/toshiba.png" alt="Copier" class="sidebar-logo-icon">
+                            <span>Copier Driver</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </aside>
