@@ -1,3 +1,46 @@
+/* --- កូដសម្រាប់រៀបចំ Firmware ឱ្យចេញជា ២កូឡោន (Grid) --- */
+        .firmware-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* ចែកជា ២ ប្រអប់ស្មើគ្នាក្នុង១ជួរ */
+            gap: 8px; /* គម្លាតចន្លោះរវាងប្រអប់នីមួយៗ */
+            margin-bottom: 10px;
+        }
+
+        /* ស្ទីលសម្រាប់ប៊ូតុង Firmware នីមួយៗ */
+        .shop-sidebar .firmware-grid .brand-btn {
+            display: flex !important;
+            flex-direction: column !important; /* ឱ្យឡូហ្គោនៅលើ អត្ថបទនៅក្រោម */
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            padding: 10px 5px !important;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            width: 100% !important;
+            height: 100%;
+        }
+
+        .shop-sidebar .firmware-grid .brand-btn:hover {
+            background-color: #eff6ff;
+            border-color: #3b82f6;
+        }
+
+        /* ទំហំរូបឡូហ្គោ */
+        .shop-sidebar .firmware-grid .brand-btn img.brand-logo-icon {
+            width: 55px !important;    /* ទទឹងឡូហ្គោ សមល្មមសម្រាប់ ២ ប្រអប់ */
+            height: auto !important;   
+            object-fit: contain;
+            margin-bottom: 6px;        
+            flex-shrink: 0;
+        }
+
+        /* ទំហំអត្ថបទ Firmware ឱ្យតូចល្មមស្អាតមិនបែកជួរខ្លាំង */
+        .shop-sidebar .firmware-grid .brand-btn span {
+            font-size: 11px;
+            font-weight: 600;
+            color: #334155;
+        }
 /* --- Header & Top Bar Fix Styles --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
