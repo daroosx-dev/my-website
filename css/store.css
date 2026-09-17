@@ -235,7 +235,7 @@ body {
 /* --- ផ្នែក Firmware Grid ឱ្យចេញជា ២ កូឡោនទាំងអស់គ្នា --- */
 .firmware-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* ចែកជា ២ ប្រអប់ស្មើគ្នាក្នុង១ជួរ */
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -243,7 +243,7 @@ body {
 
 .shop-sidebar .firmware-grid .brand-btn {
     display: flex !important;
-    flex-direction: column !important; /* ដាក់ឡូហ្គោពីលើ អត្ថបទពីក្រោម */
+    flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
@@ -376,14 +376,37 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+/* --- ជួរខាងលើកាត (Brand Name + Badge) --- */
+.product-card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
 .brand-logo-text {
     font-size: 11px;
     font-weight: 800;
     color: #003399;
     letter-spacing: 0.5px;
     text-align: left;
-    margin-bottom: 6px;
+    margin-bottom: 0;
     text-transform: uppercase;
+}
+
+/* --- ចលនាប្ដូរពណ៌ RGB ស្រទន់ៗ មិនវិលមុខ --- */
+.sw-badge-animate {
+    font-weight: 700;
+    font-size: 11px;
+    animation: rgbColorChange 4s infinite linear;
+}
+
+@keyframes rgbColorChange {
+    0%   { color: #2563eb; } /* ពណ៌ខៀវ */
+    25%  { color: #16a34a; } /* ពណ៌បៃតង */
+    50%  { color: #d97706; } /* ពណ៌ទឹកក្រូច/មាស */
+    75%  { color: #9333ea; } /* ពណ៌ស្វាយ */
+    100% { color: #2563eb; } /* វិលមកពណ៌ខៀវវិញ */
 }
 
 .card-img {
@@ -434,13 +457,17 @@ body {
     margin-bottom: 6px;
 }
 
+/* --- ស្ទីល Tag Item ពណ៌ខៀវស្អាត ងាយស្រួលមើល --- */
 .tag-item {
-    background-color: #e6f7ff;
-    border-left: 3px solid #00aeef;
-    padding: 3px 6px;
-    font-size: 9px;
-    color: #333333;
+    background-color: #eff6ff;  
+    border-left: 4px solid #2563eb; 
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #1e40af;              
     display: block;
+    margin-bottom: 3px;
+    border-radius: 4px;
 }
 
 /* --- COLOR DOTS & ANIMATIONS --- */
@@ -464,19 +491,6 @@ body {
 .product-card:hover .color-dot {
     animation: dotPulse 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
-
-.product-card:hover .color-dot:nth-child(1) { animation-delay: 0.05s; }
-.product-card:hover .color-dot:nth-child(2) { animation-delay: 0.10s; }
-.product-card:hover .color-dot:nth-child(3) { animation-delay: 0.15s; }
-.product-card:hover .color-dot:nth-child(4) { animation-delay: 0.20s; }
-.product-card:hover .color-dot:nth-child(5) { animation-delay: 0.25s; }
-.product-card:hover .color-dot:nth-child(6) { animation-delay: 0.30s; }
-.product-card:hover .color-dot:nth-child(7) { animation-delay: 0.35s; }
-.product-card:hover .color-dot:nth-child(8) { animation-delay: 0.40s; }
-.product-card:hover .color-dot:nth-child(9) { animation-delay: 0.45s; }
-.product-card:hover .color-dot:nth-child(10) { animation-delay: 0.50s; }
-.product-card:hover .color-dot:nth-child(11) { animation-delay: 0.55s; }
-.product-card:hover .color-dot:nth-child(12) { animation-delay: 0.60s; }
 
 .color-dot:hover {
     transform: scale(1.4) !important;
@@ -612,23 +626,5 @@ body {
 
     .nav-menu.active {
         display: flex;
-    }
-
-    .nav-menu > a, .dropbtn {
-        width: 100%;
-        text-align: left;
-    }
-
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background-color: #222223;
-        width: 100%;
-        margin-top: 5px;
-    }
-
-    .dropdown-content button {
-        color: #f5f5f7;
-        padding-left: 25px;
     }
 }

@@ -26,7 +26,6 @@ function filterProducts(keyword) {
         const pCopier = p.copier_type ? p.copier_type.toLowerCase() : '';
         const pName = p.name ? p.name.toLowerCase() : '';
 
-        // លក្ខខណ្ឌពិសេសសម្រាប់ Firmware
         if (cleanKeyword.includes('firmware')) {
             const brandPart = cleanKeyword.replace('firmware', '').replace('software', '').trim();
             const isFirmware = pCat.includes('firmware') || pName.includes('firmware') || pType.includes('firmware');
@@ -34,11 +33,9 @@ function filterProducts(keyword) {
             if (brandPart === '') {
                 return isFirmware;
             }
-            
             return isFirmware && (pBrand.includes(brandPart) || pName.includes(brandPart));
         }
 
-        // លក្ខខណ្ឌពិសេសសម្រាប់ Laptop និង Desktop
         if (cleanKeyword === 'laptop' || cleanKeyword === 'desktop') {
             return pCat.includes(cleanKeyword) || 
                    pType.includes(cleanKeyword) || 
@@ -46,7 +43,6 @@ function filterProducts(keyword) {
                    pName.includes(cleanKeyword);
         }
 
-        // លក្ខខណ្ឌស្វែងរកទូទៅ
         return pBrand.includes(cleanKeyword) || 
                pCat.includes(cleanKeyword) || 
                pType.includes(cleanKeyword) || 
@@ -56,7 +52,6 @@ function filterProducts(keyword) {
     });
 }
 
-// មុខងារពិនិត្យ URL Parameter ពេលចូលមកពី single-product.html
 function handleURLFilter() {
     const urlParams = new URLSearchParams(window.location.search);
     const filterFromURL = urlParams.get('filter');
@@ -70,7 +65,6 @@ function handleURLFilter() {
     }
 }
 
-// ប្ដូរ Active Class ឱ្យប៊ូតុង Sidebar ស្វ័យប្រវត្តិ
 function updateActiveSidebarButton(filterValue) {
     document.querySelectorAll('.filter-trigger, .software-sidebar a').forEach(btn => {
         const btnFilter = btn.getAttribute('data-filter') || btn.textContent.trim();
@@ -84,7 +78,6 @@ function updateActiveSidebarButton(filterValue) {
 
 // --- 4. UI RENDERING FUNCTIONS ---
 
-// មុខងារបង្ខំឱ្យអក្សរដិតខ្លាំង ១០០% គ្រប់តម្លៃទាំងអស់
 function forceBoldSpecs() {
     const valueCells = document.querySelectorAll('.specs-table td');
     valueCells.forEach(cell => {
@@ -95,64 +88,41 @@ function forceBoldSpecs() {
     });
 }
 
-// មុខងារបង្កើត HTML សម្រាប់ Product Card (បែងចែក Specs និងបង្ហាញ Color Dots ស្វ័យប្រវត្តិ)
+// មុខងារបង្កើត HTML សម្រាប់ Product Card (ដាក់ Badge ឱ្យស្មើគ្នាជាមួយ Brand ខាងស្ដាំ)
 function createProductCardHTML(product) {
-    // 1. ពិនិត្យថាតើផលិតផលនេះជា Computer (Laptop ឬ Desktop) ឬអត់
     const isComputer = (product.category && (product.category.toLowerCase().includes('laptop') || product.category.toLowerCase().includes('desktop'))) || 
                        (product.machine_type && (product.machine_type.toLowerCase().includes('laptop') || product.machine_type.toLowerCase().includes('desktop')));
 
-    // 2. ពិនិត្យមើលថាតើជា License ដែរឬទេ (ដក Color Dots ចេញតែ License បុណ្នោះ)
     const checkStr = `${product.category || ''} ${product.type || ''} ${product.name || ''} ${product.machine_type || ''}`.toLowerCase();
     const isLicense = checkStr.includes('license');
 
     let colorBarHTML = '';
-    
-    // បង្ហាញ Color Dots លើគ្រប់ផលិតផលទាំងអស់ រួមទាំង Firmware/Software (លើកលែងតែ Computer និង License)
     if (!isComputer && !isLicense) {
         const colorType = product.color_bar_type ? product.color_bar_type.toLowerCase().trim() : '';
-        
         if (colorType === 'cmyklmlc') {
             colorBarHTML = `
                 <div class="color-dots-container" style="display: flex; justify-content: center; gap: 6px; margin: 10px 0;">
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #0088ff; display: inline-block;" title="Cyan"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff0088; display: inline-block;" title="Magenta"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ffee00; display: inline-block;" title="Yellow"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #00ffff; display: inline-block;" title="Light Cyan"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff00ff; display: inline-block;" title="Light Magenta"></span>
-                </div>
-            `;
-        } else if (colorType === '12-color') {
-            colorBarHTML = `
-                <div class="color-dots-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 10px 0;">
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #333333; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #0088ff; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #00ffff; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff0088; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff00ff; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ffee00; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #ff4500; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #888888; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #800080; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #008000; display: inline-block;"></span>
-                    <span class="color-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #4169e1; display: inline-block;"></span>
+                    <span class="color-dot" style="background: #000000;" title="Black"></span>
+                    <span class="color-dot" style="background: #0088ff;" title="Cyan"></span>
+                    <span class="color-dot" style="background: #ff0088;" title="Magenta"></span>
+                    <span class="color-dot" style="background: #ffee00;" title="Yellow"></span>
+                    <span class="color-dot" style="background: #00ffff;" title="Light Cyan"></span>
+                    <span class="color-dot" style="background: #ff00ff;" title="Light Magenta"></span>
                 </div>
             `;
         } else if (colorType === 'cmyk') {
             colorBarHTML = `
                 <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
-                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black"></span>
-                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #0088ff; display: inline-block;" title="Cyan"></span>
-                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #ff0088; display: inline-block;" title="Magenta"></span>
-                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #ffee00; display: inline-block;" title="Yellow"></span>
+                    <span class="color-dot" style="background: #000000;" title="Black"></span>
+                    <span class="color-dot" style="background: #0088ff;" title="Cyan"></span>
+                    <span class="color-dot" style="background: #ff0088;" title="Magenta"></span>
+                    <span class="color-dot" style="background: #ffee00;" title="Yellow"></span>
                 </div>
             `;
         } else {
-            // បង្ហាញពណ៌ K (Black) សម្រាប់ព្រីនធ័រម៉ូណូ ឬ Firmware/Software
             colorBarHTML = `
                 <div class="color-dots-container" style="display: flex; justify-content: center; gap: 8px; margin: 10px 0;">
-                    <span class="color-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #000000; display: inline-block;" title="Black (K)"></span>
+                    <span class="color-dot" style="background: #000000;" title="Black (K)"></span>
                 </div>
             `;
         }
@@ -165,56 +135,29 @@ function createProductCardHTML(product) {
         });
     }
 
-    let specsHTML = '';
+    // ទាញយកអត្ថបទ Badge មានចលនាពី JSON
+    let badgeHTML = '';
+    if (product.badge_text) {
+        badgeHTML = `<div class="sw-badge-animate">${product.badge_text}</div>`;
+    }
 
+    let specsHTML = '';
     if (isComputer) {
         specsHTML = `
             <table class="specs-table">
-                <tr>
-                    <td class="label">Processor</td>
-                    <td class="colon">:</td>
-                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.processor || 'N/A'}</td>
-                </tr>
-                <tr>
-                    <td class="label">Memory</td>
-                    <td class="colon">:</td>
-                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.memory || 'N/A'}</td>
-                </tr>
-                <tr>
-                    <td class="label">Storage</td>
-                    <td class="colon">:</td>
-                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.storage || 'N/A'}</td>
-                </tr>
-                <tr>
-                    <td class="label">Graphic</td>
-                    <td class="colon">:</td>
-                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.graphic || 'N/A'}</td>
-                </tr>
-                <tr>
-                    <td class="label">Power</td>
-                    <td class="colon">:</td>
-                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.power || 'N/A'}</td>
-                </tr>
+                <tr><td class="label">Processor</td><td class="colon">:</td><td class="value">${product.processor || 'N/A'}</td></tr>
+                <tr><td class="label">Memory</td><td class="colon">:</td><td class="value">${product.memory || 'N/A'}</td></tr>
+                <tr><td class="label">Storage</td><td class="colon">:</td><td class="value">${product.storage || 'N/A'}</td></tr>
+                <tr><td class="label">Graphic</td><td class="colon">:</td><td class="value">${product.graphic || 'N/A'}</td></tr>
+                <tr><td class="label">Power</td><td class="colon">:</td><td class="value">${product.power || 'N/A'}</td></tr>
             </table>
         `;
     } else {
         specsHTML = `
             <table class="specs-table">
-                <tr>
-                    <td class="label">Machine Type</td>
-                    <td class="colon">:</td>
-                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.machine_type || 'N/A'}</td>
-                </tr>
-                <tr>
-                    <td class="label">Functions</td>
-                    <td class="colon">:</td>
-                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.functions || 'N/A'}</td>
-                </tr>
-                <tr>
-                    <td class="label">Copier Type</td>
-                    <td class="colon">:</td>
-                    <td class="value" style="font-weight: 800 !important; color: #0f172a !important;">${product.copier_type || 'N/A'}</td>
-                </tr>
+                <tr><td class="label">Machine Type</td><td class="colon">:</td><td class="value">${product.machine_type || 'N/A'}</td></tr>
+                <tr><td class="label">Functions</td><td class="colon">:</td><td class="value">${product.functions || 'N/A'}</td></tr>
+                <tr><td class="label">Copier Type</td><td class="colon">:</td><td class="value">${product.copier_type || 'N/A'}</td></tr>
             </table>
         `;
     }
@@ -222,10 +165,16 @@ function createProductCardHTML(product) {
     return `
         <div class="product-card" style="position: relative;">
             <div>
-                <div class="brand-logo-text">${product.brand || ''}</div>
+                <!-- ជួរខាងលើ៖ Brand Name នៅខាងឆ្វេង និង Badge មានចលនាatខាងស្ដាំ -->
+                <div class="product-card-top-row">
+                    <div class="brand-logo-text">${product.brand || ''}</div>
+                    ${badgeHTML}
+                </div>
+
                 <div class="card-img" data-id="${product.id}">
                     <img src="${product.images && product.images.length > 0 ? product.images[0] : 'images/default.png'}" alt="${product.name}">
                 </div>
+
                 <div class="product-title" data-id="${product.id}">${product.name}</div>
                 <div class="price">${product.price}</div>
 
@@ -241,7 +190,6 @@ function createProductCardHTML(product) {
     `;
 }
 
-// មុខងារបង្ហាញទំនិញបែងចែកជា 3 Section ពេលនៅหน้า Home
 function renderHomeSections(products) {
     isHomeView = true;
     currentPage = 1;
@@ -279,7 +227,7 @@ function renderHomeSections(products) {
                         <h2>${section.title}</h2>
                     </div>
                 </div>
-                <div class="product-container" id="grid-${section.title.toLowerCase().replace(/\s+/g, '-')}" style="margin-bottom: 20px;">
+                <div class="product-container" style="margin-bottom: 20px;">
                     ${matchedProducts.map(product => createProductCardHTML(product)).join('')}
                 </div>
             `;
@@ -292,7 +240,6 @@ function renderHomeSections(products) {
     setTimeout(forceBoldSpecs, 10);
 }
 
-// មុខងារបង្ហាញ Filtered Grid និង Pagination
 function renderFilteredGrid(products, title = "Search Results") {
     isHomeView = false;
     currentFilteredProducts = products;
@@ -302,7 +249,7 @@ function renderFilteredGrid(products, title = "Search Results") {
     mainContainer.innerHTML = '';
 
     if (products.length === 0) {
-        mainContainer.innerHTML = '<p style="text-align: center; padding: 40px; color: #777; grid-column: 1 / -1;">រកមិនឃើញផលិតផលដែលអ្នកកំពុងស្វែងរកឡើយ political position.</p>';
+        mainContainer.innerHTML = '<p style="text-align: center; padding: 40px; color: #777; grid-column: 1 / -1;">រកមិនឃើញផលិតផលដែលអ្នកកំពុងស្វែងរកឡើយ។</p>';
         removePagination();
         return;
     }
@@ -317,7 +264,7 @@ function renderFilteredGrid(products, title = "Search Results") {
                 <h2>${title} (${products.length})</h2>
             </div>
         </div>
-        <div class="product-container" id="filtered-product-grid">
+        <div class="product-container">
             ${paginatedItems.map(product => createProductCardHTML(product)).join('')}
         </div>
     `;
@@ -328,7 +275,6 @@ function renderFilteredGrid(products, title = "Search Results") {
     setTimeout(forceBoldSpecs, 10);
 }
 
-// បង្កើត Pagination ខាងក្រោម
 function renderPagination(totalItems) {
     let paginationContainer = document.getElementById('pagination-container');
     if (!paginationContainer) {
@@ -375,8 +321,6 @@ function removePagination() {
     if (paginationContainer) paginationContainer.innerHTML = '';
 }
 
-// --- 5. EVENT LISTENERS ---
-
 function attachCardEvents(container) {
     container.querySelectorAll('.card-img, .product-title, .btn-detail').forEach(element => {
         element.addEventListener('click', (e) => {
@@ -386,7 +330,6 @@ function attachCardEvents(container) {
     });
 }
 
-// Search Bar Input Event
 const searchInput = document.getElementById('searchInput');
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
@@ -401,7 +344,6 @@ if (searchInput) {
     });
 }
 
-// Sidebar & Mega Menu Filter Click Event
 document.addEventListener('click', (e) => {
     const trigger = e.target.closest('.filter-trigger, .dropdown-content button, .dropdown-content a, .mega-item, .software-sidebar a');
     if (!trigger) return;
@@ -424,7 +366,6 @@ document.addEventListener('click', (e) => {
     renderFilteredGrid(filtered, filterValue);
 });
 
-// View Detail Redirect Function
 function viewDetail(id) {
     window.location.href = `pages/single-product.html?id=${id}`;
 }
